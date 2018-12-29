@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,600i,900');
+
+
+
+$shadow: 0 0 25px rgba(40,47,60,.05), 0 20px 25px rgba(40,47,60,.05), 0 3px 4px rgba(40,47,60,.05);
+
+$white: #fff;
+$grey: #dee2e6;
+$black: #212529;
+
+
+
+
+$medium: 1660px;
+$small: 1030px;
+
+
+
+* {
+  font-family: Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body, html {
+  background-image: url('../images/bg.png');
+  @media only screen and (min-device-pixel-ratio: 2) {
+    background-image: url('../images/bg-x2.png');    
+  }
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+  height: 100%;
+  display: grid;
+}
+
+body {
+  @media (min-width: $small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $small) {
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  justify-items: center;
+  align-items: center;
+}
+
+h1 {
+  color: $white;
+  font-weight: 600;
+  font-size: 70px;
+  text-shadow: $shadow;
+
+  @media (max-width: $medium) {
+    margin-left: 20px;
+  }
+
+  @media (max-width: $small) {
+    font-size: 50px;
+  }
+
+  span {
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+}
+
+#work {
+  background-color: $white;
+  color: $black;
+  border-radius: 25px;
+  width: 450px;
+  height: 500px;
+  box-shadow: $shadow;
+
+  @media (max-width: $small) {
+    width: 90%;
+    height: 90%;
+    margin: 2.5%;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none outside;
+    padding: 0;
+
+    li {
+      padding: 0;
+      
+      a {
+        margin: 0px;
+        display: block;
+        text-decoration: none;
+        color: $black;
+        font-weight: 400;
+        font-size: 20px;
+        transition: 5s;
+        padding: 25px 35px;
+        
+        &:hover {
+          background-color: $grey;
+          box-shadow: $shadow;
+        }
+
+        i {
+          font-size: 25px;
+          margin-right: 5px;
+        }
+
+        span {
+          font-size: 15px;
+          font-weight: 600;
+          font-style: italic;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+.tippy-tooltip.light-theme, .tippy-tooltip.light-theme .tippy-backdrop {
+  background-color: $white;
+  padding: 0;
+}
+
+#tippyTemplate {
+  background-color: white;
+  
+  ul {
+    list-style: none outside;
+    padding: 0;
+
+    li {
+      padding: 0;
+
+      a {
+        margin: 0;
+        display: block;
+        padding: 20px 10px;
+        text-decoration: none;
+        color: $black;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: $grey;
+          box-shadow: $shadow;
+        }
+
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
