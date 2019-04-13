@@ -33,7 +33,7 @@ $small: 1030px;
   }
 
   @media (max-width: $small) {
-    grid-template-rows: 80vw;
+    grid-template-rows: 67.88vw;
     margin-right: 10vw;
     margin-left: 10vw;
   }
@@ -129,7 +129,7 @@ $small: 1030px;
   .Project {
     margin: 25px auto;
     width: 33vw;
-    height: 33vw;
+    height: 28vw;
     box-shadow: $shadow;
     border-radius: 15px;
     text-decoration: none;
@@ -137,7 +137,7 @@ $small: 1030px;
     
     @media (max-width: $small) {
       width: 80vw;
-      height: 80vw;
+      height: 67.88vw;
     }
 
     img {
