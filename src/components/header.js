@@ -1,18 +1,42 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import React from "react"
 
-export default () => (
-  <header className="Header gridded">
-    <h1>
-      Hi,<br/>
-      I'm <span id="me">JuanM04</span>,<br/>
-      full-stack developer.<br/>
-    </h1>
-
-    <div className="contacts">
-      <a href="mailto:me@juanm04.com" target="_blank" rel="noopener noreferrer" className="contact"><FontAwesomeIcon icon={['fas', 'envelope']} /> me@juanm04.com</a>
-      <a href="https://github.com/JuanM04" target="_blank" rel="noopener noreferrer" className="contact"><FontAwesomeIcon icon={['fab', 'github']} /> JuanM04</a>
-      <span className="contact"><FontAwesomeIcon icon={['fab', 'discord']} /> JuanM04#5973</span>
+const Header = ({ siteTitle }) => (
+  <header
+    style={{
+      background: `rebeccapurple`,
+      marginBottom: `1.45rem`,
+    }}
+  >
+    <div
+      style={{
+        margin: `0 auto`,
+        maxWidth: 960,
+        padding: `1.45rem 1.0875rem`,
+      }}
+    >
+      <h1 style={{ margin: 0 }}>
+        <Link
+          to="/"
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          {siteTitle}
+        </Link>
+      </h1>
     </div>
   </header>
 )
+
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
+}
+
+export default Header
