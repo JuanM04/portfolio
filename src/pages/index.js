@@ -15,7 +15,7 @@ library.add(faEnvelope, faDiscord, faGithub)
 
 export default () => (
   <div className="App">
-    <SEO title="JuanM04" />
+    <SEO title="Full-stack developer" />
     <Header />
     <Projects />
   </div>
