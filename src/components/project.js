@@ -7,7 +7,7 @@ export default props => (
     rel="noopener noreferrer"
     className="Project"
   >
-    <img src={require(`../images/${props.image}.png`)} alt={props.name}/>
+    <img src={require(`../images/projects/${props.image}.png`)} alt={props.name}/>
 
     <h2>{props.name}</h2>
     <h3>{props.category}</h3>
