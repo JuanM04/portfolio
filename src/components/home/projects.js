@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { dot, theme, StyledA } from "../../styles"
-import { Section } from "../"
+import { dot, theme, StyledA } from "styles"
+import { Section } from "components"
 
-import PROJECTS from "../../utils/projects.json"
+import PROJECTS from "utils/projects.json"
 
 const StyledLi = styled.li`
   * {

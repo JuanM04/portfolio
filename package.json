@@ -26,6 +26,8 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
+    "eslint-import-resolver-alias": "^1.1.2",
+    "gatsby-plugin-root-import": "^2.0.5",
     "prettier": "^1.17.0"
   },
   "keywords": [

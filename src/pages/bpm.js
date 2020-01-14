@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react"
-import SEO from "../components/seo"
 import styled from "styled-components"
 
 const StyledDiv = styled.div`

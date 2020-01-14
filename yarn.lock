@@ -4419,6 +4419,11 @@ eslint-config-react-app@^5.1.0:
   dependencies:
     confusing-browser-globals "^1.0.9"
 
+eslint-import-resolver-alias@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-alias/-/eslint-import-resolver-alias-1.1.2.tgz#297062890e31e4d6651eb5eba9534e1f6e68fc97"
+  integrity sha512-WdviM1Eu834zsfjHtcGHtGfcu+F30Od3V7I9Fi57uhBEwPkjDcii7/yW8jAT+gOhn4P/vOxxNAXbFAKsrrc15w==
+
 eslint-import-resolver-node@^0.3.2:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.3.tgz#dbaa52b6b2816b50bc6711af75422de808e98404"
@@ -5460,6 +5465,11 @@ gatsby-plugin-react-helmet@^3.0.12:
   integrity sha512-6LZ2LEYTwqD+ZqyCH55mVpk2xEXbQoCTfijP1W4ZCQsKtpWGJP+vyd6b96FWVyEb2k5LsQ1u+jk4R8xXULSX+w==
   dependencies:
     "@babel/runtime" "^7.7.6"
+
+gatsby-plugin-root-import@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-root-import/-/gatsby-plugin-root-import-2.0.5.tgz#04e520dc661d67f49aa7950f11b7c780fd2fdbd3"
+  integrity sha512-/yA6rFjfjiFb8D6nCjfFrrGqYQMkOt4J3u2o6s7VYEF/zpA5dw2C9ENJ5fDKkJSCbbwLiEIGVMMee3vMEip2zA==
 
 gatsby-plugin-sharp@^2.0.35:
   version "2.3.13"

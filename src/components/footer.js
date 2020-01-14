@@ -1,9 +1,9 @@
 import React from "react"
-import { theme, StyledA } from "../styles"
+import { theme, StyledA } from "styles"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import SOCIALS from "../utils/socials.json"
+import SOCIALS from "utils/socials.json"
 
 const StyledFooter = styled.footer`
   text-align: center;
@@ -42,6 +42,8 @@ export default () => (
         </StyledA>
       ))}
     </div>
-    <span>&copy; {new Date().getFullYear()} JuanM04</span>
+    <span>
+      &copy; {new Date().getFullYear()} <StyledA href="/">JuanM04</StyledA>
+    </span>
   </StyledFooter>
 )

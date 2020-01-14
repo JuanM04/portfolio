@@ -13,6 +13,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-root-import`,
+      options: {
+        components: `${__dirname}/src/components`,
+        styles: `${__dirname}/src/styles`,
+        utils: `${__dirname}/src/utils`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { hr } from "../styles"
+import { hr } from "styles"
 
 const StyledSection = styled.section`
   ${hr}
