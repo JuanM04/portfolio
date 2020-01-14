@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { hr } from "../styles"
 
 import { About, Projects, Toolbox } from "../components/home"
-import { Footer, SEO } from "../components"
+import { SEO } from "../components"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
@@ -34,7 +34,7 @@ const StyledHeader = styled.header`
 `
 
 export default () => (
-  <div className="App">
+  <>
     <SEO title="Full-stack developer" />
     <StyledHeader>
       <h1>JuanM04</h1>
@@ -43,6 +43,5 @@ export default () => (
     <About />
     <Projects />
     <Toolbox />
-    <Footer />
-  </div>
+  </>
 )

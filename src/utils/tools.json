@@ -1,5 +1,9 @@
 [
   {
+    "id": "bpm",
+    "name": "BPM"
+  },
+  {
     "id": "docs",
     "name": "Docs"
   },
