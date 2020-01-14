@@ -2,11 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { hr } from "../styles"
 
-import About from "../components/about"
-import Projects from "../components/projects"
-import Toolbox from "../components/toolbox"
-import Footer from "../components/footer"
-import SEO from "../components/seo"
+import { About, Projects, Toolbox } from "../components/home"
+import { Footer, SEO } from "../components"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"

@@ -1,5 +1,5 @@
 import React from "react"
-import Section from "./section"
+import { Section } from "../"
 
 export default () => (
   <Section title="About Me">

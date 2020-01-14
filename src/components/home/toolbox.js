@@ -1,8 +1,8 @@
 import React from "react"
-import { StyledA } from "../styles"
-import Section from "./section"
+import { StyledA } from "../../styles"
+import { Section } from "../"
 
-import TOOLS from "../utils/tools.json"
+import TOOLS from "../../utils/tools.json"
 
 export default () => (
   <Section title="Toolbox">
