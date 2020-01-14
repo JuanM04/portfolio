@@ -1,30 +1,56 @@
 [
   {
-    "name": "PITBULL",
-    "category": "Static website",
-    "description": "Company of work machines (spanish)",
-    "image": "pitbull",
-    "url": "https://pitbull.com.ar"
+    "id": "cartas-negras",
+    "name": "Cartas Negras",
+    "description": "Cards Against Humanity as an app (and argentine)",
+    "stack": ["Flutter", "Firebase (Auth and Firestore)"],
+    "released": "Late 2019",
+    "url": "https://play.google.com/store/apps/details?id=com.juanm04.cartas_negras"
   },
   {
-    "name": "Martín Seery",
-    "category": "Static website",
-    "description": "Company of work machines (spanish)",
-    "image": "martinseery",
-    "url": "https://martinseery.com.ar"
+    "id": "animu",
+    "name": "Animú",
+    "description": "Android app to watch anime",
+    "stack": ["Flutter", "ZEIT Now", "Web Scrapping"],
+    "released": "Late 2019",
+    "url": "https://animu.juanm04.com"
   },
   {
-    "name": "Bees: the game",
-    "category": "Desktop app",
-    "description": "Quiz-game about bees (spanish)",
-    "image": "bees",
-    "url": "https://github.com/JuanM04/bees-thegame"
+    "id": "pasetec",
+    "name": "PaseTec",
+    "description": "Personal url shortener",
+    "stack": [
+      "Next.js (PWA)",
+      "ZEIT Now",
+      "GraphQL",
+      "MySQL (Prisma)",
+      "Arduino"
+    ],
+    "released": "Mid 2019",
+    "url": "https://pasetec.juanm04.com"
   },
   {
+    "id": "veritas",
+    "name": "Veritas",
+    "description": "Group scholar schedule",
+    "stack": ["Next.js", "ZEIT Now", "WebSockets (Pusher)"],
+    "released": "Mid 2019",
+    "url": "https://github.com/JuanM04/veritas"
+  },
+  {
+    "id": "watch-with",
     "name": "WatchWith",
-    "category": "Web app",
     "description": "Watch media from Youtube, Twitch, Facebook, direct files and more synchronously",
-    "image": "watch-with",
+    "stack": ["React", "Express", "WebSockets (Pusher)"],
+    "released": "Early 2019",
     "url": "https://watchwith.juanm04.com"
+  },
+  {
+    "id": "bees-thegame",
+    "name": "Bees: the game",
+    "description": "Quiz-game about bees (spanish)",
+    "stack": ["React", "Electron"],
+    "released": "Late 2018",
+    "url": "https://github.com/JuanM04/bees-thegame"
   }
 ]

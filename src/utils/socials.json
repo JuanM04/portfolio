@@ -1,0 +1,14 @@
+[
+  {
+    "icon": ["fab", "github"],
+    "url": "https://github.com/JuanM04"
+  },
+  {
+    "icon": ["fab", "twitter"],
+    "url": "https://twitter.com/JuanM04_"
+  },
+  {
+    "icon": ["fas", "envelope"],
+    "url": "mailto:me@juanm04.com"
+  }
+]
