@@ -9,8 +9,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `docs`,
+        path: `${__dirname}/docs`,
       },
     },
     {
@@ -19,6 +19,29 @@ module.exports = {
         components: `${__dirname}/src/components`,
         styles: `${__dirname}/src/styles`,
         utils: `${__dirname}/src/utils`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: `#`,
+              className: `heading-anchor`,
+            },
+          },
+          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              macros: {
+                "\\unit": "\\ \\text{#1}",
+              },
+            },
+          },
+        ],
       },
     },
     `gatsby-transformer-sharp`,

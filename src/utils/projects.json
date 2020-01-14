@@ -30,14 +30,6 @@
     "url": "https://pasetec.juanm04.com"
   },
   {
-    "id": "to",
-    "name": "To",
-    "description": "Personal url shortener",
-    "stack": ["Unknown"],
-    "released": "Mid 2019",
-    "url": "https://to.juanm04.com"
-  },
-  {
     "id": "veritas",
     "name": "Veritas",
     "description": "Group scholar schedule",

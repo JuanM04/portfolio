@@ -20,9 +20,12 @@ exports.wrapPageElement = ({ element, props }) => {
   return (
     <>
       <Global />
-      {props.uri && !props.custom404 && props.uri !== "/" && (
-        <SEO title={getTool(props.uri).name} />
-      )}
+      {props.uri &&
+        !props.custom404 &&
+        props.uri !== "/" &&
+        props.uri.split("/").length === 2 && (
+          <SEO title={getTool(props.uri).name} />
+        )}
       {element}
       <Footer />
     </>
