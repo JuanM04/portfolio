@@ -1,4 +1,5 @@
 import React from "react"
+import { StyledA } from "../styles"
 import Section from "./section"
 
 import TOOLS from "../utils/tools.json"
@@ -11,7 +12,7 @@ export default () => (
     <ul>
       {TOOLS.map(tool => (
         <li key={tool.id}>
-          <a href={`/${tool.id}`}>{tool.name}</a>
+          <StyledA href={`/${tool.id}`}>{tool.name}</StyledA>
         </li>
       ))}
     </ul>

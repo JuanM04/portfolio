@@ -1,4 +1,6 @@
 import React from "react"
+import styled from "styled-components"
+import { hr } from "../styles"
 
 import About from "../components/about"
 import Projects from "../components/projects"
@@ -6,21 +8,41 @@ import Toolbox from "../components/toolbox"
 import Footer from "../components/footer"
 import SEO from "../components/seo"
 
-import "../styles/main.scss"
-
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons"
 
 library.add(faEnvelope, faTwitter, faGithub)
 
+const StyledHeader = styled.header`
+  ${hr}
+  margin-top: 10vh;
+  padding-bottom: 5vh;
+
+  h1,
+  h3 {
+    margin: 0;
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 50px;
+  }
+
+  h3 {
+    font-weight: normal;
+    font-size: 18px;
+  }
+`
+
 export default () => (
   <div className="App">
     <SEO title="Full-stack developer" />
-    <header>
+    <StyledHeader>
       <h1>JuanM04</h1>
       <h3>Full-Stack Developer</h3>
-    </header>
+    </StyledHeader>
     <About />
     <Projects />
     <Toolbox />
