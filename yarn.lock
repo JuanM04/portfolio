@@ -8293,6 +8293,11 @@ methods@~1.1.2:
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
   integrity sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=
 
+micro-redirect@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/micro-redirect/-/micro-redirect-1.0.2.tgz#f2fa6686e5a404992abb1fe228341323af4699fd"
+  integrity sha512-lRx+OBr+5WFEoQ/f1R6FgPIprVGwf0HBda1DXvRUPtjGqzxAgTf243MfPFF6xQJ7G9YQR+C3QlZrCsRI9IkJVw==
+
 micromatch@^3.1.10, micromatch@^3.1.4:
   version "3.1.10"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-3.1.10.tgz#70859bc95c9840952f359a068a3fc49f9ecfac23"

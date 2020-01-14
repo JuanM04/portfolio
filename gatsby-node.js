@@ -6,11 +6,11 @@
 
 const { resolve } = require("path")
 
-// Create Docs pages
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const docComponent = resolve(__dirname, "src/templates/doc.js")
 
+  // Create Docs pages
   return graphql(/* GraphQL */ `
     {
       allMarkdownRemark {

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "juanm04",
+  "regions": ["all"],
+  "routes": [
+    { "src": "/to/(?<id>[^/]*)", "dest": "/api/to/redirect.js?id=$id" }
+  ],
+  "env": {
+    "TO_PASSWORD": "@to_password",
+    "TO_GIST_URL": "https://api.github.com/gists/e31b21d1d7f21bfface486168a242f08",
+    "TO_GITHUB_TOKEN": "@to_github_token"
+  }
+}

@@ -27,6 +27,27 @@ export const Global = createGlobalStyle`
       width: 100%;
     }
   }
+  
+  input {
+    border: none;
+    border-bottom: 2px solid ${theme.primaryColor};
+    font-size: 18px;
+  }
+
+  button {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: ${theme.primaryColor};
+    border: none;
+    transition: 0.25s;
+
+    &:hover {
+      background-color: ${theme.primaryColorActive};
+    }
+  }
 `
 
 export const hr = `

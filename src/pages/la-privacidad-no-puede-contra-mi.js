@@ -10,12 +10,6 @@ const StyledDiv = styled.div`
   align-items: center;
   flex-direction: column;
   text-align: center;
-
-  input {
-    border: none;
-    border-bottom: 2px solid ${theme.primaryColor};
-    font-size: 18px;
-  }
 `
 
 export default () => {
