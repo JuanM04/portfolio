@@ -10,9 +10,7 @@
   <a href="https://www.gatsbyjs.org/">
     <img alt="Gatsby Version" src="https://img.shields.io/github/package-json/dependency-version/JuanM04/juanm04/gatsby.svg?style=for-the-badge&logo=gatsby&color=663399" />
   </a>
-  <a href="https://app.netlify.com/sites/juanm04/deploys">
-    <img alt="Netlify Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fdeveloper.oswaldlabs.com%2Fnetlify-status%2Fd0befef1-a0f4-4b12-9223-11eeb2ce60b6&style=for-the-badge&logo=netlify" />
-  </a>
+  <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/JuanM04/juanm04?color=success&style=for-the-badge" />
 </p>
 
 ## Installation

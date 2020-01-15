@@ -2,7 +2,7 @@
   "name": "juanm04",
   "private": true,
   "description": "JuanM04's portfolio",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "author": "JuanM04 <me@juanm04.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",

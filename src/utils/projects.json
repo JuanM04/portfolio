@@ -41,9 +41,9 @@
     "id": "watch-with",
     "name": "WatchWith",
     "description": "Watch media from Youtube, Twitch, Facebook, direct files and more synchronously",
-    "stack": ["React", "Express", "WebSockets (Pusher)"],
+    "stack": ["React", "Express", "WebSockets"],
     "released": "Early 2019",
-    "url": "https://watchwith.juanm04.com"
+    "url": "https://github.com/JuanM04/watch-with"
   },
   {
     "id": "bees-thegame",
