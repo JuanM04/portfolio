@@ -1,7 +1,6 @@
 {
   "version": 2,
   "name": "juanm04",
-  "regions": ["all"],
   "routes": [
     { "src": "/to/(?<id>[^/]*)", "dest": "/api/to/redirect.js?id=$id" }
   ],
