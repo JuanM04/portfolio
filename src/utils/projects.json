@@ -18,7 +18,7 @@
   {
     "id": "pasetec",
     "name": "PaseTec",
-    "description": "Personal url shortener",
+    "description": "An electronic system of scholar transport",
     "stack": [
       "Next.js (PWA)",
       "ZEIT Now",
@@ -30,12 +30,17 @@
     "url": "https://pasetec.juanm04.com"
   },
   {
-    "id": "veritas",
-    "name": "Veritas",
+    "id": "veritas-pwa",
+    "name": "Veritas (v2)",
     "description": "Group scholar schedule",
-    "stack": ["Next.js", "ZEIT Now", "WebSockets (Pusher)"],
+    "stack": [
+      "Next.js",
+      "ZEIT Now",
+      "PWA with Offline support",
+      "MySQL (Prisma)"
+    ],
     "released": "Mid 2019",
-    "url": "https://github.com/JuanM04/veritas"
+    "url": "https://github.com/JuanM04/veritas-pwa"
   },
   {
     "id": "watch-with",
