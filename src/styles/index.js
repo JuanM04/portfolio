@@ -15,6 +15,11 @@ export const Global = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: ${theme.textColor};
+
+    code, code * {
+      font-family: "SFMono-Regular", "Ubuntu Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      color: #abb2bf;
+    }
   }
 
   body {

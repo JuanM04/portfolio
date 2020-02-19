@@ -182,7 +182,6 @@ export const DocBody = styled.section`
     font-size: inherit;
     padding: 0;
     margin: 0;
-    color: #abb2bf;
     .error {
       background: rgba(224, 108, 117, 0.1);
       border-bottom: 2px solid #e06c75;
