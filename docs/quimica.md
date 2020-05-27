@@ -1,6 +1,5 @@
 ---
 title: Química
-id: quimica
 category: 4º 5ª
 ---
 

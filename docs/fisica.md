@@ -1,6 +1,5 @@
 ---
 title: Física
-id: fisica
 category: 4º 5ª
 ---
 
@@ -53,7 +52,7 @@ $$
 ## Fuerza
 $$
 \begin{aligned}
-1 \unit{N} &= 1 \unit{kg×m/s}^2 \\
+1 \unit{N} &= 1 \unit{kg$\times$m/s}^2 \\
 1 \unit{kgf} &= 10 \unit{N}
 \end{aligned}
 $$
@@ -72,8 +71,8 @@ $$
 ## Energía y trabajo
 $$
 \begin{aligned}
-1 \unit{J} &= 1 \unit{N} × 1 \unit{m} \\
-1 \unit{kgf×m} = 1 \unit{kgm} &= 9,807 \unit{J} \\
+1 \unit{J} &= 1 \unit{N} \times 1 \unit{m} \\
+1 \unit{kgf$\times$m} = 1 \unit{kgm} &= 9,807 \unit{J} \\
 \end{aligned}
 $$
 
@@ -97,10 +96,10 @@ $$
 \begin{aligned}
 1 \unit{W (Watt)} &= 1 \unit{J/s} \\
 1 \unit{kW} &= 1000 \unit{J/s} \\
-						&= 101,97 \unit{kg×m/s} \\
+						&= 101,97 \unit{kg$\times$m/s} \\
 						&= 1,341 \unit{cv} \\
 						&= 1,256 \unit{hp} \\
-1 \unit{kW×h} &= 3.600.000 \unit{J}
+1 \unit{kW$\times$h} &= 3.600.000 \unit{J}
 \end{aligned}
 $$
 

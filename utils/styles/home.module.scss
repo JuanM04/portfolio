@@ -1,0 +1,102 @@
+@import "utils";
+
+.skills {
+  > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.25);
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    > div {
+      padding: 15px 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}
+
+.projects li {
+  * {
+    @include animated();
+  }
+
+  > div {
+    user-select: none;
+
+    span:nth-child(1) {
+      @include dot();
+      &:hover {
+        color: var(--nc-lk-1);
+      }
+    }
+
+    span:nth-child(2) {
+      opacity: 0.75;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  > ul {
+    max-height: 0;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+
+    li {
+      font-weight: 300;
+      margin: 0;
+
+      .label {
+        @include dot();
+        font-weight: normal;
+      }
+
+      a {
+        font-weight: normal;
+      }
+
+      .item {
+        @include dot();
+
+        &:last-of-type::after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &.active {
+    > div {
+      margin-bottom: 0;
+
+      span:nth-child(1) {
+        font-weight: bold;
+        font-size: 20px;
+
+        &::after {
+          content: none;
+        }
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+        display: none;
+      }
+    }
+
+    > ul {
+      margin-bottom: 25px;
+      max-height: 200px;
+    }
+  }
+}

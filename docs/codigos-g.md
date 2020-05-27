@@ -1,6 +1,5 @@
 ---
 title: Códigos G
-id: codigos-g
 category: 4º 5ª
 ---
 

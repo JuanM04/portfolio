@@ -1,14 +1,14 @@
 <p align="center">
   <a href="https://www.juanm04.com">
-    <img alt="JuanM04" src="src/images/favicon.png" width="60" />
+    <img alt="JuanM04" src="public/images/favicon.png" width="60" />
   </a>
 </p>
 <h1 align="center">
-  JuanM04's portfolio
+  JuanM04's website
 </h1>
 <p align="center">
-  <a href="https://www.gatsbyjs.org/">
-    <img alt="Gatsby Version" src="https://img.shields.io/github/package-json/dependency-version/JuanM04/juanm04/gatsby.svg?style=for-the-badge&logo=gatsby&color=663399" />
+  <a href="https://www.nextjs.org/">
+    <img alt="Next.js Version" src="https://img.shields.io/github/package-json/dependency-version/JuanM04/juanm04/next.svg?style=for-the-badge&logo=next-dot-js&color=000000" />
   </a>
   <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/JuanM04/juanm04?color=success&style=for-the-badge" />
 </p>
@@ -21,10 +21,13 @@ yarn install
 
 ## Usage
 
-See [Gatsby Docs](https://www.gatsbyjs.org/docs/).
+See [Next.js Docs](https://www.nextjs.org/docs/).
 
 ```bash
-yarn develop
+yarn dev
+
+# Generate Docs OG images
+yarn generate
 ```
 
 ## Contributing
@@ -35,4 +38,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](LICENSE)

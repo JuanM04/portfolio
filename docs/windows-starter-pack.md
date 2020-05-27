@@ -1,10 +1,9 @@
 ---
 title: Windows Starter Pack
-id: windows-starter-pack
 ---
 
+![version](https://img.shields.io/badge/release-1.2-success.svg?style=for-the-badge)  
 **Windows Starter Pack** is a guide written in basic Markdown with a list of useful links, files, programs and tips when installing Windows 10.
-![version](https://img.shields.io/badge/release-1.2-success.svg?style=for-the-badge)
 
 ## Download & Installation
 You can download the latest ISO [here](https://www.microsoft.com/en-us/software-download/windows10) and you can use [Etcher](https://www.balena.io/etcher/) to flash a USB. If you don't have a key when installing, you can just simply skip the activation step and crack the OS later.

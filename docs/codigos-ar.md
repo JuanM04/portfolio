@@ -1,6 +1,5 @@
 ---
 title: Códigos de Argentina
-id: codigos-ar
 ---
 
 | Provincia                                             | [IATA] | [ISO] |

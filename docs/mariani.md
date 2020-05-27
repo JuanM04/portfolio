@@ -1,15 +1,14 @@
 ---
 title: Mariani
-id: mariani
 category: 4º 5ª
 ---
 
-- [Medición](#medici%c3%b3n)
-  - [Conversión](#conversi%c3%b3n)
+- [Medición](#medición)
+  - [Conversión](#conversión)
   - [Calibre](#calibre)
-  - [Micrómetro](#micr%c3%b3metro)
+  - [Micrómetro](#micrómetro)
   - [Reloj comparador](#reloj-comparador)
-  - [Alexómetro](#alex%c3%b3metro)
+  - [Alexómetro](#alexómetro)
 - [Torno](#torno)
   - [Plato](#plato)
   - [Contrapunta](#contrapunta)

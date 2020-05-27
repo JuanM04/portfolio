@@ -1,6 +1,5 @@
 ---
 title: Medium Bypass
-id: medium-bypass
 ---
 
 1. Install [ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj) (chrome).

@@ -1,6 +1,5 @@
 ---
 title: RECYLER
-id: recycler
 ---
 
 ```vb

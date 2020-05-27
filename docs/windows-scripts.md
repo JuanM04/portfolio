@@ -1,6 +1,5 @@
 ---
 title: Windows Scripts
-id: windows-scripts
 ---
 
 ### Keyboard lights trick`.vbs`

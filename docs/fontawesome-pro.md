@@ -1,6 +1,5 @@
 ---
 title: FontAwesome Pro
-id: fontawesome-pro
 ---
 
 > **Warning**

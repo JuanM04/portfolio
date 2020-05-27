@@ -1,0 +1,23 @@
+@import "utils";
+
+.url {
+  svg {
+    padding-left: 10px;
+    color: var(--nc-tx-2);
+    opacity: 0.5;
+    display: none;
+    cursor: pointer;
+    @include animated();
+
+    &:hover {
+      opacity: 1;
+      color: var(--nc-lk-1);
+    }
+  }
+
+  &:hover {
+    svg {
+      display: inline-block;
+    }
+  }
+}

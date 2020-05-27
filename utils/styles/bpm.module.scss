@@ -1,0 +1,18 @@
+.container {
+  height: 50vh;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 75px;
+
+    span {
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
+}
