@@ -20,7 +20,7 @@ type _Props = {
 export const getStaticPaths: GetStaticPaths = async () => {
   const files = fs.readdirSync("docs")
   return {
-    paths: files.map(f => `/docs/${f.split(".")[0]}`),
+    paths: files.map((f) => `/docs/${f.split(".")[0]}`),
     fallback: false,
   }
 }
@@ -38,7 +38,9 @@ export default ({ slug, data, content }: _Props) => {
   let macros: any = {
     "\\unit": "\\ \\text{#1}",
   }
-  if (data.macros) data.macros.forEach(macro => (macros[macro.cmd] = macro.def))
+  if (data.macros) {
+    data.macros.forEach((macro) => (macros[macro.cmd] = macro.def))
+  }
 
   return (
     <Layout title={data.title}>
@@ -51,6 +53,10 @@ export default ({ slug, data, content }: _Props) => {
           content={`https://juanm04.com/images/docs/${slug}.png`}
         />
         <meta property="og:site_name" content="JuanM04 Docs" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"
+        />
       </Head>
       <h1 className={styles.title}>
         {data.title}

@@ -2,7 +2,7 @@ import { AppProps } from "next/app"
 
 import "@exampledev/new.css/new.css"
 import "utils/styles/_main.scss"
-import "katex/dist/katex.css"
+// import "katex/dist/katex.css"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
