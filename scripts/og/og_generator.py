@@ -33,5 +33,7 @@ def generate(slug):
 
 def generate_all():
     docs = os.listdir(f"docs")
+    if not os.path.exists("public/images/docs"):
+        os.mkdir("public/images/docs")
     for doc in docs:
         generate(doc.rsplit(".", 1)[0])
