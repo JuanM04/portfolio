@@ -39,6 +39,13 @@ category: 4º 5ª
 |  M09   | Detención del líquido refrigerante |
 |  M30   | Final del programa                 |
 
+### Convenciones
+
+En un torno:
+- `F0.1` para cilindrar y `F0.16` para frentear
+- Se contornea empezando desde `Z0`
+- `X` se mueve la mitad de lo indicado, por eso se usa el diámetro en vez del radio para guiarse.
+
 ### Ejemplo
 ```gcode
 ( #-----------#             )
