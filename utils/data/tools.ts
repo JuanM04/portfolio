@@ -7,7 +7,7 @@ const TOOLS: Tool[] = [
   { slug: "bpm", name: "BPM" },
   { slug: "docs", name: "Docs" },
   {
-    slug: "la-privacidad-no-puede-contra-mi",
+    slug: "lpnpcmi",
     name: "La privacidad no puede contra mí",
   },
   { slug: "to", name: "To" },

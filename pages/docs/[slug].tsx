@@ -50,7 +50,7 @@ export default ({ slug, data, content }: _Props) => {
         <meta property="og:url" content={`https://juanm04.com/docs/${slug}`} />
         <meta
           property="og:image"
-          content={`https://juanm04.com/images/docs/_og/${slug}.png`}
+          content={`https://juanm04.com/images/.og/docs/${slug}.png`}
         />
         <meta property="og:site_name" content="JuanM04 Docs" />
         <link

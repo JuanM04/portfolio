@@ -3,25 +3,25 @@ import frontmatter
 from PIL import Image, ImageDraw, ImageFont
 
 og_path = os.path.realpath(__file__ + "/..")
-final_path = "public/images/docs/_og"
+final_path = "public/images/.og"
 
 
-def generate(slug):
+def generate_doc(slug):
     doc = frontmatter.load(f"docs/{slug}.md")
     title = doc["title"]
 
-    image = Image.open(f"{og_path}/background.png")
+    image = Image.open(f"{og_path}/doc_background.png")
 
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype(f"{og_path}/font.ttf", size=90)
+    font = ImageFont.truetype(f"{og_path}/doc_font.ttf", size=90)
 
     title_w, title_h = draw.textsize(title, font=font)
-    while title_w > 1000:
+    while title_w > 800:
         title = "\n".join(title.rsplit(" ", 1))
         title_w, title_h = draw.textsize(title, font=font)
 
     draw.multiline_text(
-        ((1200 - title_w) / 2, (630 - title_h) / 2),
+        ((1200 - title_w) / 2, (630 - title_h) / 2 + 20),
         title,
         fill="rgb(0, 0, 0)",
         font=font,
@@ -29,12 +29,14 @@ def generate(slug):
         spacing=-10,
     )
 
-    image.save(f"{final_path}/{slug}.png")
+    image.save(f"{final_path}/docs/{slug}.png")
 
 
 def generate_all():
-    docs = os.listdir(f"docs")
     if not os.path.exists(final_path):
         os.mkdir(final_path)
+        os.mkdir(final_path + "/docs")
+
+    docs = os.listdir(f"docs")
     for doc in docs:
-        generate(doc.rsplit(".", 1)[0])
+        generate_doc(doc.rsplit(".", 1)[0])

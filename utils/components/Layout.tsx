@@ -24,7 +24,12 @@ export default (props: _Props) => {
           name="robots"
           content={!props.noIndexPage ? "index, follow" : "noindex, nofollow"}
         />
-        <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+        <link
+          rel="shortcut icon"
+          href="/images/icons/Icon-32.png"
+          type="image/png"
+        />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <header className={styles.header}>
         <h3>
