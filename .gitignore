@@ -35,6 +35,7 @@ yarn-error.log*
 __pycache__
 
 # generated files
-/public/images/.og/
+/public/images/.og/*
+!/public/images/.og/index.png
 /public/sw*
 /public/workbox*

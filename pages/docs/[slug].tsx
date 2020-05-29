@@ -43,7 +43,7 @@ export default ({ slug, data, content }: _Props) => {
   }
 
   return (
-    <Layout title={data.title}>
+    <Layout title={data.title} noOG>
       <Head>
         <meta property="og:title" content={data.title} />
         <meta property="og:type" content="article" />

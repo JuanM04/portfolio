@@ -11,6 +11,7 @@ type _Props = {
   title: string
   children: ReactNode
   noIndexPage?: boolean
+  noOG?: boolean
 }
 
 export default (props: _Props) => {
@@ -30,6 +31,16 @@ export default (props: _Props) => {
           type="image/png"
         />
         <link rel="manifest" href="/manifest.json" />
+        {selected && !props.noOG && (
+          <>
+            <meta property="og:type" content="website" />
+            <meta property="og:site_name" content="JuanM04" />
+            <meta
+              property="og:image"
+              content={`https://juanm04.com/images/.og/${selected}.png`}
+            />
+          </>
+        )}
       </Head>
       <header className={styles.header}>
         <h3>

@@ -1,11 +1,20 @@
 import { useState } from "react"
+import Head from "next/head"
 
 import { Layout } from "components"
 import { PROJECTS, SKILLS } from "data"
 import styles from "styles/home"
 
 export default () => (
-  <Layout title="Full-Stack Developer">
+  <Layout title="Full-Stack Developer" noOG>
+    <Head>
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="JuanM04" />
+      <meta
+        property="og:image"
+        content="https://juanm04.com/images/.og/index.png"
+      />
+    </Head>
     <p>
       My name is Juan Martín Seery. I was born in 2004 in Argentina. I started
       programming at the age of 12 doing basic HTML pages, and slowly focused in
@@ -16,7 +25,7 @@ export default () => (
       <div className={styles.skills}>
         {SKILLS.map((skills, i) => (
           <div key={i}>
-            {skills.map(icon => (
+            {skills.map((icon) => (
               <div key={icon.slug}>
                 <svg
                   role="img"
