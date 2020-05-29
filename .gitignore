@@ -35,4 +35,4 @@ yarn-error.log*
 __pycache__
 
 # generated files
-/public/images/docs/
+/public/images/docs/_og/

@@ -3,6 +3,7 @@ import frontmatter
 from PIL import Image, ImageDraw, ImageFont
 
 og_path = os.path.realpath(__file__ + "/..")
+final_path = "public/images/docs/_og"
 
 
 def generate(slug):
@@ -28,12 +29,12 @@ def generate(slug):
         spacing=-10,
     )
 
-    image.save(f"public/images/docs/{slug}.png")
+    image.save(f"{final_path}/{slug}.png")
 
 
 def generate_all():
     docs = os.listdir(f"docs")
-    if not os.path.exists("public/images/docs"):
-        os.mkdir("public/images/docs")
+    if not os.path.exists(final_path):
+        os.mkdir(final_path)
     for doc in docs:
         generate(doc.rsplit(".", 1)[0])
