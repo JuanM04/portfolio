@@ -1,5 +1,7 @@
-module.exports = {
-  webpack: config => {
+const withPWA = require("next-pwa")
+
+module.exports = withPWA({
+  webpack: (config) => {
     config.module.rules.push({
       test: /docs\/.+\.md$/,
       use: "raw-loader",
@@ -7,4 +9,8 @@ module.exports = {
     return config
   },
   target: "serverless",
-}
+  pwa: {
+    disable: process.env.NODE_ENV !== "production",
+    dest: "public",
+  },
+})

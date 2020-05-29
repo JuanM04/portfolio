@@ -1,5 +1,5 @@
 ---
-title: Kayboard Layout
+title: Keyboard Layout
 ---
 
 Edit `us` file in `/usr/share/X11/xkb/symbols/`
