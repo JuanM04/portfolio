@@ -1,5 +1,9 @@
 @import "utils";
 
+.loading {
+  cursor: progress !important;
+}
+
 .url {
   svg {
     height: 15px;
