@@ -2,9 +2,9 @@ import { useState } from "react"
 import useSWR, { mutate } from "swr"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash, faCopy } from "@fortawesome/free-solid-svg-icons"
-import slugify from "slugify"
 
 import { Layout } from "components"
+import { slugify } from "utils/helpers"
 import styles from "styles/to"
 
 export default () => {
@@ -52,7 +52,7 @@ export default () => {
             if (loading || !redirects) return
             update({
               ...redirects,
-              [slugify(inputs.name, { lower: true })]: {
+              [slugify(inputs.name)]: {
                 name: inputs.name,
                 url: inputs.url,
               },

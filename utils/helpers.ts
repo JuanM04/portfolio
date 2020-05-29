@@ -25,3 +25,12 @@ export const getGist = async (id: string) => {
 
   return data.viewer.gist.files as { name: string; text: string }[]
 }
+
+export const slugify = (str: string) => {
+  const PUNCTUATION = /[^\p{L}\p{M}\p{N}\p{Pc}\- ]/gu
+  return str
+    .trim()
+    .replace(PUNCTUATION, "")
+    .replace(/ /g, "-")
+    .toLocaleLowerCase()
+}

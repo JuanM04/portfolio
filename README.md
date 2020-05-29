@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.juanm04.com">
-    <img alt="JuanM04" src="public/images/favicon.png" width="60" />
+    <img alt="JuanM04" src="public/images/icons/Icon-128.png" width="60" />
   </a>
 </p>
 <h1 align="center">

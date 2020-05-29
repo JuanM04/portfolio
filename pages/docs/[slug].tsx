@@ -1,3 +1,4 @@
+import { createElement } from "react"
 import { GetStaticPaths, GetStaticProps } from "next"
 import Head from "next/head"
 import fs from "fs"
@@ -9,6 +10,7 @@ import RemarkMathPlugin from "remark-math"
 import TeX from "@matejmazur/react-katex"
 
 import { Layout, CodeBlock } from "components"
+import { slugify } from "utils/helpers"
 import styles from "styles/doc"
 
 type _Props = {
@@ -42,6 +44,8 @@ export default ({ slug, data, content }: _Props) => {
     data.macros.forEach((macro) => (macros[macro.cmd] = macro.def))
   }
 
+  let anchors: string[] = []
+
   return (
     <Layout title={data.title} noOG>
       <Head>
@@ -73,6 +77,24 @@ export default ({ slug, data, content }: _Props) => {
             </TeX>
           ),
           inlineMath: ({ value }) => <TeX settings={{ macros }}>{value}</TeX>,
+          heading: (props) => {
+            let anchor = slugify(props.children[0].props.children)
+            if (anchors.includes(anchor)) {
+              let timesRepeated = anchors.reduce(
+                (accum, a) =>
+                  new RegExp(`^${anchor}-\\d+$`).test(a) ? accum + 1 : accum,
+                1
+              )
+              anchor += `-${timesRepeated}`
+            }
+
+            anchors.push(anchor)
+            return createElement(
+              `h${props.level}`,
+              { id: anchor },
+              props.children
+            )
+          },
         }}
       />
     </Layout>

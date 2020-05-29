@@ -32,7 +32,7 @@ $$
 $$
 - Pasar 1 3/8" a milímetros:
 $$
-25,4 \times \color{blue} 1 \color{red} \frac{3}{8} \color{black} = \color{blue} (25,4 \times 1) \color{black} + \color{red} (25,4 \times 3 : 8) \color{black} = 34,925
+25,4 \times \textcolor{blue}{1} \textcolor{red}{\frac{3}{8}} = \textcolor{blue}{(25,4 \times 1)} + \textcolor{red}{(25,4 \times 3 : 8)} = 34,925
 $$
 - Pasar 22,2 mm a pulgadas:
 $$
@@ -58,7 +58,7 @@ Partes:
 El **micrómetro** es un instrumento de medición que mide en milímetros y centécimas.
 
 Partes:
-![Partes del Micrómetro](/public/images/docs/mariani/partes-del-micrometro.svg)
+![Partes del Micrómetro](/images/docs/mariani/partes-del-micrometro.svg)
 
 1. **Cuerpo**: constituye el armazón del micrómetro; suele tener unas plaquitas de aislante térmico para evitar la variación de medida por dilatación.
 2. **Tope**: determina el punto cero de la medida; suele ser de algún material duro (como acero o hierro) para evitar el desgaste, así como optimizar la medida.
@@ -71,8 +71,8 @@ Partes:
 ### Reloj comparador
 Ejemplos:
 
-![0 mm](/public/images/docs/mariani/0-mm.svg)
-![0,263 mm](/public/images/docs/mariani/0263-mm.svg)
+![0 mm](/images/docs/mariani/0-mm.svg)
+![0,263 mm](/images/docs/mariani/0263-mm.svg)
 ![1,328 mm](/images/docs/mariani/1328-mm.svg)
 
 ### Alexómetro

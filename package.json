@@ -38,7 +38,6 @@
     "remark-math": "^2.0.1",
     "sass": "^1.26.7",
     "simple-icons": "^2.14.0",
-    "slugify": "^1.4.0",
     "swr": "^0.2.2"
   },
   "devDependencies": {
