@@ -17,6 +17,7 @@
 .vercel
 
 # misc
+.todo
 .DS_Store
 
 # debug

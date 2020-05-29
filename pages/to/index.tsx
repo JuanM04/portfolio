@@ -1,21 +1,17 @@
 import { useState } from "react"
-import { GetServerSideProps } from "next"
+import useSWR, { mutate } from "swr"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTrash } from "@fortawesome/free-solid-svg-icons"
+import { faTrash, faCopy } from "@fortawesome/free-solid-svg-icons"
 import slugify from "slugify"
 
 import { Layout } from "components"
-import { getGist } from "utils/helpers"
 import styles from "styles/to"
+import { copyFile } from "fs"
 
-export const getServerSideProps: GetServerSideProps = async _ => {
-  const files = await getGist(process.env.GIST_TO as string)
-
-  return { props: { redirects: JSON.parse(files[0].text) } }
-}
-
-export default (props: { redirects: Redirects }) => {
-  const [redirects, setRedirects] = useState(props.redirects)
+export default () => {
+  const { data: redirects, error } = useSWR<Redirects>("/api/get-to", (url) =>
+    fetch(url).then((r) => r.json())
+  )
   const [inputs, setInputs] = useState({ name: "", url: "", password: "" })
   const [loading, setLoading] = useState(false)
 
@@ -31,26 +27,29 @@ export default (props: { redirects: Redirects }) => {
         "Content-Type": "application/json",
       },
     })
-      .then(res => res.json())
-      .then(success => {
+      .then((res) => res.json())
+      .then((success) => {
         if (success) {
-          setRedirects(newRedirects)
+          mutate("/api/get-to", newRedirects)
         } else {
           alert("Error")
         }
       })
-      .catch(_ => alert("Invalid password"))
+      .catch((_) => alert("Invalid password"))
       .finally(() => {
         setLoading(false)
         setInputs({ name: "", url: "", password: "" })
       })
   }
 
+  if (error) console.error(error)
+
   return (
     <Layout title="To">
       <form
-        onSubmit={e => {
+        onSubmit={(e) => {
           e.preventDefault()
+          if (loading || !redirects) return
           update({
             ...redirects,
             [slugify(inputs.name, { lower: true })]: {
@@ -64,8 +63,8 @@ export default (props: { redirects: Redirects }) => {
           type="text"
           placeholder="Name"
           value={inputs.name}
-          onChange={e => setInputs({ ...inputs, name: e.target.value })}
-          disabled={loading}
+          onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
+          disabled={loading || !redirects}
           required
         />
         <br />
@@ -73,8 +72,8 @@ export default (props: { redirects: Redirects }) => {
           type="url"
           placeholder="URL"
           value={inputs.url}
-          onChange={e => setInputs({ ...inputs, url: e.target.value })}
-          disabled={loading}
+          onChange={(e) => setInputs({ ...inputs, url: e.target.value })}
+          disabled={loading || !redirects}
           required
         />
         <br />
@@ -82,33 +81,49 @@ export default (props: { redirects: Redirects }) => {
           type="password"
           placeholder="Admin Password"
           value={inputs.password}
-          onChange={e => setInputs({ ...inputs, password: e.target.value })}
-          disabled={loading}
+          onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
+          disabled={loading || !redirects}
           required
         />
         <br />
         <button type="submit">Create</button>
       </form>
       <hr />
-      <ul>
-        {Object.keys(redirects).map(slug => (
-          <li key={slug} className={styles.url}>
-            <a href={`/to/${slug}`} target="_blank" rel="noopener noreferrer">
-              {redirects[slug].name}
-            </a>
-            {!loading && (
-              <FontAwesomeIcon
-                icon={faTrash}
-                onClick={() => {
-                  let newRedirects = Object.assign({}, redirects)
-                  delete newRedirects[slug]
-                  update(newRedirects)
-                }}
-              />
-            )}
-          </li>
-        ))}
-      </ul>
+      {!redirects ? (
+        <p>Loading...</p>
+      ) : (
+        <ul>
+          {Object.keys(redirects)
+            .sort((a, b) => redirects[a].name.localeCompare(redirects[b].name))
+            .map((slug) => (
+              <li key={slug} className={styles.url}>
+                <a
+                  href={redirects[slug].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {redirects[slug].name}
+                </a>
+                <FontAwesomeIcon
+                  icon={faCopy}
+                  onClick={() =>
+                    navigator.clipboard.writeText(`${location.href}/${slug}`)
+                  }
+                />
+                {!loading && inputs.password.length > 1 && (
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    onClick={() => {
+                      let newRedirects = Object.assign({}, redirects)
+                      delete newRedirects[slug]
+                      update(newRedirects)
+                    }}
+                  />
+                )}
+              </li>
+            ))}
+        </ul>
+      )}
     </Layout>
   )
 }
