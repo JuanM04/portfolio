@@ -4,5 +4,9 @@
     "\\unit": "\\ \\text{#1}"
   },
   "markdown.extension.toc.slugifyMode": "github",
-  "markdown.extension.toc.downcaseLink": true
+  "markdown.extension.toc.downcaseLink": true,
+  "markdown.extension.math.enabled": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  }
 }
