@@ -104,17 +104,9 @@ $$
 
 - **Módulo de Elasticidad Longitudinal o Módulo de Young**: $E = \tan \alpha$
 - **Tensión al límite de Proporcionalidad** (1): $\sigma_p = \frac{\text{Carga al límite proporcional}}{S_0}$
+- **Tensión al límite de Fluencia Superior** (2): $\sigma_{fs} = \frac{\text{Carga al límite de fluencia superior}}{S_0}$
 - **Tensión al límite de Fluencia Inferior** (3): `fórmula desconocida`
 - **Tensión Máxima o Resistencia Estática a la Tracción** (4): `fórmula desconocida`
 - **Tensión a la Rotura Convencional** (5): `fórmula desconocida`
-- **Alargamiento Porcentual**: $\delta = \epsilon \times 100$
-- **Estricción Porcentual**: $\delta =  \times 100$
-
-
-
-
-
-
-
-
-
+- **Alargamiento Porcentual**: $\delta = \frac{\Delta L}{L_0} \times 100$
+- **Estricción Porcentual**: $\phi = \frac{\Delta S}{S_0} \times 100$
