@@ -102,7 +102,7 @@ $$
 
 ![Diagrama de Tracción para un Acero](/images/docs/materiales-5/traccion-acero.png)
 
-- **Módulo de Elasticidad Longitudinal o Módulo de Young**: $E = \tan \alpha$
+- **Módulo de Elasticidad Longitudinal o Módulo de Young**: $E = \tan \alpha = \frac{\sigma}{\epsilon}$
 - **Tensión al límite de Proporcionalidad** (1): $\sigma_p = \frac{\text{Carga al límite proporcional}}{S_0}$
 - **Tensión al límite de Fluencia Superior** (2): $\sigma_{fs} = \frac{\text{Carga al límite de fluencia superior}}{S_0}$
 - **Tensión al límite de Fluencia Inferior** (3): `fórmula desconocida`
