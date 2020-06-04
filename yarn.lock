@@ -1692,10 +1692,10 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.28"
 
-"@fortawesome/react-fontawesome@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.9.tgz#c865b9286c707407effcec99958043711367cd02"
-  integrity sha512-49V3WNysLZU5fZ3sqSuys4nGRytsrxJktbv3vuaXkEoxv22C6T7TEG0TW6+nqVjMnkfCQd5xOnmJoZHMF78tOw==
+"@fortawesome/react-fontawesome@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.10.tgz#7ba2bd300036f95e2ac084000ba8ba26cd269c96"
+  integrity sha512-UGdpJiLBIqR/8xcLrCarf2pChqQFKjDTD02C7ZS/odpOVVl2YuHYRCLEOQ0GpfOk6jtYhmouSFOFoC8qNCe5cg==
   dependencies:
     prop-types "^15.7.2"
 
@@ -1860,10 +1860,15 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/node@*", "@types/node@^14.0.5":
+"@types/node@*":
   version "14.0.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.5.tgz#3d03acd3b3414cf67faf999aed11682ed121f22b"
   integrity sha512-90hiq6/VqtQgX8Sp0EzeIsv3r+ellbGj4URKj5j30tLlZvRUpnAe9YbYnjl3pJM93GyXU0tghHhvXHq+5rnCKA==
+
+"@types/node@^14.0.10":
+  version "14.0.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.10.tgz#dbfaa170bd9eafccccb6d7060743a761b0844afd"
+  integrity sha512-Bz23oN/5bi0rniKT24ExLf4cK0JdvN3dH/3k0whYkdN4eI4vS2ZW/2ENNn2uxHCzWcbdHIa/GRuWQytfzCjRYw==
 
 "@types/prop-types@*":
   version "15.7.3"
@@ -4980,10 +4985,10 @@ neo-async@2.6.1, neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-next-pwa@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/next-pwa/-/next-pwa-2.4.1.tgz#a30ae1211e69b09ac753ba6efd7b4243bd55bde5"
-  integrity sha512-vZzRkdMDOBGPpnQeaaXfnAIPGuNcU6GU41j+bXWy++AVkVllrIHfz+nAMlLsFPcILjsfXuYrCDSSLcewSywmcg==
+next-pwa@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/next-pwa/-/next-pwa-2.5.0.tgz#e9ce3c0371c742f49b83fb9a36933dfc9a75cd91"
+  integrity sha512-akc/nltafdhiz4Bszr0wqUnRNqdBcGquuvaWjoOZvMYzNLWK+98Ftl43K6YzUjUlrwCvRA+dAABUsYlizFkhOw==
   dependencies:
     clean-webpack-plugin "^3.0.0"
     globby "^11.0.0"
@@ -6436,10 +6441,10 @@ shell-quote@1.7.2:
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.7.2.tgz#67a7d02c76c9da24f99d20808fcaded0e0e04be2"
   integrity sha512-mRz/m/JVscCrkMyPqHc/bczi3OQHkLTqXHEFu0zDhK/qfv3UcOA4SVmRCLmos4bhjr9ekVQubj/R7waKapmiQg==
 
-simple-icons@^2.14.0:
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-2.14.0.tgz#10c170049763db62482799f6e66ab00bffc2b95a"
-  integrity sha512-AUixKWXsT53vcbwBrypERGUCWPmffpMToj9yXxY2qri2KTCvZp5JOfkht3+aaIWn0RR3EkNKi6hf2ySIz22h3g==
+simple-icons@^2.15.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-2.15.0.tgz#35ef45fa014a19665e16d695a6bfd48151f22f06"
+  integrity sha512-P8cIVf9TF9y1Dk/gLth4WEa3cLBen4YymZuUvdlSNqjGUM4x9Zcy8oXHneVLo0AYPJcHa0b3q3+QEwKAoF+C8Q==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"

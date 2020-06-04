@@ -1,15 +1,24 @@
 type Project = {
   name: string
-  description: string
+  description: {
+    en: string
+    es: string
+  }
   stack: string[]
-  released: string
+  released: {
+    year: number
+    moment: "EARLY" | "MID" | "LATE"
+  }
   url: string
 }
 
 const PROJECTS: Project[] = [
   {
     name: "Organit",
-    description: "The definitive tool for students",
+    description: {
+      en: "The definitive tool for students",
+      es: "La herramienta definitiva para los estudiantes",
+    },
     stack: [
       "Flutter",
       "Firebase (Auth, Firestore, Storage, Functions)",
@@ -18,51 +27,91 @@ const PROJECTS: Project[] = [
       "Sentry",
       "Web App with Firestore",
     ],
-    released: "Mid 2020",
+    released: {
+      year: 2020,
+      moment: "MID",
+    },
     url: "https://organit.juanm04.com",
   },
   {
     name: "Cartas Negras",
-    description: "Cards Against Humanity as an app (and argentine)",
-    stack: ["Flutter", "Firebase (Auth and Firestore)"],
-    released: "Late 2019",
+    description: {
+      en: "Cards Against Humanity as an app (and argentine)",
+      es: "Cards Against Humanity como una app (con un toque argentino)",
+    },
+    stack: ["Flutter", "Firebase (Auth & Firestore)"],
+    released: {
+      year: 2019,
+      moment: "LATE",
+    },
     url:
       "https://play.google.com/store/apps/details?id=com.juanm04.cartas_negras",
   },
   {
     name: "Animú",
-    description: "Android app to watch anime",
+    description: {
+      en: "Android app to watch anime",
+      es: "Aplicación Android para mirar anime",
+    },
     stack: ["Flutter", "Vercel", "Web Scrapping"],
-    released: "Late 2019",
+    released: {
+      year: 2019,
+      moment: "LATE",
+    },
     url: "https://animu.juanm04.com",
   },
   {
     name: "PaseTec",
-    description: "An electronic system of scholar transport",
+    description: {
+      en: "An electronic system of scholar transport",
+      es: "Un sistema de tranporte escolar electrónico",
+    },
     stack: ["Next.js (PWA)", "Vercel", "GraphQL", "MySQL (Prisma)", "Arduino"],
-    released: "Mid 2019",
+    released: {
+      year: 2019,
+      moment: "MID",
+    },
     url: "https://pasetec.juanm04.com",
   },
   {
     name: "Veritas (v2)",
-    description: "Group scholar schedule",
+    description: {
+      en: "Group scholar schedule",
+      es: "Horarios escolares grupales",
+    },
     stack: ["Next.js", "Vercel", "PWA with Offline support", "MySQL (Prisma)"],
-    released: "Mid 2019",
+    released: {
+      year: 2019,
+      moment: "MID",
+    },
     url: "https://github.com/JuanM04/veritas-pwa",
   },
   {
     name: "WatchWith",
-    description:
-      "Watch media from Youtube, Twitch, Facebook, direct files and more synchronously",
+    description: {
+      en:
+        "Watch media from Youtube, Twitch, Facebook, direct files and more synchronously",
+      es:
+        "Mirar videos de Youtube, Twitch, Facebook, archivos directos y más síncronamente",
+    },
     stack: ["Next.js", "Vercel", "Pusher"],
-    released: "Early 2019",
+    released: {
+      year: 2019,
+      moment: "EARLY",
+    },
     url: "https://github.com/JuanM04/watch-with",
   },
   {
     name: "Bees: the game",
-    description: "Quiz-game about bees (spanish)",
+    description: {
+      en: "Quiz-game about bees",
+      es: "Preguntados, pero con abejas",
+    },
     stack: ["React", "Electron"],
-    released: "Late 2018",
+    released: {
+      year: 2018,
+      moment: "LATE",
+    },
     url: "https://github.com/JuanM04/bees-thegame",
   },
 ]
