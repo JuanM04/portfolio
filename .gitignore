@@ -36,6 +36,7 @@ __pycache__
 
 # generated files
 /public/images/.og/*
+/public/images/icons/*
 !/public/images/.og/index.png
 /public/sw*
 /public/workbox*

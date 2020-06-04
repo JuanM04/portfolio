@@ -55,8 +55,8 @@
       "short_name": "BPM",
       "url": "/bpm",
       "icons": [
-        { "src": "/images/icons/BPM-192.png", "sizes": "192x192" },
-        { "src": "/images/icons/BPM-512.png", "sizes": "512x512" }
+        { "src": "/images/icons/bpm-192.png", "sizes": "192x192" },
+        { "src": "/images/icons/bpm-512.png", "sizes": "512x512" }
       ]
     },
     {
@@ -64,8 +64,8 @@
       "short_name": "Docs",
       "url": "/docs",
       "icons": [
-        { "src": "/images/icons/Docs-192.png", "sizes": "192x192" },
-        { "src": "/images/icons/Docs-512.png", "sizes": "512x512" }
+        { "src": "/images/icons/docs-192.png", "sizes": "192x192" },
+        { "src": "/images/icons/docs-512.png", "sizes": "512x512" }
       ]
     },
     {
@@ -73,8 +73,8 @@
       "short_name": "LPNPCM",
       "url": "/lpnpcm",
       "icons": [
-        { "src": "/images/icons/LPNPCM-192.png", "sizes": "192x192" },
-        { "src": "/images/icons/LPNPCM-512.png", "sizes": "512x512" }
+        { "src": "/images/icons/lpnpcm-192.png", "sizes": "192x192" },
+        { "src": "/images/icons/lpnpcm-512.png", "sizes": "512x512" }
       ]
     },
     {
@@ -82,8 +82,8 @@
       "short_name": "To",
       "url": "/to",
       "icons": [
-        { "src": "/images/icons/To-192.png", "sizes": "192x192" },
-        { "src": "/images/icons/To-512.png", "sizes": "512x512" }
+        { "src": "/images/icons/to-192.png", "sizes": "192x192" },
+        { "src": "/images/icons/to-512.png", "sizes": "512x512" }
       ]
     }
   ]

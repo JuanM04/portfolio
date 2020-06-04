@@ -1,26 +1,23 @@
 @import "utils";
 
 .header {
-  h3 a {
-    color: var(--nc-tx-1) !important;
+  > img {
+    height: 50px;
+    margin-bottom: 10px;
+    cursor: pointer;
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
+  > div img {
+    height: 40px;
+    padding: 0 5px;
+    margin: 0;
+    cursor: pointer;
+    filter: grayscale(100%);
+    @include animated();
 
-    li {
-      @include dot();
-      display: inline;
-
-      &:last-of-type::after {
-        content: none;
-      }
-
-      .selected {
-        color: var(--nc-ac-tx);
-        background-color: var(--nc-ac-1);
-      }
+    &:hover,
+    &.selected {
+      filter: grayscale(0%);
     }
   }
 }

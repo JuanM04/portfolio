@@ -43,24 +43,22 @@ export default (props: _Props) => {
         )}
       </Head>
       <header className={styles.header}>
-        <h3>
-          <Link href="/index" as="/">
-            <a>JuanM04</a>
-          </Link>
-        </h3>
-        <ul>
-          {TOOLS.map((t) => (
-            <li key={t.slug}>
-              <Link href={`/${t.slug}`}>
-                <a
-                  className={selected === t.slug ? styles.selected : undefined}
-                >
-                  {t.name}
-                </a>
+        <Link href="/index" as="/">
+          <img src="/images/Full logo.png" alt="Logo" />
+        </Link>
+        <div>
+          {TOOLS.map(({ name, slug }) => (
+            <label title={name}>
+              <Link key={slug} href={`/${slug}`}>
+                <img
+                  src={`/images/icons/${slug}-48.png`}
+                  alt={name}
+                  className={selected === slug ? styles.selected : undefined}
+                />
               </Link>
-            </li>
+            </label>
           ))}
-        </ul>
+        </div>
       </header>
       {props.children}
       <footer className={styles.footer}>
