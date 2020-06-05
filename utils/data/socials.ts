@@ -1,5 +1,9 @@
 import { IconDefinition, faEnvelope } from "@fortawesome/free-solid-svg-icons"
-import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons"
+import {
+  faGithub,
+  faTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons"
 
 type Social = {
   icon: IconDefinition
@@ -10,6 +14,10 @@ const SOCIALS: Social[] = [
   {
     icon: faGithub,
     url: "https://github.com/JuanM04",
+  },
+  {
+    icon: faTwitter,
+    url: "https://twitter.com/JuanM04_",
   },
   {
     icon: faInstagram,
