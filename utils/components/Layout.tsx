@@ -48,8 +48,8 @@ export default (props: _Props) => {
         </Link>
         <div>
           {TOOLS.map(({ name, slug }) => (
-            <label title={name}>
-              <Link key={slug} href={`/${slug}`}>
+            <label title={name} key={slug}>
+              <Link href={`/${slug}`}>
                 <img
                   src={`/images/icons/${slug}-48.png`}
                   alt={name}
