@@ -49,6 +49,7 @@
   "display": "fullscreen",
   "orientation": "portrait",
   "theme_color": "#CE125A",
+  "background_color": "#FFFFFF",
   "shortcuts": [
     {
       "name": "BPM",

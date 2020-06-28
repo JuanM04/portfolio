@@ -30,7 +30,9 @@ export default (props: _Props) => {
           href="/images/icons/Icon-32.png"
           type="image/png"
         />
+        <link rel="apple-touch-icon" href="/images/icons/Icon-192.png"></link>
         <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#CE125A" />
         {selected && !props.noOG && (
           <>
             <meta property="og:type" content="website" />

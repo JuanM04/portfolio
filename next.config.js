@@ -11,7 +11,7 @@ module.exports = withPWA({
   target: "serverless",
   pwa: {
     disable: process.env.NODE_ENV !== "production",
-    register: process.env.NODE_ENV !== "production",
+    register: process.env.NODE_ENV === "production",
     dest: "public",
   },
 })
