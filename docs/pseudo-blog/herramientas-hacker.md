@@ -1,6 +1,5 @@
 ---
 title: Cómo convertí mi sitio web en mi caja de herramientas hacker
-category: Pseudo blog
 ---
 
 Posiblemente tengas un sitio web personal, mostrando quién eres, qué haces y tus proyectos pasados. Yo tenía un sitio así, pero descubrí el poder de las aplicaciones web.

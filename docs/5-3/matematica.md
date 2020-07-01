@@ -1,6 +1,5 @@
 ---
 title: Matemática
-category: 5º 3ª
 ---
 
 ## Funciones Cuadráticas

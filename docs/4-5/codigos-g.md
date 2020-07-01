@@ -1,6 +1,5 @@
 ---
 title: Códigos G
-category: 4º 5ª
 ---
 
 | Código | Descripción                               |

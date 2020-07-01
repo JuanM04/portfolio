@@ -6,6 +6,17 @@ declare module "styles/*" {
   export default content
 }
 
+type Doc = {
+  slug: string
+  data: DocData
+}
+
+type Category = {
+  slug: string
+  name: string
+  docs: Doc[]
+}
+
 type DocData = {
   title: string
   category?: string

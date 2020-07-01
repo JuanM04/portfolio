@@ -1,4 +1,6 @@
 {
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "markdown.extension.katex.macros": {
     "\\unit": "\\ \\text{#1}"
@@ -6,6 +8,7 @@
   "markdown.extension.toc.slugifyMode": "github",
   "markdown.extension.toc.downcaseLink": true,
   "markdown.extension.math.enabled": true,
+  "markdown.extension.list.indentationSize": "inherit",
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   }

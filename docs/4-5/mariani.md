@@ -1,6 +1,5 @@
 ---
 title: Mariani
-category: 4º 5ª
 ---
 
 - [Medición](#medición)

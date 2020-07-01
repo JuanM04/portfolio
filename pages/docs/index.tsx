@@ -1,47 +1,49 @@
 import { GetStaticProps } from "next"
-import Link from "next/link"
 import fs from "fs"
 import matter from "gray-matter"
 
-import { Layout } from "components"
-
-type Doc = {
-  slug: string
-  data: DocData
-}
-
-type Category = {
-  category: string | null
-  docs: Doc[]
-}
+import { Layout, DocItem } from "components"
+import { DOC_CATEGORIES } from "utils/data"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const files = fs.readdirSync("docs")
+  const files = fs.readdirSync("docs").reduce<string[][]>((accum, f) => {
+    if (f.includes(".")) return [...accum, [f.split(".")[0]]]
+    else
+      return [
+        ...accum,
+        ...fs.readdirSync(`docs/${f}`).map((f2) => [f, f2.split(".")[0]]),
+      ]
+  }, [])
+
   const docs = await Promise.all(
-    files.map(async file => {
-      const slug = file.split(".")[0]
+    files.map(async (file) => {
+      const slug = file.join("/")
       const { data } = matter.read(`docs/${slug}.md`)
 
-      return { slug, data }
+      return {
+        slug,
+        data: {
+          ...data,
+          category: file.length > 1 ? file[0] : null,
+        },
+      } as Doc
     })
   )
   return { props: { docs } }
 }
 
 export default ({ docs }: { docs: Doc[] }) => {
-  let categories: Category[] = [
-    {
-      category: null,
-      docs: [],
-    },
-  ]
-  docs.forEach(doc => {
-    if (!doc.data.category) categories[0].docs.push(doc)
+  let noCategory: Doc[] = []
+  let categories: Category[] = []
+
+  docs.forEach((doc) => {
+    if (!doc.data.category) noCategory.push(doc)
     else {
-      const i = categories.findIndex(cat => cat.category === doc.data.category)
+      const i = categories.findIndex((cat) => cat.slug === doc.data.category)
       if (i === -1)
         categories.push({
-          category: doc.data.category,
+          slug: doc.data.category,
+          name: DOC_CATEGORIES[doc.data.category],
           docs: [doc],
         })
       else categories[i].docs.push(doc)
@@ -50,20 +52,18 @@ export default ({ docs }: { docs: Doc[] }) => {
 
   return (
     <Layout title="Docs">
-      {categories.map(({ category, docs }) => (
-        <div key={category || "none"}>
-          {category && <h4>{category}</h4>}
-          <ul>
-            {docs.map(doc => (
-              <li key={doc.slug}>
-                <Link href="/docs/[slug]" as={`/docs/${doc.slug}`}>
-                  <a>{doc.data.title}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      <div>
+        {noCategory
+          .sort((a, b) => a.data.title.localeCompare(b.data.title))
+          .map((doc) => (
+            <DocItem.DocItem key={doc.slug} {...doc} />
+          ))}
+      </div>
+      {categories
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((cat) => (
+          <DocItem.DocCategory key={cat.slug} {...cat} />
+        ))}
     </Layout>
   )
 }

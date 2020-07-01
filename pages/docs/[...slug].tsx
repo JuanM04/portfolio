@@ -11,6 +11,7 @@ import TeX from "@matejmazur/react-katex"
 
 import { Layout, CodeBlock } from "components"
 import { slugify } from "utils/helpers"
+import { DOC_CATEGORIES } from "utils/data"
 import styles from "styles/doc"
 
 type _Props = {
@@ -20,20 +21,37 @@ type _Props = {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const files = fs.readdirSync("docs")
+  const files = fs.readdirSync("docs").reduce<string[][]>((accum, f) => {
+    if (f.includes(".")) return [...accum, [f.split(".")[0]]]
+    else
+      return [
+        ...accum,
+        ...fs.readdirSync(`docs/${f}`).map((f2) => [f, f2.split(".")[0]]),
+      ]
+  }, [])
+
   return {
-    paths: files.map((f) => `/docs/${f.split(".")[0]}`),
+    paths: files.map((f) => `/docs/${f.join("/")}`),
     fallback: false,
   }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  if (!params) return { props: {} }
+  if (!params || typeof params.slug !== "object") return { props: {} }
 
-  const { slug } = params
-  const { content, data } = matter.read(`docs/${params.slug}.md`)
+  const slug = params.slug.join("/")
+  const { content, data } = matter.read(`docs/${slug}.md`)
 
-  return { props: { slug, content, data } }
+  return {
+    props: {
+      slug,
+      content,
+      data: {
+        ...data,
+        category: params.slug.length > 1 ? params.slug[0] : null,
+      },
+    },
+  }
 }
 
 export default ({ slug, data, content }: _Props) => {
@@ -64,7 +82,7 @@ export default ({ slug, data, content }: _Props) => {
       </Head>
       <h1 className={styles.title}>
         {data.title}
-        {data.category && <span>{data.category}</span>}
+        {data.category && <span>{DOC_CATEGORIES[data.category]}</span>}
       </h1>
       <ReactMarkdown
         source={content}

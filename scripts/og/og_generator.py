@@ -72,12 +72,27 @@ def generate_all(tools):
             tool["name"], tool["slug"], f"{final_path}/{tool['slug']}.png"
         )
 
-    if not os.path.exists(final_path + "/docs"):
-        os.mkdir(final_path + "/docs")
+    doc_final_path = final_path + "/docs"
+    if not os.path.exists(doc_final_path):
+        os.mkdir(doc_final_path)
     docs = os.listdir(f"docs")
     for doc in docs:
-        slug = doc.rsplit(".", 1)[0]
-        doc_data = frontmatter.load(f"docs/{slug}.md")
-        generate_og_with_icon(
-            doc_data["title"], "docs", f"{final_path}/docs/{slug}.png"
-        )
+        if not "." in doc:
+            category = doc
+            category_docs = os.listdir(f"docs/{category}")
+            if not os.path.exists(doc_final_path + f"/{category}"):
+                os.mkdir(doc_final_path + f"/{category}")
+            for doc in category_docs:
+                slug = doc.rsplit(".", 1)[0]
+                doc_data = frontmatter.load(f"docs/{category}/{doc}")
+                generate_og_with_icon(
+                    doc_data["title"],
+                    "docs",
+                    f"{doc_final_path}/{category}/{slug}.png",
+                )
+        else:
+            slug = doc.rsplit(".", 1)[0]
+            doc_data = frontmatter.load(f"docs/{doc}")
+            generate_og_with_icon(
+                doc_data["title"], "docs", f"{doc_final_path}/{slug}.png"
+            )

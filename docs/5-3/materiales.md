@@ -1,6 +1,5 @@
 ---
 title: Materiales
-category: 5º 3ª
 ---
 
 - [Ensayo de Dureza](#ensayo-de-dureza)

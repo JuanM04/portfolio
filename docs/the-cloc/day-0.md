@@ -1,5 +1,5 @@
 ---
-title: The Cloc
+title: "Day 0: Project presentation"
 ---
 
 The Clocl is a alarm clock that doesn't show you the time. Unbelivable, right? Actually, you only see light from a wood box. This light changes its color depending on how much time is left to the preestablished time (a.k.a. the *ring time*)

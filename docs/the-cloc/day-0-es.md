@@ -1,5 +1,5 @@
 ---
-title: The Cloc (ES)
+title: "Día 0: Presentación del proyecto"
 ---
 
 The Cloc es un reloj que no te muestra la hora. ¿Increíble, verdad? En realidad, solo vez una luz que sale de una caja de madera. Esta luz cambia de color dependiendo de cuánto falte para que suene la alarma.
@@ -9,25 +9,26 @@ Que "suele la alrma" significa que suene una canción de Spotify. Esta sonaría 
 ## ¿Cómo está compuesto?
 Consta de una [Raspberry Pi Zero W](https://www.adafruit.com/product/3708) como cerebro de operaciones. Esta controla la [tira LED](https://www.adafruit.com/product/1138) y el [parlante](https://www.adafruit.com/product/3968).
 
-La RasPi consume 5V 2A y los LED también. Como la RasPi no es capaz de darle eso a los LED, hace falta que sean alimentados en paralelo con una [fuente de 5V 4A](https://www.adafruit.com/product/1466) de la siguiente manera:
+La RasPi consume ~200 mA y los LED ~1000 mA. Como la RasPi no es capaz de darle eso a los LED, hace falta que sean alimentados en paralelo con una [fuente de 5V 2A](https://www.adafruit.com/product/276) de la siguiente manera:
 
-![Diagrama de conexiones eléctricas](/images/docs/the-cloc/power-diagram.png)
+![Conexiones](/images/docs/the-cloc/connections.png)
 
-De esta forma, además, se igualan las tierras/masas.
+De esta forma, además, se igualan las tierras/masas. La lista completa de productos está [aquí](https://www.notion.so/ba4adbab8cc74623929503db389bc93a?v=75cedd8367284c4ca33dbbf666e76b07).
 
-### Otros elementos
-- [Perma-Proto](https://www.adafruit.com/product/2310) + [Screws](https://www.adafruit.com/product/2336)
-- [Amplificador](https://www.adafruit.com/product/3006)
-- Jumper Wires
-  - [Macho/Macho](https://www.adafruit.com/product/1956)
-  - [Hembra/Hembra](https://www.adafruit.com/product/1950)
-  - [Hembra/Macho](https://www.adafruit.com/product/1954)
-- Adaptador PSU
-  - [Hembra](https://www.adafruit.com/product/368)
-  - [Macho](https://www.adafruit.com/product/369)
-  - [MicroUSB - Macho](https://www.adafruit.com/product/2727)
-- Otros
-  - [Protoboard](https://www.adafruit.com/product/64)
+### Mapeo de pines
+|  Componente | Pin      |    Componente | Pin     |
+| ----------: | :------- | ------------: | :------ |
+| Raspbery Pi | `5V`     |  Amplificador | `Vin`   |
+| Raspbery Pi | `GND`    |  Amplificador | `GND`   |
+| Raspbery Pi | `GPIO18` |  Amplificador | `BCLK`  |
+| Raspbery Pi | `GPIO19` |  Amplificador | `LRCLK` |
+| Raspbery Pi | `GPIO21` |  Amplificador | `DIN`   |
+| Rasberry Pi | `GPIO10` | Level-Shifter | `1A`    |
+|    NeoPixel | `DIN`    | Level-Shifter | `1Y`    |
+|         PSU | `GND`    | Level-Shifter | `GND`   |
+|         PSU | `GND`    | Level-Shifter | `1OE`   |
+|         PSU | `5V`     | Level-Shifter | `VCC`   |
+
 
 ## Bueno, ¿y el software?
 El mismo se puede dividir en dos: la *configuración* y *la alarma*.

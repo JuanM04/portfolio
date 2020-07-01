@@ -1,6 +1,5 @@
 ---
 title: Química
-category: 4º 5ª
 ---
 
 ## Compuestos

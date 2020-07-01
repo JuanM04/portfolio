@@ -1,6 +1,5 @@
 ---
 title: Presentación Laboral
-category: Pseudo blog
 ---
 
 Hola, me llamo Juan Martín Seery. Ofrezco mi tiempo y talento a cambios de bienes y servicios.
