@@ -1,35 +1,63 @@
 ---
-title: "Day 0: Project presentation"
+title: "Day 0 — Pilot Episode"
 ---
 
-The Clocl is a alarm clock that doesn't show you the time. Unbelivable, right? Actually, you only see light from a wood box. This light changes its color depending on how much time is left to the preestablished time (a.k.a. the *ring time*)
+**The Cloc** is a alarm clock that doesn't show you the time. Unbelivable, right? Actually, you only see light from a wood box. This light changes its color depending on how much time is left to the pre-established time (a.k.a. the *ring time*)
 
 When the *ring time* happens, a Spotify song will be played. This song will be played for a few seconds and will turn off automatically. No buttons.
 
-## What's inside?
-It has a [Raspberry Pi Zero W](https://www.adafruit.com/product/3708) as brain. This board manages the [LED strip](https://www.adafruit.com/product/1138) and the [speaker](https://www.adafruit.com/product/3968).
+## How is it made?
+It has a **Raspberry Pi Zero W** as a control center. This one manages the LED strip and the speaker.
 
-The RasPi uses 5V 2A, and the LED too. Because the RasPi is not able to give that power to the LED, they need to be powered in parallel with a [5V 4A PSU](https://www.adafruit.com/product/1466) like this:
+The RasPi needs ~200 mA, the speaker ~800 mA and the LED strip 36 mA/cm. To make everyone happy, a 2A or a 2.5A PSU will work perfectly. More current = more centimeters of LED.
 
-![Connections](/images/docs/the-cloc/power-diagram.png)
+The LED strip get its data at 5V; and the GPIO pins run at 3.3V. To make the data travel at 5V, we need a Level-Shifter:
 
-### Other components
-- [Perma-Proto](https://www.adafruit.com/product/2310) + [Screws](https://www.adafruit.com/product/2336)
-- [Amp](https://www.adafruit.com/product/3006)
-- Jumper Wires
-  - [Male/Male](https://www.adafruit.com/product/1956)
-  - [Female/Female](https://www.adafruit.com/product/1950)
-  - [Female/Male](https://www.adafruit.com/product/1954)
-- PSU Adapter
-  - [Female](https://www.adafruit.com/product/368)
-  - [Male](https://www.adafruit.com/product/369)
-  - [MicroUSB - Male](https://www.adafruit.com/product/2727)
-- Other
-  - [Protoboard](https://www.adafruit.com/product/64)
+![Connections](/images/docs/the-cloc/connections.png)
 
-## And the software?
-This can be divided in two: the *config* and *the alarm*.
+### Components
+#### Raspberry
+- [Raspberry Pi Zero W](https://www.adafruit.com/product/3708)
+- [Perma-Proto](https://www.adafruit.com/product/2310)
+- [Perma-Proto screws](https://www.adafruit.com/product/2336)
 
-The config is how the user could configurate the device. My current idea is a mobile app that connects to the RasPi by Bluetooth, like the Chromecasts do. From there, the user could configurate the time, color, intensity, song or playlist to play, and so.
+#### RGB
+- [NeoPixels 60 LED/m](https://www.adafruit.com/product/1138?length=1)
+- [Port adaptor](https://www.adafruit.com/product/1663)
+- [Level-Shifter 3.3V-5V](https://www.adafruit.com/product/1875)
 
-The alarm, a.k.a the RasPi, would run a server that listen to Bluetooth requests to change the configuration. Also, it would manage when and how the alarm will turn on and off.
+#### Sonido
+- [Speaker 4Ω 3W](https://www.adafruit.com/product/1314)
+- [Mono Amp MAX98357A](https://www.adafruit.com/product/3006)
+
+#### Tha Power
+- [PSU 5V 2A](https://www.adafruit.com/product/276) (if it's a 2.5A one, better)
+- [Female Plug adaptor](https://www.adafruit.com/product/368)
+- Wires [Male/Male](https://www.adafruit.com/product/1956), [Female/Female](https://www.adafruit.com/product/1950), [Female/Male](https://www.adafruit.com/product/1954)
+
+#### Others (that may be useful)
+- [Protoboard](https://www.adafruit.com/product/239)
+
+### Pin map
+|    Component | Pin      |     Component | Pin     |
+| -----------: | :------- | ------------: | :------ |
+|  Raspbery Pi | `5V`     |           Amp | `Vin`   |
+|  Raspbery Pi | `GND`    |           Amp | `GND`   |
+|  Raspbery Pi | `GPIO18` |           Amp | `BCLK`  |
+|  Raspbery Pi | `GPIO19` |           Amp | `LRCLK` |
+|  Raspbery Pi | `GPIO21` |           Amp | `DIN`   |
+| Raspberry Pi | `GPIO10` | Level-Shifter | `A1`    |
+|     NeoPixel | `DIN`    | Level-Shifter | `B1`    |
+|          PSU | `5V`     | Level-Shifter | `HV`    |
+|          PSU | `GND`    | Level-Shifter | `GND`   |
+
+*If it's possible, connect all `GND` together*
+
+
+## Nice, and the software?
+That can be splitted in two: the *configuration* and the *alarm*.
+
+The configuration, or how I will call it to prevent headaches, **the editor**, is the thing which the user uses to configurate the device. Mi current idea is a mobile app that connects to the device via Bluetooth, like Chromecasts do. With that app, the user could customizate the time, color and intensity of the light, the song or playlist, and how long they want to have the alarm ringing.
+
+
+The alarm, a.k.a, **the wake-up-ator**, would run a server which listens to Bluetooth requests to change the configuration and would start the *ring-time*. This last would be a song being played through the speaker and the LED strip being turned on. If it's possible, the lights will have an animation.

@@ -1,38 +1,62 @@
 ---
-title: "Día 0: Presentación del proyecto"
+title: "Día 0 — Episodio Piloto"
 ---
 
-The Cloc es un reloj que no te muestra la hora. ¿Increíble, verdad? En realidad, solo vez una luz que sale de una caja de madera. Esta luz cambia de color dependiendo de cuánto falte para que suene la alarma.
+**The Cloc**, o como me gusta llamarlo en español, **El Despe**, es un reloj que no te muestra la hora. ¿Increíble, verdad? En realidad, solo vez una luz que sale de una caja de madera. Esta luz cambia de color dependiendo de cuánto falte para que suene la alarma.
 
 Que "suele la alrma" significa que suene una canción de Spotify. Esta sonaría por unos segundos para que luego se apague sola. Sin botones.
 
 ## ¿Cómo está compuesto?
-Consta de una [Raspberry Pi Zero W](https://www.adafruit.com/product/3708) como cerebro de operaciones. Esta controla la [tira LED](https://www.adafruit.com/product/1138) y el [parlante](https://www.adafruit.com/product/3968).
+Consta de una **Raspberry Pi Zero W** como cerebro de operaciones. Esta controla la tira LED y el parlante.
 
-La RasPi consume ~200 mA y los LED ~1000 mA. Como la RasPi no es capaz de darle eso a los LED, hace falta que sean alimentados en paralelo con una [fuente de 5V 2A](https://www.adafruit.com/product/276) de la siguiente manera:
+La RasPi consume ~200 mA, el parlante ~800 mA y la tira led 36 mA/cm. Para eso, una fuente de 2A o 2.5A sirve perfectamente. A más corriente, más centímetros de LED se podrán colocar.
+
+La tira LED recibe los datos en una señal de 5V; y los pines GPIO solo tiran 3.3V. Para hacer que los datos viajen a 5V, hace falta utilizar un conversor de niveles:
 
 ![Conexiones](/images/docs/the-cloc/connections.png)
 
-De esta forma, además, se igualan las tierras/masas. La lista completa de productos está [aquí](https://www.notion.so/ba4adbab8cc74623929503db389bc93a?v=75cedd8367284c4ca33dbbf666e76b07).
+### Componentes
+#### Raspberry
+- [Raspberry Pi Zero W](https://www.adafruit.com/product/3708)
+- [Perma-Proto](https://www.adafruit.com/product/2310)
+- [Tornillos para la Perma-Proto](https://www.adafruit.com/product/2336)
+
+#### Luces RGB
+- [NeoPixels 60 LED/m](https://www.adafruit.com/product/1138?length=1)
+- [Adaptador de puertos](https://www.adafruit.com/product/1663)
+- [Conversor de niveles 3.3V-5V](https://www.adafruit.com/product/1875)
+
+#### Sonido
+- [Parlante 4Ω 3W](https://www.adafruit.com/product/1314)
+- [Amplificador Mono MAX98357A](https://www.adafruit.com/product/3006)
+
+#### Tha Power
+- [PSU 5V 2A](https://www.adafruit.com/product/276) (si es de 2.5A, mejor)
+- [Puerto Plug Hueco](https://www.adafruit.com/product/368)
+- Cables [Macho/Macho](https://www.adafruit.com/product/1956), [Hembra/Hembra](https://www.adafruit.com/product/1950), [Hembra/Macho](https://www.adafruit.com/product/1954)
+
+#### Otros (que pueden ser útiles)
+- [Protoboard](https://www.adafruit.com/product/239)
 
 ### Mapeo de pines
-|  Componente | Pin      |    Componente | Pin     |
-| ----------: | :------- | ------------: | :------ |
-| Raspbery Pi | `5V`     |  Amplificador | `Vin`   |
-| Raspbery Pi | `GND`    |  Amplificador | `GND`   |
-| Raspbery Pi | `GPIO18` |  Amplificador | `BCLK`  |
-| Raspbery Pi | `GPIO19` |  Amplificador | `LRCLK` |
-| Raspbery Pi | `GPIO21` |  Amplificador | `DIN`   |
-| Rasberry Pi | `GPIO10` | Level-Shifter | `1A`    |
-|    NeoPixel | `DIN`    | Level-Shifter | `1Y`    |
-|         PSU | `GND`    | Level-Shifter | `GND`   |
-|         PSU | `GND`    | Level-Shifter | `1OE`   |
-|         PSU | `5V`     | Level-Shifter | `VCC`   |
+|   Componente | Pin      |           Componente | Pin     |
+| -----------: | :------- | -------------------: | :------ |
+|  Raspbery Pi | `5V`     |         Amplificador | `Vin`   |
+|  Raspbery Pi | `GND`    |         Amplificador | `GND`   |
+|  Raspbery Pi | `GPIO18` |         Amplificador | `BCLK`  |
+|  Raspbery Pi | `GPIO19` |         Amplificador | `LRCLK` |
+|  Raspbery Pi | `GPIO21` |         Amplificador | `DIN`   |
+| Raspberry Pi | `GPIO10` | Conversor de niveles | `A1`    |
+|     NeoPixel | `DIN`    | Conversor de niveles | `B1`    |
+|          PSU | `5V`     | Conversor de niveles | `HV`    |
+|          PSU | `GND`    | Conversor de niveles | `GND`   |
+
+*En lo posible, conectar el `GND` de la Raspberry Pi y de la PSU en la Perma-Proto, para igualar las masas*
 
 
 ## Bueno, ¿y el software?
-El mismo se puede dividir en dos: la *configuración* y *la alarma*.
+El mismo se puede dividir en dos: la *configuración* y la *alarma*.
 
-La configuración es cómo el usuario configuraría el dispositivo. Mi idea actual es una aplicación móbil que se conecte por Bluetooth, como hacen los Chromecasts. Desde ahí, el usuario podría configurar la hora, el color e intensidad de la luz, la canción o playlist a sonar, y cuanto tiempo quiere que dure la alarma.
+La configuración, o como lo llamaré para evitar dolores de cabeza, **el editor**, es aquello que el usuario usaría para configurar el dispositivo. Mi idea actual es una aplicación móvil que se conecte por Bluetooth, como hacen los Chromecasts. Desde ahí, el usuario podría configurar la hora, el color e intensidad de la luz, la canción o playlist a sonar, y cuanto tiempo quiere que dure la alarma.
 
-La alarma, es decir, la RasPi, correría un servidor que escucha las peticiones Bluetooth para modificar la configuración y se encargaría de activar la alarma y modificar las luces.
+La alarma, es decir, **el wake-up-ator**, correría un servidor que escucha las peticiones Bluetooth para modificar la configuración y se encargaría de activar la alarma según esta última. La alarma cosistiría de hacer sonar una canción por el parlante y encender las luces. En lo posible, estas luces tendrán una animación.
