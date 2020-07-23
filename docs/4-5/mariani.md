@@ -11,6 +11,8 @@ title: Mariani
 - [Torno](#torno)
   - [Plato](#plato)
   - [Contrapunta](#contrapunta)
+  - [Puntos](#puntos)
+  - [Otros](#otros)
 - [Fresadora](#fresadora)
 - [Roscas](#roscas)
 
@@ -41,7 +43,6 @@ $$
 ### Calibre
 El **calibre** es un instrumento de medición que mide en milímetros.
 
-Partes:
 ![Partes del Calibre](/images/docs/mariani/partes-del-calibre.svg)
 
 1. Mordazas para medidas exteriores.
@@ -56,7 +57,6 @@ Partes:
 ### Micrómetro
 El **micrómetro** es un instrumento de medición que mide en milímetros y centécimas.
 
-Partes:
 ![Partes del Micrómetro](/images/docs/mariani/partes-del-micrometro.svg)
 
 1. **Cuerpo**: constituye el armazón del micrómetro; suele tener unas plaquitas de aislante térmico para evitar la variación de medida por dilatación.
@@ -77,14 +77,13 @@ Ejemplos:
 ### Alexómetro
 El **alexómetro** es un instrumento utilizado para mediciones de interiores con precisión, utilizado en los talleres de automoción y talleres de mecanizado sobre todo, que permite la realización de medidas indirectas (por comparación) en elementos del vehículo.
 
-![Alexómetro](/images/docs/mariani/alexometro.png)
+![Partes del Alexómetro](/images/docs/mariani/alexometro.png)
 
 
 
 ## Torno
-[Video en funcionamiento](https://www.youtube.com/watch?v=8MYCtjxKyNs).
+![@embed Video en funcionamiento](https://youtube.com/embed/8MYCtjxKyNs)
 
-Partes:
 ![Partes del Torno](/images/docs/mariani/partes-del-torno.jpeg)
 
 ### Plato
@@ -94,26 +93,22 @@ Partes:
 ### Contrapunta
 ![Contrapunta](/images/docs/mariani/contrapunta.jpeg)
 
-Puntos giratorios:
+### Puntos
 ![Puntos giratorios](/images/docs/mariani/puntos-giratorios.jpg)
 
-Puntos fijos:
 ![Puntos fijos](/images/docs/mariani/puntos-fijos.jpeg)
 
-Mandril:
+### Otros
 ![Mandril](/images/docs/mariani/mandril.jpeg)
 
-Cono morse:
 ![Cono morse](/images/docs/mariani/cono-morse.jpeg)
 
-Mecha de Avellanar:
 ![Mecha de Avellanar](/images/docs/mariani/mecha-de-avellanar.jpeg)
 
 
 
 ## Fresadora
-Tabla de divisiones:
-![Cálculos](/images/docs/mariani/calculos.jpg)
+![Tabla de divisiones](/images/docs/mariani/calculos.jpg)
 
 $\varnothing$: Diámetro Exterior  
 $m$: Módulo  

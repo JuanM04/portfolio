@@ -2,7 +2,7 @@
 title: "Day 0 — Pilot Episode"
 ---
 
-**The Cloc** is a alarm clock that doesn't show you the time. Unbelivable, right? Actually, you only see light from a wood box. This light changes its color depending on how much time is left to the pre-established time (a.k.a. the *ring time*)
+**The Cloc** is a alarm clock that doesn't show you the time. Unbelievably, right? Actually, you only see light from a wood box. This light changes its color depending on how much time is left to the pre-established time (a.k.a. the *ring time*)
 
 When the *ring time* happens, a Spotify song will be played. This song will be played for a few seconds and will turn off automatically. No buttons.
 
@@ -13,7 +13,7 @@ The RasPi needs ~200 mA, the speaker ~800 mA and the LED strip 36 mA/cm. To make
 
 The LED strip get its data at 5V; and the GPIO pins run at 3.3V. To make the data travel at 5V, we need a Level-Shifter:
 
-![Connections](/images/docs/the-cloc/connections.png)
+![](/images/docs/the-cloc/connections.png)
 
 ### Components
 #### Raspberry
@@ -41,11 +41,11 @@ The LED strip get its data at 5V; and the GPIO pins run at 3.3V. To make the dat
 ### Pin map
 |    Component | Pin      |     Component | Pin     |
 | -----------: | :------- | ------------: | :------ |
-|  Raspbery Pi | `5V`     |           Amp | `Vin`   |
-|  Raspbery Pi | `GND`    |           Amp | `GND`   |
-|  Raspbery Pi | `GPIO18` |           Amp | `BCLK`  |
-|  Raspbery Pi | `GPIO19` |           Amp | `LRCLK` |
-|  Raspbery Pi | `GPIO21` |           Amp | `DIN`   |
+| Raspberry Pi | `5V`     |           Amp | `Vin`   |
+| Raspberry Pi | `GND`    |           Amp | `GND`   |
+| Raspberry Pi | `GPIO18` |           Amp | `BCLK`  |
+| Raspberry Pi | `GPIO19` |           Amp | `LRCLK` |
+| Raspberry Pi | `GPIO21` |           Amp | `DIN`   |
 | Raspberry Pi | `GPIO10` | Level-Shifter | `A1`    |
 |     NeoPixel | `DIN`    | Level-Shifter | `B1`    |
 |          PSU | `5V`     | Level-Shifter | `HV`    |
@@ -57,7 +57,7 @@ The LED strip get its data at 5V; and the GPIO pins run at 3.3V. To make the dat
 ## Nice, and the software?
 That can be splitted in two: the *configuration* and the *alarm*.
 
-The configuration, or how I will call it to prevent headaches, **the editor**, is the thing which the user uses to configurate the device. Mi current idea is a mobile app that connects to the device via Bluetooth, like Chromecasts do. With that app, the user could customizate the time, color and intensity of the light, the song or playlist, and how long they want to have the alarm ringing.
+The configuration, or how I will call it to prevent headaches, **the editor**, is the thing which the user uses to configurate the device. Mi current idea is a mobile app that connects to the device via Bluetooth, like Chromecasts do. With that app, the user could customize the time, color and intensity of the light, the song or playlist, and how long they want to have the alarm ringing.
 
 
 The alarm, a.k.a, **the wake-up-ator**, would run a server which listens to Bluetooth requests to change the configuration and would start the *ring-time*. This last would be a song being played through the speaker and the LED strip being turned on. If it's possible, the lights will have an animation.

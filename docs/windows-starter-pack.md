@@ -2,7 +2,7 @@
 title: Windows Starter Pack
 ---
 
-![version](https://img.shields.io/badge/release-1.2-success.svg?style=for-the-badge)  
+![](https://img.shields.io/badge/release-1.2-success.svg?style=for-the-badge)  
 **Windows Starter Pack** is a guide written in basic Markdown with a list of useful links, files, programs and tips when installing Windows 10.
 
 ## Download & Installation

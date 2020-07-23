@@ -113,6 +113,39 @@ export default ({ slug, data, content }: _Props) => {
               props.children
             )
           },
+          image: (props: { alt?: string; src: string }) => {
+            if (!props.alt || !props.alt.startsWith("@")) {
+              return (
+                <>
+                  <img src={props.src} style={{ margin: 0 }} />
+                  {props.alt && <p className={styles.epigraph}>{props.alt}</p>}
+                </>
+              )
+            } else {
+              return (
+                <>
+                  {props.alt.toLowerCase().startsWith("@direct") && (
+                    <video
+                      controls
+                      style={{ margin: 0, width: "100%", height: "56.25%" }}
+                    >
+                      <source src={props.src} />
+                    </video>
+                  )}
+                  {props.alt.toLowerCase().startsWith("@embed") && (
+                    <div className={styles.iframeContainer}>
+                      <iframe src={props.src} frameBorder="0" allowFullScreen />
+                    </div>
+                  )}
+                  {props.alt.split(" ").length >= 2 && (
+                    <p className={styles.epigraph}>
+                      {props.alt.substr(props.alt.split(" ")[0].length + 1)}
+                    </p>
+                  )}
+                </>
+              )
+            }
+          },
         }}
       />
     </Layout>

@@ -11,7 +11,11 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 })
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  if (!params?.category || typeof params.category !== "string")
+  if (
+    !params?.category ||
+    typeof params.category !== "string" ||
+    !DOC_CATEGORIES[params.category]
+  )
     return { props: {} }
   const { category } = params
 
