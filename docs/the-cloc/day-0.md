@@ -46,7 +46,7 @@ The LED strip get its data at 5V; and the GPIO pins run at 3.3V. To make the dat
 | Raspberry Pi | `GPIO18` |           Amp | `BCLK`  |
 | Raspberry Pi | `GPIO19` |           Amp | `LRCLK` |
 | Raspberry Pi | `GPIO21` |           Amp | `DIN`   |
-| Raspberry Pi | `GPIO10` | Level-Shifter | `A1`    |
+| Raspberry Pi | `GPIO12` | Level-Shifter | `A1`    |
 |     NeoPixel | `DIN`    | Level-Shifter | `B1`    |
 |          PSU | `5V`     | Level-Shifter | `HV`    |
 |          PSU | `GND`    | Level-Shifter | `GND`   |
