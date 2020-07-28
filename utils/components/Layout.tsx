@@ -14,7 +14,7 @@ type _Props = {
   noOG?: boolean
 }
 
-export default (props: _Props) => {
+const Layout = (props: _Props) => {
   const selected = useRouter().pathname.split("/")[1]
 
   return (
@@ -77,3 +77,5 @@ export default (props: _Props) => {
     </>
   )
 }
+
+export default Layout

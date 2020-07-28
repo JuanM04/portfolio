@@ -6,7 +6,7 @@ import styles from "styles/bpm"
 const maxTaps = 10
 let lastTap = Date.now()
 
-export default () => {
+const BPMPage = () => {
   const [bpm, setBpm] = useState("0")
   const [taps, setTaps] = useState<number[]>([])
 
@@ -63,3 +63,5 @@ function useInterval(callback: Function, delay: number) {
     }
   }, [delay])
 }
+
+export default BPMPage

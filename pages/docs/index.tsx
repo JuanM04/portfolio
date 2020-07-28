@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { docs } }
 }
 
-export default ({ docs }: { docs: Doc[] }) => {
+const DocsPage = ({ docs }: { docs: Doc[] }) => {
   let noCategory: Doc[] = []
   let categories: Category[] = []
 
@@ -67,3 +67,5 @@ export default ({ docs }: { docs: Doc[] }) => {
     </Layout>
   )
 }
+
+export default DocsPage

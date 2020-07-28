@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 
-export default ({ slug, data, content }: _Props) => {
+const DocPage = ({ slug, data, content }: _Props) => {
   let macros: any = {
     "\\unit": "\\ \\text{#1}",
   }
@@ -151,3 +151,5 @@ export default ({ slug, data, content }: _Props) => {
     </Layout>
   )
 }
+
+export default DocPage

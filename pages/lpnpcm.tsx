@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import { Layout } from "components"
 
-export default () => {
+const LPNPCMPage = () => {
   const [inputValue, setInputValue] = useState("")
   const [user, setUser] = useState<any>(null)
 
@@ -12,8 +12,8 @@ export default () => {
         ? str + (str.includes("?") ? "&" : "?") + "__a=1"
         : `https://www.instagram.com/${str}/?__a=1`
     )
-      .then(res => res.json())
-      .then(data =>
+      .then((res) => res.json())
+      .then((data) =>
         setUser({
           name: data.graphql.user.full_name,
           avatar: data.graphql.user.profile_pic_url_hd,
@@ -26,9 +26,9 @@ export default () => {
     <Layout title="La privacidad no puede contra mí">
       <input
         value={inputValue}
-        onChange={e => setInputValue(e.target.value)}
+        onChange={(e) => setInputValue(e.target.value)}
         placeholder="Username or profile url"
-        onKeyPress={e => {
+        onKeyPress={(e) => {
           if (e.which === 13 || e.keyCode === 13) getUser(inputValue)
         }}
       />
@@ -55,3 +55,5 @@ function validURL(str: string) {
   ) // fragment locator
   return !!pattern.test(str)
 }
+
+export default LPNPCMPage

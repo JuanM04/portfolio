@@ -7,7 +7,7 @@ import { Layout } from "components"
 import { slugify } from "utils/helpers"
 import styles from "styles/to"
 
-export default () => {
+const ToPage = () => {
   const { data: redirects, error } = useSWR<Redirects>("/api/get-to", (url) =>
     fetch(url).then((r) => r.json())
   )
@@ -130,3 +130,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default ToPage

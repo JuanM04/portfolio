@@ -6,8 +6,10 @@ type _Props = {
   value: string
 }
 
-export default ({ language, value }: _Props) => (
+const CodeBlock = ({ language, value }: _Props) => (
   <SyntaxHighlighter language={language} style={style}>
     {value}
   </SyntaxHighlighter>
 )
+
+export default CodeBlock

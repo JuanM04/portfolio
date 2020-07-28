@@ -10,7 +10,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   const files = await getGist(process.env.GIST_TO as string)
   const redirects: Redirects = JSON.parse(files[0].text)
 
-  if(typeof params?.slug === 'string' && redirects[params.slug]) {
+  if (typeof params?.slug === "string" && redirects[params.slug]) {
     res.statusCode = 302
     res.setHeader("Location", redirects[params.slug].url)
     res.end()
@@ -22,4 +22,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   return { props: {} }
 }
 
-export default ({ error = true }) => error ? <Error msg="Redirect not found" /> : <p>Redirecting...</p>
+const ToRedirect = ({ error = true }) =>
+  error ? <Error msg="Redirect not found" /> : <p>Redirecting...</p>
+
+export default ToRedirect

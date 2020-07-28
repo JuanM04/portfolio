@@ -35,7 +35,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return { props: { category: category, docs } }
 }
 
-export default ({ category, docs }: { category: string; docs: Doc[] }) => {
+const DocCategoryPage = ({
+  category,
+  docs,
+}: {
+  category: string
+  docs: Doc[]
+}) => {
   return (
     <Layout title={`${category} | Docs`}>
       <DocItem.DocCategory
@@ -47,3 +53,5 @@ export default ({ category, docs }: { category: string; docs: Doc[] }) => {
     </Layout>
   )
 }
+
+export default DocCategoryPage

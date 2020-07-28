@@ -55,7 +55,7 @@ const i18n: {
   },
 }
 
-export default () => {
+const HomePage = () => {
   const inSpanish =
     typeof navigator !== "undefined"
       ? navigator.language.startsWith("es")
@@ -155,3 +155,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default HomePage
