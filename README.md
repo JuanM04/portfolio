@@ -5,9 +5,9 @@
 </p>
 <p align="center">
   <a href="https://www.nextjs.org/">
-    <img alt="Next.js Version" src="https://img.shields.io/github/package-json/dependency-version/JuanM04/juanm04/next.svg?style=for-the-badge&logo=next.js&color=000000" />
+    <img alt="Next.js Version" src="https://img.shields.io/github/package-json/dependency-version/JuanM04/portfolio/next.svg?style=for-the-badge&logo=next.js&color=000000" />
   </a>
-  <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/JuanM04/juanm04?color=success&style=for-the-badge" />
+  <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/JuanM04/portfolio?color=success&style=for-the-badge" />
 </p>
 
 ## Installation
