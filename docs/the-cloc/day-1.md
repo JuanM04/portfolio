@@ -9,6 +9,7 @@ The first thing I did was solder the amplifier headers and connect it to the spe
 I flashed a copy of [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (now called Raspberry Pi OS) into a 16 GB MicroSD with [Etcher](https://www.balena.io/etcher/) (I love Etcher <3).
 
 Because of my lack of MicroHDMI wires, I had to do some stuff before turning on my Raspberry.
+
 1. I disconnected and connected the MicroSD to my PC.
 2. I went to the `boot` drive (with Ubuntu, it was in `/media/USER/boot`).
 3. I created an empty `ssh` file with no extension.
@@ -26,7 +27,7 @@ network={
 }
 ```
 
-Then, I inserted the MicroSD into the Raspberry and turned it on. With the steps above done, now I can ssh in with `ssh pi@raspberry-pi.local` (or `pri@192.168.X.X`) with the password `raspberry`.
+Then, I inserted the MicroSD into the Raspberry and turned it on. With the steps above done, now I can ssh in with `ssh pi@raspberrypi.local` (or `pri@192.168.X.X`) with the password `raspberry`.
 
 Then, I did what any Linux-user does:
 ```bash
@@ -34,6 +35,8 @@ $ sudo apt-get update && sudo apt-get upgrade -y
 $ sudo apt-get install python python-pip python3 python3-pip -y
 $ passwd
 ```
+
+> If you have the error `Can't set locale; make sure $LC_* and $LANG are correct!`, you should `sudo dpkg-reconfigure locales` and select your locale (I selected `en_GB.UTF-8` and `es_AR.UTF-8`... just in case).
 
 ## Speaker Setup
 
@@ -87,3 +90,5 @@ At first, I run `speaker-test -c2`. You should hear a continuous white noise. If
 After that, I installed SoX (`sudo apt-get install sox libsox-fmt-all`), downloaded [Superchería](https://www.youtube.com/watch?v=bA3ePHU00KY) and run `play supercheria.mp3`:
 
 ![@direct This one's for Vitale for helping me with the Amp](/images/docs/the-cloc/supercheria.mp4)
+
+[&larr; Day 0](/docs/the-cloc/day-0) | [Day 2 &rarr;](/docs/the-cloc/day-2)

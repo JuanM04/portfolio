@@ -96,3 +96,5 @@ while True:
 
     rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
 ```
+
+[&larr; Day 1](/docs/the-cloc/day-1) | [Day 3 &rarr;](/docs/the-cloc/day-3)
