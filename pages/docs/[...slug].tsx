@@ -4,9 +4,7 @@ import Head from "next/head"
 import fs from "fs"
 import matter from "gray-matter"
 import ReactMarkdown from "react-markdown"
-// @ts-ignore
 import RemarkMathPlugin from "remark-math"
-// @ts-ignore
 import TeX from "@matejmazur/react-katex"
 
 import { Layout, CodeBlock } from "components"
