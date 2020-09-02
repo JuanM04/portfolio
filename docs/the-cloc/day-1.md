@@ -40,7 +40,7 @@ $ passwd
 
 ## Speaker Setup
 
-Thanks to [Luca Dentella](http://www.lucadentella.it/) and [his post](http://www.lucadentella.it/en/2017/04/26/raspberry-pi-zero-audio-output-via-i2s/) I could make this bloody thing work.
+> All was stolen from [Adafruit](https://learn.adafruit.com/adafruit-max98357-i2s-class-d-mono-amp/overview), shh!
 
 At first, I connected the pins.
 
@@ -52,36 +52,7 @@ At first, I connected the pins.
 |     `GPIO19` | `LRCLK` |
 |     `GPIO21` | `DIN`   |
 
-Then, I edited (or *nanoed*) `/boot/config.txt`. I commented `dtparam=audio=on` and added two more lines:
-```
-# Enable audio (loads snd_bcm2835)
-#dtparam=audio=on
-dtoverlay=hifiberry-dac
-dtoverlay=i2s-mmap
-```
-
-After that, I created `/etc/asound.conf`:
-```
-pcm.hifiberry {
-  type hw card 0
-}
-
-pcm.!default {
-  type plug
-  slave.pcm "dmixer"
-}
-
-pcm.dmixer {
-  type dmix
-  ipc_key 1024
-  slave {
-    pcm "hifiberry"
-    channels 2
-  }
-}
-```
-
-Finally, I rebooted.
+Then, I run `curl -sS https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/i2samp.sh | bash` and rebooted. That was... very easy.
 
 ## Testing sound
 
