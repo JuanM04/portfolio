@@ -3,4 +3,5 @@ export default {
   "5-3": "5º 3ª",
   "pseudo-blog": "Pseudo blog",
   "the-cloc": "The Cloc",
+  tutiles: "Tarjetas Útiles",
 } as { [key: string]: string }
