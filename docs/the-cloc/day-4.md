@@ -1,5 +1,5 @@
 ---
-title: Day 4 — Almost finished!
+title: "Day 4 — Almost finished!"
 ---
 
 So, I spent two days doing all the software (now available in [GitHub](https://github.com/JuanM04/the-cloc)), and this is how it works:
@@ -14,11 +14,13 @@ It has a dashboard-like interface, with all the values to change. When you are f
 
 Finally, it has and API endpoint that returns the all the Spotify data of the song that will be played.
 
+![The Editor](/images/docs/the-cloc/the-editor.jpg)
+
 ## The Wake-up-ator (WUA)
 
-This is made of two parts: the _editor server_, that is the one the Editor is talking to: it only sends and recieve the settings, to minimize the load.
+This is made of two parts: the firt one is the _editor server_, that is the one the Editor is talking to. It only has two methods: GET and POST, which sends and recieves-writes the settings.
 
-The second part is all the Python scripts than control the lights and the music. Each 15 minutes, a cron executes them, and turns the lights on, changes it colors, or plays the alarm.
+The second part is all the Python scripts than control the lights and the music. Each 15 minutes, a cron executes `main.py`, and it decides what to do depending on the time: it can turns the lights on, changes it colors, or plays the alarm.
 
 ## Diagrams
 
@@ -29,7 +31,7 @@ The second part is all the Python scripts than control the lights and the music.
 
 ### Things that shouldn't be that way
 
-- Theorically, being login in with Spotify isn't necessary, but Spotify doesn't gives you the song in MP3 unless you are authenticated.
+- Theorically, according to the Spotify API docs, being login in with Spotify isn't necessary, but Spotify doesn't gives you the song in MP3 unless you are authenticated.
 - A little fade-in and fade-out is added to the song. The problem is that is added from the RasPi, but I would like to be added by Vercel, but PyDub is sooo magical that I just let it happen in the RasPi.
 
-[&larr; Day 3](/docs/the-cloc/day-3) | Day 5 &rarr;
+[&larr; Day 3](/docs/the-cloc/day-3) | [Day 5 &rarr;](/docs/the-cloc/day-5)

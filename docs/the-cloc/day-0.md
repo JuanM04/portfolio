@@ -13,7 +13,7 @@ The RasPi needs ~200 mA, the speaker ~800 mA and the LED strip 36 mA/cm. To make
 
 The LED strip get its data at 5V; and the GPIO pins run at 3.3V. To make the data travel at 5V, we need a Level-Shifter:
 
-![](/images/docs/the-cloc/connections.png)
+![Thanks, Diego!](/images/docs/the-cloc/connections.png)
 
 ### Components
 #### Raspberry

@@ -6,12 +6,10 @@ The first thing I did was solder the amplifier headers and connect it to the spe
 
 ## Raspberry Pi Setup
 
-I flashed a copy of [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (now called Raspberry Pi OS) into a 16 GB MicroSD with [Etcher](https://www.balena.io/etcher/) (I love Etcher <3).
-
-Because of my lack of MicroHDMI wires, I had to do some stuff before turning on my Raspberry.
+I flashed a copy of [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (now called Raspberry Pi OS) into a 16 GB MicroSD with [Etcher](https://www.balena.io/etcher/) (I love Etcher <3). Then, I did some things to the files inside the MicroSD to activate SSH and WiFi *headlessly*:
 
 1. I disconnected and connected the MicroSD to my PC.
-2. I went to the `boot` drive (with Ubuntu, it was in `/media/USER/boot`).
+2. I went to the `boot` drive (with Ubuntu, it was in `/media/$USER/boot`).
 3. I created an empty `ssh` file with no extension.
 4. And finally, I created a `wpa_supplicant.conf` file with this data:
 ```

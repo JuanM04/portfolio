@@ -1,5 +1,5 @@
 ---
-title: Day 2 — Gaming RasPi
+title: "Day 2 — Gaming RasPi"
 ---
 
 Before anything, Using the protoboard and a Female Plug adaptor, I now turn on my Raspberry through the 5V pin instead of the MicroUSB port.
