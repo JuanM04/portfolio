@@ -43,7 +43,7 @@ const DocCategoryPage = ({
   docs: Doc[]
 }) => {
   return (
-    <Layout title={`${category} | Docs`}>
+    <Layout title={`${DOC_CATEGORIES[category]} | Docs`}>
       <DocItem.DocCategory
         key={category}
         slug={category}
