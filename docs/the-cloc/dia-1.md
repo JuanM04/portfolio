@@ -58,6 +58,6 @@ Primero, corrí `speaker-test -c2`. Deberías escuchar un ruido blanco continuo.
 
 Luego de eso, Instalé SoX (`sudo apt-get install sox libsox-fmt-all`), descargué [Superchería](https://www.youtube.com/watch?v=bA3ePHU00KY) y corrí `play supercheria.mp3`:
 
-![@direct Se la dedico a Vitale por ayudarme con el amplificador](/images/docs/the-cloc/supercheria.mp4)
+![@direct Se la dedico a Vitale por ayudarme con el amplificador](/the-cloc/supercheria.mp4)
 
 [&larr; Día 0](/docs/the-cloc/dia-0) | [Día 2 &rarr;](/docs/the-cloc/dia-2)

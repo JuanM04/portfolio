@@ -43,7 +43,7 @@ $$
 ### Calibre
 El **calibre** es un instrumento de medición que mide en milímetros.
 
-![Partes del Calibre](/images/docs/mariani/partes-del-calibre.svg)
+![Partes del Calibre](/mariani/partes-del-calibre.svg)
 
 1. Mordazas para medidas exteriores.
 2. Mordazas para medidas interiores.
@@ -57,7 +57,7 @@ El **calibre** es un instrumento de medición que mide en milímetros.
 ### Micrómetro
 El **micrómetro** es un instrumento de medición que mide en milímetros y centécimas.
 
-![Partes del Micrómetro](/images/docs/mariani/partes-del-micrometro.svg)
+![Partes del Micrómetro](/mariani/partes-del-micrometro.svg)
 
 1. **Cuerpo**: constituye el armazón del micrómetro; suele tener unas plaquitas de aislante térmico para evitar la variación de medida por dilatación.
 2. **Tope**: determina el punto cero de la medida; suele ser de algún material duro (como acero o hierro) para evitar el desgaste, así como optimizar la medida.
@@ -70,45 +70,45 @@ El **micrómetro** es un instrumento de medición que mide en milímetros y cent
 ### Reloj comparador
 Ejemplos:
 
-![0 mm](/images/docs/mariani/0-mm.svg)
-![0,263 mm](/images/docs/mariani/0263-mm.svg)
-![1,328 mm](/images/docs/mariani/1328-mm.svg)
+![0 mm](/mariani/0-mm.svg)
+![0,263 mm](/mariani/0263-mm.svg)
+![1,328 mm](/mariani/1328-mm.svg)
 
 ### Alexómetro
 El **alexómetro** es un instrumento utilizado para mediciones de interiores con precisión, utilizado en los talleres de automoción y talleres de mecanizado sobre todo, que permite la realización de medidas indirectas (por comparación) en elementos del vehículo.
 
-![Partes del Alexómetro](/images/docs/mariani/alexometro.png)
+![Partes del Alexómetro](/mariani/alexometro.png)
 
 
 
 ## Torno
 ![@embed Video en funcionamiento](https://youtube.com/embed/8MYCtjxKyNs)
 
-![Partes del Torno](/images/docs/mariani/partes-del-torno.jpeg)
+![Partes del Torno](/mariani/partes-del-torno.jpeg)
 
 ### Plato
 ![Plato](http://swedmaq.cl/5049/plato-torno-k11-250mm-3-garras-universal.jpg)
-![Plato desarmado](/images/docs/mariani/plato-desarmado.gif)
+![Plato desarmado](/mariani/plato-desarmado.gif)
 
 ### Contrapunta
-![Contrapunta](/images/docs/mariani/contrapunta.jpeg)
+![Contrapunta](/mariani/contrapunta.jpeg)
 
 ### Puntos
-![Puntos giratorios](/images/docs/mariani/puntos-giratorios.jpg)
+![Puntos giratorios](/mariani/puntos-giratorios.jpg)
 
-![Puntos fijos](/images/docs/mariani/puntos-fijos.jpeg)
+![Puntos fijos](/mariani/puntos-fijos.jpeg)
 
 ### Otros
-![Mandril](/images/docs/mariani/mandril.jpeg)
+![Mandril](/mariani/mandril.jpeg)
 
-![Cono morse](/images/docs/mariani/cono-morse.jpeg)
+![Cono morse](/mariani/cono-morse.jpeg)
 
-![Mecha de Avellanar](/images/docs/mariani/mecha-de-avellanar.jpeg)
+![Mecha de Avellanar](/mariani/mecha-de-avellanar.jpeg)
 
 
 
 ## Fresadora
-![Tabla de divisiones](/images/docs/mariani/calculos.jpg)
+![Tabla de divisiones](/mariani/calculos.jpg)
 
 $\varnothing$: Diámetro Exterior  
 $m$: Módulo  
@@ -124,4 +124,4 @@ $$
 
 ## Roscas
 
-![Tabla URANGA](/images/docs/mariani/tabla-uranga.jpeg)
+![Tabla URANGA](/mariani/tabla-uranga.jpeg)

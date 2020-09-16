@@ -13,7 +13,7 @@ La RasPi consume ~200 mA, el parlante ~800 mA y la tira led 36 mA/cm. Para eso, 
 
 La tira LED recibe los datos en una señal de 5V; y los pines GPIO solo tiran 3.3V. Para hacer que los datos viajen a 5V, hace falta utilizar un conversor de niveles:
 
-![Gracias, Diego!](/images/docs/the-cloc/connections.png)
+![Gracias, Diego!](/the-cloc/connections.png)
 
 ### Componentes
 #### Raspberry

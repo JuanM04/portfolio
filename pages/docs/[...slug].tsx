@@ -112,10 +112,14 @@ const DocPage = ({ slug, data, content }: _Props) => {
             )
           },
           image: (props: { alt?: string; src: string }) => {
+            const src = props.src.startsWith("/")
+              ? `/images/docs${props.src}`
+              : props.src
+
             if (!props.alt || !props.alt.startsWith("@")) {
               return (
                 <>
-                  <img src={props.src} style={{ margin: 0 }} />
+                  <img src={src} style={{ margin: 0 }} />
                   {props.alt && <p className={styles.epigraph}>{props.alt}</p>}
                 </>
               )
@@ -127,12 +131,12 @@ const DocPage = ({ slug, data, content }: _Props) => {
                       controls
                       style={{ margin: 0, width: "100%", height: "56.25%" }}
                     >
-                      <source src={props.src} />
+                      <source src={src} />
                     </video>
                   )}
                   {props.alt.toLowerCase().startsWith("@embed") && (
                     <div className={styles.iframeContainer}>
-                      <iframe src={props.src} frameBorder="0" allowFullScreen />
+                      <iframe src={src} frameBorder="0" allowFullScreen />
                     </div>
                   )}
                   {props.alt.split(" ").length >= 2 && (

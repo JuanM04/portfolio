@@ -14,7 +14,7 @@ Tiene una interfaz tipo dashboard, con todos los valores personalizables. Cuando
 
 Finalmente, esta página tiene una API que le permite a la RasPi enviarle las credenciales de Spotify y que vuelva la canción con toda la metadata.
 
-![El Editor](/images/docs/the-cloc/the-editor.jpg)
+![El Editor](/the-cloc/the-editor.jpg)
 
 ## El Wake-up-ator (WUA)
 
@@ -24,9 +24,9 @@ La segunda parte está formada de varios scripts de Python que controlan las luc
 
 ## Diagramas
 
-![Flujo de Login](/images/docs/the-cloc/flow_1.png)
-![Flujo de seteo de configuración](/images/docs/the-cloc/flow_2.png)
-![Flujo de obtención de la canción](/images/docs/the-cloc/flow_3.png)
+![Flujo de Login](/the-cloc/flow_1.png)
+![Flujo de seteo de configuración](/the-cloc/flow_2.png)
+![Flujo de obtención de la canción](/the-cloc/flow_3.png)
 
 ### Cosas que no deberían ser como son
 

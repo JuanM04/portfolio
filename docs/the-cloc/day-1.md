@@ -58,6 +58,6 @@ At first, I run `speaker-test -c2`. You should hear a continuous white noise. If
 
 After that, I installed SoX (`sudo apt-get install sox libsox-fmt-all`), downloaded [Superchería](https://www.youtube.com/watch?v=bA3ePHU00KY) and run `play supercheria.mp3`:
 
-![@direct This one's for Vitale for helping me with the Amp](/images/docs/the-cloc/supercheria.mp4)
+![@direct This one's for Vitale for helping me with the Amp](/the-cloc/supercheria.mp4)
 
 [&larr; Day 0](/docs/the-cloc/day-0) | [Day 2 &rarr;](/docs/the-cloc/day-2)

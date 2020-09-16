@@ -2,4 +2,4 @@
 title: Resistencias
 ---
 
-![](/images/docs/tutiles/resistencias.png)
+![](/tutiles/resistencias.png)
