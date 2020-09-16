@@ -34,6 +34,7 @@ xkb_symbols "altgr-intl" {
    key <AE09> { [        9,     parenleft,  ordfeminine                    ] };
    key <AE10> { [        0,     parenright, masculine                      ] };
    key <AE11> { [        minus, underscore, emdash,       degree           ] };
+   key <AE12> { [        equal, plus,       plusmn,       times            ] };
    key <AB08> { [        comma, less,       dead_cedilla, lessthanequal    ] };
    key <AB09> { [       period, greater,    ellipsis,     greaterthanequal ] };
 
