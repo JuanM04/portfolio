@@ -9,10 +9,48 @@ type Project = {
     year: number
     moment: "EARLY" | "MID" | "LATE"
   }
-  url: string
+  url?: string
 }
 
 const PROJECTS: Project[] = [
+  {
+    name: "Hidro Industrial",
+    description: {
+      en: "A website for a factory",
+      es: "Un sitio web para una fábrica",
+    },
+    stack: [
+      "Next.js",
+      "SASS",
+      "Figma",
+      "Google Sheets (auto-update)",
+      "Mapbox",
+    ],
+    released: {
+      year: 2020,
+      moment: "MID",
+    },
+    url: "https://hidroindustrial.com.ar",
+  },
+  {
+    name: "Seery Facturas",
+    description: {
+      en: "A billing program connected with AFIP (argentine IRS)",
+      es: "Un programa de facturación conectado con la AFIP",
+    },
+    stack: [
+      "Next.js",
+      "Prisma",
+      "MySQL",
+      "Docker",
+      "AFIP WS",
+      "Authentication",
+    ],
+    released: {
+      year: 2020,
+      moment: "MID",
+    },
+  },
   {
     name: "Organit",
     description: {
@@ -29,7 +67,7 @@ const PROJECTS: Project[] = [
     ],
     released: {
       year: 2020,
-      moment: "MID",
+      moment: "EARLY",
     },
     url: "https://organit.juanm04.com",
   },

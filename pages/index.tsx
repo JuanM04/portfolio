@@ -142,11 +142,13 @@ const HomePage = () => {
                   {text.projects.released.moment[p.released.moment]}{" "}
                   {p.released.year}
                 </li>
-                <li>
-                  <a href={p.url} target="_blank" rel="noopener noreferrer">
-                    {text.projects.homepage}
-                  </a>
-                </li>
+                {p.url && (
+                  <li>
+                    <a href={p.url} target="_blank" rel="noopener noreferrer">
+                      {text.projects.homepage}
+                    </a>
+                  </li>
+                )}
               </ul>
             </li>
           )
