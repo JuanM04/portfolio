@@ -75,16 +75,17 @@ const HomePage = () => {
       {inSpanish ? (
         <p>
           Mi nombre es Juan Martín Seery. Nací en Argentina en el 2004. Empecé a
-          programar a los 12 años haciendo páginas web básicas en HTML, y
-          lentamente me focalicé en el Backend. Hoy en día, hago pequeños
-          proyectos en mi tiempo libre.
+          programar a los 12 años haciendo páginas web básicas en HTML y
+          pequeños scripts. Actualmente me dedico a hacer proyectos variados:
+          desde una app open-source para ver anime hasta un sistema de
+          facturación cerrado.
         </p>
       ) : (
         <p>
           My name is Juan Martín Seery. I was born in 2004 in Argentina. I
-          started programming at the age of 12 doing basic HTML pages, and
-          slowly focused in Backend. Nowadays, I do small projects in my free
-          time.
+          started programming at the age of 12 doing basic HTML pages and simple
+          scripts. Nowadays I do diverse projects: from an open-source app to
+          watch anime to a closed billing system.
         </p>
       )}
       <details>

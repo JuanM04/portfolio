@@ -33,6 +33,18 @@ const PROJECTS: Project[] = [
     url: "https://hidroindustrial.com.ar",
   },
   {
+    name: "The Cloc",
+    description: {
+      en: "An alarm clock that doesn't show the time",
+      es: "Una alarma que no te dice la hora",
+    },
+    stack: ["Raspberry Pi", "Electronics", "Python", "Next.js", "HackClub"],
+    released: {
+      year: 2020,
+      moment: "MID",
+    },
+  },
+  {
     name: "Seery Facturas",
     description: {
       en: "A billing program connected with AFIP (argentine IRS)",
