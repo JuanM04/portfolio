@@ -27,7 +27,7 @@ export const getGist = async (id: string) => {
 }
 
 export const slugify = (str: string) => {
-  const PUNCTUATION = /[^\p{L}\p{M}\p{N}\p{Pc}\- ]/gu
+  const PUNCTUATION = /[^\p{L}\p{M}\p{N}\p{Pc}\- ]/gi
   return str
     .trim()
     .replace(PUNCTUATION, "")
