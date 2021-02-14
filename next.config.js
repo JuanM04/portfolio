@@ -14,4 +14,14 @@ module.exports = withPWA({
     register: process.env.NODE_ENV === "production",
     dest: "public",
   },
+  async redirects() {
+    return [
+      {
+        source: "/nkm.sh",
+        destination:
+          "https://raw.githubusercontent.com/JuanM04/kmds/main/scripts/nkm.sh",
+        permanent: true,
+      },
+    ]
+  },
 })
