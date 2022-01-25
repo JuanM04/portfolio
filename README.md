@@ -1,38 +1,43 @@
-<p align="center">
-  <a href="https://www.juanm04.com">
-    <img alt="JuanM04" src="public/images/Full logo.png" height="60" />
-  </a>
-</p>
-<p align="center">
-  <a href="https://www.nextjs.org/">
-    <img alt="Next.js Version" src="https://img.shields.io/github/package-json/dependency-version/JuanM04/portfolio/next.svg?style=for-the-badge&logo=next.js&color=000000" />
-  </a>
-  <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/JuanM04/portfolio?color=success&style=for-the-badge" />
-</p>
+# Astro Starter Kit: Minimal
 
-## Installation
-
-```bash
-yarn install
+```
+npm init astro -- --template minimal
 ```
 
-## Usage
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
 
-See [Next.js Docs](https://www.nextjs.org/docs/).
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-```bash
-yarn dev
+## 🚀 Project Structure
 
-# Generate Docs OG images
-yarn generate
+Inside of your Astro project, you'll see the following folders and files:
+
+```
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-## Contributing
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Please make sure to update tests as appropriate.
+Any static assets, like images, can be placed in the `public/` directory.
 
-## License
+## 🧞 Commands
 
-[MIT](LICENSE)
+All commands are run from the root of the project, from a terminal:
+
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `npm install`     | Installs dependencies                        |
+| `npm run dev`     | Starts local dev server at `localhost:3000`  |
+| `npm run build`   | Build your production site to `./dist/`      |
+| `npm run preview` | Preview your build locally, before deploying |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).

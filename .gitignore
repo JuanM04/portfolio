@@ -40,3 +40,12 @@ __pycache__
 !/public/images/.og/index.png
 /public/sw*
 /public/workbox*
+
+# Yarn V2
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
