@@ -21,7 +21,7 @@ const canonicalURL = Astro.request.canonicalURL
     <meta property="og:url" content={canonicalURL} />
 
     <style>
-      a .icon {
+      a [astro-icon] {
         vertical-align: middle;
         padding-right: 0.25em;
         display: inline-block;
@@ -45,10 +45,10 @@ const canonicalURL = Astro.request.canonicalURL
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Icon name="feather:github" class="icon" /> GitHub
+          <Icon name="feather:github" /> GitHub
         </a>
         <a href="mailto:me@juanm04.com">
-          <Icon name="feather:mail" class="icon" /> Email
+          <Icon name="feather:mail" /> Email
         </a>
       </nav>
       <h1>{title}</h1>
