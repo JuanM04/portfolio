@@ -1,0 +1,10 @@
+---
+import "katex/dist/katex.css"
+import MainLayout from "./MainLayout.astro"
+
+const props = Astro.props as any
+---
+
+<MainLayout {...props}>
+  <slot />
+</MainLayout>

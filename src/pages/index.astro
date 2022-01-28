@@ -1,0 +1,218 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro"
+
+const projects: {
+  name: string
+  description: string
+  released: string
+  stack: string[]
+  url?: string
+}[] = [
+  {
+    name: "pure-date-fns",
+    description: "A package based on date-fns that works with string dates",
+    stack: ["JavaScript", "NPM"],
+    released: "Late 2021",
+    url: "https://github.com/JuanM04/pure-date-fns",
+  },
+  {
+    name: "Literatura 2021",
+    description: "A website with essays and memes",
+    stack: ["Astro", "Tailwind"],
+    released: "Mid 2021",
+    url: "https://github.com/JuanM04/literatura-2021",
+  },
+  {
+    name: "Martín Seery",
+    description: "A redesign for a factory",
+    stack: [
+      "Next.js",
+      "Nodemailer",
+      "TailwindCSS",
+      "Typescript / Zod",
+      "React Hook Form",
+    ],
+    released: "Mid 2021",
+    url: "https://seery.com.ar",
+  },
+  {
+    name: "Kana",
+    description: "A simple website to learn hiragana and katakana",
+    stack: ["Svelte", "Tailwind", "Snowpack", "Very basic japanese"],
+    released: "Early 2021",
+    url: "https://github.com/JuanM04/kana",
+  },
+  {
+    name: "Hidro Industrial",
+    description: "A website for a factory",
+    stack: [
+      "Next.js",
+      "SASS",
+      "Figma",
+      "Google Sheets (auto-update)",
+      "Mapbox",
+    ],
+    released: "Mid 2020",
+    url: "https://hidroindustrial.com.ar",
+  },
+  {
+    name: "The Cloc",
+    description: "An alarm clock that doesn't show the time",
+    stack: ["Raspberry Pi", "Electronics", "Python", "Next.js", "HackClub"],
+    released: "Mid 2020",
+  },
+  {
+    name: "Seery Facturas",
+    description: "A billing program connected with AFIP (argentine IRS)",
+    stack: [
+      "Blitz.js",
+      "Prisma",
+      "Postgres",
+      "Docker",
+      "AFIP WS",
+      "Railway",
+      "TailwindCSS",
+      "Zod",
+      "PDF Generation",
+    ],
+    released: "Mid 2020",
+  },
+  {
+    name: "Organit",
+    description: "The definitive tool for students",
+    stack: [
+      "Flutter",
+      "Firebase (Auth, Firestore, Storage, Functions)",
+      "Push Notifications",
+      "Google AdMob",
+      "Sentry",
+      "Web App with Firestore",
+    ],
+    released: "Early 2020",
+    url: "https://organit.juanm04.com",
+  },
+  {
+    name: "Cartas Negras",
+    description: "Cards Against Humanity as an app (and argentine)",
+    stack: ["Flutter", "Firebase (Auth & Firestore)"],
+    released: "Late 2019",
+    url: "https://play.google.com/store/apps/details?id=com.juanm04.cartas_negras",
+  },
+  {
+    name: "Animú",
+    description: "Android app to watch anime",
+    stack: ["Flutter", "Vercel", "Web Scrapping"],
+    released: "Late 2019",
+    url: "https://animu.juanm04.com",
+  },
+  {
+    name: "PaseTec",
+    description: "An electronic system of scholar transport",
+    stack: ["Next.js (PWA)", "Vercel", "GraphQL", "MySQL (Prisma)", "Arduino"],
+    released: "Mid 2019",
+    url: "https://pasetec.juanm04.com",
+  },
+  {
+    name: "Veritas (v2)",
+    description: "Group scholar schedule",
+    stack: ["Next.js", "Vercel", "PWA with Offline support", "MySQL (Prisma)"],
+    released: "Mid 2019",
+    url: "https://github.com/JuanM04/veritas-pwa",
+  },
+  {
+    name: "WatchWith",
+    description:
+      "Watch media from Youtube, Twitch, Facebook, direct files and more synchronously",
+    stack: ["Next.js", "Vercel", "Pusher"],
+    released: "Early 2019",
+    url: "https://github.com/JuanM04/watch-with",
+  },
+  {
+    name: "Bees: the game",
+    description: "Quiz-game about bees",
+    stack: ["React", "Electron"],
+    released: "Late 2018",
+    url: "https://github.com/JuanM04/bees-thegame",
+  },
+]
+---
+
+<MainLayout
+  content={{
+    title: "Juan Martín Seery",
+    description: "Another Full-Stack developer trying new technologies",
+  }}
+>
+  <h2 id="apps">Apps</h2>
+  <ul>
+    <li><a href="/bpm">BPM</a></li>
+  </ul>
+
+  <h2>Projects</h2>
+  <ul class="projects">
+    {projects.map((project) => (
+      <li class="project">
+        <p class="project-name">{project.name}</p>
+        <p class="project-description">{project.description}</p>
+        <p class="project-released">{project.released}</p>
+        <ul class="project-stack">
+          {project.stack.map((tech) => (
+            <li>{tech}</li>
+          ))}
+        </ul>
+        {project.url && (
+          <a href={project.url} target="_blank" rel="noopener noreferrer">
+            Visit ↗︎
+          </a>
+        )}
+      </li>
+    ))}
+  </ul>
+
+  <style>
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0;
+      gap: 2rem;
+    }
+
+    @media (max-width: 720px) {
+      .projects {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .project {
+      display: block;
+      padding: 1rem;
+      border: 2px solid var(--border);
+      border-radius: 5px;
+      background-color: var(--accent-bg);
+    }
+
+    .project-name {
+      margin: 0;
+      font-size: 1.33rem;
+      font-weight: bold;
+    }
+
+    .project-description {
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .project-released {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .project-stack {
+      font-size: 1rem;
+      padding-left: 1.1rem;
+      margin: 0.5rem 0;
+    }
+  </style>
+</MainLayout>
