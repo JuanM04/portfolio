@@ -1,4 +1,4 @@
-.button {
+.measure {
   max-width: 20rem;
   width: 100%;
   margin: auto;
@@ -12,16 +12,52 @@
   align-items: center;
 }
 
-.value {
+.measure .value {
   font-size: 7rem;
   font-weight: bold;
 }
 
-.label {
+.measure .label {
   font-size: 1rem;
   font-style: italic;
 }
 
-.value, .label {
+.measure .value, .label {
   user-select: none;
+}
+
+.play .inputs {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.play .slider {
+  width: 100%;
+}
+
+.play .text {
+  width: 75px;
+}
+
+.play .playpause {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.play .playpause button span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.play .playpause button svg {
+  height: 1em;
+  width: 1em;
+  fill: none;
+  stroke: currentColor;
 }

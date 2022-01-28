@@ -1,7 +1,7 @@
 import { createMemo, createSignal } from "solid-js"
 import styles from "./BPM.module.css"
 
-export function BPM() {
+export function MeasureBPM() {
   const [timestamps, setTimestamps] = createSignal(null, { equals: false })
 
   const bpm = createMemo(() => {
@@ -15,9 +15,8 @@ export function BPM() {
   })
 
   return (
-    <div
-      class={styles.button}
-      role="button"
+    <button
+      class={styles.measure}
       onClick={() => {
         setTimestamps((prev) => {
           const now = new Date().getTime()
@@ -27,9 +26,106 @@ export function BPM() {
       }}
     >
       <div>
-        <span className={styles.value}>{bpm()}</span>
-        <span className={styles.label}>BPM</span>
+        <span class={styles.value}>{bpm()}</span>
+        <span class={styles.label}>BPM</span>
       </div>
-    </div>
+    </button>
+  )
+}
+
+export function PlayBPM() {
+  const [bpm, setBpm] = createSignal(120)
+  const [playing, setPlaying] = createSignal(false)
+
+  const getBeatInterval = (bpm) => {
+    return setInterval(() => {
+      const audio = new Audio("/metronome.wav")
+      audio.play()
+    }, (60 / bpm) * 1000)
+  }
+
+  const updateBpm = (bpm) => {
+    setBpm(bpm)
+    if (typeof playing() === "number") {
+      clearInterval(playing())
+      setPlaying(getBeatInterval(bpm))
+    }
+  }
+
+  return (
+    <section class={styles.play}>
+      <div class={styles.inputs}>
+        <input
+          class={styles.slider}
+          type="range"
+          min={1}
+          max={420}
+          step={1}
+          value={bpm()}
+          onInput={(e) => updateBpm(e.target.valueAsNumber)}
+        />
+        <input
+          class={styles.text}
+          type="number"
+          value={bpm()}
+          onInput={(e) => {
+            const value = e.target.valueAsNumber
+            if (
+              isFinite(value) &&
+              value % 1 === 0 &&
+              value > 0 &&
+              value <= 420
+            ) {
+              updateBpm(value)
+            }
+          }}
+        />
+      </div>
+
+      <div class={styles.playpause}>
+        <button
+          onClick={() =>
+            setPlaying((playing) => {
+              if (typeof playing === "number") {
+                clearInterval(playing)
+                return false
+              } else {
+                const interval = getBeatInterval(bpm())
+                return interval
+              }
+            })
+          }
+        >
+          {playing() ? (
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="6" y="4" width="4" height="16" />
+                <rect x="14" y="4" width="4" height="16" />
+              </svg>
+              Pause
+            </span>
+          ) : (
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              Play
+            </span>
+          )}
+        </button>
+      </div>
+    </section>
   )
 }

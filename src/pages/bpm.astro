@@ -1,6 +1,6 @@
 ---
 import MainLayout from "~/layouts/MainLayout.astro"
-import { BPM } from "~/apps/BPM.jsx"
+import { MeasureBPM, PlayBPM } from "~/apps/BPM.jsx"
 ---
 
 <MainLayout
@@ -9,5 +9,11 @@ import { BPM } from "~/apps/BPM.jsx"
     description: "Beats per minute",
   }}
 >
-  <BPM client:load />
+  <h3>Measure BPM</h3>
+  <MeasureBPM client:load />
+
+  <hr />
+
+  <h3>Play BPM</h3>
+  <PlayBPM client:load />
 </MainLayout>
