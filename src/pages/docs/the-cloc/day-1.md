@@ -13,7 +13,7 @@ I flashed a copy of [Raspbian Buster Lite](https://www.raspberrypi.org/downloads
 2. I went to the `boot` drive (with Ubuntu, it was in `/media/$USER/boot`).
 3. I created an empty `ssh` file with no extension.
 4. And finally, I created a `wpa_supplicant.conf` file with this data:
-```
+```ini:wpa_supplicant.conf
 country=AR
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1

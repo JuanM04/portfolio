@@ -17,7 +17,7 @@ WSL does use a really low amount of RAM but it is allocated about 4GB by default
 
 Create a `%UserProfile%\.wslconfig` file and use it to limit memory assigned to WSL2 VM.
 
-```ini
+```ini:.wslconfig
 [wsl2]
 kernel=<path>              # An absolute Windows path to a custom Linux kernel.
 memory=<size>              # How much memory to assign to the WSL2 VM.
@@ -32,7 +32,7 @@ localhostForwarding=<bool> # Boolean specifying if ports bound to wildcard or lo
 
 Therefore, in your situation, all you need to include in your file is ⤵
 
-```ini
+```ini:.wslconfig
 [wsl2]
 memory=1GB
 ```

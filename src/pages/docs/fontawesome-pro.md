@@ -21,9 +21,7 @@ curl -O -L "https://kit-pro.fontawesome.com/releases/latest/css/pro.min.css"
 
 ## `font_awesome_flutter`
 
-### `tool/hack.sh`
-
-```bash
+```bash:tool/hack.sh
 VERSION=$1
 
 pushd lib/fonts/
@@ -42,9 +40,7 @@ rm /tmp/cheatsheet.html
 ./tool/update.sh
 ```
 
-### `tool/hack.dart`
-
-```dart
+```dart:tool/hack.dart
 import 'dart:convert';
 import 'dart:io';
 

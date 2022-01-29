@@ -1,0 +1,29 @@
+@import "simpledotcss/simple.css";
+
+a [astro-icon] {
+  vertical-align: middle;
+  padding-right: 0.25em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.remark-code-title {
+  border: 1px solid var(--border);
+  background-color: var(--accent-bg);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 0.75rem 1.4rem;
+  font-size: 1rem;
+  font-family: var(--mono-font);
+}
+
+.remark-code-title + pre {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none;
+}

@@ -3588,6 +3588,7 @@ __metadata:
     prettier-plugin-astro: ^0.0.12
     rehype-katex: ^6.0.2
     rehype-slug: ^5.0.1
+    remark-code-titles: ^0.1.2
     remark-gfm: ^3.0.1
     remark-math: ^5.1.1
     remark-smartypants: ^2.0.0
@@ -5178,6 +5179,15 @@ __metadata:
     hast-util-to-html: ^8.0.0
     unified: ^10.0.0
   checksum: 6854325591702944fff6cf8aa91e3148ee1332cfb7163ef5bbd27b2486f0c5e057b8f08c398934f7357338bd0a4633d5c4eac58eada548a154c525e6077e690a
+  languageName: node
+  linkType: hard
+
+"remark-code-titles@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "remark-code-titles@npm:0.1.2"
+  dependencies:
+    unist-util-visit: ^1.4.0
+  checksum: 5cf2f90e8e780c6843344f9341acf2e7c4dac60a042439b0d436621f13a15405c3586c8da8774febaaf4c4f68a27b7eb2a0941823b4f10a4062832e3c23f5179
   languageName: node
   linkType: hard
 

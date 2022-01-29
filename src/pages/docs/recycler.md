@@ -4,7 +4,7 @@ description: Script to remove RECYCLER virus
 layout: ~/layouts/MainLayout.astro
 ---
 
-```vb
+```vb:recycler.vbs
 on Error Resume Next
 ​
 Dim objShell, objFileSystem, objTextStream, objRegex

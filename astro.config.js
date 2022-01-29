@@ -17,7 +17,12 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
     render: [
       "@astrojs/markdown-remark",
       {
-        remarkPlugins: ["remark-gfm", "remark-smartypants", "remark-math"],
+        remarkPlugins: [
+          "remark-gfm",
+          "remark-smartypants",
+          "remark-code-titles",
+          "remark-math",
+        ],
         rehypePlugins: [
           "rehype-slug",
           [

@@ -35,6 +35,7 @@
     "prettier-plugin-astro": "^0.0.12",
     "rehype-katex": "^6.0.2",
     "rehype-slug": "^5.0.1",
+    "remark-code-titles": "^0.1.2",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
     "remark-smartypants": "^2.0.0",

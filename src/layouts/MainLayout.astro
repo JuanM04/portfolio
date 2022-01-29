@@ -1,5 +1,5 @@
 ---
-import "simpledotcss/simple.css"
+import "~/main.css"
 import { Icon } from "astro-icon"
 
 export interface Props {
@@ -19,19 +19,6 @@ const canonicalURL = Astro.request.canonicalURL
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
     <meta property="og:url" content={canonicalURL} />
-
-    <style>
-      a [astro-icon] {
-        vertical-align: middle;
-        padding-right: 0.25em;
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        stroke-width: 0;
-        stroke: currentColor;
-        fill: currentColor;
-      }
-    </style>
   </head>
 
   <body>
