@@ -33,7 +33,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
               },
             },
           ],
-          new URL("./src/plugins/video.js", import.meta.url).pathname,
+          new URL("./src/plugins/better-images.js", import.meta.url).pathname,
         ],
       },
     ],
