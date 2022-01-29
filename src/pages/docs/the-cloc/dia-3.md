@@ -8,4 +8,4 @@ layout: ~/layouts/MainLayout.astro
 
 Ahora, es momento de hacer un experimento: obtener una canción de Spotify y reproducirla. Y eso fue lo que hice. Visualmente, no es nada *wow*, pero funciona. El código está en [este repo](https://github.com/JuanM04/the-cloc/tree/day-3), en la rama `day-3`. Ahora, ¡a hacer The Cloc!
 
-[&larr; Día 2](/images/docs/docs/the-cloc/dia-2) | [Día 4 &rarr;](/images/docs/docs/the-cloc/dia-4)
+[&larr; Día 2](/docs/the-cloc/dia-2) | [Día 4 &rarr;](/docs/the-cloc/dia-4)

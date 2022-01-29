@@ -61,4 +61,4 @@ After that, I installed SoX (`sudo apt-get install sox libsox-fmt-all`), downloa
 
 ![@direct This one's for Vitale for helping me with the Amp](/images/docs/the-cloc/supercheria.mp4)
 
-[&larr; Day 0](/images/docs/docs/the-cloc/day-0) | [Day 2 &rarr;](/images/docs/docs/the-cloc/day-2)
+[&larr; Day 0](/docs/the-cloc/day-0) | [Day 2 &rarr;](/docs/the-cloc/day-2)

@@ -62,4 +62,4 @@ Luego de eso, Instalé SoX (`sudo apt-get install sox libsox-fmt-all`), descargu
 
 ![@direct Se la dedico a Vitale por ayudarme con el amplificador](/images/docs/the-cloc/supercheria.mp4)
 
-[&larr; Día 0](/images/docs/docs/the-cloc/dia-0) | [Día 2 &rarr;](/images/docs/docs/the-cloc/dia-2)
+[&larr; Día 0](/docs/the-cloc/dia-0) | [Día 2 &rarr;](/docs/the-cloc/dia-2)

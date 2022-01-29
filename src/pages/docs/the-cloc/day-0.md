@@ -62,4 +62,4 @@ The configuration, or how I will call it to prevent headaches, **the editor**, i
 
 The alarm, a.k.a, **the wake-up-ator**, would run a server which listens to Bluetooth requests to change the configuration and would start the *ring-time*. This last would be a song being played through the speaker and the LED strip being turned on. If it's possible, the lights will have an animation.
 
-[Day 1 &rarr;](/images/docs/docs/the-cloc/day-1)
+[Day 1 &rarr;](/docs/the-cloc/day-1)
