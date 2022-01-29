@@ -37,6 +37,7 @@
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
-    "remark-smartypants": "^2.0.0"
+    "remark-smartypants": "^2.0.0",
+    "unist-util-visit": "^4.1.0"
   }
 }

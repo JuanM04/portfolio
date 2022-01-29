@@ -9,6 +9,6 @@ Thanks to HackClub for trusting me with the hardware and the HackClub community 
 
 Here is some footage of the The Cloc in action
 
-![@direct](/images/docs/the-cloc/working.mp4)
+![](/images/docs/the-cloc/working.mp4)
 
 [&larr; Day 4](/docs/the-cloc/day-4)

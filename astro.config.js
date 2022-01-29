@@ -28,6 +28,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
               },
             },
           ],
+          new URL("./src/plugins/video.js", import.meta.url).pathname,
         ],
       },
     ],
