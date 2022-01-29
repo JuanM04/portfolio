@@ -6,7 +6,7 @@ layout: ~/layouts/WithKatex.astro
 
 ## MCU
 
-[¿Qué es un Radián?](/images/docs/docs/5-3/radianes)
+[¿Qué es un Radián?](/docs/5-3/radianes)
 
 $$
 \begin{aligned}

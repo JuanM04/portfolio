@@ -10,6 +10,6 @@ Luego de unos días de testeo, ¡funciona perfectamente! De nuevo, el código es
 
 Dejo un videito de The Cloc en acción
 
-![](/images/docs/the-cloc/working.mp4)
+![](/images/the-cloc/working.mp4)
 
 [&larr; Día 4](/docs/the-cloc/dia-4)

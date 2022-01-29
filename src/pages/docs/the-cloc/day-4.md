@@ -15,7 +15,7 @@ It has a dashboard-like interface, with all the values to change. When you are f
 
 Finally, it has and API endpoint that returns the all the Spotify data of the song that will be played.
 
-![The Editor](/images/docs/the-cloc/the-editor.jpg)
+![The Editor](/images/the-cloc/the-editor.jpg)
 
 ## The Wake-up-ator (WUA)
 
@@ -25,9 +25,9 @@ The second part is all the Python scripts than control the lights and the music.
 
 ## Diagrams
 
-![Login Flow](/images/docs/the-cloc/flow_1.png)
-![Settings change Flow](/images/docs/the-cloc/flow_2.png)
-![Get Song Flow](/images/docs/the-cloc/flow_3.png)
+![Login Flow](/images/the-cloc/flow_1.png)
+![Settings change Flow](/images/the-cloc/flow_2.png)
+![Get Song Flow](/images/the-cloc/flow_3.png)
 
 
 ### Things that shouldn't be that way

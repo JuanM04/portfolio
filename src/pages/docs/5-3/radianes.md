@@ -6,13 +6,13 @@ layout: ~/layouts/WithKatex.astro
 
 Desde chiquitos, nosotros medimos los ángulos en **grados**, como en esta imagen.
 
-![](/images/docs/radianes/grados.png)
+![](/images/radianes/grados.png)
 
 Estos ángulos están bien, pero como cualquier medida impuesta por los humanos, tiene una escala arbitraria. ¿Por qué una vuelta completa son 360° y no 420°? Así que, los matemáticos inventaron una medida ~~mejor~~ más útil: los **radianes**.
 
 Al principio, puede parecer poco intuitivo. Imaginate que tenés un círculo cualquiera con su radio $r$. Ahora, imaginate que tenemos un ángulo $\theta$. Ahora, fijate el arco $R$ formado.
 
-![](/images/docs/radianes/circulo.png)
+![](/images/radianes/circulo.png)
 
 Digamos que $\theta$ es justo, justo el ángulo necesario para que la longitud de $R$ sea igual a $r$. Eso, mi gente, es un radián: *el ángulo formado cuando la longitud del arco es igual al radio*. Ese ángulo resulta ser $\approx 57.3\degree$.
 

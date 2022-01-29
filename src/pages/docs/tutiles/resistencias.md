@@ -4,4 +4,4 @@ lang: es
 layout: ~/layouts/MainLayout.astro
 ---
 
-![](/images/docs/tutiles/resistencias.png)
+![](/images/tutiles/resistencias.png)

@@ -39,7 +39,7 @@ export function PlayBPM() {
 
   const getBeatInterval = (bpm) => {
     return setInterval(() => {
-      const audio = new Audio("/metronome.wav")
+      const audio = new Audio("/assets/metronome.wav")
       audio.play()
     }, (60 / bpm) * 1000)
   }

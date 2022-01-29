@@ -101,7 +101,7 @@ $$
   - $L_0$: Longitud incial
   - $L_1$: Longitud final
 
-![Diagrama de Tracción para un Acero](/images/docs/materiales-5/traccion-acero.png)
+![Diagrama de Tracción para un Acero](/images/materiales-5/traccion-acero.png)
 
 - **Módulo de Elasticidad Longitudinal o Módulo de Young**: $E = \tan \alpha = \frac{\sigma}{\epsilon}$
 - **Tensión al límite de Proporcionalidad** (1): $\sigma_p = \frac{\text{Carga al límite proporcional}}{S_0}$
