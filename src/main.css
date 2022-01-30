@@ -1,5 +1,33 @@
 @import "simpledotcss/simple.css";
 
+:root {
+  /* Tailwind pallete "Neutral" and "Red" */
+  --bg: #fafafa;
+  --accent-bg: #f5f5f5;
+  --text: #171717;
+  --text-light: #525252;
+  --border: #d4d4d4;
+  --accent: #dc2626;
+  --code: #ef4444;
+  --preformatted: #525252;
+  --marked: #ef4444;
+  --disabled: #e5e5e5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171717;
+    --accent-bg: #262626;
+    --text: #fafafa;
+    --text-light: #d4d4d4;
+    --border: #525252;
+    --accent: #ef4444;
+    --code: #ef4444;
+    --preformatted: #d4d4d4;
+    --disabled: #404040;
+  }
+}
+
 a [astro-icon] {
   vertical-align: middle;
   padding-right: 0.25em;
