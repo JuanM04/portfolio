@@ -37,12 +37,12 @@ export function PlayBPM() {
   const [bpm, setBpm] = createSignal(120)
   const [playing, setPlaying] = createSignal(false)
 
-  const getBeatInterval = (bpm) => {
-    return setInterval(() => {
-      const audio = new Audio("/assets/metronome.wav")
-      audio.play()
-    }, (60 / bpm) * 1000)
+  const playBeat = () => {
+    const audio = new Audio("/assets/metronome.wav")
+    audio.play()
   }
+
+  const getBeatInterval = (bpm) => setInterval(playBeat, (60 / bpm) * 1000)
 
   const updateBpm = (bpm) => {
     setBpm(bpm)
@@ -90,6 +90,7 @@ export function PlayBPM() {
                 clearInterval(playing)
                 return false
               } else {
+                playBeat()
                 const interval = getBeatInterval(bpm())
                 return interval
               }
