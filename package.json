@@ -1,22 +1,5 @@
 {
-  "name": "juanm04",
-  "version": "7.0.0",
-  "description": "JuanM04's portfolio",
-  "author": "JuanM04 <me@juanm04.com>",
-  "license": "MIT",
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JuanM04/juanm04"
-  },
-  "bugs": {
-    "url": "https://github.com/JuanM04/juanm04/issues"
-  },
-  "packageManager": "yarn@3.1.1",
-  "volta": {
-    "node": "16.13.2",
-    "yarn": "1.22.17"
-  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
