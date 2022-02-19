@@ -22,12 +22,19 @@ const markdownConfig = {
     "remark-code-titles",
     "remark-math",
   ],
-  rehypePlugins: ["rehype-slug", ["rehype-katex", {
-    output: "html",
-    macros: {
-      "\\unit": "\\ \\text{#1}",
-    },
-  }] betterImages],
+  rehypePlugins: [
+    "rehype-slug",
+    [
+      "rehype-katex",
+      {
+        output: "html",
+        macros: {
+          "\\unit": "\\ \\text{#1}",
+        },
+      },
+    ],
+    betterImages,
+  ],
 }
 
 // @ts-check
