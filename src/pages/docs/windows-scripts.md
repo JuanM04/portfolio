@@ -41,7 +41,7 @@ x=msgbox("Your Message Here", 0+16, "Your Title Here")
 
 ### Matrix code - type 1`.bat`
 
-```batch
+```bat
 @echo off
 color 02
 :start
@@ -51,7 +51,7 @@ goto start
 
 ### Matrix code - type 2`.bat`
 
-```batch
+```bat
 @echo off
 :a
 color 2
@@ -76,7 +76,7 @@ goto a
 
 ### Guessing game`.bat`
 
-```batch
+```bat
 @echo off
 color 0e
 title Guessing Game by seJma
@@ -105,9 +105,11 @@ echo.
 echo It took you %guessnum% guesses. 
 echo. 
 pause
+```
 
 8) Password generator`.bat`
 
+```bat
 @echo off
 :Start2
 cls
@@ -162,7 +164,7 @@ if %input%==2 goto Exit if NOT goto Start 2
 
 ### Private folder`.bat`
 
-```batch
+```bat
 Quote:
 Quote: cls
 @ECHO OFF
@@ -212,7 +214,7 @@ sapi.Speak message
 
 ### Shutdown computer with custom message`.bat`
 
-```batch
+```bat
 @echo off
 Shutdown.exe -s -t 10
 cls
