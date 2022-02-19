@@ -1,5 +1,4 @@
 ---
-import "katex/dist/katex.css"
 import MainLayout from "./MainLayout.astro"
 
 const props = Astro.props as any
@@ -7,4 +6,8 @@ const props = Astro.props as any
 
 <MainLayout {...props}>
   <slot />
+
+  <style global>
+    @import "katex/dist/katex.css";
+  </style>
 </MainLayout>

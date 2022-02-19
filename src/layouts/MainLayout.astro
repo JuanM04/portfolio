@@ -1,5 +1,4 @@
 ---
-import "~/main.css"
 import { Icon } from "astro-icon"
 
 export interface Props {
@@ -19,6 +18,10 @@ const canonicalURL = Astro.request.canonicalURL
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
     <meta property="og:url" content={canonicalURL} />
+
+    <style global>
+      @import "../main.css";
+    </style>
 
     <script
       async
