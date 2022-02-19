@@ -12,13 +12,13 @@ specifiers:
   remark-gfm: ^3.0.1
   remark-math: ^5.1.1
   remark-smartypants: ^2.0.0
-  simpledotcss: ^2.0.4
+  simpledotcss: ^2.0.5
   solid-js: ^1.3.7
   unist-util-visit: ^4.1.0
 
 dependencies:
   katex: 0.15.2
-  simpledotcss: 2.0.4
+  simpledotcss: 2.0.5
   solid-js: 1.3.7
 
 devDependencies:
@@ -3605,8 +3605,8 @@ packages:
       object-inspect: 1.12.0
     dev: true
 
-  /simpledotcss/2.0.4:
-    resolution: {integrity: sha512-sq2XHtOhFJ092MUF96WE9aYW7jNn9yGNO3PG9i3lK7vnd6tvE50hG9D7X3Ri+otyTZyj47uSsb1TBsf2+lF78Q==}
+  /simpledotcss/2.0.5:
+    resolution: {integrity: sha512-414JbYb5KU2gKg8kWU2rG93sBiUu/uOMRvLeYuNUCvCQHz2pNzDQ2gePOWELMn6uh1z0OiL6+6QV9opFb/RnwQ==}
     dev: false
 
   /slash/3.0.0:
