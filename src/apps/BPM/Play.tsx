@@ -1,44 +1,9 @@
-import { createMemo, createSignal } from "solid-js"
-import styles from "./BPM.module.css"
+import { createSignal } from "solid-js"
+import styles from "./Play.module.css"
 
-type Timestamps = [current: number, previous: number] | null
 type Playing = ReturnType<typeof setInterval> | false
 
-export function MeasureBPM() {
-  const [timestamps, setTimestamps] = createSignal<Timestamps>(null, {
-    equals: false,
-  })
-
-  const bpm = createMemo(() => {
-    const time = timestamps()
-    if (!time) return 0
-
-    const diffInSeconds = (time[0] - time[1]) / 1000
-    if (diffInSeconds <= 0 || diffInSeconds > 60) return 0
-
-    return Math.round(60 / diffInSeconds)
-  })
-
-  return (
-    <button
-      class={styles.measure}
-      onClick={() => {
-        setTimestamps((prev) => {
-          const now = new Date().getTime()
-          if (prev) return [now, prev[0]]
-          else return [now, now]
-        })
-      }}
-    >
-      <div>
-        <span class={styles.value}>{bpm()}</span>
-        <span class={styles.label}>BPM</span>
-      </div>
-    </button>
-  )
-}
-
-export function PlayBPM() {
+export function Play() {
   const [bpm, setBpm] = createSignal(120)
   const [playing, setPlaying] = createSignal<Playing>(false)
 
@@ -60,7 +25,7 @@ export function PlayBPM() {
   }
 
   return (
-    <section class={styles.play}>
+    <section>
       <div class={styles.inputs}>
         <input
           class={styles.slider}

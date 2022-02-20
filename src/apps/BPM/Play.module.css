@@ -1,0 +1,35 @@
+.inputs {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.slider {
+  width: 100%;
+}
+
+.text {
+  width: 75px;
+}
+
+.playpause {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.playpause button span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.playpause button svg {
+  height: 1em;
+  width: 1em;
+  fill: none;
+  stroke: currentColor;
+}
