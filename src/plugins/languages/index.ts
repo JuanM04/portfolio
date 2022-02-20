@@ -1,8 +1,8 @@
-import fs from "fs"
+import { readFileSync } from "fs"
 
-function getLang(id, ...aliases) {
+function getLang(id: string, ...aliases: string[]) {
   const grammar = JSON.parse(
-    fs.readFileSync(`./src/plugins/languages/${id}.tmLanguage.json`, {
+    readFileSync(`./src/plugins/languages/${id}.tmLanguage.json`, {
       encoding: "utf-8",
     })
   )

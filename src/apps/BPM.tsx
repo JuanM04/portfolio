@@ -1,8 +1,13 @@
 import { createMemo, createSignal } from "solid-js"
 import styles from "./BPM.module.css"
 
+type Timestamps = [current: number, previous: number] | null
+type Playing = ReturnType<typeof setInterval> | false
+
 export function MeasureBPM() {
-  const [timestamps, setTimestamps] = createSignal(null, { equals: false })
+  const [timestamps, setTimestamps] = createSignal<Timestamps>(null, {
+    equals: false,
+  })
 
   const bpm = createMemo(() => {
     const time = timestamps()
@@ -35,19 +40,21 @@ export function MeasureBPM() {
 
 export function PlayBPM() {
   const [bpm, setBpm] = createSignal(120)
-  const [playing, setPlaying] = createSignal(false)
+  const [playing, setPlaying] = createSignal<Playing>(false)
 
   const playBeat = () => {
     const audio = new Audio("/assets/metronome.wav")
     audio.play()
   }
 
-  const getBeatInterval = (bpm) => setInterval(playBeat, (60 / bpm) * 1000)
+  const getBeatInterval = (bpm: number) =>
+    setInterval(playBeat, (60 / bpm) * 1000)
 
-  const updateBpm = (bpm) => {
+  const updateBpm = (bpm: number) => {
     setBpm(bpm)
-    if (typeof playing() === "number") {
-      clearInterval(playing())
+    const handle = playing()
+    if (typeof handle === "number") {
+      clearInterval(handle)
       setPlaying(getBeatInterval(bpm))
     }
   }
@@ -62,14 +69,14 @@ export function PlayBPM() {
           max={420}
           step={1}
           value={bpm()}
-          onInput={(e) => updateBpm(e.target.valueAsNumber)}
+          onInput={(e) => updateBpm(e.currentTarget.valueAsNumber)}
         />
         <input
           class={styles.text}
           type="number"
           value={bpm()}
           onInput={(e) => {
-            const value = e.target.valueAsNumber
+            const value = e.currentTarget.valueAsNumber
             if (
               isFinite(value) &&
               value % 1 === 0 &&

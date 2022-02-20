@@ -1,16 +1,12 @@
 // Full Astro Configuration API Documentation:
 // https://docs.astro.build/reference/configuration-reference
 
-// @type-check enabled!
-// VSCode and other TypeScript-enabled text editors will provide auto-completion,
-// helpful tooltips, and warnings if your exported object is invalid.
-// You can disable this by removing "@ts-check" and `@type` comments below.
-import betterImages from "./src/plugins/better-images.js"
-import { getLanguages } from "./src/plugins/languages/index.js"
+import type { AstroUserConfig } from "astro"
+import markdownRemark, { AstroMarkdownOptions } from "@astrojs/markdown-remark"
+import { betterImages } from "./src/plugins/better-images"
+import { getLanguages } from "./src/plugins/languages"
 
-// @ts-check
-/** @type{import('@astrojs/markdown-remark').AstroMarkdownOptions} */
-const markdownConfig = {
+const markdownConfig: AstroMarkdownOptions = {
   syntaxHighlight: "shiki",
   shikiConfig: {
     theme: "css-variables",
@@ -37,16 +33,14 @@ const markdownConfig = {
   ],
 }
 
-// @ts-check
-/** @type{import('astro').AstroUserConfig} */
-const config = {
+const config: AstroUserConfig = {
   renderers: ["@astrojs/renderer-solid"],
   buildOptions: {
     site: "https://juanm04.com",
     experimentalStaticBuild: true,
   },
   markdownOptions: {
-    render: ["@astrojs/markdown-remark", markdownConfig],
+    render: [markdownRemark, markdownConfig],
   },
   vite: { ssr: { external: ["svgo"] } },
 }
