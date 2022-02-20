@@ -1,8 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "BROWSER=none netlify dev",
     "build": "astro build",
     "preview": "astro preview"
   },

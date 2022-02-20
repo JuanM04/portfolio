@@ -1,0 +1,14 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[dev]
+  command = "astro dev"
+  port = 8888
+  targetPort = 3000
+  publish = "dist"
+  framework = "#custom"
+
+[functions]
+  directory = "functions"
+  node_bundler = "esbuild"
