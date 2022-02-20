@@ -38,6 +38,7 @@ const config: AstroUserConfig = {
   buildOptions: {
     site: "https://juanm04.com",
     experimentalStaticBuild: true,
+    sitemap: true,
   },
   markdownOptions: {
     render: [markdownRemark, markdownConfig],

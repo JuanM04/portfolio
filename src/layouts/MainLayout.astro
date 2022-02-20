@@ -59,7 +59,13 @@ const canonicalURL = Astro.request.canonicalURL
 
     <footer>
       <p>
-        Last updated: {new Date().toISOString().slice(0, 10)} —
+        Last updated: {new Date().toISOString().slice(0, 10)}
+        —
+        <a href="/sitemap.xml">Sitemap</a>
+        —
+        <a href="https://github.com/JuanM04/portfolio">Source code</a> 
+      </p>
+      <p>
         <a href="#">Back to top ↑</a>
       </p>
     </footer>
