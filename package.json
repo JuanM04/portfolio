@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "BROWSER=none netlify dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "prettier -w ."
   },
   "dependencies": {
     "katex": "^0.15.2",
@@ -15,6 +16,7 @@
     "@types/node": "^16.11.25",
     "astro": "^0.23.0",
     "astro-icon": "^0.6.0",
+    "prettier": "^2.5.1",
     "prettier-plugin-astro": "^0.0.12",
     "rehype-katex": "^6.0.2",
     "rehype-slug": "^5.0.1",

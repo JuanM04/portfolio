@@ -64,9 +64,8 @@ $\text{Oxoácido o Hidrácido} + \text{Hidróxido} \rightarrow \text{Sal} + H_2O
 | $Cu(PO_3)_2$ | $2H(PO_3) + Cu(OH)2 \rightarrow Cu(PO_3)_2 + 2H_2O$ |  Fosfato cúprico   |
 |    $AgCl$    |       $HCl + Ag(OH) \rightarrow AgCl + H_2O$        |  Cloruro de plata  |
 
-
-
 ## Soluciones
+
 - Solución: $S$
 - Soluto: $S_t$
 - Solvente: $S_v$
@@ -84,11 +83,11 @@ $$
 - Molaridad: $M$
 - Molalidad: $m$
 - Normalidad: $N$
-	- Peso Molecular: $\text{PM}$
-	- Parámetro: $\Theta$
-		- Ácido ($H^+$): $\Theta = 2$
-		- Base ($OH^-$): $\Theta = 3$
-		- Sal (_Catión_): $\Theta = 2$
+  - Peso Molecular: $\text{PM}$
+  - Parámetro: $\Theta$
+    - Ácido ($H^+$): $\Theta = 2$
+    - Base ($OH^-$): $\Theta = 3$
+    - Sal (_Catión_): $\Theta = 2$
 
 $$
 \begin{aligned}

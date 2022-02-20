@@ -5,9 +5,10 @@ layout: ~/layouts/MainLayout.astro
 ---
 
 > **Warning**
-> I *think* this is illegal. If someone from FortAwesome says it to me, I will remove this post.
+> I _think_ this is illegal. If someone from FortAwesome says it to me, I will remove this post.
 
 ## Sources
+
 ```bash
 VERSION=$1 # E.g. 5.12.1
 

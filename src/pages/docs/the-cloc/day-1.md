@@ -7,12 +7,13 @@ The first thing I did was solder the amplifier headers and connect it to the spe
 
 ## Raspberry Pi Setup
 
-I flashed a copy of [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (now called Raspberry Pi OS) into a 16 GB MicroSD with [Etcher](https://www.balena.io/etcher/) (I love Etcher <3). Then, I did some things to the files inside the MicroSD to activate SSH and WiFi *headlessly*:
+I flashed a copy of [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (now called Raspberry Pi OS) into a 16 GB MicroSD with [Etcher](https://www.balena.io/etcher/) (I love Etcher <3). Then, I did some things to the files inside the MicroSD to activate SSH and WiFi _headlessly_:
 
 1. I disconnected and connected the MicroSD to my PC.
 2. I went to the `boot` drive (with Ubuntu, it was in `/media/$USER/boot`).
 3. I created an empty `ssh` file with no extension.
 4. And finally, I created a `wpa_supplicant.conf` file with this data:
+
 ```ini:wpa_supplicant.conf
 country=AR
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -29,6 +30,7 @@ network={
 Then, I inserted the MicroSD into the Raspberry and turned it on. With the steps above done, now I can ssh in with `ssh pi@raspberrypi.local` (or `pri@192.168.X.X`) with the password `raspberry`.
 
 Then, I did what any Linux-user does:
+
 ```bash
 $ sudo apt-get update && sudo apt-get upgrade -y
 $ sudo apt-get install python python-pip python3 python3-pip -y

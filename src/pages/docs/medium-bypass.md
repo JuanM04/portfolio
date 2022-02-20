@@ -11,11 +11,16 @@ layout: ~/layouts/MainLayout.astro
   "title": "Medium",
   "hideComment": true,
   "headers": [
-    {"enabled": true, "name": "Referer", "value": "https://t.co/x?amp=1", "comment": "" }
+    {
+      "enabled": true,
+      "name": "Referer",
+      "value": "https://t.co/x?amp=1",
+      "comment": ""
+    }
   ],
   "respHeaders": [],
   "filters": [
-    { "enabled": true, "type": "urls", "urlRegex":"https://medium.com/.*" }
+    { "enabled": true, "type": "urls", "urlRegex": "https://medium.com/.*" }
   ],
   "urlReplacements": [],
   "appendMode": false

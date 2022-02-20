@@ -24,12 +24,14 @@ It turns out that my level-shifter isn't similar to the one that Adafruit offers
 ## Python-time
 
 I installed the NeoPixel library:
+
 ```bash
 $ sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
 $ sudo python3 -m pip install --force-reinstall adafruit-blinka
 ```
 
 And run this script **in root mode**:
+
 ```python
 # Simple test for NeoPixels on Raspberry Pi
 import time

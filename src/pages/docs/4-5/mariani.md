@@ -24,25 +24,27 @@ Para empezar, todo, generalmente, se mide en **milímetros**. Es la medida por d
 
 $10,3\unit{mm}$ se lee diez milímetros con tres décimas;  
 $4,04\unit{mm}$ se lee cuatro milímetros con cuatro centécimas;  
-$1,23\unit{mm}$ se lee un milímetro con dos décimas y tres centécimas.  
+$1,23\unit{mm}$ se lee un milímetro con dos décimas y tres centécimas.
 
 Además del milímetro, está la **pulgada**. Su símbolo es $"$ y equivale a 25,4 mm.
 
 ### Conversión
+
 - Pasar 3/4" a milímetros:
-$$
-25,4 \times \frac{3}{4} = 25,4 \times 3 : 4 = 19,05
-$$
+  $$
+  25,4 \times \frac{3}{4} = 25,4 \times 3 : 4 = 19,05
+  $$
 - Pasar 1 3/8" a milímetros:
-$$
-25,4 \times \textcolor{blue}{1} \textcolor{red}{\frac{3}{8}} = \textcolor{blue}{(25,4 \times 1)} + \textcolor{red}{(25,4 \times 3 : 8)} = 34,925
-$$
+  $$
+  25,4 \times \textcolor{blue}{1} \textcolor{red}{\frac{3}{8}} = \textcolor{blue}{(25,4 \times 1)} + \textcolor{red}{(25,4 \times 3 : 8)} = 34,925
+  $$
 - Pasar 22,2 mm a pulgadas:
-$$
-22,2 \div 25,4 = 0,875 \approx \frac{7}{8}
-$$
+  $$
+  22,2 \div 25,4 = 0,875 \approx \frac{7}{8}
+  $$
 
 ### Calibre
+
 El **calibre** es un instrumento de medición que mide en milímetros.
 
 ![Partes del Calibre](/images/mariani/partes-del-calibre.svg)
@@ -57,6 +59,7 @@ El **calibre** es un instrumento de medición que mide en milímetros.
 8. Botón de deslizamiento y freno.
 
 ### Micrómetro
+
 El **micrómetro** es un instrumento de medición que mide en milímetros y centécimas.
 
 ![Partes del Micrómetro](/images/mariani/partes-del-micrometro.svg)
@@ -70,6 +73,7 @@ El **micrómetro** es un instrumento de medición que mide en milímetros y cent
 7. **Tambor fijo**: solidario al cuerpo, donde está grabada la **escala fija** de 0 a 25 mm.
 
 ### Reloj comparador
+
 Ejemplos:
 
 ![0 mm](/images/mariani/0-mm.svg)
@@ -77,39 +81,42 @@ Ejemplos:
 ![1,328 mm](/images/mariani/1328-mm.svg)
 
 ### Alexómetro
+
 El **alexómetro** es un instrumento utilizado para mediciones de interiores con precisión, utilizado en los talleres de automoción y talleres de mecanizado sobre todo, que permite la realización de medidas indirectas (por comparación) en elementos del vehículo.
 
 ![Partes del Alexómetro](/images/mariani/alexometro.png)
 
-
-
 ## Torno
+
 ![@embed Video en funcionamiento](https://youtube.com/embed/8MYCtjxKyNs)
 
 ![Partes del Torno](/images/mariani/partes-del-torno.jpeg)
 
 ### Plato
+
 ![Plato](http://swedmaq.cl/5049/plato-torno-k11-250mm-3-garras-universal.jpg)
 ![Plato desarmado](/images/mariani/plato-desarmado.gif)
 
 ### Contrapunta
+
 ![Contrapunta](/images/mariani/contrapunta.jpeg)
 
 ### Puntos
+
 ![Puntos giratorios](/images/mariani/puntos-giratorios.jpg)
 
 ![Puntos fijos](/images/mariani/puntos-fijos.jpeg)
 
 ### Otros
+
 ![Mandril](/images/mariani/mandril.jpeg)
 
 ![Cono morse](/images/mariani/cono-morse.jpeg)
 
 ![Mecha de Avellanar](/images/mariani/mecha-de-avellanar.jpeg)
 
-
-
 ## Fresadora
+
 ![Tabla de divisiones](/images/mariani/calculos.jpg)
 
 $\varnothing$: Diámetro Exterior  

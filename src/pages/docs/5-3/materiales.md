@@ -40,12 +40,13 @@ $$
 - $C = 2.5 - 1.5 - 1$ para materiales muy blandos (plomo, estaño y/o sus aleaciones)
 
 #### Nomenclatura
+
 $200\ H_B\  5\ /\ 375\ /\ 30$, siendo:
+
 - $200$ el valor final de la dureza ($H_b$)
 - $5$ el diámetro de la bolilla en $\text{mm}$ ($D$)
 - $375$ la carga aplicada en $\text{kgf}$ ($P$)
 - $30$ la duración del ensayo en segundos
-
 
 ### Vickers
 
@@ -69,9 +70,11 @@ $$
 - $k = 1$ si $P$ está en $\text{kgf}$ y la superficie en $\text{mm}^2$
 - $k = 1000$ si $P$ está en $\text{gf}$ y la superficie en $\mu\text{m}^2$
 - $k = 0.10197$ si $P$ está en $\text{N}$ y la superficie en $\text{mm}^2$
-  
+
 #### Nomenclatura
+
 $150\ H_V\ 30\ /\ 20$, siendo:
+
 - $140$ el valor final de la dureza ($H_v$)
 - $30$ la carga aplicada en $\text{kgf}$ ($P$)
 - $20$ la duración del ensayo en segundos
@@ -80,10 +83,8 @@ $150\ H_V\ 30\ /\ 20$, siendo:
   - Si el ensayo estubiera en $\text{gf}$, se escribiría así: $150\ H_V\ _{30\ /\ 20}$
   - Las dos reglas anteriores pueden sumare, quedando $150\ H_V\ _{30}$
 
-
-
-
 ## Ensayo de Tracción
+
 $$
 \begin{aligned}
 \sigma    &= \frac{P}{S_0}        \\

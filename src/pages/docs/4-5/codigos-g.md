@@ -14,6 +14,7 @@ layout: ~/layouts/MainLayout.astro
 |   T    | Posición de la herramienta                |
 
 ## Códigos G
+
 | Código | Descripción                              |
 | :----: | :--------------------------------------- |
 |  G00   | Movimiento rápido de posicionamiento     |
@@ -31,6 +32,7 @@ layout: ~/layouts/MainLayout.astro
 |  G99   | Avance por milímetro                     |
 
 ## Misceláneos
+
 | Código | Descripción                        |
 | :----: | :--------------------------------- |
 |  M03   | Arranque del husillo               |
@@ -43,11 +45,13 @@ layout: ~/layouts/MainLayout.astro
 ### Convenciones
 
 En un torno:
+
 - `F0.1` para cilindrar y `F0.16` para frentear
 - Se contornea empezando desde `Z0`
 - `X` se mueve la mitad de lo indicado, por eso se usa el diámetro en vez del radio para guiarse.
 
 ### Ejemplo
+
 ```gcode
 ( #-----------#             )
 ( | 0 | 0 | 7 |             )

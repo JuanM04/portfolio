@@ -3,11 +3,12 @@ title: Física
 lang: es
 layout: ~/layouts/WithKatex.astro
 ---
+
 - [Horinzontalidad](#horinzontalidad)
-	- [MRU & MRUV](#mru--mruv)
+  - [MRU & MRUV](#mru--mruv)
 - [Verticalidad](#verticalidad)
-	- [Tiro Vertical](#tiro-vertical)
-	- [Caida Libre](#caida-libre)
+  - [Tiro Vertical](#tiro-vertical)
+  - [Caida Libre](#caida-libre)
 - [Fuerza](#fuerza)
 - [Energía y trabajo](#energía-y-trabajo)
 - [Potencia](#potencia)
@@ -20,12 +21,15 @@ $$
 1 \unit{km/h}^2 &= 12960 \unit{m/s}^2 \\
 \end{aligned}
 $$
+
 $$
 x=\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
 
 ## Horinzontalidad
+
 ### MRU & MRUV
+
 $$
 \begin{aligned}
 x &= v_0t + \frac{1}{2}t^2 \\
@@ -41,6 +45,7 @@ G = -10 \unit{m/s}^2 = -129600 \unit{km/h}^2
 $$
 
 ### Tiro Vertical
+
 $$
 \begin{aligned}
 y &= v_0t + \frac{1}{2}Gt^2 \\
@@ -50,6 +55,7 @@ v_1^2 &= v_0^2 + 2G\Delta{y} \\
 $$
 
 ### Caida Libre
+
 $$
 \begin{aligned}
 y_1 &= y_0 + \frac{1}{2}Gt^2 \\
@@ -59,12 +65,14 @@ v^2 &= 2G\Delta{y}
 $$
 
 ## Fuerza
+
 $$
 \begin{aligned}
 1 \unit{N} &= 1 \unit{kg$\times$m/s}^2 \\
 1 \unit{kgf} &= 10 \unit{N}
 \end{aligned}
 $$
+
 $$
 \begin{aligned}
 F &= ma \\
@@ -74,10 +82,11 @@ $$
 
 - Fuerza elástica: $F_e = k \Delta x$
 - Rozamiento
-	- Estático: $F_{re} \leq \mu_eN$
-	- Dinámico: $F_{rd} = \mu_dN$
+  - Estático: $F_{re} \leq \mu_eN$
+  - Dinámico: $F_{rd} = \mu_dN$
 
 ## Energía y trabajo
+
 $$
 \begin{aligned}
 1 \unit{J} &= 1 \unit{N} \times 1 \unit{m} \\
@@ -101,6 +110,7 @@ J &= E_p\ A - E_p\ B
 $$
 
 ## Potencia
+
 $$
 \begin{aligned}
 1 \unit{W (Watt)} &= 1 \unit{J/s} \\

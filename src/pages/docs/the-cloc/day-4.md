@@ -29,7 +29,6 @@ The second part is all the Python scripts than control the lights and the music.
 ![Settings change Flow](/images/the-cloc/flow_2.png)
 ![Get Song Flow](/images/the-cloc/flow_3.png)
 
-
 ### Things that shouldn't be that way
 
 - Theorically, according to the Spotify API docs, being login in with Spotify isn't necessary, but Spotify doesn't gives you the song in MP3 unless you are authenticated.

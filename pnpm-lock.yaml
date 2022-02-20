@@ -6,6 +6,7 @@ specifiers:
   astro: ^0.23.0
   astro-icon: ^0.6.0
   katex: ^0.15.2
+  prettier: ^2.5.1
   prettier-plugin-astro: ^0.0.12
   rehype-katex: ^6.0.2
   rehype-slug: ^5.0.1
@@ -28,6 +29,7 @@ devDependencies:
   '@types/node': 16.11.25
   astro: 0.23.0_typescript@4.5.5
   astro-icon: 0.6.0
+  prettier: 2.5.1
   prettier-plugin-astro: 0.0.12
   rehype-katex: 6.0.2
   rehype-slug: 5.0.1

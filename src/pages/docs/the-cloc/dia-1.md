@@ -8,12 +8,13 @@ Lo primero que hice fue soldar los pines del amplificador y conectarlo con el pa
 
 ## Configurar la Raspberry Pi
 
-Quemé una copia de [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (por lo visto, ahora se llama *Raspberry Pi OS*) en una MicroSD de 16 GB con [Etcher](https://www.balena.io/etcher/) (Amo Etcher <3). Luego toqué un poco algunos archivos dentro de la MicroSD para activar el SSH y el WiFi *headlessly*:
+Quemé una copia de [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (por lo visto, ahora se llama _Raspberry Pi OS_) en una MicroSD de 16 GB con [Etcher](https://www.balena.io/etcher/) (Amo Etcher <3). Luego toqué un poco algunos archivos dentro de la MicroSD para activar el SSH y el WiFi _headlessly_:
 
 1. Desconecté y contecté la MicroSD a mi PC.
 2. Fui al disco `boot` (con Ubuntu, está en `/media/$USER/boot`).
 3. Create un archivo `ssh` vacío y sin extensión.
 4. Finalmente, creé el archivo `wpa_supplicant.conf` con estos datos:
+
 ```ini:wpa_supplicant.conf
 country=AR
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -30,6 +31,7 @@ network={
 Luego, inserté la MicroSD en la Raspberry y la encendí. Gracias a los pasos anteriormente mencionados, ya puedo entrar en ella con `ssh pi@raspberrypi.local` con la contraseña `rasperry`.
 
 Luego, hice lo que cualquier usuario de Linux hace con un nuevo OS:
+
 ```bash
 $ sudo apt-get update && sudo apt-get upgrade -y
 $ sudo apt-get install python python-pip python3 python3-pip -y

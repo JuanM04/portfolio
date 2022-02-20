@@ -10,7 +10,7 @@ Estuve dos días escribiendo el código (ahora disponible en [GitHub](https://gi
 
 Es una página hosteada en Vercel (no quería usar mucha CPU de RasPi, así que la hosteé afuera): [esta página](https://thecloc.juanm04.com). En esta, le decís la IP de la RasPi y la página mediante llamadas HTTP obtiene la configuración (lo explico luego).
 
-Si no estás logueado con Spotify, el editor en sí se encargará de todo el *Authorization Flow* y le enviará las credenciales a la RasPi.
+Si no estás logueado con Spotify, el editor en sí se encargará de todo el _Authorization Flow_ y le enviará las credenciales a la RasPi.
 
 Tiene una interfaz tipo dashboard, con todos los valores personalizables. Cuando terminaste de editar la configuración, esta se envía a la RasPi vía POST.
 
@@ -22,7 +22,7 @@ Finalmente, esta página tiene una API que le permite a la RasPi enviarle las cr
 
 Está compuesto de dos partes: la primera es el _editor server_, que es el encargado de recibir los llamados del Editor. Tiene dos métodos: GET y POST, los cuales envían y reciven-escriben la configuración respectivamente.
 
-La segunda parte está formada de varios scripts de Python que controlan las luces y la música. Cada 15 minutos, un *cron* ejecuta `main.py`, el cual decide qué hacer dependiendo de la hora: puede encender las luces, cambiar el color, o encender la alarma.
+La segunda parte está formada de varios scripts de Python que controlan las luces y la música. Cada 15 minutos, un _cron_ ejecuta `main.py`, el cual decide qué hacer dependiendo de la hora: puede encender las luces, cambiar el color, o encender la alarma.
 
 ## Diagramas
 

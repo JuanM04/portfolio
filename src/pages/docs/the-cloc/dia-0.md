@@ -9,6 +9,7 @@ layout: ~/layouts/MainLayout.astro
 Que "suele la alarma" significa que suene una canción de Spotify. Esta sonaría por unos segundos para que luego se apague sola. Sin botones.
 
 ## ¿Cómo está compuesto?
+
 Consta de una **Raspberry Pi 3 B=** como cerebro de operaciones. Esta controla la tira LED y el parlante.
 
 La RasPi consume ~200 mA, el parlante ~800 mA y la tira led 36 mA/cm. Para eso, una fuente de 2A o 2.5A sirve perfectamente. A más corriente, más centímetros de LED se podrán colocar.
@@ -18,29 +19,36 @@ La tira LED recibe los datos en una señal de 5V; y los pines GPIO solo tiran 3.
 ![Gracias, Diego!](/images/the-cloc/connections.png)
 
 ### Componentes
+
 #### Raspberry
+
 - [Raspberry Pi 3 B+](https://www.adafruit.com/product/3775)
 - [Perma-Proto](https://www.adafruit.com/product/2310)
 - [Tornillos para la Perma-Proto](https://www.adafruit.com/product/2336)
 
 #### Luces RGB
+
 - [NeoPixels 60 LED/m](https://www.adafruit.com/product/1138?length=1)
 - [Adaptador de puertos](https://www.adafruit.com/product/1663)
 - [Conversor de niveles 3.3V-5V](https://www.adafruit.com/product/1875)
 
 #### Sonido
+
 - [Parlante 4Ω 3W](https://www.adafruit.com/product/1314)
 - [Amplificador Mono MAX98357A](https://www.adafruit.com/product/3006)
 
 #### Tha Power
+
 - [PSU 5V 2A](https://www.adafruit.com/product/276) (si es de 2.5A, mejor)
 - [Puerto Plug Hueco](https://www.adafruit.com/product/368)
 - Cables [Macho/Macho](https://www.adafruit.com/product/1956), [Hembra/Hembra](https://www.adafruit.com/product/1950), [Hembra/Macho](https://www.adafruit.com/product/1954)
 
 #### Otros (que pueden ser útiles)
+
 - [Protoboard](https://www.adafruit.com/product/239)
 
 ### Mapeo de pines
+
 |   Componente | Pin      |           Componente | Pin     |
 | -----------: | :------- | -------------------: | :------ |
 | Raspberry Pi | `5V`     |         Amplificador | `Vin`   |
@@ -53,11 +61,11 @@ La tira LED recibe los datos en una señal de 5V; y los pines GPIO solo tiran 3.
 |          PSU | `5V`     | Conversor de niveles | `HV`    |
 |          PSU | `GND`    | Conversor de niveles | `GND`   |
 
-*En lo posible, conectar el `GND` de la Raspberry Pi y de la PSU en la Perma-Proto, para igualar las masas*
-
+_En lo posible, conectar el `GND` de la Raspberry Pi y de la PSU en la Perma-Proto, para igualar las masas_
 
 ## Bueno, ¿y el software?
-El mismo se puede dividir en dos: la *configuración* y la *alarma*.
+
+El mismo se puede dividir en dos: la _configuración_ y la _alarma_.
 
 La configuración, o como lo llamaré para evitar dolores de cabeza, **el editor**, es aquello que el usuario usaría para configurar el dispositivo. Mi idea actual es una aplicación móvil que se conecte por Bluetooth, como hacen los Chromecasts. Desde ahí, el usuario podría configurar la hora, el color e intensidad de la luz, la canción o playlist a sonar, y cuanto tiempo quiere que dure la alarma.
 

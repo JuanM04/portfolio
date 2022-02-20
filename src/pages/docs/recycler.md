@@ -43,14 +43,14 @@ objRegex.IgnoreCase = True
 Set Carpetas_Recycler = objRegex.Execute(strIpFileText)
 ​
 i=0
-For Each carpetarecycler In Carpetas_Recycler 
+For Each carpetarecycler In Carpetas_Recycler
 	i=i+1
 Next
 ​
 Dim carpetaInfectada
 ​
-For Each carpetarecycler In Carpetas_Recycler 
-	flag=0	
+For Each carpetarecycler In Carpetas_Recycler
+	flag=0
 	nret=geekside.Run("cmd /C cd C:\Recycler & cd " & carpetarecycler & " & dir > c:\chesx.txt",0,TRUE)
 ​
 	Set objTextStream = objFileSystem.OpenTextFile("C:\chesx.txt",1)
@@ -84,27 +84,27 @@ For Each carpetarecycler In Carpetas_Recycler
 		objTextStream.Close
 ​
 		Set objRegex = new RegExp
-	
+
 		objRegex.Pattern = "C:.*"
 		objRegex.Global = True
 		objRegex.IgnoreCase = True
 		Set Ruta_Registro_sospechosa = objRegex.Execute(strIpFileText)
-	
+
 		For Each rutarara In Ruta_Registro_sospechosa
-			For Each rara2 In RutaSospechosa			
+			For Each rara2 In RutaSospechosa
 				temp=rara2&"\"&archivo
 				temp=Replace(temp, chr(13),"")
 				rutarara=replace(rutarara,char(13),"")
 				rutarara=replace(rutarara,"c","C")
 				nret1=geekside.Run("cmd /C echo "&rutarara&"> C:\ptm0.txt",0,TRUE)
 				nret1=geekside.Run("cmd /C echo "&temp&"> C:\ptm1.txt",0,TRUE)
-				
+
 				Set objTextStream = objFileSystem.OpenTextFile("c:\ptm0.txt",1)
 				strIpFileText = objTextStream.ReadAll
 				objTextStream.Close
-	
+
 				Set objRegex = new RegExp
-		
+
 				objRegex.Pattern = "C:.*"
 				objRegex.Global = True
 				objRegex.IgnoreCase = True
@@ -114,14 +114,14 @@ For Each carpetarecycler In Carpetas_Recycler
 				Set objTextStream = objFileSystem.OpenTextFile("c:\ptm1.txt",1)
 				strIpFileText = objTextStream.ReadAll
 				objTextStream.Close
-	
+
 				Set objRegex = new RegExp
-		
+
 				objRegex.Pattern = "C:.*"
 				objRegex.Global = True
 				objRegex.IgnoreCase = True
 				Set Ruta_Registro_sospechosa2 = objRegex.Execute(strIpFileText)
-			
+
 				for each ptm in Ruta_Registro_sospechosa1
 					for each ptm1 in Ruta_Registro_sospechosa2
 						If ptm=ptm1 then
@@ -130,11 +130,11 @@ For Each carpetarecycler In Carpetas_Recycler
 							rutavirica=rutarara
 						End if
 					next
-				next	
+				next
 			Next
-		Next 
-	
-	Next 
+		Next
+
+	Next
 	If flag=1 Then
 		carpetaInfectada=carpetarecycler
 	End If
@@ -143,8 +143,8 @@ Next
 ​
 ​
 ​
-For Each carpetarecycler In Carpetas_Recycler 
-flag1=0	
+For Each carpetarecycler In Carpetas_Recycler
+flag1=0
 nret=geekside.Run("cmd /C cd C:\Recycler & cd " & carpetarecycler & " & dir > c:\chesx.txt",0,TRUE)
 ​
 	Set objTextStream = objFileSystem.OpenTextFile("C:\chesx.txt",1)
@@ -178,27 +178,27 @@ nret=geekside.Run("cmd /C cd C:\Recycler & cd " & carpetarecycler & " & dir > c:
 		objTextStream.Close
 ​
 		Set objRegex = new RegExp
-	
+
 		objRegex.Pattern = "C:.*"
 		objRegex.Global = True
 		objRegex.IgnoreCase = True
 		Set Ruta_Registro_sospechosa = objRegex.Execute(strIpFileText)
-	
+
 		For Each rutarara In Ruta_Registro_sospechosa
-			For Each rara2 In RutaSospechosa			
+			For Each rara2 In RutaSospechosa
 				temp=rara2&"\"&archivo
 				temp=Replace(temp, chr(13),"")
 				rutarara=replace(rutarara,char(13),"")
 				rutarara=replace(rutarara,"c","C")
 				nret1=geekside.Run("cmd /C echo "&rutarara&"> c:\ptm0.txt",0,TRUE)
 				nret1=geekside.Run("cmd /C echo "&temp&"> c:\ptm1.txt",0,TRUE)
-				
+
 				Set objTextStream = objFileSystem.OpenTextFile("c:\ptm0.txt",1)
 				strIpFileText = objTextStream.ReadAll
 				objTextStream.Close
-	
+
 				Set objRegex = new RegExp
-		
+
 				objRegex.Pattern = "C:.*"
 				objRegex.Global = True
 				objRegex.IgnoreCase = True
@@ -208,14 +208,14 @@ nret=geekside.Run("cmd /C cd C:\Recycler & cd " & carpetarecycler & " & dir > c:
 				Set objTextStream = objFileSystem.OpenTextFile("c:\ptm1.txt",1)
 				strIpFileText = objTextStream.ReadAll
 				objTextStream.Close
-	
+
 				Set objRegex = new RegExp
-		
+
 				objRegex.Pattern = "C:.*"
 				objRegex.Global = True
 				objRegex.IgnoreCase = True
 				Set Ruta_Registro_sospechosa2 = objRegex.Execute(strIpFileText)
-			
+
 				for each ptm in Ruta_Registro_sospechosa1
 					for each ptm1 in Ruta_Registro_sospechosa2
 						If ptm=ptm1 then
@@ -224,20 +224,20 @@ nret=geekside.Run("cmd /C cd C:\Recycler & cd " & carpetarecycler & " & dir > c:
 							rutavirica=rutarara
 						End if
 					next
-				next	
+				next
 			Next
-		Next 
-	
-	Next 
-	If flag1=1 Then 
+		Next
+
+	Next
+	If flag1=1 Then
 		carpetaInfectada=carpetarecycler
 	End If
 Next
 ​
 ​
 ​
-For Each carpetarecycler In Carpetas_Recycler 
-	flag2=0	
+For Each carpetarecycler In Carpetas_Recycler
+	flag2=0
 	nret=geekside.Run("cmd /C cd C:\Recycler & cd " & carpetarecycler & " & dir > c:\chesx.txt",0,TRUE)
 ​
 	Set objTextStream = objFileSystem.OpenTextFile("C:\chesx.txt",1)
@@ -271,27 +271,27 @@ For Each carpetarecycler In Carpetas_Recycler
 		objTextStream.Close
 ​
 		Set objRegex = new RegExp
-	
+
 		objRegex.Pattern = "C:.*"
 		objRegex.Global = True
 		objRegex.IgnoreCase = True
 		Set Ruta_Registro_sospechosa = objRegex.Execute(strIpFileText)
-	
+
 		For Each rutarara In Ruta_Registro_sospechosa
-			For Each rara2 In RutaSospechosa			
+			For Each rara2 In RutaSospechosa
 				temp=rara2&"\"&archivo
 				temp=Replace(temp, chr(13),"")
 				rutarara=replace(rutarara,char(13),"")
 				rutarara=replace(rutarara,"c","C")
 				nret1=geekside.Run("cmd /C echo "&rutarara&"> c:\ptm0.txt",0,TRUE)
 				nret1=geekside.Run("cmd /C echo "&temp&"> c:\ptm1.txt",0,TRUE)
-				
+
 				Set objTextStream = objFileSystem.OpenTextFile("c:\ptm0.txt",1)
 				strIpFileText = objTextStream.ReadAll
 				objTextStream.Close
-	
+
 				Set objRegex = new RegExp
-		
+
 				objRegex.Pattern = "C:.*"
 				objRegex.Global = True
 				objRegex.IgnoreCase = True
@@ -301,14 +301,14 @@ For Each carpetarecycler In Carpetas_Recycler
 				Set objTextStream = objFileSystem.OpenTextFile("c:\ptm1.txt",1)
 				strIpFileText = objTextStream.ReadAll
 				objTextStream.Close
-	
+
 				Set objRegex = new RegExp
-		
+
 				objRegex.Pattern = "C:.*"
 				objRegex.Global = True
 				objRegex.IgnoreCase = True
 				Set Ruta_Registro_sospechosa2 = objRegex.Execute(strIpFileText)
-			
+
 				for each ptm in Ruta_Registro_sospechosa1
 					for each ptm1 in Ruta_Registro_sospechosa2
 						If ptm=ptm1 then
@@ -317,11 +317,11 @@ For Each carpetarecycler In Carpetas_Recycler
 							rutavirica=rutarara
 						End if
 					next
-				next	
+				next
 			Next
-		Next 
-	
-	Next 
+		Next
+
+	Next
 	If flag2=1 Then
 		carpetaInfectada=carpetarecycler
 	End If
@@ -364,7 +364,7 @@ else
 		Next
 		i = i + 1
 	Next
-	
+
 ​
 	Set objRegex= Nothing
 	Set objTextStream = Nothing

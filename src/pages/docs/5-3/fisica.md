@@ -24,4 +24,4 @@ $$
 - $\omega$: Velocidad angular
 - $v$: Velocidad tangencial
 - $T$: Período
-- $f$: Frecuencia 
+- $f$: Frecuencia

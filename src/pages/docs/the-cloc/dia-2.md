@@ -25,12 +25,14 @@ Resulta que el mi conversor de niveles es ligeramente distinto que el de Adafrui
 ## Momento Python
 
 Instalé la librería de los NeoPixel:
+
 ```bash
 $ sudo pip3 install rpi_ws281x adafruit-circuitpython-neopixel
 $ sudo python3 -m pip install --force-reinstall adafruit-blinka
 ```
 
 Y ejecuté este script **en modo root**:
+
 ```python
 # Test simple de NeoPixels en una Raspberry Pi
 import time
