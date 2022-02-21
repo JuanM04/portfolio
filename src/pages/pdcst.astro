@@ -1,0 +1,10 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro"
+import { Pdcst } from "~/apps/pdcst/Pdcst.tsx"
+---
+
+<MainLayout
+  content={{ title: "pdcst" }}
+>
+  <Pdcst client:load />
+</MainLayout>

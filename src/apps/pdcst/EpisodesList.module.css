@@ -1,0 +1,33 @@
+.list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.episode {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.episode img {
+  width: 100px;
+  height: 100px;
+}
+
+.episode.playing .title {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.title {
+  font-size: 1.25rem;
+  line-height: 1;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.meta {
+  font-size: 0.9rem;
+  margin: 0;
+}

@@ -1,0 +1,125 @@
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  background-color: var(--accent-bg);
+  color: var(--text);
+  margin-bottom: 6rem;
+}
+
+.info {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.info img {
+  width: 150px;
+  height: 150px;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.meta {
+  margin: 0;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.time p {
+  width: 4rem;
+  font-size: 0.95rem;
+}
+.time .currentTime {
+  text-align: right;
+}
+
+.time .duration {
+  text-align: left;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 4rem;
+}
+
+.buttons > * {
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.buttons svg.playpause {
+  width: 2rem;
+  height: 2rem;
+}
+
+.mainButtons {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 0.25rem;
+}
+
+.volume {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.volume > div {
+  width: 6rem;
+  height: 0.5rem;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  border-radius: 0.25rem;
+  height: 1rem;
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+.slider div:nth-child(1) {
+  background-color: var(--accent);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slider div:nth-child(2) {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  cursor: pointer;
+}
