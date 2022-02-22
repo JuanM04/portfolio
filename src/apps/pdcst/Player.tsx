@@ -142,7 +142,7 @@ export function Player({
                     muted: el.muted,
                     playing: !el.paused,
                     time: el.currentTime,
-                    volume: Math.sqrt(el.volume),
+                    volume: el.volume,
                     mute: () => (el.muted = true),
                     unmute: () => (el.muted = false),
                     pause: () => el.pause(),
@@ -156,7 +156,7 @@ export function Player({
                         el.currentTime = el.currentTime + input
                       }
                     },
-                    setVolume: (volume) => (el.volume = Math.pow(volume, 2)),
+                    setVolume: (volume) => (el.volume = volume),
                   })
 
                   el.addEventListener("canplay", () => {
@@ -193,6 +193,13 @@ export function Player({
                       const time = el.currentTime
                       setPlayer({ ...state, time: el.currentTime })
                       if (time) updateTime(time)
+                    }
+                  })
+
+                  el.addEventListener("volumechange", () => {
+                    const state = player()
+                    if (state) {
+                      setPlayer({ ...state, volume: el.volume })
                     }
                   })
                 }}
@@ -241,8 +248,8 @@ export function Player({
                           <VolumeIcon onClick={player.mute} />
                         )}
                         <Slider
-                          percent={player.volume}
-                          onClick={player.setVolume}
+                          percent={Math.sqrt(player.volume)}
+                          onClick={(n) => player.setVolume(n ** 2)}
                         />
                       </div>
                     </div>
