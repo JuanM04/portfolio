@@ -52,8 +52,8 @@
 }
 
 .buttons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
   padding: 0 4rem;
@@ -122,4 +122,18 @@
   bottom: 0;
   z-index: 10;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 720px) {
+  .info {
+    display: block;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 }

@@ -221,7 +221,6 @@ export function Player({
                       </p>
                     </div>
                     <div class={styles.buttons}>
-                      <StopIcon onClick={() => changeEpisode(null)} />
                       <div class={styles.mainButtons}>
                         <RewindIcon
                           onClick={() => player.seekTo(-30, "relative")}
@@ -237,6 +236,7 @@ export function Player({
                             onClick={player.play}
                           />
                         )}
+                        <StopIcon onClick={() => changeEpisode(null)} />
                         <FastForwardIcon
                           onClick={() => player.seekTo(+30, "relative")}
                         />
