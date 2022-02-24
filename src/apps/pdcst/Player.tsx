@@ -156,7 +156,10 @@ export function Player({
                         el.currentTime = el.currentTime + input
                       }
                     },
-                    setVolume: (volume) => (el.volume = volume),
+                    setVolume: (volume) => {
+                      if (el.muted) el.muted = false
+                      el.volume = volume
+                    },
                   })
 
                   el.addEventListener("canplay", () => {
@@ -171,6 +174,11 @@ export function Player({
                             : el.buffered.end(el.buffered.length - 1),
                       })
                     }
+                    navigator.mediaSession.setPositionState({
+                      duration: el.duration,
+                      playbackRate: el.playbackRate,
+                      position: el.currentTime,
+                    })
                   })
 
                   el.addEventListener("pause", () => {
@@ -193,18 +201,24 @@ export function Player({
                       const time = el.currentTime
                       setPlayer({ ...state, time: el.currentTime })
                       if (time > 0) updateTime(time)
-                      navigator.mediaSession.setPositionState({
-                        duration: el.duration,
-                        playbackRate: el.playbackRate,
-                        position: el.currentTime,
-                      })
+                      if (!isNaN(el.duration)) {
+                        navigator.mediaSession.setPositionState({
+                          duration: el.duration,
+                          playbackRate: el.playbackRate,
+                          position: el.currentTime,
+                        })
+                      }
                     }
                   })
 
                   el.addEventListener("volumechange", () => {
                     const state = player()
                     if (state) {
-                      setPlayer({ ...state, volume: el.volume })
+                      setPlayer({
+                        ...state,
+                        volume: el.volume,
+                        muted: el.muted,
+                      })
                     }
                   })
                 }}
@@ -253,7 +267,7 @@ export function Player({
                           <VolumeIcon onClick={player.mute} />
                         )}
                         <Slider
-                          percent={Math.sqrt(player.volume)}
+                          percent={player.muted ? 0 : Math.sqrt(player.volume)}
                           onClick={(n) => player.setVolume(n ** 2)}
                         />
                       </div>
