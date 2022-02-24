@@ -192,7 +192,12 @@ export function Player({
                     if (state) {
                       const time = el.currentTime
                       setPlayer({ ...state, time: el.currentTime })
-                      if (time) updateTime(time)
+                      if (time > 0) updateTime(time)
+                      navigator.mediaSession.setPositionState({
+                        duration: el.duration,
+                        playbackRate: el.playbackRate,
+                        position: el.currentTime,
+                      })
                     }
                   })
 
