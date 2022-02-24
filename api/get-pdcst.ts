@@ -4,7 +4,11 @@ import SuperJSON from "superjson"
 import { Parser } from "xml2js"
 import fetch from "node-fetch"
 
-import { EpisodeType, PodcastType, episodeSchema } from "~/apps/pdcst/schemas"
+import {
+  EpisodeType,
+  PodcastType,
+  episodeSchema,
+} from "../src/apps/pdcst/schemas"
 
 interface FeedItem {
   url: string
@@ -319,7 +323,7 @@ const feeds: FeedItem[] = [
   },
 ]
 
-export const handler: VercelApiHandler = async (_req, res) => {
+const handler: VercelApiHandler = async (_req, res) => {
   const releaseLimit = subMonths(new Date(), 1) // one month ago
   const xmlParser = new Parser({ explicitArray: false })
 
@@ -350,3 +354,5 @@ export const handler: VercelApiHandler = async (_req, res) => {
   res.setHeader("Content-Type", "application/json")
   res.send(SuperJSON.stringify(episodes))
 }
+
+export default handler
