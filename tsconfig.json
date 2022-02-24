@@ -10,6 +10,6 @@
       "~/*": ["./src/*"]
     }
   },
-  "include": ["functions", "src", "astro.config.ts"],
+  "include": ["api", "src", "astro.config.ts"],
   "exclude": ["node_modules"]
 }

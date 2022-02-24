@@ -1,4 +1,4 @@
-import { Handler } from "@netlify/functions"
+import type { VercelApiHandler } from "@vercel/node"
 import { compareDesc, subMonths } from "date-fns"
 import SuperJSON from "superjson"
 import { Parser } from "xml2js"
@@ -319,7 +319,7 @@ const feeds: FeedItem[] = [
   },
 ]
 
-export const handler: Handler = async (event, context) => {
+export const handler: VercelApiHandler = async (_req, res) => {
   const releaseLimit = subMonths(new Date(), 1) // one month ago
   const xmlParser = new Parser({ explicitArray: false })
 
@@ -347,9 +347,6 @@ export const handler: Handler = async (event, context) => {
     .filter((episode) => compareDesc(episode.releaseDate, releaseLimit) <= 0)
     .sort((a, b) => compareDesc(a.releaseDate, b.releaseDate))
 
-  return {
-    statusCode: 200,
-    body: SuperJSON.stringify(episodes),
-    headers: { "Content-Type": "application/json" },
-  }
+  res.setHeader("Content-Type", "application/json")
+  res.send(SuperJSON.stringify(episodes))
 }
