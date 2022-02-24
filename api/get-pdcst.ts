@@ -113,12 +113,11 @@ const feeds: FeedItem[] = [
       }
 
       return channel.item.map((episode: any): EpisodeType => {
-        // MULTIPLAYER GAMES ft. Masayoshi | OfflineTV Podcast #38
-        let title = episode.title.split(" | ")
-        title.pop()
+        // OfflineTV Podcast #12 - Brodin Plett
+        let title = episode.title.split(" - ").slice(1).join(" - ")
 
         return {
-          title: title.join(" | "),
+          title,
           notes: episode.description,
           cover: channel.image.url,
           source: episode.enclosure.$.url,
