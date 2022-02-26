@@ -15,6 +15,19 @@ interface FeedItem {
   parser: (feed: any) => EpisodeType[]
 }
 
+const dateInRage = (date: string | Date) =>
+  compareDesc(
+    typeof date === "string" ? new Date(date) : date,
+    subMonths(new Date(), 2) // two months ago
+  ) <= 0
+
+const pubDateInRage = (episode: any) => dateInRage(episode.pubDate)
+
+const decodeHTMLEntities = (encoded: string) =>
+  encoded.replace(/&#\d+;/g, (entity) =>
+    String.fromCharCode(parseInt(entity.slice(2, -1), 10))
+  )
+
 const anchorPodcast =
   (
     podcast: Omit<PodcastType, "cover">,
@@ -28,7 +41,7 @@ const anchorPodcast =
       items = [items]
     }
 
-    return items.map((episode: any) => {
+    return items.filter(pubDateInRage).map((episode: any) => {
       const result: EpisodeType = {
         title: episode.title,
         notes: episode.description,
@@ -55,7 +68,7 @@ const relayFmPodcast = (id: string): FeedItem => ({
   parser: (feed) => {
     const { channel } = feed.rss
 
-    return channel.item.map(
+    return channel.item.filter(pubDateInRage).map(
       (episode: any): EpisodeType => ({
         title: episode["itunes:title"],
         notes: episode["content:encoded"],
@@ -81,7 +94,7 @@ const transistorPodcast =
   (feed) => {
     const { channel } = feed.rss
 
-    return channel.item.map((episode: any) => {
+    return channel.item.filter(pubDateInRage).map((episode: any) => {
       const result: EpisodeType = {
         title: episode.title,
         notes: episode.description,
@@ -97,11 +110,6 @@ const transistorPodcast =
     })
   }
 
-const decodeHTMLEntities = (encoded: string) =>
-  encoded.replace(/&#\d+;/g, (entity) =>
-    String.fromCharCode(parseInt(entity.slice(2, -1), 10))
-  )
-
 const feeds: FeedItem[] = [
   {
     url: "https://feeds.simplecast.com/bbt_sv9A",
@@ -112,23 +120,25 @@ const feeds: FeedItem[] = [
         cover: channel.image.url,
       }
 
-      return channel.item.map((episode: any): EpisodeType => {
-        // OfflineTV Podcast #12 - Brodin Plett
-        let title = episode.title.split(" - ").slice(1).join(" - ")
+      return channel.item
+        .filter(pubDateInRage)
+        .map((episode: any): EpisodeType => {
+          // OfflineTV Podcast #12 - Brodin Plett
+          let title = episode.title.split(" - ").slice(1).join(" - ")
 
-        return {
-          title,
-          notes: episode.description,
-          cover: channel.image.url,
-          source: episode.enclosure.$.url,
-          releaseDate: new Date(episode.pubDate),
-          episode: [
-            parseInt(episode["itunes:season"]),
-            parseInt(episode["itunes:episode"]),
-          ],
-          podcast,
-        }
-      })
+          return {
+            title,
+            notes: episode.description,
+            cover: channel.image.url,
+            source: episode.enclosure.$.url,
+            releaseDate: new Date(episode.pubDate),
+            episode: [
+              parseInt(episode["itunes:season"]),
+              parseInt(episode["itunes:episode"]),
+            ],
+            podcast,
+          }
+        })
     },
   },
   {
@@ -155,20 +165,22 @@ const feeds: FeedItem[] = [
         cover: channel.image.url,
       }
 
-      return channel.item.map((episode: any): EpisodeType => {
-        const [meta, title] = episode.title.split(" - ", 2)
-        const [s, e] = meta.split(":")
+      return channel.item
+        .filter(pubDateInRage)
+        .map((episode: any): EpisodeType => {
+          const [meta, title] = episode.title.split(" - ", 2)
+          const [s, e] = meta.split(":")
 
-        return {
-          title: title,
-          notes: episode.description,
-          cover: channel.image.url,
-          source: episode.enclosure.$.url,
-          releaseDate: new Date(episode.pubDate),
-          episode: [parseInt(s.substr(1)), parseInt(e.substr(1))],
-          podcast,
-        }
-      })
+          return {
+            title: title,
+            notes: episode.description,
+            cover: channel.image.url,
+            source: episode.enclosure.$.url,
+            releaseDate: new Date(episode.pubDate),
+            episode: [parseInt(s.substr(1)), parseInt(e.substr(1))],
+            podcast,
+          }
+        })
     },
   },
   {
@@ -188,24 +200,26 @@ const feeds: FeedItem[] = [
         cover: channel.image.url,
       }
 
-      return channel.item.map((episode: any): EpisodeType => {
-        // S04E30
-        const metaRaw = episode.title.split(" - ")[1]
+      return channel.item
+        .filter(pubDateInRage)
+        .map((episode: any): EpisodeType => {
+          // S04E30
+          const metaRaw = episode.title.split(" - ")[1]
 
-        return {
-          // Polémica en /var - S04E30 - Lo que google se llevó
-          title: decodeHTMLEntities(episode.title.split(" - ").pop()),
-          notes: episode.description,
-          cover: episode["itunes:image"]?.$?.href,
-          source: episode.enclosure?.$?.url,
-          releaseDate: new Date(episode.pubDate),
-          episode:
-            typeof metaRaw === "string" && metaRaw.length === 6
-              ? [parseInt(metaRaw.substr(1, 2)), parseInt(metaRaw.substr(4))]
-              : [9, 99],
-          podcast,
-        }
-      })
+          return {
+            // Polémica en /var - S04E30 - Lo que google se llevó
+            title: decodeHTMLEntities(episode.title.split(" - ").pop()),
+            notes: episode.description,
+            cover: episode["itunes:image"]?.$?.href,
+            source: episode.enclosure?.$?.url,
+            releaseDate: new Date(episode.pubDate),
+            episode:
+              typeof metaRaw === "string" && metaRaw.length === 6
+                ? [parseInt(metaRaw.substr(1, 2)), parseInt(metaRaw.substr(4))]
+                : [9, 99],
+            podcast,
+          }
+        })
     },
   },
   {
@@ -224,7 +238,7 @@ const feeds: FeedItem[] = [
         cover: channel.image.url,
       }
 
-      return channel.item.map(
+      return channel.item.filter(pubDateInRage).map(
         (episode: any): EpisodeType => ({
           title: episode.title,
           notes: episode.description,
@@ -249,7 +263,7 @@ const feeds: FeedItem[] = [
         cover: channel.image.url,
       }
 
-      return channel.item.map(
+      return channel.item.filter(pubDateInRage).map(
         (episode: any): EpisodeType => ({
           title: episode.title,
           notes: episode.description,
@@ -304,20 +318,22 @@ const feeds: FeedItem[] = [
         cover: channel.image.url,
       }
 
-      return channel.item.map((episode: any): EpisodeType => {
-        // 318: Opposing Squirrel Vibes
-        let title = episode.title.split(": ").slice(1).join(": ")
+      return channel.item
+        .filter(pubDateInRage)
+        .map((episode: any): EpisodeType => {
+          // 318: Opposing Squirrel Vibes
+          let title = episode.title.split(": ").slice(1).join(": ")
 
-        return {
-          title,
-          notes: episode.description,
-          cover: channel.image.url,
-          source: episode.enclosure.$.url,
-          releaseDate: new Date(episode.pubDate),
-          episode: [1, parseInt(episode["itunes:episode"])],
-          podcast,
-        }
-      })
+          return {
+            title,
+            notes: episode.description,
+            cover: channel.image.url,
+            source: episode.enclosure.$.url,
+            releaseDate: new Date(episode.pubDate),
+            episode: [1, parseInt(episode["itunes:episode"])],
+            podcast,
+          }
+        })
     },
   },
   {
@@ -329,21 +345,23 @@ const feeds: FeedItem[] = [
         cover: channel.image.url,
       }
 
-      return channel.item.map((episode: any): EpisodeType => {
-        // <itunes:image href="https://ssl-static.libsyn.com/p/assets/d/0/b/4/d0b4429854bf1153bafc7308ab683e82/Syntax_-_434.jpg" />
-        const cover = episode["itunes:image"].$.href as string
-        const epNumber = cover.split("_-_").reverse()[0].slice(0, -4)
+      return channel.item
+        .filter(pubDateInRage)
+        .map((episode: any): EpisodeType => {
+          // <itunes:image href="https://ssl-static.libsyn.com/p/assets/d/0/b/4/d0b4429854bf1153bafc7308ab683e82/Syntax_-_434.jpg" />
+          const cover = episode["itunes:image"].$.href as string
+          const epNumber = cover.split("_-_").reverse()[0].slice(0, -4)
 
-        return {
-          title: episode.title,
-          notes: episode.description,
-          cover,
-          source: episode.enclosure.$.url,
-          releaseDate: new Date(episode.pubDate),
-          episode: [1, parseInt(epNumber)],
-          podcast,
-        }
-      })
+          return {
+            title: episode.title,
+            notes: episode.description,
+            cover,
+            source: episode.enclosure.$.url,
+            releaseDate: new Date(episode.pubDate),
+            episode: [1, parseInt(epNumber)],
+            podcast,
+          }
+        })
     },
   },
 ]
@@ -361,29 +379,17 @@ const handler: VercelApiHandler = async (_req, res) => {
 
         const parsedData = feed.parser(data)
 
-        return parsedData
-          .filter((episode) => {
-            if (episode.releaseDate instanceof Date) {
-              return compareDesc(episode.releaseDate, releaseLimit) <= 0
-            } else {
-              console.warn(
-                "Couldn't find date of episode:\n" +
-                  SuperJSON.stringify(episode)
-              )
-              return false
-            }
-          })
-          .filter((episode) => {
-            const { success } = episodeSchema.safeParse(episode)
-            if (!success) {
-              console.warn(
-                "This episode doesn't match the schema:\n" +
-                  SuperJSON.stringify(episode)
-              )
-            }
+        return parsedData.filter((episode) => {
+          const { success } = episodeSchema.safeParse(episode)
+          if (!success) {
+            console.warn(
+              "This episode doesn't match the schema:\n" +
+                SuperJSON.stringify(episode)
+            )
+          }
 
-            return success
-          })
+          return success
+        })
       } catch (error) {
         console.error(feed.url, error)
         return []
@@ -393,6 +399,7 @@ const handler: VercelApiHandler = async (_req, res) => {
 
   const episodes = feedsData
     .reduce((episodes, feed) => [...episodes, ...feed], [])
+    .filter((episode) => compareDesc(episode.releaseDate, releaseLimit) <= 0)
     .sort((a, b) => compareDesc(a.releaseDate, b.releaseDate))
 
   res.setHeader("Content-Type", "application/json")
