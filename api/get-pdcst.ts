@@ -320,10 +320,36 @@ const feeds: FeedItem[] = [
       })
     },
   },
+  {
+    url: "https://feed.syntax.fm/rss",
+    parser({ rss: { channel } }) {
+      const podcast: PodcastType = {
+        name: "Syntax",
+        website: "https://syntax.fm",
+        cover: channel.image.url,
+      }
+
+      return channel.item.map((episode: any): EpisodeType => {
+        // <itunes:image href="https://ssl-static.libsyn.com/p/assets/d/0/b/4/d0b4429854bf1153bafc7308ab683e82/Syntax_-_434.jpg" />
+        const cover = episode["itunes:image"].$.href as string
+        const epNumber = cover.split("_-_").reverse()[0].slice(0, -4)
+
+        return {
+          title: episode.title,
+          notes: episode.description,
+          cover,
+          source: episode.enclosure.$.url,
+          releaseDate: new Date(episode.pubDate),
+          episode: [1, parseInt(epNumber)],
+          podcast,
+        }
+      })
+    },
+  },
 ]
 
 const handler: VercelApiHandler = async (_req, res) => {
-  const releaseLimit = subMonths(new Date(), 1) // one month ago
+  const releaseLimit = subMonths(new Date(), 2) // two months ago
   const xmlParser = new Parser({ explicitArray: false })
 
   const feedsData = await Promise.all(
@@ -335,9 +361,29 @@ const handler: VercelApiHandler = async (_req, res) => {
 
         const parsedData = feed.parser(data)
 
-        return parsedData.filter(
-          (episode) => episodeSchema.safeParse(episode).success
-        )
+        return parsedData
+          .filter((episode) => {
+            if (episode.releaseDate instanceof Date) {
+              return compareDesc(episode.releaseDate, releaseLimit) <= 0
+            } else {
+              console.warn(
+                "Couldn't find date of episode:\n" +
+                  SuperJSON.stringify(episode)
+              )
+              return false
+            }
+          })
+          .filter((episode) => {
+            const { success } = episodeSchema.safeParse(episode)
+            if (!success) {
+              console.warn(
+                "This episode doesn't match the schema:\n" +
+                  SuperJSON.stringify(episode)
+              )
+            }
+
+            return success
+          })
       } catch (error) {
         console.error(feed.url, error)
         return []
@@ -347,7 +393,6 @@ const handler: VercelApiHandler = async (_req, res) => {
 
   const episodes = feedsData
     .reduce((episodes, feed) => [...episodes, ...feed], [])
-    .filter((episode) => compareDesc(episode.releaseDate, releaseLimit) <= 0)
     .sort((a, b) => compareDesc(a.releaseDate, b.releaseDate))
 
   res.setHeader("Content-Type", "application/json")
