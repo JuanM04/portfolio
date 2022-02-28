@@ -25,7 +25,10 @@ export function EpisodesList({
   return (
     <section id="episodes">
       <ul class={styles.list}>
-        <For each={!data.loading && data()} fallback={<p>Loading...</p>}>
+        <For
+          each={!data.loading && data()}
+          fallback={<p>Loading (might take a while)...</p>}
+        >
           {(episode) => (
             <li
               classList={{
