@@ -2,11 +2,11 @@ lockfileVersion: 5.3
 
 specifiers:
   '@astrojs/renderer-solid': ^0.4.0
-  '@types/node': ^16.11.25
+  '@types/node': ^16.11.26
   '@types/node-fetch': ^2
   '@types/xml2js': ^0.4.9
   '@vercel/node': ^1.13.0
-  astro: ^0.23.1
+  astro: ^0.23.2
   astro-icon: ^0.6.0
   date-fns: ^2.28.0
   katex: ^0.15.2
@@ -20,7 +20,7 @@ specifiers:
   remark-math: ^5.1.1
   remark-smartypants: ^2.0.0
   simpledotcss: ^2.0.5
-  solid-js: ^1.3.8
+  solid-js: ^1.3.9
   superjson: ^1.8.1
   typescript: ^4.5.5
   unist-util-visit: ^4.1.0
@@ -32,18 +32,18 @@ dependencies:
   katex: 0.15.2
   node-fetch: 2.6.7
   simpledotcss: 2.0.5
-  solid-js: 1.3.8
+  solid-js: 1.3.9
   superjson: 1.8.1
   xml2js: 0.4.23
   zod: 3.12.0
 
 devDependencies:
   '@astrojs/renderer-solid': 0.4.0
-  '@types/node': 16.11.25
+  '@types/node': 16.11.26
   '@types/node-fetch': 2.6.1
   '@types/xml2js': 0.4.9
   '@vercel/node': 1.13.0
-  astro: 0.23.1_typescript@4.5.5
+  astro: 0.23.2_typescript@4.5.5
   astro-icon: 0.6.0
   prettier: 2.5.1
   prettier-plugin-astro: 0.0.12
@@ -157,19 +157,19 @@ packages:
     engines: {node: ^14.15.0 || >=16.0.0}
     dependencies:
       babel-preset-solid: 1.3.6
-      solid-js: 1.3.8
+      solid-js: 1.3.9
     transitivePeerDependencies:
       - '@babel/core'
     dev: true
 
-  /@astrojs/renderer-svelte/0.4.0_7f4d3699b37748b46352c398cf5bc526:
+  /@astrojs/renderer-svelte/0.4.0_d8e390bf9c632815193e9283fbf545a2:
     resolution: {integrity: sha512-YP6e6qPMEx5Pr6tCiD+GTyT7Bl+aA1biTX9Yg8Sd7bjXHOiqfMH28d8Bo0CXHiqUXli/CTp6pRtR0WN44a4gUg==}
     engines: {node: ^14.15.0 || >=16.0.0}
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.37_svelte@3.46.4+vite@2.8.4
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.38_svelte@3.46.4+vite@2.8.4
       postcss-load-config: 3.1.3
       svelte: 3.46.4
-      svelte-preprocess: 4.10.4_473b841b6f8a1064ee3f440f06b5d892
+      svelte-preprocess: 4.10.4_d2b6ae46c908c55b36e6a483ed91fd35
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -529,8 +529,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.37_svelte@3.46.4+vite@2.8.4:
-    resolution: {integrity: sha512-EdSXw2rXeOahNrQfMJVZxa/NxZxW1a0TiBI3s+pVxnxU14hEQtnkLtdbTFhnceu22gJpNPFSIJRcIwRBBDQIeA==}
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.38_svelte@3.46.4+vite@2.8.4:
+    resolution: {integrity: sha512-epYAVZvfpiDZwB4Whe5AALk3zF5odKFf8Vx4q2tth+QuXmr0GLZ13ri02zINS6pHRCx+GjtOqCEEwMaPAfPcgQ==}
     engines: {node: ^14.13.1 || >= 16}
     peerDependencies:
       diff-match-patch: ^1.0.5
@@ -629,7 +629,7 @@ packages:
     dependencies:
       '@types/events': 3.0.0
       '@types/minimatch': 3.0.3
-      '@types/node': 17.0.18
+      '@types/node': 16.11.26
     dev: true
 
   /@types/hast/2.3.1:
@@ -689,16 +689,12 @@ packages:
   /@types/node-fetch/2.6.1:
     resolution: {integrity: sha512-oMqjURCaxoSIsHSr1E47QHzbmzNR5rK8McHuNb11BOM9cHcIK3Avy0s/b2JlXHoQGTYS3NsvWzV1M0iK7l0wbA==}
     dependencies:
-      '@types/node': 17.0.18
+      '@types/node': 16.11.26
       form-data: 3.0.1
     dev: true
 
-  /@types/node/16.11.25:
-    resolution: {integrity: sha512-NrTwfD7L1RTc2qrHQD4RTTy4p0CO2LatKBEKEds3CaVuhoM/+DJzmWZl5f+ikR8cm8F5mfJxK+9rQq07gRiSjQ==}
-    dev: true
-
-  /@types/node/17.0.18:
-    resolution: {integrity: sha512-eKj4f/BsN/qcculZiRSujogjvp5O/k4lOW5m35NopjZM/QwLOR075a8pJW5hD+Rtdm2DaCVPENS6KtSQnUD6BA==}
+  /@types/node/16.11.26:
+    resolution: {integrity: sha512-GZ7bu5A6+4DtG7q9GsoHXy3ALcgeIHP4NnL0Vv2wu0uUB/yQex26v0tf6/na1mm0+bS9Uw+0DFex7aaKr2qawQ==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -720,7 +716,7 @@ packages:
   /@types/sass/1.43.1:
     resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
     dependencies:
-      '@types/node': 17.0.18
+      '@types/node': 16.11.26
     dev: true
 
   /@types/unist/2.0.3:
@@ -734,7 +730,7 @@ packages:
   /@types/xml2js/0.4.9:
     resolution: {integrity: sha512-CHiCKIihl1pychwR2RNX5mAYmJDACgFVCMT5OArMaO3erzwXVcBqPcusr+Vl8yeeXukxZqtF8mZioqX+mpjjdw==}
     dependencies:
-      '@types/node': 17.0.18
+      '@types/node': 16.11.26
     dev: true
 
   /@types/yargs-parser/20.2.1:
@@ -744,7 +740,7 @@ packages:
   /@vercel/node/1.13.0:
     resolution: {integrity: sha512-AqdUuJC0+r3q1lcL+Knjb+dHsSDSCRfwFPJ7odRkHO7sfoAkhJI4RussIDFTF7Yvt0e+GmWuYGFAgwSiv4FWEg==}
     dependencies:
-      '@types/node': 17.0.18
+      '@types/node': 16.11.26
       ts-node: 8.9.1_typescript@4.3.4
       typescript: 4.3.4
     dev: true
@@ -787,7 +783,7 @@ packages:
       '@vue/shared': 3.2.31
       estree-walker: 2.0.2
       magic-string: 0.25.7
-      postcss: 8.4.6
+      postcss: 8.4.7
       source-map: 0.6.1
     dev: true
 
@@ -918,8 +914,8 @@ packages:
       svgo: 2.8.0
     dev: true
 
-  /astro/0.23.1_typescript@4.5.5:
-    resolution: {integrity: sha512-iieMjkqTVA9zAG7VvI3ckDHlQVHym79WCkxxhICoNKrPt2cq6PMZK/lqVIJZzTtIudMdnaHnH1KHsxHTN4AI/A==}
+  /astro/0.23.2_typescript@4.5.5:
+    resolution: {integrity: sha512-NoVZxRXDW/PLSsEQLdsiBub+AeVq8EAzc2Lg+XdHegvoeQnGsYrvrzLIxbztRHZIeOuY+lbgf8MlwgVnOrQY4g==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -929,7 +925,7 @@ packages:
       '@astrojs/prism': 0.4.0
       '@astrojs/renderer-preact': 0.5.0_@babel+core@7.17.5
       '@astrojs/renderer-react': 0.5.0_@babel+core@7.17.5
-      '@astrojs/renderer-svelte': 0.4.0_7f4d3699b37748b46352c398cf5bc526
+      '@astrojs/renderer-svelte': 0.4.0_d8e390bf9c632815193e9283fbf545a2
       '@astrojs/renderer-vue': 0.4.0_vite@2.8.4
       '@astropub/webapi': 0.10.14
       '@babel/core': 7.17.5
@@ -956,7 +952,7 @@ packages:
       mime: 3.0.0
       parse5: 6.0.1
       path-to-regexp: 6.2.0
-      postcss: 8.4.6
+      postcss: 8.4.7
       prismjs: 1.27.0
       rehype-slug: 5.0.1
       resolve: 1.22.0
@@ -969,12 +965,12 @@ packages:
       slash: 4.0.0
       sourcemap-codec: 1.4.8
       srcset-parse: 1.1.0
-      string-width: 5.1.0
+      string-width: 5.1.1
       strip-ansi: 7.0.1
       supports-esm: 1.0.0
       tsconfig-resolver: 3.0.1
       vite: 2.8.4
-      yargs-parser: 21.0.0
+      yargs-parser: 21.0.1
       zod: 3.12.0
     transitivePeerDependencies:
       - coffeescript
@@ -1050,7 +1046,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001312
-      electron-to-chromium: 1.4.72
+      electron-to-chromium: 1.4.73
       escalade: 3.1.1
       node-releases: 2.0.2
       picocolors: 1.0.0
@@ -1366,8 +1362,8 @@ packages:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: true
 
-  /electron-to-chromium/1.4.72:
-    resolution: {integrity: sha512-9LkRQwjW6/wnSfevR21a3k8sOJ+XWSH7kkzs9/EUenKmuDkndP3W9y1yCZpOxufwGbX3JV8glZZSDb4o95zwXQ==}
+  /electron-to-chromium/1.4.73:
+    resolution: {integrity: sha512-RlCffXkE/LliqfA5m29+dVDPB2r72y2D2egMMfIy3Le8ODrxjuZNVo4NIC2yPL01N4xb4nZQLwzi6Z5tGIGLnA==}
     dev: true
 
   /emmet/2.3.6:
@@ -3397,8 +3393,8 @@ packages:
       yaml: 1.10.2
     dev: true
 
-  /postcss/8.4.6:
-    resolution: {integrity: sha512-OovjwIzs9Te46vlEx7+uXB0PLijpwjXGKXjVGGPIGubGpq7uh5Xgf6D6FiJ/SzJMBosHDp6a2hiXOS97iBXcaA==}
+  /postcss/8.4.7:
+    resolution: {integrity: sha512-L9Ye3r6hkkCeOETQX6iOaWZgjp3LL6Lpqm6EtgbKrgqGGteRMNb9vzBfRL96YOSu8o7x3MfIH9Mo5cPJFGrW6A==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.1
@@ -3809,7 +3805,7 @@ packages:
     resolution: {integrity: sha512-VsY7QJVzU51j5o1+DguUd+6vmCmZ5v/6gYu4vyYAhzjuNQU6P/vmSy4uQaOhvje031qQMiW0d2BwgMH52vqMng==}
     dependencies:
       jsonc-parser: 3.0.0
-      vscode-oniguruma: 1.6.1
+      vscode-oniguruma: 1.6.2
       vscode-textmate: 5.2.0
     dev: true
 
@@ -3839,8 +3835,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /solid-js/1.3.8:
-    resolution: {integrity: sha512-cgQ7s++ccPfxcgqAzfguiHPJdnYPMM3z8flzNPH/yiZw/GpDir0fZEwINn0rbBTzzl95Q7l62K/6cjYFJwesyw==}
+  /solid-js/1.3.9:
+    resolution: {integrity: sha512-BZyDen2oj3XA8g8xe0hhVIzGP2d+TV2dn3w90lXjNYLxveAXeN4aA5pxdO4vn7FKd0e0p4nqWtbWtG7NyaPs2A==}
 
   /sorcery/0.10.0:
     resolution: {integrity: sha1-iukK19fLBfxZ8asMY3hF1cFaUrc=}
@@ -3926,8 +3922,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /string-width/5.1.0:
-    resolution: {integrity: sha512-7x54QnN21P+XL/v8SuNKvfgsUre6PXpN7mc77N3HlZv+f1SBRGmjxtOud2Z6FZ8DmdkD/IdjCaf9XXbnqmTZGQ==}
+  /string-width/5.1.1:
+    resolution: {integrity: sha512-V4jFFhDoJzUOpG491nUrDginBuZi+wKtG+omlT5hgdBLYGPNNVT/o75JWwsSqClbrYMEV9Dvm3fXjZzxyOjk2w==}
     engines: {node: '>=12'}
     dependencies:
       eastasianwidth: 0.2.0
@@ -4038,7 +4034,7 @@ packages:
       svelte: 3.46.4
     dev: true
 
-  /svelte-preprocess/4.10.4_473b841b6f8a1064ee3f440f06b5d892:
+  /svelte-preprocess/4.10.4_d2b6ae46c908c55b36e6a483ed91fd35:
     resolution: {integrity: sha512-fuwol0N4UoHsNQolLFbMqWivqcJ9N0vfWO9IuPAiX/5okfoGXURyJ6nECbuEIv0nU3M8Xe2I1ONNje2buk7l6A==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -4084,7 +4080,7 @@ packages:
       '@types/sass': 1.43.1
       detect-indent: 6.1.0
       magic-string: 0.25.7
-      postcss: 8.4.6
+      postcss: 8.4.7
       postcss-load-config: 3.1.3
       sorcery: 0.10.0
       strip-indent: 3.0.0
@@ -4409,7 +4405,7 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.14.23
-      postcss: 8.4.6
+      postcss: 8.4.7
       resolve: 1.22.0
       rollup: 2.68.0
     optionalDependencies:
@@ -4481,8 +4477,8 @@ packages:
     resolution: {integrity: sha512-u0Lw+IYlgbEJFF6/qAqG2d1jQmJl0eyAGJHoAJqr2HT4M2BNuQYSEiSE75f52pXHSJm8AlTjnLLbBFPrdz2hpA==}
     dev: true
 
-  /vscode-oniguruma/1.6.1:
-    resolution: {integrity: sha512-vc4WhSIaVpgJ0jJIejjYxPvURJavX6QG41vu0mGhqywMkQqulezEqEQ3cO3gc8GvcOpX6ycmKGqRoROEMBNXTQ==}
+  /vscode-oniguruma/1.6.2:
+    resolution: {integrity: sha512-KH8+KKov5eS/9WhofZR8M8dMHWN2gTxjMsG4jd04YhpbPR91fUj7rYQ2/XjeHCJWbg7X++ApRIU9NUwM2vTvLA==}
     dev: true
 
   /vscode-textmate/5.2.0:
@@ -4583,8 +4579,8 @@ packages:
       decamelize: 1.2.0
     dev: true
 
-  /yargs-parser/21.0.0:
-    resolution: {integrity: sha512-z9kApYUOCwoeZ78rfRYYWdiU/iNL6mwwYlkkZfJoyMR1xps+NEBX5X7XmRpxkZHhXJ6+Ey00IwKxBBSW9FIjyA==}
+  /yargs-parser/21.0.1:
+    resolution: {integrity: sha512-9BK1jFpLzJROCI5TzwZL/TU4gqjK5xiHV/RfWLOahrjAko/e4DJkRDZQXfvqAsiZzzYhgAzbgz6lg48jcm4GLg==}
     engines: {node: '>=12'}
     dev: true
 

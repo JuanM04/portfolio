@@ -5,6 +5,7 @@
     "strict": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
