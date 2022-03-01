@@ -6,7 +6,7 @@ specifiers:
   '@types/node-fetch': ^2
   '@types/xml2js': ^0.4.9
   '@vercel/node': ^1.13.0
-  astro: ^0.23.2
+  astro: ^0.23.3
   astro-icon: ^0.6.0
   date-fns: ^2.28.0
   katex: ^0.15.2
@@ -22,10 +22,10 @@ specifiers:
   simpledotcss: ^2.0.5
   solid-js: ^1.3.9
   superjson: ^1.8.1
-  typescript: ^4.5.5
+  typescript: ~4.6.2
   unist-util-visit: ^4.1.0
   xml2js: ^0.4.23
-  zod: ^3.12.0
+  zod: ^3.12.1
 
 dependencies:
   date-fns: 2.28.0
@@ -35,7 +35,7 @@ dependencies:
   solid-js: 1.3.9
   superjson: 1.8.1
   xml2js: 0.4.23
-  zod: 3.12.0
+  zod: 3.12.1
 
 devDependencies:
   '@astrojs/renderer-solid': 0.4.0
@@ -43,7 +43,7 @@ devDependencies:
   '@types/node-fetch': 2.6.1
   '@types/xml2js': 0.4.9
   '@vercel/node': 1.13.0
-  astro: 0.23.2_typescript@4.5.5
+  astro: 0.23.3_typescript@4.6.2
   astro-icon: 0.6.0
   prettier: 2.5.1
   prettier-plugin-astro: 0.0.12
@@ -53,7 +53,7 @@ devDependencies:
   remark-gfm: 3.0.1
   remark-math: 5.1.1
   remark-smartypants: 2.0.0
-  typescript: 4.5.5
+  typescript: 4.6.2
   unist-util-visit: 4.1.0
 
 packages:
@@ -68,7 +68,7 @@ packages:
   /@astrojs/compiler/0.11.4:
     resolution: {integrity: sha512-T598FTCgBFjjPLPClvn+lc2SFGAJkjaF+lbxvHNjzmUpOYdz7YyH1apd3XAZvDp5r5WBBhicB6693GhQRpf3oQ==}
     dependencies:
-      typescript: 4.5.5
+      typescript: 4.6.2
     dev: true
 
   /@astrojs/language-server/0.8.8:
@@ -78,7 +78,7 @@ packages:
       lodash: 4.17.21
       source-map: 0.7.3
       ts-morph: 12.2.0
-      typescript: 4.5.5
+      typescript: 4.6.2
       vscode-css-languageservice: 5.1.13
       vscode-emmet-helper: 2.1.2
       vscode-html-languageservice: 3.2.0
@@ -162,14 +162,14 @@ packages:
       - '@babel/core'
     dev: true
 
-  /@astrojs/renderer-svelte/0.4.0_d8e390bf9c632815193e9283fbf545a2:
+  /@astrojs/renderer-svelte/0.4.0_3b2ea0e0c757bb08afeab8e546b06307:
     resolution: {integrity: sha512-YP6e6qPMEx5Pr6tCiD+GTyT7Bl+aA1biTX9Yg8Sd7bjXHOiqfMH28d8Bo0CXHiqUXli/CTp6pRtR0WN44a4gUg==}
     engines: {node: ^14.15.0 || >=16.0.0}
     dependencies:
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.38_svelte@3.46.4+vite@2.8.4
       postcss-load-config: 3.1.3
       svelte: 3.46.4
-      svelte-preprocess: 4.10.4_d2b6ae46c908c55b36e6a483ed91fd35
+      svelte-preprocess: 4.10.4_11cdafd825ffb6439cf9ab567a13da4e
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -635,7 +635,7 @@ packages:
   /@types/hast/2.3.1:
     resolution: {integrity: sha512-viwwrB+6xGzw+G1eWpF9geV3fnsDgXqHG+cqgiHrvQfDUW5hzhCyV7Sy3UJxhfRFBsgky2SSW33qi/YrIkjX5Q==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
     dev: true
 
   /@types/hast/2.3.4:
@@ -661,7 +661,7 @@ packages:
   /@types/mdast/3.0.3:
     resolution: {integrity: sha512-SXPBMnFVQg1s00dlMCc/jCdvPqdE4mXaMMCeRlxLDmTAEoegHT53xKtkDnzDTOcmMHUfcjyf36/YYZ6SxRdnsw==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
     dev: true
 
   /@types/mdurl/1.0.2:
@@ -683,7 +683,7 @@ packages:
   /@types/nlcst/1.0.0:
     resolution: {integrity: sha512-3TGCfOcy8R8mMQ4CNSNOe3PG66HttvjcLzCoOpvXvDtfWOTi+uT/rxeOKm/qEwbM4SNe1O/PjdiBK2YcTjU4OQ==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
     dev: true
 
   /@types/node-fetch/2.6.1:
@@ -717,10 +717,6 @@ packages:
     resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
     dependencies:
       '@types/node': 16.11.26
-    dev: true
-
-  /@types/unist/2.0.3:
-    resolution: {integrity: sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==}
     dev: true
 
   /@types/unist/2.0.6:
@@ -914,8 +910,8 @@ packages:
       svgo: 2.8.0
     dev: true
 
-  /astro/0.23.2_typescript@4.5.5:
-    resolution: {integrity: sha512-NoVZxRXDW/PLSsEQLdsiBub+AeVq8EAzc2Lg+XdHegvoeQnGsYrvrzLIxbztRHZIeOuY+lbgf8MlwgVnOrQY4g==}
+  /astro/0.23.3_typescript@4.6.2:
+    resolution: {integrity: sha512-IoeP2jsp/Z52UsgyMh/l/EZD8n1HYA6ZUD+rVnbRnWZfWdrGSU5C4TMhuVwXdEIE7KVysRJSvBcIBrMlU5qbGQ==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -925,7 +921,7 @@ packages:
       '@astrojs/prism': 0.4.0
       '@astrojs/renderer-preact': 0.5.0_@babel+core@7.17.5
       '@astrojs/renderer-react': 0.5.0_@babel+core@7.17.5
-      '@astrojs/renderer-svelte': 0.4.0_d8e390bf9c632815193e9283fbf545a2
+      '@astrojs/renderer-svelte': 0.4.0_3b2ea0e0c757bb08afeab8e546b06307
       '@astrojs/renderer-vue': 0.4.0_vite@2.8.4
       '@astropub/webapi': 0.10.14
       '@babel/core': 7.17.5
@@ -948,7 +944,7 @@ packages:
       htmlparser2: 7.2.0
       kleur: 4.1.4
       magic-string: 0.25.7
-      micromorph: 0.0.2
+      micromorph: 0.1.2
       mime: 3.0.0
       parse5: 6.0.1
       path-to-regexp: 6.2.0
@@ -971,7 +967,7 @@ packages:
       tsconfig-resolver: 3.0.1
       vite: 2.8.4
       yargs-parser: 21.0.1
-      zod: 3.12.0
+      zod: 3.12.1
     transitivePeerDependencies:
       - coffeescript
       - diff-match-patch
@@ -2097,7 +2093,7 @@ packages:
     dependencies:
       '@types/hast': 2.3.1
       '@types/parse5': 6.0.3
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       hastscript: 7.0.2
       property-information: 6.1.1
       vfile: 5.3.0
@@ -2119,7 +2115,7 @@ packages:
     resolution: {integrity: sha512-thjnlGAnwP8ef/GSO1Q8BfVk2gundnc2peGQqEg2kUt/IqesiGg/5mSwN2fE7nLzy61pg88NG6xV+UrGOrx9EA==}
     dependencies:
       '@types/hast': 2.3.1
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
     dev: true
 
   /hast-util-parse-selector/3.1.0:
@@ -2718,7 +2714,7 @@ packages:
     resolution: {integrity: sha512-doJZmTEGagHypWvJ8ltinmwUsT9ZaNgNIQW6Gl7jNdsI1QZkTHTimYW561Niy2s8AEPAqEgV0dIh2UOVlSXUJA==}
     dependencies:
       '@types/mdast': 3.0.3
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       longest-streak: 3.0.1
       mdast-util-to-string: 3.1.0
       micromark-util-decode-string: 1.0.2
@@ -3090,8 +3086,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /micromorph/0.0.2:
-    resolution: {integrity: sha512-hfy/OA8rtwI/vPRm4L6a3/u6uDvqsPmTok7pPmtfv2a7YfaTVfxd9HX2Kdn/SZ8rGMKkKVJ9A0WcBnzs0bjLXw==}
+  /micromorph/0.1.2:
+    resolution: {integrity: sha512-pDEgWjUoCMBwME8z8UiCOO6FKH0It1LASFh8hFSk8uSyfyw6rqY4PBk2LiIEPaVHwtLDhozp4Pr0I+yAUfCpiA==}
     dev: true
 
   /mime-db/1.51.0:
@@ -4034,7 +4030,7 @@ packages:
       svelte: 3.46.4
     dev: true
 
-  /svelte-preprocess/4.10.4_d2b6ae46c908c55b36e6a483ed91fd35:
+  /svelte-preprocess/4.10.4_11cdafd825ffb6439cf9ab567a13da4e:
     resolution: {integrity: sha512-fuwol0N4UoHsNQolLFbMqWivqcJ9N0vfWO9IuPAiX/5okfoGXURyJ6nECbuEIv0nU3M8Xe2I1ONNje2buk7l6A==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -4085,7 +4081,7 @@ packages:
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 3.46.4
-      typescript: 4.5.5
+      typescript: 4.6.2
     dev: true
 
   /svelte/3.46.4:
@@ -4199,8 +4195,8 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript/4.5.5:
-    resolution: {integrity: sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==}
+  /typescript/4.6.2:
+    resolution: {integrity: sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
@@ -4221,7 +4217,7 @@ packages:
   /unified/10.1.1:
     resolution: {integrity: sha512-v4ky1+6BN9X3pQrOdkFIPWAaeDsHPE1svRDxq7YpTc2plkIqFMwukfqM+l0ewpP9EfwARlt9pPFAeWYhHm8X9w==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       bail: 2.0.2
       extend: 3.0.2
       is-buffer: 2.0.4
@@ -4239,7 +4235,7 @@ packages:
   /unist-util-find-after/4.0.0:
     resolution: {integrity: sha512-gfpsxKQde7atVF30n5Gff2fQhAc4/HTOV4CvkXpTg9wRfQhZWdXitpyXHWB6YcYgnsxLx+4gGHeVjCTAAp9sjw==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       unist-util-is: 5.1.1
     dev: true
 
@@ -4280,14 +4276,14 @@ packages:
   /unist-util-remove-position/4.0.1:
     resolution: {integrity: sha512-0yDkppiIhDlPrfHELgB+NLQD5mfjup3a8UYclHruTJWmY74je8g+CIFr79x5f6AkmzSwlvKLbs63hC0meOMowQ==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       unist-util-visit: 4.1.0
     dev: true
 
   /unist-util-stringify-position/3.0.0:
     resolution: {integrity: sha512-SdfAl8fsDclywZpfMDTVDxA2V7LjtRDTOFd44wUJamgl6OlVngsqWjxvermMYf60elWHbxhuRCZml7AnuXCaSA==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
     dev: true
 
   /unist-util-visit-children/1.1.4:
@@ -4303,14 +4299,14 @@ packages:
   /unist-util-visit-parents/4.1.1:
     resolution: {integrity: sha512-1xAFJXAKpnnJl8G7K5KgU7FY55y3GcLIXqkzUj5QF/QVP7biUm0K0O2oqVkYsdjzJKifYeWn9+o6piAK2hGSHw==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       unist-util-is: 5.1.1
     dev: true
 
   /unist-util-visit-parents/5.1.0:
     resolution: {integrity: sha512-y+QVLcY5eR/YVpqDsLf/xh9R3Q2Y4HxkZTp7ViLDU6WtJCEcPmRzW1gpdWDCDIqIlhuPDXOgttqPlykrHYDekg==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       unist-util-is: 5.1.1
     dev: true
 
@@ -4331,7 +4327,7 @@ packages:
   /unist-util-visit/4.1.0:
     resolution: {integrity: sha512-n7lyhFKJfVZ9MnKtqbsqkQEk5P1KShj0+//V7mAcoI6bpbUjh3C/OG8HVD+pBihfh6Ovl01m8dkcv9HNqYajmQ==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       unist-util-is: 5.1.1
       unist-util-visit-parents: 5.1.0
     dev: true
@@ -4368,21 +4364,21 @@ packages:
   /vfile-location/4.0.1:
     resolution: {integrity: sha512-JDxPlTbZrZCQXogGheBHjbRWjESSPEak770XwWPfw5mTc1v1nWGLB/apzZxsx8a0SJVfF8HK8ql8RD308vXRUw==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       vfile: 5.3.0
     dev: true
 
   /vfile-message/3.1.0:
     resolution: {integrity: sha512-4QJbBk+DkPEhBXq3f260xSaWtjE4gPKOfulzfMFF8ZNwaPZieWsg3iVlcmF04+eebzpcpeXOOFMfrYzJHVYg+g==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       unist-util-stringify-position: 3.0.0
     dev: true
 
   /vfile/5.3.0:
     resolution: {integrity: sha512-Tj44nY/48OQvarrE4FAjUfrv7GZOYzPbl5OD65HxVKwLJKMPU7zmfV8cCgCnzKWnSfYG2f3pxu+ALqs7j22xQQ==}
     dependencies:
-      '@types/unist': 2.0.3
+      '@types/unist': 2.0.6
       is-buffer: 2.0.4
       unist-util-stringify-position: 3.0.0
       vfile-message: 3.1.0
@@ -4589,8 +4585,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /zod/3.12.0:
-    resolution: {integrity: sha512-w+mmntgEL4hDDL5NLFdN6Fq2DSzxfmlSoJqiYE1/CApO8EkOCxvJvRYEVf8Vr/lRs3i6gqoiyFM6KRcWqqdBzQ==}
+  /zod/3.12.1:
+    resolution: {integrity: sha512-wm4Gm6ACayAagHRDIGyDS0H4dRI4gGVqOJ9M4X2UjwgN/rv+QPRUjcvGqZRHiVYVuvQTOszRSkZ074I1dzEy9A==}
 
   /zwitch/2.0.2:
     resolution: {integrity: sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA==}

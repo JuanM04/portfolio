@@ -1,13 +1,16 @@
-import { elementVisit } from "./utils/visit"
 import type { Plugin } from "unified"
+import type { Root } from "hast"
+import { visit } from "unist-util-visit"
 
 const videoTest = /\/(.*)(.mp4|.mov)$/
 
-export const betterImages: Plugin = () => (tree) => {
-  elementVisit(tree, (node, _index, parent) => {
-    if (node.tagName !== "img" || parent?.tagName === "figure") return
+export const betterImages: Plugin<[], Root> = () => (tree) => {
+  visit(tree, "element", (node, _index, parent) => {
+    if (node.tagName !== "img") return
+    if (parent && parent.type === "element" && parent.tagName === "figure")
+      return
 
-    const { src, alt } = node.properties
+    const { src, alt } = node.properties || {}
 
     if (
       typeof src !== "string" ||
