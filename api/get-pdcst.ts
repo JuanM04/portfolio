@@ -11,6 +11,7 @@ import {
 } from "../src/apps/pdcst/schemas"
 
 interface FeedItem {
+  type?: "xml" | "json"
   url: string
   parser: (feed: any) => EpisodeType[]
 }
@@ -337,31 +338,28 @@ const feeds: FeedItem[] = [
     },
   },
   {
-    url: "https://feed.syntax.fm/rss",
-    parser({ rss: { channel } }) {
+    type: "json",
+    url: "https://syntax.fm/api/shows",
+    parser(episodes: any[]) {
       const podcast: PodcastType = {
         name: "Syntax",
         website: "https://syntax.fm",
-        cover: channel.image.url,
+        cover: "https://syntax.fm/static/favicon.png",
       }
 
-      return channel.item
-        .filter(pubDateInRage)
-        .map((episode: any): EpisodeType => {
-          // <itunes:image href="https://ssl-static.libsyn.com/p/assets/d/0/b/4/d0b4429854bf1153bafc7308ab683e82/Syntax_-_434.jpg" />
-          const cover = episode["itunes:image"].$.href as string
-          const epNumber = cover.split("_-_").reverse()[0].slice(0, -4)
-
-          return {
+      return episodes
+        .filter((episode) => dateInRage(episode.date))
+        .map(
+          (episode): EpisodeType => ({
             title: episode.title,
-            notes: episode.description,
-            cover,
-            source: episode.enclosure.$.url,
-            releaseDate: new Date(episode.pubDate),
-            episode: [1, parseInt(epNumber)],
+            notes: episode.html,
+            cover: podcast.cover,
+            source: episode.url,
+            releaseDate: new Date(episode.date),
+            episode: [1, episode.number],
             podcast,
-          }
-        })
+          })
+        )
     },
   },
 ]
@@ -374,8 +372,15 @@ const handler: VercelApiHandler = async (_req, res) => {
     feeds.map(async (feed) => {
       try {
         const res = await fetch(feed.url)
-        const body = await res.text()
-        const data = await xmlParser.parseStringPromise(body)
+
+        let data: any
+
+        if (feed.type === "json") {
+          data = await res.json()
+        } else {
+          const body = await res.text()
+          data = await xmlParser.parseStringPromise(body)
+        }
 
         const parsedData = feed.parser(data)
 
