@@ -116,7 +116,9 @@ export function Player({
                 <p class={styles.title}>{episode.title}</p>
                 <p class={styles.meta}>
                   S{episode.episode[0]}:E{episode.episode[1]} —{" "}
-                  {format(episode.releaseDate, "d/M/yyyy 'at' HH:mm")}
+                  <time dateTime={episode.releaseDate.toISOString()}>
+                    {format(episode.releaseDate, "d/M/yyyy 'at' HH:mm")}
+                  </time>
                 </p>
               </div>
             </div>

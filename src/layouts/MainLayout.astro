@@ -7,6 +7,8 @@ export interface Props {
 
 const { title, description, lang = "en" } = Astro.props.content || {}
 const canonicalURL = Astro.request.canonicalURL
+
+const lastUpdate = new Date().toISOString()
 ---
 
 <html {lang}>
@@ -64,7 +66,7 @@ const canonicalURL = Astro.request.canonicalURL
 
     <footer>
       <p>
-        Last updated: {new Date().toISOString().slice(0, 10)}
+        Last update: <time datetime={lastUpdate}>{lastUpdate.slice(0, 10)}</time>
         —
         <a href="/sitemap.xml">Sitemap</a>
         —

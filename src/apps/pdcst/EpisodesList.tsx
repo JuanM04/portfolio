@@ -45,7 +45,9 @@ export function EpisodesList({
                 <p class={styles.title}>{episode.title}</p>
                 <p class={styles.meta}>
                   S{episode.episode[0]}:E{episode.episode[1]} —{" "}
-                  {formatRelative(episode.releaseDate, new Date())}
+                  <time dateTime={episode.releaseDate.toISOString()}>
+                    {formatRelative(episode.releaseDate, new Date())}
+                  </time>
                 </p>
               </div>
             </li>
