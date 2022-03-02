@@ -89,7 +89,13 @@ export function Player({
       navigator.mediaSession.metadata = new MediaMetadata({
         title: playerStore.episode.title,
         artist: playerStore.episode.podcast,
-        artwork: [{ src: playerStore.episode.cover }],
+        artwork: [
+          {
+            src: playerStore.episode.cover,
+            type: "image/avif",
+            sizes: "150x150",
+          },
+        ],
       })
 
       navigator.mediaSession.setActionHandler("pause", () => player().pause())
