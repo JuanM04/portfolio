@@ -40,7 +40,7 @@ export function EpisodesList({
                 document.getElementById("player")!.scrollIntoView()
               }}
             >
-              <img src={episode.cover} alt={episode.podcast.name} />
+              <img src={episode.cover} alt={episode.podcast} />
               <div>
                 <p class={styles.title}>{episode.title}</p>
                 <p class={styles.meta}>

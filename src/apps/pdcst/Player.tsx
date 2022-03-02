@@ -88,7 +88,7 @@ export function Player({
     ) {
       navigator.mediaSession.metadata = new MediaMetadata({
         title: playerStore.episode.title,
-        artist: playerStore.episode.podcast.name,
+        artist: playerStore.episode.podcast,
         artwork: [{ src: playerStore.episode.cover }],
       })
 
@@ -123,7 +123,7 @@ export function Player({
         {(episode) => (
           <>
             <div class={styles.info}>
-              <img src={episode.cover} alt={episode.podcast.name} />
+              <img src={episode.cover} alt={episode.podcast} />
               <div>
                 <p class={styles.title}>{episode.title}</p>
                 <p class={styles.meta}>
