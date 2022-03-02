@@ -4,7 +4,7 @@ export const episodeSchema = z.object({
   podcast: z.string(),
   title: z.string(),
   notes: z.string().nullable(),
-  cover: z.string().url(),
+  cover: z.string(),
   source: z.string().url(),
   releaseDate: z.date(),
   episode: z.tuple([

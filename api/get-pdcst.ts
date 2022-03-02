@@ -297,6 +297,10 @@ const handler: VercelApiHandler = async (_req, res) => {
     .reduce((episodes, feed) => [...episodes, ...feed], [])
     .filter((episode) => compareDesc(episode.releaseDate, releaseLimit) <= 0)
     .sort((a, b) => compareDesc(a.releaseDate, b.releaseDate))
+    .map((episode) => ({
+      ...episode,
+      cover: "/api/optimize-cover?src=" + encodeURIComponent(episode.cover),
+    }))
 
   res.setHeader("Content-Type", "application/json")
   res.send(SuperJSON.stringify(episodes))

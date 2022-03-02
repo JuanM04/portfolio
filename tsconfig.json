@@ -6,6 +6,8 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "skipLibCheck": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
