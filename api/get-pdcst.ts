@@ -15,7 +15,7 @@ interface FeedItem {
 const dateInRage = (date: string | Date) =>
   compareDesc(
     typeof date === "string" ? new Date(date) : date,
-    subMonths(new Date(), 2) // two months ago
+    subMonths(new Date(), 1) // one month ago
   ) <= 0
 
 const pubDateInRage = (episode: any) => dateInRage(episode.pubDate)
@@ -256,7 +256,6 @@ const feeds: FeedItem[] = [
 ]
 
 const handler: VercelApiHandler = async (_req, res) => {
-  const releaseLimit = subMonths(new Date(), 2) // two months ago
   const xmlParser = new Parser({ explicitArray: false })
 
   const feedsData = await Promise.all(
@@ -295,7 +294,7 @@ const handler: VercelApiHandler = async (_req, res) => {
 
   const episodes = feedsData
     .reduce((episodes, feed) => [...episodes, ...feed], [])
-    .filter((episode) => compareDesc(episode.releaseDate, releaseLimit) <= 0)
+    .filter((episode) => dateInRage(episode.releaseDate))
     .sort((a, b) => compareDesc(a.releaseDate, b.releaseDate))
     .map((episode) => ({
       ...episode,
