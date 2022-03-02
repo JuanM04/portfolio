@@ -19,7 +19,7 @@ const handler: VercelApiHandler = async (req, res) => {
     return
   }
 
-  const avif = await sharp(syntax).resize(150).avif({ quality: 75 }).toBuffer()
+  const avif = await sharp(syntax).resize(150).avif({ quality: 85 }).toBuffer()
 
   res.setHeader("Content-Type", "image/avif")
   res.setHeader("Cache-Control", "max-age=604800, public") // one week
