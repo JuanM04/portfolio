@@ -88,40 +88,9 @@
   gap: 0.5rem;
 }
 
-.volume > div {
+.volumeSlider {
   width: 6rem;
-  height: 0.5rem;
-}
-
-.slider {
-  position: relative;
-  width: 100%;
-  border-radius: 0.25rem;
-  height: 1rem;
-  overflow: hidden;
-  background-color: var(--bg);
-}
-
-.slider div:nth-child(1) {
-  background-color: var(--accent);
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.slider div:nth-child(2) {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  cursor: pointer;
+  font-size: 0.8rem;
 }
 
 @media only screen and (max-width: 720px) {

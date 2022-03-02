@@ -1,6 +1,7 @@
 import { format } from "date-fns"
 import { createEffect, createSignal, Show } from "solid-js"
 
+import { Slider } from "./Slider"
 import type { PlayerStore } from "./Pdcst"
 import {
   FastForwardIcon,
@@ -55,15 +56,27 @@ export function Player({
 }: {
   playerStore: PlayerStore
 }) {
-  const [player, setPlayer] = createSignal<PlayerState | null>(null)
+  const [player, setPlayer] = createSignal<PlayerState>({
+    duration: 0,
+    loaded: 0,
+    muted: false,
+    playing: false,
+    time: 0,
+    volume: 1,
+    mute: () => {},
+    unmute: () => {},
+    pause: () => {},
+    play: () => {},
+    seekTo: () => {},
+    setVolume: () => {},
+  })
   const [initialTimeSet, setInitialTimeSet] = createSignal(false)
 
   createEffect(() => {
     if (initialTimeSet()) return
-    const state = player()
-    if (!state || state.loaded === 0) return
+    if (player().loaded === 0) return
 
-    state.seekTo(playerStore.time)
+    player().seekTo(playerStore.time)
     setInitialTimeSet(true)
   })
 
@@ -71,7 +84,6 @@ export function Player({
     if (
       "mediaSession" in navigator &&
       navigator.mediaSession &&
-      player() &&
       playerStore.episode
     ) {
       navigator.mediaSession.metadata = new MediaMetadata({
@@ -80,21 +92,21 @@ export function Player({
         artwork: [{ src: playerStore.episode.cover }],
       })
 
-      navigator.mediaSession.setActionHandler("pause", () => player()!.pause())
-      navigator.mediaSession.setActionHandler("play", () => player()!.play())
+      navigator.mediaSession.setActionHandler("pause", () => player().pause())
+      navigator.mediaSession.setActionHandler("play", () => player().play())
       navigator.mediaSession.setActionHandler("seekbackward", () =>
-        player()!.seekTo(-30, "relative")
+        player().seekTo(-30, "relative")
       )
       navigator.mediaSession.setActionHandler("seekforward", () =>
-        player()!.seekTo(+30, "relative")
+        player().seekTo(+30, "relative")
       )
       navigator.mediaSession.setActionHandler(
         "seekto",
-        (e) => e.seekTime && player()!.seekTo(e.seekTime)
+        (e) => e.seekTime && player().seekTo(e.seekTime)
       )
       navigator.mediaSession.setActionHandler("stop", () => {
-        player()!.pause()
-        player()!.seekTo(0)
+        player().pause()
+        player().seekTo(0)
         changeEpisode(null)
       })
     }
@@ -130,6 +142,7 @@ export function Player({
             )}
             <div class={styles.player}>
               <audio
+                autoplay={false}
                 controls={false}
                 loop={false}
                 hidden
@@ -165,118 +178,101 @@ export function Player({
                   })
 
                   el.addEventListener("canplay", () => {
-                    const state = player()
-                    if (state) {
-                      setPlayer({
-                        ...state,
+                    setPlayer({
+                      ...player(),
+                      duration: isNaN(el.duration) ? 0 : el.duration,
+                      loaded:
+                        el.buffered.length === 0
+                          ? 0
+                          : el.buffered.end(el.buffered.length - 1),
+                    })
+                    if (!isNaN(el.duration)) {
+                      navigator.mediaSession.setPositionState({
                         duration: el.duration,
-                        loaded:
-                          el.buffered.length === 0
-                            ? 0
-                            : el.buffered.end(el.buffered.length - 1),
+                        playbackRate: el.playbackRate,
+                        position: el.currentTime,
                       })
                     }
-                    navigator.mediaSession.setPositionState({
-                      duration: el.duration,
-                      playbackRate: el.playbackRate,
-                      position: el.currentTime,
-                    })
                   })
 
                   el.addEventListener("pause", () => {
-                    const state = player()
-                    if (state) {
-                      setPlayer({ ...state, playing: false })
-                    }
+                    setPlayer({ ...player(), playing: false })
                   })
 
                   el.addEventListener("play", () => {
-                    const state = player()
-                    if (state) {
-                      setPlayer({ ...state, playing: true })
-                    }
+                    setPlayer({ ...player(), playing: true })
                   })
 
                   el.addEventListener("timeupdate", () => {
-                    const state = player()
-                    if (state) {
-                      const time = el.currentTime
-                      setPlayer({ ...state, time: el.currentTime })
-                      if (time > 0) updateTime(time)
-                      if (!isNaN(el.duration)) {
-                        navigator.mediaSession.setPositionState({
-                          duration: el.duration,
-                          playbackRate: el.playbackRate,
-                          position: el.currentTime,
-                        })
-                      }
+                    const time = el.currentTime
+                    setPlayer({ ...player(), time })
+
+                    if (time > 0) updateTime(time)
+                    if (!isNaN(el.duration)) {
+                      navigator.mediaSession.setPositionState({
+                        duration: el.duration,
+                        playbackRate: el.playbackRate,
+                        position: el.currentTime,
+                      })
                     }
                   })
 
                   el.addEventListener("volumechange", () => {
-                    const state = player()
-                    if (state) {
-                      setPlayer({
-                        ...state,
-                        volume: el.volume,
-                        muted: el.muted,
-                      })
-                    }
+                    setPlayer({
+                      ...player(),
+                      volume: el.volume,
+                      muted: el.muted,
+                    })
                   })
                 }}
               />
 
-              <Show when={player()} fallback={<p>Loading player...</p>}>
-                {(player) => (
-                  <>
-                    <div class={styles.time}>
-                      <p class={styles.currentTime}>
-                        {formatTime(player.time)}
-                      </p>
-                      <Slider
-                        percent={player.time / player.duration}
-                        onClick={(n) => player.seekTo(n, "fraction")}
-                      />
-                      <p class={styles.duration}>
-                        {formatTime(player.duration)}
-                      </p>
-                    </div>
-                    <div class={styles.buttons}>
-                      <div class={styles.mainButtons}>
-                        <RewindIcon
-                          onClick={() => player.seekTo(-30, "relative")}
-                        />
-                        {player.playing ? (
-                          <PauseIcon
-                            class={styles.playpause}
-                            onClick={player.pause}
-                          />
-                        ) : (
-                          <PlayIcon
-                            class={styles.playpause}
-                            onClick={player.play}
-                          />
-                        )}
-                        <StopIcon onClick={() => changeEpisode(null)} />
-                        <FastForwardIcon
-                          onClick={() => player.seekTo(+30, "relative")}
-                        />
-                      </div>
-                      <div class={styles.volume}>
-                        {player.muted ? (
-                          <MutedIcon onClick={player.unmute} />
-                        ) : (
-                          <VolumeIcon onClick={player.mute} />
-                        )}
-                        <Slider
-                          percent={player.muted ? 0 : Math.sqrt(player.volume)}
-                          onClick={(n) => player.setVolume(n ** 2)}
-                        />
-                      </div>
-                    </div>
-                  </>
-                )}
-              </Show>
+              <div class={styles.time}>
+                <p class={styles.currentTime}>{formatTime(player().time)}</p>
+                <Slider
+                  value={
+                    player().duration > 0
+                      ? player().time / player().duration
+                      : 0
+                  }
+                  onChange={(value) => player().seekTo(value, "fraction")}
+                />
+                <p class={styles.duration}>{formatTime(player().duration)}</p>
+              </div>
+              <div class={styles.buttons}>
+                <div class={styles.mainButtons}>
+                  <RewindIcon
+                    onClick={() => player().seekTo(-30, "relative")}
+                  />
+                  {player().playing ? (
+                    <PauseIcon
+                      class={styles.playpause}
+                      onClick={player().pause}
+                    />
+                  ) : (
+                    <PlayIcon
+                      class={styles.playpause}
+                      onClick={player().play}
+                    />
+                  )}
+                  <StopIcon onClick={() => changeEpisode(null)} />
+                  <FastForwardIcon
+                    onClick={() => player().seekTo(+30, "relative")}
+                  />
+                </div>
+                <div class={styles.volume}>
+                  {player().muted ? (
+                    <MutedIcon onClick={player().unmute} />
+                  ) : (
+                    <VolumeIcon onClick={player().mute} />
+                  )}
+                  <Slider
+                    classList={{ [styles.volumeSlider]: true }}
+                    value={player().muted ? 0 : Math.sqrt(player().volume)}
+                    onChange={(value) => player().setVolume(value ** 2)}
+                  />
+                </div>
+              </div>
             </div>
           </>
         )}
@@ -284,27 +280,3 @@ export function Player({
     </section>
   )
 }
-
-const Slider = ({
-  onClick,
-  percent,
-  classList = {},
-}: {
-  onClick: (n: number) => void
-  percent: number
-  classList?: {
-    [k: string]: boolean | undefined
-  }
-}) => (
-  <div classList={{ ...classList, [styles.slider]: true }}>
-    <div style={{ width: percent * 100 + "%" }} />
-    <div
-      onClick={(e) => {
-        const width = e.currentTarget.offsetWidth
-        const x = e.offsetX
-
-        onClick(x / width)
-      }}
-    />
-  </div>
-)
