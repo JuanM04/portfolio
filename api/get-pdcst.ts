@@ -152,60 +152,60 @@ const feeds: FeedItem[] = [
         })
     },
   },
-  {
-    url: "https://feeds.transistor.fm/oh-la-humanidad",
-    parser({ rss: { channel } }) {
-      return channel.item.filter(pubDateInRage).map(
-        (episode: any): EpisodeType => ({
-          podcast: "Oh, la humanidad",
-          title: episode.title,
-          notes: episode.description,
-          cover: episode["itunes:image"]?.$?.href,
-          source: episode.enclosure?.$?.url,
-          releaseDate: new Date(episode.pubDate),
-          episode: [1, parseInt(episode["itunes:episode"])],
-        })
-      )
-    },
-  },
-  {
-    url: "https://feeds.resonaterecordings.com/codesandbox-podcast",
-    parser({ rss: { channel } }) {
-      return channel.item.filter(pubDateInRage).map(
-        (episode: any): EpisodeType => ({
-          podcast: "The CodeSandbox Podcast",
-          title: episode.title,
-          notes: episode.description,
-          cover: channel.image.url,
-          source: episode.enclosure?.$?.url,
-          releaseDate: new Date(episode.pubDate),
-          episode: [
-            parseInt(episode["itunes:season"]),
-            parseInt(episode["itunes:episode"]),
-          ],
-        })
-      )
-    },
-  },
-  {
-    url: "https://feeds.resonaterecordings.com/version-one-with-maurice-cherry",
-    parser({ rss: { channel } }) {
-      return channel.item.filter(pubDateInRage).map(
-        (episode: any): EpisodeType => ({
-          podcast: "Version One"
-          title: episode.title,
-          notes: episode.description,
-          cover: channel.image.url,
-          source: episode.enclosure?.$?.url,
-          releaseDate: new Date(episode.pubDate),
-          episode: [
-            parseInt(episode["itunes:season"]),
-            parseInt(episode["itunes:episode"]),
-          ],
-        })
-      )
-    },
-  },
+  // {
+  //   url: "https://feeds.transistor.fm/oh-la-humanidad",
+  //   parser({ rss: { channel } }) {
+  //     return channel.item.filter(pubDateInRage).map(
+  //       (episode: any): EpisodeType => ({
+  //         podcast: "Oh, la humanidad",
+  //         title: episode.title,
+  //         notes: episode.description,
+  //         cover: episode["itunes:image"]?.$?.href,
+  //         source: episode.enclosure?.$?.url,
+  //         releaseDate: new Date(episode.pubDate),
+  //         episode: [1, parseInt(episode["itunes:episode"])],
+  //       })
+  //     )
+  //   },
+  // },
+  // {
+  //   url: "https://feeds.resonaterecordings.com/codesandbox-podcast",
+  //   parser({ rss: { channel } }) {
+  //     return channel.item.filter(pubDateInRage).map(
+  //       (episode: any): EpisodeType => ({
+  //         podcast: "The CodeSandbox Podcast",
+  //         title: episode.title,
+  //         notes: episode.description,
+  //         cover: channel.image.url,
+  //         source: episode.enclosure?.$?.url,
+  //         releaseDate: new Date(episode.pubDate),
+  //         episode: [
+  //           parseInt(episode["itunes:season"]),
+  //           parseInt(episode["itunes:episode"]),
+  //         ],
+  //       })
+  //     )
+  //   },
+  // },
+  // {
+  //   url: "https://feeds.resonaterecordings.com/version-one-with-maurice-cherry",
+  //   parser({ rss: { channel } }) {
+  //     return channel.item.filter(pubDateInRage).map(
+  //       (episode: any): EpisodeType => ({
+  //         podcast: "Version One"
+  //         title: episode.title,
+  //         notes: episode.description,
+  //         cover: channel.image.url,
+  //         source: episode.enclosure?.$?.url,
+  //         releaseDate: new Date(episode.pubDate),
+  //         episode: [
+  //           parseInt(episode["itunes:season"]),
+  //           parseInt(episode["itunes:episode"]),
+  //         ],
+  //       })
+  //     )
+  //   },
+  // },
   anchorPodcast("5aa7d44c"), // Me mudo al campo
   anchorPodcast("583b4e00"), // Cenital
   anchorPodcast("62d12970"), // Trash Taste
