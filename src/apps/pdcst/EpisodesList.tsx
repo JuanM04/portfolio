@@ -37,7 +37,7 @@ export function EpisodesList({
               }}
               onClick={() => {
                 changeEpisode(episode)
-                location.hash = "player"
+                document.getElementById("player")!.scrollIntoView()
               }}
             >
               <img src={episode.cover} alt={episode.podcast.name} />
