@@ -12,12 +12,7 @@ const markdownConfig: AstroMarkdownOptions = {
     theme: "css-variables",
     langs: getLanguages(),
   },
-  remarkPlugins: [
-    "remark-gfm",
-    "remark-smartypants",
-    "remark-code-titles",
-    "remark-math",
-  ],
+  remarkPlugins: ["remark-gfm", "remark-smartypants", "remark-code-titles", "remark-math"],
   rehypePlugins: [
     "rehype-slug",
     [

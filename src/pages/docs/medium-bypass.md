@@ -19,9 +19,7 @@ layout: ~/layouts/MainLayout.astro
     }
   ],
   "respHeaders": [],
-  "filters": [
-    { "enabled": true, "type": "urls", "urlRegex": "https://medium.com/.*" }
-  ],
+  "filters": [{ "enabled": true, "type": "urls", "urlRegex": "https://medium.com/.*" }],
   "urlReplacements": [],
   "appendMode": false
 }

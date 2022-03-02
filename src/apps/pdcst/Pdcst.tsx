@@ -38,8 +38,8 @@ export function Pdcst() {
   const playerStore: PlayerStore = [
     state,
     {
-      changeEpisode: (episode) => setState({ episode, time: 0 }),
-      updateTime: (time) => setState("time", time),
+      changeEpisode: episode => setState({ episode, time: 0 }),
+      updateTime: time => setState("time", time),
     },
   ]
 

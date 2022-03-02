@@ -22,7 +22,7 @@ export function Measure() {
     <button
       class={styles.button}
       onClick={() => {
-        setTimestamps((prev) => {
+        setTimestamps(prev => {
           const now = new Date().getTime()
           if (prev) return [now, prev[0]]
           else return [now, now]

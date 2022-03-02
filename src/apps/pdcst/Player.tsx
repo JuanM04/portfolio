@@ -81,11 +81,7 @@ export function Player({
   })
 
   createEffect(() => {
-    if (
-      "mediaSession" in navigator &&
-      navigator.mediaSession &&
-      playerStore.episode
-    ) {
+    if ("mediaSession" in navigator && navigator.mediaSession && playerStore.episode) {
       navigator.mediaSession.metadata = new MediaMetadata({
         title: playerStore.episode.title,
         artist: playerStore.episode.podcast,
@@ -103,12 +99,10 @@ export function Player({
       navigator.mediaSession.setActionHandler("seekbackward", () =>
         player().seekTo(-30, "relative")
       )
-      navigator.mediaSession.setActionHandler("seekforward", () =>
-        player().seekTo(+30, "relative")
-      )
+      navigator.mediaSession.setActionHandler("seekforward", () => player().seekTo(+30, "relative"))
       navigator.mediaSession.setActionHandler(
         "seekto",
-        (e) => e.seekTime && player().seekTo(e.seekTime)
+        e => e.seekTime && player().seekTo(e.seekTime)
       )
       navigator.mediaSession.setActionHandler("stop", () => {
         player().pause()
@@ -122,11 +116,9 @@ export function Player({
     <section id="player" class={styles.container}>
       <Show
         when={playerStore.episode}
-        fallback={
-          <p style={{ "text-align": "center" }}>There is no episode playing</p>
-        }
+        fallback={<p style={{ "text-align": "center" }}>There is no episode playing</p>}
       >
-        {(episode) => (
+        {episode => (
           <>
             <div class={styles.info}>
               <img src={episode.cover} alt={episode.podcast} />
@@ -153,13 +145,10 @@ export function Player({
                 loop={false}
                 hidden
                 src={episode.source}
-                ref={(el) => {
+                ref={el => {
                   setPlayer({
                     duration: el.duration,
-                    loaded:
-                      el.buffered.length === 0
-                        ? 0
-                        : el.buffered.end(el.buffered.length - 1),
+                    loaded: el.buffered.length === 0 ? 0 : el.buffered.end(el.buffered.length - 1),
                     muted: el.muted,
                     playing: !el.paused,
                     time: el.currentTime,
@@ -177,7 +166,7 @@ export function Player({
                         el.currentTime = el.currentTime + input
                       }
                     },
-                    setVolume: (volume) => {
+                    setVolume: volume => {
                       if (el.muted) el.muted = false
                       el.volume = volume
                     },
@@ -188,9 +177,7 @@ export function Player({
                       ...player(),
                       duration: isNaN(el.duration) ? 0 : el.duration,
                       loaded:
-                        el.buffered.length === 0
-                          ? 0
-                          : el.buffered.end(el.buffered.length - 1),
+                        el.buffered.length === 0 ? 0 : el.buffered.end(el.buffered.length - 1),
                     })
                     if (!isNaN(el.duration)) {
                       navigator.mediaSession.setPositionState({
@@ -236,35 +223,21 @@ export function Player({
               <div class={styles.time}>
                 <p class={styles.currentTime}>{formatTime(player().time)}</p>
                 <Slider
-                  value={
-                    player().duration > 0
-                      ? player().time / player().duration
-                      : 0
-                  }
-                  onChange={(value) => player().seekTo(value, "fraction")}
+                  value={player().duration > 0 ? player().time / player().duration : 0}
+                  onChange={value => player().seekTo(value, "fraction")}
                 />
                 <p class={styles.duration}>{formatTime(player().duration)}</p>
               </div>
               <div class={styles.buttons}>
                 <div class={styles.mainButtons}>
-                  <RewindIcon
-                    onClick={() => player().seekTo(-30, "relative")}
-                  />
+                  <RewindIcon onClick={() => player().seekTo(-30, "relative")} />
                   {player().playing ? (
-                    <PauseIcon
-                      class={styles.playpause}
-                      onClick={player().pause}
-                    />
+                    <PauseIcon class={styles.playpause} onClick={player().pause} />
                   ) : (
-                    <PlayIcon
-                      class={styles.playpause}
-                      onClick={player().play}
-                    />
+                    <PlayIcon class={styles.playpause} onClick={player().play} />
                   )}
                   <StopIcon onClick={() => changeEpisode(null)} />
-                  <FastForwardIcon
-                    onClick={() => player().seekTo(+30, "relative")}
-                  />
+                  <FastForwardIcon onClick={() => player().seekTo(+30, "relative")} />
                 </div>
                 <div class={styles.volume}>
                   {player().muted ? (
@@ -275,7 +248,7 @@ export function Player({
                   <Slider
                     classList={{ [styles.volumeSlider]: true }}
                     value={player().muted ? 0 : Math.sqrt(player().volume)}
-                    onChange={(value) => player().setVolume(value ** 2)}
+                    onChange={value => player().setVolume(value ** 2)}
                   />
                 </div>
               </div>

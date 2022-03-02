@@ -11,8 +11,8 @@ const handler: VercelApiHandler = async (req, res) => {
   }
 
   const syntax = await fetch(src)
-    .then((res) => res.buffer())
-    .catch((_) => null)
+    .then(res => res.buffer())
+    .catch(_ => null)
 
   if (syntax === null) {
     res.status(500).send("Error fetching the image")

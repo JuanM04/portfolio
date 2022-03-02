@@ -1,6 +1,4 @@
 {
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
   "markdown.extension.katex.macros": {
     "\\unit": "\\ \\text{#1}"
   },
@@ -10,5 +8,7 @@
   "markdown.extension.list.indentationSize": "inherit",
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "conventionalCommits.scopes": ["docs", "bpm", "pdcst"]
 }

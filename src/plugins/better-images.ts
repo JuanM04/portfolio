@@ -4,18 +4,14 @@ import { visit } from "unist-util-visit"
 
 const videoTest = /\/(.*)(.mp4|.mov)$/
 
-export const betterImages: Plugin<[], Root> = () => (tree) => {
+export const betterImages: Plugin<[], Root> = () => tree => {
   visit(tree, "element", (node, _index, parent) => {
     if (node.tagName !== "img") return
-    if (parent && parent.type === "element" && parent.tagName === "figure")
-      return
+    if (parent && parent.type === "element" && parent.tagName === "figure") return
 
     const { src, alt } = node.properties || {}
 
-    if (
-      typeof src !== "string" ||
-      (typeof alt !== "undefined" && typeof alt !== "string")
-    ) {
+    if (typeof src !== "string" || (typeof alt !== "undefined" && typeof alt !== "string")) {
       return
     }
 

@@ -56,9 +56,9 @@ export const Slider = (props: {
   return (
     <div
       role="slider"
-      ref={(ref) => (sliderRef = ref)}
+      ref={ref => (sliderRef = ref)}
       classList={{ ...props.classList, [styles.container]: true }}
-      onPointerDown={(e) => {
+      onPointerDown={e => {
         setSeeking(true)
         setTrackValue(getClickPosition(e, sliderRef))
       }}
@@ -66,9 +66,9 @@ export const Slider = (props: {
       <div
         class={styles.track}
         style={{
-          background: `linear-gradient(to right, var(--accent) ${
+          background: `linear-gradient(to right, var(--accent) ${trackValue() * 100}%, var(--bg) ${
             trackValue() * 100
-          }%, var(--bg) ${trackValue() * 100}%)`,
+          }%)`,
         }}
       />
       <div

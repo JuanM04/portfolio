@@ -12,8 +12,7 @@ export function Play() {
     audio.play()
   }
 
-  const getBeatInterval = (bpm: number) =>
-    setInterval(playBeat, (60 / bpm) * 1000)
+  const getBeatInterval = (bpm: number) => setInterval(playBeat, (60 / bpm) * 1000)
 
   const updateBpm = (bpm: number) => {
     setBpm(bpm)
@@ -34,20 +33,15 @@ export function Play() {
           max={420}
           step={1}
           value={bpm()}
-          onInput={(e) => updateBpm(e.currentTarget.valueAsNumber)}
+          onInput={e => updateBpm(e.currentTarget.valueAsNumber)}
         />
         <input
           class={styles.text}
           type="number"
           value={bpm()}
-          onInput={(e) => {
+          onInput={e => {
             const value = e.currentTarget.valueAsNumber
-            if (
-              isFinite(value) &&
-              value % 1 === 0 &&
-              value > 0 &&
-              value <= 420
-            ) {
+            if (isFinite(value) && value % 1 === 0 && value > 0 && value <= 420) {
               updateBpm(value)
             }
           }}
@@ -57,7 +51,7 @@ export function Play() {
       <div class={styles.playpause}>
         <button
           onClick={() =>
-            setPlaying((playing) => {
+            setPlaying(playing => {
               if (typeof playing === "number") {
                 clearInterval(playing)
                 return false
