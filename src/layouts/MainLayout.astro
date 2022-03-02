@@ -17,6 +17,8 @@ const lastUpdate = new Date().toISOString()
     <meta name="viewport" content="width=device-width" />
 
     <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
     <meta property="og:url" content={canonicalURL} />
