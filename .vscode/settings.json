@@ -6,6 +6,8 @@
   "markdown.extension.toc.downcaseLink": true,
   "markdown.extension.math.enabled": true,
   "markdown.extension.list.indentationSize": "inherit",
+  "markdown.suggest.paths.enabled": false,
+  "markdown.extension.completion.root": "public",
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
