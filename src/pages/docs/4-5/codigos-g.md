@@ -1,6 +1,8 @@
 ---
 title: Códigos G
 lang: es
+createdAt: 2019-07-01
+updatedAt: 2020-05-28
 layout: ~/layouts/DocLayout.astro
 ---
 

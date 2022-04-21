@@ -1,5 +1,7 @@
 ---
 title: "Day 0 — Pilot Episode"
+createdAt: 2020-07-01
+updatedAt: 2020-09-10
 layout: ~/layouts/DocLayout.astro
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Medium Bypass
+createdAt: 2020-01-15
 layout: ~/layouts/DocLayout.astro
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Química
 lang: es
+createdAt: 2019-07-01
 layout: ~/layouts/DocLayout.astro
 ---
 

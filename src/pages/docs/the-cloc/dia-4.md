@@ -1,6 +1,8 @@
 ---
 title: "Día 4 — ¡Casi terminado!"
 lang: es
+createdAt: 2020-07-26
+updatedAt: 2020-09-10
 layout: ~/layouts/DocLayout.astro
 ---
 

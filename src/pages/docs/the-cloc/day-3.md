@@ -1,5 +1,7 @@
 ---
 title: "Day 3 — There were problems"
+createdAt: 2020-07-25
+updatedAt: 2020-09-10
 layout: ~/layouts/DocLayout.astro
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Materiales
 lang: es
+createdAt: 2020-05-29
 layout: ~/layouts/DocLayout.astro
 ---
 

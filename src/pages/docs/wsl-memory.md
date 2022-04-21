@@ -1,5 +1,6 @@
 ---
 title: Taking Back Memory From Vmmem/WSL
+createdAt: 2020-11-22
 layout: ~/layouts/DocLayout.astro
 ---
 

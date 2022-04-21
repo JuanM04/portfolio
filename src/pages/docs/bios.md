@@ -1,5 +1,6 @@
 ---
 title: BIOS Cheatsheet
+createdAt: 2021-05-09
 layout: ~/layouts/DocLayout.astro
 ---
 

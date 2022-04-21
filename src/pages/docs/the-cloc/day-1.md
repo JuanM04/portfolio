@@ -1,5 +1,7 @@
 ---
 title: "Day 1 — Superchería"
+createdAt: 2020-07-23
+updatedAt: 2020-09-10
 layout: ~/layouts/DocLayout.astro
 ---
 

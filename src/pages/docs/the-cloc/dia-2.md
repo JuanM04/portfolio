@@ -1,6 +1,8 @@
 ---
 title: "Día 2 — RasPi Gamer"
 lang: es
+createdAt: 2020-07-24
+updatedAt: 2020-09-10
 layout: ~/layouts/DocLayout.astro
 ---
 

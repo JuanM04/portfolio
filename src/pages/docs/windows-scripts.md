@@ -1,5 +1,6 @@
 ---
 title: Windows Scripts
+createdAt: 2020-02-19
 layout: ~/layouts/DocLayout.astro
 ---
 

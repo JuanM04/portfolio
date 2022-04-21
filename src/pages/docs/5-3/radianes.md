@@ -1,6 +1,7 @@
 ---
 title: ¿Qué es un Radián?
 lang: es
+createdAt: 2020-09-16
 layout: ~/layouts/DocLayout.astro
 ---
 

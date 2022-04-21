@@ -1,6 +1,7 @@
 ---
 title: RECYLER
 description: Script to remove RECYCLER virus
+createdAt: 2019-07-01
 layout: ~/layouts/DocLayout.astro
 ---
 

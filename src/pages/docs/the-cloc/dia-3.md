@@ -1,6 +1,8 @@
 ---
 title: "Día 3 — Hubo problemas"
 lang: es
+createdAt: 2020-07-25
+updatedAt: 2020-09-10
 layout: ~/layouts/DocLayout.astro
 ---
 
