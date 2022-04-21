@@ -1,0 +1,25 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro"
+
+const en = await Astro.glob("./day-*.md")
+const es = await Astro.glob("./dia-*.md")
+---
+
+<MainLayout title="The Cloc">
+  <section>
+    <h3>English</h3>
+    {en.map((doc) => (
+      <article>
+        <a href={doc.url}>{doc.frontmatter.title}</a>
+      </article>
+    ))}
+  </section>
+  <section>
+    <h3>Español</h3>
+    {es.map((doc) => (
+      <article>
+        <a href={doc.url}>{doc.frontmatter.title}</a>
+      </article>
+    ))}
+  </section>
+</MainLayout>

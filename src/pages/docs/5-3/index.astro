@@ -1,0 +1,13 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro"
+
+const docs = await Astro.glob("./*.md")
+---
+
+<MainLayout title="5º 3ª">
+  {docs.map((doc) => (
+    <article>
+      <a href={doc.url}>{doc.frontmatter.title}</a>
+    </article>
+  ))}
+</MainLayout>

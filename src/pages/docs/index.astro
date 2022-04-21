@@ -2,29 +2,19 @@
 import MainLayout from "~/layouts/MainLayout.astro"
 
 const uncategorizedDocs = await Astro.glob("./*.md")
-const categorizedDocs = {
-  "4º 5ª": await Astro.glob("./4-5/*.md"),
-  "5º 3ª": await Astro.glob("./5-3/*.md"),
-  "Tarjetas Útiles": await Astro.glob("./tutiles/*.md"),
-  "The Cloc (EN)": await Astro.glob("./the-cloc/day-*.md"),
-  "The Cloc (ES)": await Astro.glob("./the-cloc/dia-*.md"),
-}
 ---
 
 <MainLayout title="Docs">
+  <nav>
+    <a href="/docs/4-5">4º 5ª</a>
+    <a href="/docs/5-3">5º 3ª</a>
+    <a href="/docs/tutiles">Tarjetas Útiles</a>
+    <a href="/docs/the-cloc">The Cloc</a>
+  </nav>
+  <hr />
   {uncategorizedDocs.map((doc) => (
     <article>
       <a href={doc.url}>{doc.frontmatter.title}</a>
     </article>
-  ))}
-  {Object.entries(categorizedDocs).map(([title, docs]) => (
-    <section>
-      <h3>{title}</h3>
-      {docs.map((doc) => (
-        <article>
-          <a href={doc.url}>{doc.frontmatter.title}</a>
-        </article>
-      ))}
-    </section>
   ))}
 </MainLayout>
