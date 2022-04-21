@@ -7,7 +7,7 @@ export interface Props {
 }
 
 const { title, description, lang = "en" } = Astro.props.content || {}
-const canonicalURL = Astro.request.canonicalURL
+const canonicalURL = Astro.canonicalURL
 
 const lastUpdate = new Date()
 const lastUpdateISO = lastUpdate.toISOString()
@@ -31,7 +31,7 @@ const lastUpdateFormatted = format(lastUpdate, 'MMM do, yyyy')
     <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
     <link rel="manifest" href="/manifest.webmanifest"/>
 
-    <style global>
+    <style is:global>
       @import "../main.css";
     </style>
 
@@ -40,8 +40,8 @@ const lastUpdateFormatted = format(lastUpdate, 'MMM do, yyyy')
       defer
       data-website-id="4afe33e6-87d1-40d1-adb1-613d1487c0b2"
       src="https://umami.juanm04.com/umami.js"
-    >
-    </script>
+      is:inline
+    />
   </head>
 
   <body>
@@ -75,7 +75,7 @@ const lastUpdateFormatted = format(lastUpdate, 'MMM do, yyyy')
         —
         <a href="/sitemap.xml">Sitemap</a>
         —
-        <a href="https://github.com/JuanM04/portfolio">Source code</a> 
+        <a href="https://github.com/JuanM04/portfolio">Source code</a>
       </p>
       <p>
         <a href="#">Back to top ↑</a>

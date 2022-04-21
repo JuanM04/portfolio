@@ -1,20 +1,20 @@
 ---
 import MainLayout from "~/layouts/MainLayout.astro"
 
-const uncategorizedDocs = Astro.fetchContent("./*.md")
+const uncategorizedDocs = await Astro.glob("./*.md")
 const categorizedDocs = {
-  "4º 5ª": Astro.fetchContent("./4-5/*.md"),
-  "5º 3ª": Astro.fetchContent("./5-3/*.md"),
-  "Tarjetas Útiles": Astro.fetchContent("./tutiles/*.md"),
-  "The Cloc (EN)": Astro.fetchContent("./the-cloc/day-*.md"),
-  "The Cloc (ES)": Astro.fetchContent("./the-cloc/dia-*.md"),
+  "4º 5ª": await Astro.glob("./4-5/*.md"),
+  "5º 3ª": await Astro.glob("./5-3/*.md"),
+  "Tarjetas Útiles": await Astro.glob("./tutiles/*.md"),
+  "The Cloc (EN)": await Astro.glob("./the-cloc/day-*.md"),
+  "The Cloc (ES)": await Astro.glob("./the-cloc/dia-*.md"),
 }
 ---
 
 <MainLayout content={{ title: "Docs" }}>
   {uncategorizedDocs.map((doc) => (
     <article>
-      <a href={doc.url}>{doc.title}</a>
+      <a href={doc.url}>{doc.frontmatter.title}</a>
     </article>
   ))}
   {Object.entries(categorizedDocs).map(([title, docs]) => (
@@ -22,7 +22,7 @@ const categorizedDocs = {
       <h3>{title}</h3>
       {docs.map((doc) => (
         <article>
-          <a href={doc.url}>{doc.title}</a>
+          <a href={doc.url}>{doc.frontmatter.title}</a>
         </article>
       ))}
     </section>
