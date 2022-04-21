@@ -1,10 +1,8 @@
-import type { VercelApiHandler } from "@vercel/node"
 import { compareDesc, subMonths } from "date-fns"
-import SuperJSON from "superjson"
+import { stringify } from "superjson"
 import { Parser } from "xml2js"
-import fetch from "node-fetch"
 
-import { EpisodeType, episodeSchema } from "../src/apps/pdcst/schemas"
+import { EpisodeType, episodeSchema } from "~/apps/pdcst/schemas"
 
 interface FeedItem {
   type?: "xml" | "json"
@@ -239,7 +237,7 @@ const feeds: FeedItem[] = [
   },
 ]
 
-const handler: VercelApiHandler = async (_req, res) => {
+export async function get() {
   const xmlParser = new Parser({ explicitArray: false })
 
   const feedsData = await Promise.all(
@@ -261,7 +259,7 @@ const handler: VercelApiHandler = async (_req, res) => {
         return parsedData.filter(episode => {
           const { success } = episodeSchema.safeParse(episode)
           if (!success) {
-            console.warn("This episode doesn't match the schema:\n" + SuperJSON.stringify(episode))
+            console.warn("This episode doesn't match the schema:\n" + stringify(episode))
           }
 
           return success
@@ -277,13 +275,10 @@ const handler: VercelApiHandler = async (_req, res) => {
     .reduce((episodes, feed) => [...episodes, ...feed], [])
     .filter(episode => dateInRage(episode.releaseDate))
     .sort((a, b) => compareDesc(a.releaseDate, b.releaseDate))
-    .map(episode => ({
-      ...episode,
-      cover: "/api/optimize-cover?src=" + encodeURIComponent(episode.cover),
-    }))
 
-  res.setHeader("Content-Type", "application/json")
-  res.send(SuperJSON.stringify(episodes))
+  return new Response(stringify(episodes), {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
 }
-
-export default handler
