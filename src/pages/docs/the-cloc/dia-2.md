@@ -101,4 +101,4 @@ while True:
     rainbow_cycle(0.001)  # 1ms de delay entre cada paso
 ```
 
-[&larr; Día 1](/docs/the-cloc/dia-1) | [Día 3 &rarr;](/docs/the-cloc/dia-3)
+[&larr; Día 1](../dia-1/) | [Día 3 &rarr;](../dia-3/)

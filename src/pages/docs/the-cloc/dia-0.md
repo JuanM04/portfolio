@@ -71,4 +71,4 @@ La configuración, o como lo llamaré para evitar dolores de cabeza, **el editor
 
 La alarma, es decir, **el wake-up-ator**, correría un servidor que escucha las peticiones Bluetooth para modificar la configuración y se encargaría de activar la alarma según esta última. La alarma consistiría de hacer sonar una canción por el parlante y encender las luces. En lo posible, estas luces tendrán una animación.
 
-[Día 1 &rarr;](/docs/the-cloc/dia-1)
+[Día 1 &rarr;](../dia-1/)

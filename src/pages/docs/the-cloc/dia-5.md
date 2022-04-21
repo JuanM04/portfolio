@@ -12,4 +12,4 @@ Dejo un videito de The Cloc en acción
 
 ![](/videos/the-cloc/working.mp4)
 
-[&larr; Día 4](/docs/the-cloc/dia-4)
+[&larr; Día 4](../dia-4/)

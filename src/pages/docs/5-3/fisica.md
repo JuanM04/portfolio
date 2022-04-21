@@ -6,7 +6,7 @@ layout: ~/layouts/DocLayout.astro
 
 ## MCU
 
-[¿Qué es un Radián?](/docs/5-3/radianes)
+[¿Qué es un Radián?](../radianes/)
 
 $$
 \begin{aligned}

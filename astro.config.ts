@@ -13,6 +13,7 @@ export default defineConfig({
   site: "https://juanm04.com",
   adapter: vercel(),
   integrations: [solid(), sitemap()],
+  trailingSlash: "always",
   markdown: {
     syntaxHighlight: "shiki",
     shikiConfig: {

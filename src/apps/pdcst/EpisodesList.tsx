@@ -7,7 +7,7 @@ import type { PlayerStore } from "./Pdcst"
 import styles from "./EpisodesList.module.css"
 
 const fetcher = async () => {
-  const res = await fetch("/pdcst/get-feed")
+  const res = await fetch("./get-feed")
   const raw = await res.text()
   const parsed = SuperJSON.parse(raw)
   return episodeSchema.array().parse(parsed)

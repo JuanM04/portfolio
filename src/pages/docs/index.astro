@@ -6,15 +6,15 @@ const uncategorizedDocs = await Astro.glob("./*.md")
 
 <MainLayout title="Docs">
   <nav>
-    <a href="/docs/4-5">4º 5ª</a>
-    <a href="/docs/5-3">5º 3ª</a>
-    <a href="/docs/tutiles">Tarjetas Útiles</a>
-    <a href="/docs/the-cloc">The Cloc</a>
+    <a href="./4-5/">4º 5ª</a>
+    <a href="./5-3/">5º 3ª</a>
+    <a href="./tutiles/">Tarjetas Útiles</a>
+    <a href="./the-cloc/">The Cloc</a>
   </nav>
   <hr />
   {uncategorizedDocs.map((doc) => (
     <article>
-      <a href={doc.url}>{doc.frontmatter.title}</a>
+      <a href={doc.url + '/'}>{doc.frontmatter.title}</a>
     </article>
   ))}
 </MainLayout>
