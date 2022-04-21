@@ -1,7 +1,7 @@
 ---
 title: Resistencias
 lang: es
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 ![](/images/tutiles/resistencias.png)

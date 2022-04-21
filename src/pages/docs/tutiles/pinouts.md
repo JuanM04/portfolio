@@ -1,6 +1,6 @@
 ---
 title: Pinouts
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 ![Raspberry Pi Pinout](/images/tutiles/raspberry-pi.png)

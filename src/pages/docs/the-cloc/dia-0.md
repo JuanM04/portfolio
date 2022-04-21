@@ -1,7 +1,7 @@
 ---
 title: "Día 0 — Episodio Piloto"
 lang: es
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 **The Cloc**, o como me gusta llamarlo en español, **El Despe**, es un reloj que no te muestra la hora. ¿Increíble, verdad? En realidad, solo vez una luz que sale de una caja de madera. Esta luz cambia de color dependiendo de cuánto falte para que suene la alarma.

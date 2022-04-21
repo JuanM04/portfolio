@@ -1,6 +1,6 @@
 ---
 title: "Day 0 — Pilot Episode"
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 **The Cloc** is a alarm clock that doesn't show you the time. Unbelievably, right? Actually, you only see light from a wood box. This light changes its color depending on how much time is left to the pre-established time (a.k.a. the _ring time_)

@@ -1,6 +1,6 @@
 ---
 title: BIOS Cheatsheet
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 A simple cheatsheet with some software and info.

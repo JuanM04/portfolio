@@ -1,7 +1,7 @@
 ---
 title: Mariani
 lang: es
-layout: ~/layouts/WithKatex.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 - [Medición](#medición)
@@ -22,8 +22,8 @@ layout: ~/layouts/WithKatex.astro
 
 Para empezar, todo, generalmente, se mide en **milímetros**. Es la medida por defecto a la hora de hablar de medidas.
 
-$10,3\unit{mm}$ se lee diez milímetros con tres décimas;  
-$4,04\unit{mm}$ se lee cuatro milímetros con cuatro centécimas;  
+$10,3\unit{mm}$ se lee diez milímetros con tres décimas;
+$4,04\unit{mm}$ se lee cuatro milímetros con cuatro centécimas;
 $1,23\unit{mm}$ se lee un milímetro con dos décimas y tres centécimas.
 
 Además del milímetro, está la **pulgada**. Su símbolo es $"$ y equivale a 25,4 mm.
@@ -119,8 +119,8 @@ El **alexómetro** es un instrumento utilizado para mediciones de interiores con
 
 ![Tabla de divisiones](/images/mariani/calculos.jpg)
 
-$\varnothing$: Diámetro Exterior  
-$m$: Módulo  
+$\varnothing$: Diámetro Exterior
+$m$: Módulo
 $z$: Cantidad de dientes
 
 $$

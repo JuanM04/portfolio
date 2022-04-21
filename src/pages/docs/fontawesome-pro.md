@@ -1,7 +1,7 @@
 ---
 title: FontAwesome Pro
 lang: es
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 > **Warning**

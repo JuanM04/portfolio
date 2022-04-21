@@ -1,7 +1,7 @@
 ---
 title: "Día 2 — RasPi Gamer"
 lang: es
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 Antes que nada, usando el adaptador de Plug hembra y un poco de electricidad, ahora puedo encender la Raspberry usando el pin de 5V en vez de el puerto MicroUSB.

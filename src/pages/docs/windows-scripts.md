@@ -1,6 +1,6 @@
 ---
 title: Windows Scripts
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 ### Keyboard lights trick`.vbs`

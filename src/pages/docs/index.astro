@@ -11,7 +11,7 @@ const categorizedDocs = {
 }
 ---
 
-<MainLayout content={{ title: "Docs" }}>
+<MainLayout title="Docs">
   {uncategorizedDocs.map((doc) => (
     <article>
       <a href={doc.url}>{doc.frontmatter.title}</a>

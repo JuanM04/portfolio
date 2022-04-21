@@ -1,7 +1,7 @@
 ---
 title: "Día 5 — Habemus The Cloc"
 lang: es
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 Luego de unos días de testeo, ¡funciona perfectamente! De nuevo, el código está en [GitHub](https://github.com/JuanM04/the-cloc).

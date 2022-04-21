@@ -1,7 +1,7 @@
 ---
 title: Códigos de Argentina
 lang: es
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 | Provincia                                             | IATA[^1] | ISO[^2] |

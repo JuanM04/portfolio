@@ -1,7 +1,7 @@
 ---
 title: ¿Qué es un Radián?
 lang: es
-layout: ~/layouts/WithKatex.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 Desde chiquitos, nosotros medimos los ángulos en **grados**, como en esta imagen.

@@ -1,7 +1,7 @@
 ---
 title: "Día 1 — Superchería"
 lang: es
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 Lo primero que hice fue soldar los pines del amplificador y conectarlo con el parlante. Ahora, tocaba iniciar la Raspberry.

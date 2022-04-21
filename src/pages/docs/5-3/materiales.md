@@ -1,7 +1,7 @@
 ---
 title: Materiales
 lang: es
-layout: ~/layouts/WithKatex.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 - [Ensayo de Dureza](#ensayo-de-dureza)

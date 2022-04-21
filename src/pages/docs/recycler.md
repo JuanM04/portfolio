@@ -1,7 +1,7 @@
 ---
 title: RECYLER
 description: Script to remove RECYCLER virus
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 ```vb:recycler.vbs

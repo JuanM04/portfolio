@@ -1,7 +1,7 @@
 ---
 title: "Día 4 — ¡Casi terminado!"
 lang: es
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 Estuve dos días escribiendo el código (ahora disponible en [GitHub](https://github.com/JuanM04/the-cloc)), y así es cómo funciona:

@@ -1,7 +1,7 @@
 ---
 title: Química
 lang: es
-layout: ~/layouts/WithKatex.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 ## Compuestos

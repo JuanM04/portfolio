@@ -1,6 +1,6 @@
 ---
 title: "Day 1 — Superchería"
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 The first thing I did was solder the amplifier headers and connect it to the speaker. Now, it's time to setup the Raspberry.

@@ -1,7 +1,7 @@
 ---
 title: Códigos G
 lang: es
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 | Código | Descripción                               |

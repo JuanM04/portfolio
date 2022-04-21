@@ -1,6 +1,6 @@
 ---
 title: Taking Back Memory From Vmmem/WSL
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 > Original source: [BlogLogBlog](https://blog.simonpeterdebbarma.com/2020-04-memory-and-wsl/)

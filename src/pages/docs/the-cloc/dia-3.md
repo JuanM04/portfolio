@@ -1,7 +1,7 @@
 ---
 title: "Día 3 — Hubo problemas"
 lang: es
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 > Pasó como un mes entre el Día 2 y el Día 3. ¿Por qué? Porque no podía reproducir una canción e iluminar los LED simultáneamente con una Raspberry Pi Zero. Tuve que actualizar los posts antiguos para que funcionen con una Raspberry Pi 3.

@@ -1,6 +1,6 @@
 ---
 title: "Day 2 — Gaming RasPi"
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 Before anything, Using the protoboard and a Female Plug adaptor, I now turn on my Raspberry through the 5V pin instead of the MicroUSB port.

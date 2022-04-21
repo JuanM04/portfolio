@@ -1,0 +1,14 @@
+---
+import MainLayout, {Props as MainLayoutProps} from "./MainLayout.astro"
+import "katex/dist/katex.css"
+
+export interface Props {
+  content: MainLayoutProps
+}
+
+const props = (Astro.props as Props).content
+---
+
+<MainLayout {...props}>
+  <slot />
+</MainLayout>

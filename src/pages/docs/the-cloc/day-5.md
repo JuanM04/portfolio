@@ -1,6 +1,6 @@
 ---
 title: "Day 5 — Habemus The Cloc"
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 After some days testing it, it works perfectly! Again, the code is in [GitHub](https://github.com/JuanM04/the-cloc).

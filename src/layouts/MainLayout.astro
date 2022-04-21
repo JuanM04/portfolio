@@ -1,17 +1,12 @@
 ---
 import { Icon } from "astro-icon"
-import {format} from 'date-fns'
 
 export interface Props {
-  content: { title: string; description?: string; lang?: "en" | "es" }
+  title: string; description?: string; lang?: "en" | "es"
 }
 
-const { title, description, lang = "en" } = Astro.props.content || {}
+const { title, description, lang = "en" } = Astro.props as Props
 const canonicalURL = Astro.canonicalURL
-
-const lastUpdate = new Date()
-const lastUpdateISO = lastUpdate.toISOString()
-const lastUpdateFormatted = format(lastUpdate, 'MMM do, yyyy')
 ---
 
 <html {lang}>
@@ -34,6 +29,8 @@ const lastUpdateFormatted = format(lastUpdate, 'MMM do, yyyy')
     <style is:global>
       @import "../main.css";
     </style>
+
+    <slot name="head" />
 
     <script
       async
@@ -62,7 +59,8 @@ const lastUpdateFormatted = format(lastUpdate, 'MMM do, yyyy')
         </a>
       </nav>
       <h1>{title}</h1>
-      {description && <p>{description}</p>}
+      {description && <p set:text={description} />}
+      <slot name="meta" />
     </header>
 
     <main>
@@ -71,8 +69,6 @@ const lastUpdateFormatted = format(lastUpdate, 'MMM do, yyyy')
 
     <footer>
       <p>
-        Last update: <time datetime={lastUpdateISO}>{lastUpdateFormatted}</time>
-        —
         <a href="/sitemap.xml">Sitemap</a>
         —
         <a href="https://github.com/JuanM04/portfolio">Source code</a>

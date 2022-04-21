@@ -1,7 +1,7 @@
 ---
 title: Matemática
 lang: es
-layout: ~/layouts/WithKatex.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 ## Funciones Cuadráticas

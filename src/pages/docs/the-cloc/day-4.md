@@ -1,6 +1,6 @@
 ---
 title: "Day 4 — Almost finished!"
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 So, I spent two days doing all the software (now available in [GitHub](https://github.com/JuanM04/the-cloc)), and this is how it works:

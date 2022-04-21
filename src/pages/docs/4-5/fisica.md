@@ -1,7 +1,7 @@
 ---
 title: Física
 lang: es
-layout: ~/layouts/WithKatex.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 - [Horinzontalidad](#horinzontalidad)

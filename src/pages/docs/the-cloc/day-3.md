@@ -1,6 +1,6 @@
 ---
 title: "Day 3 — There were problems"
-layout: ~/layouts/MainLayout.astro
+layout: ~/layouts/DocLayout.astro
 ---
 
 > Is has been nearly month between Day 2 and Day 3. Why? Becuase I couldn't play a song and light up the LEDs with a Raspberry Pi Zero. I updated the old posts for a Raspberry Pi 3.
