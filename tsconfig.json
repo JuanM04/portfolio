@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
+    "module": "ES2022",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "strict": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "skipLibCheck": true,
     "noEmit": true,
+    "types": ["astro/env"],
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
