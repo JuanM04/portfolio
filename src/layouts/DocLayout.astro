@@ -3,6 +3,7 @@ import "katex/dist/katex.css"
 
 import MainLayout, {Props as MainLayoutProps} from "./MainLayout.astro"
 import { format } from 'date-fns'
+import esLocale from 'date-fns/locale/es'
 
 export interface Props {
   content: MainLayoutProps & {
@@ -11,7 +12,16 @@ export interface Props {
   }
 }
 
+
 const {createdAt, updatedAt, ...props} = (Astro.props as Props).content
+
+const formatDate = (date: string) => {
+  // Removes the Z from 1900-01-01T00:00:00Z
+  date = date.slice(0, -1)
+
+  if (props.lang === 'es') return format(new Date(createdAt.slice(0, -1)), "d 'de' MMMM 'de' yyyy", {locale: esLocale})
+  else return format(new Date(createdAt.slice(0, -1)), 'MMMM d, yyyy')
+}
 ---
 
 <MainLayout {...props}>
@@ -22,8 +32,11 @@ const {createdAt, updatedAt, ...props} = (Astro.props as Props).content
   </Fragment>
 
   <p slot="meta" class="published">
-    Published at: {format(new Date(createdAt), 'MMMM d, yyyy')}
-    {updatedAt && `— Last modified: ${format(new Date(updatedAt), 'MMMM d, yyyy')}`}
+    {
+      props.lang === 'es'
+      ? <Fragment>Publicado el: {formatDate(createdAt)} {updatedAt && `— Última actualización: ${formatDate(updatedAt)}`}</Fragment>
+      : <Fragment>Published at: {formatDate(createdAt)} {updatedAt && `— Last modified: ${formatDate(updatedAt)}`}</Fragment>
+    }
   </p>
 
   <slot />
