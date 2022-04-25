@@ -1,6 +1,6 @@
 import { compareDesc, subMonths } from "date-fns"
 import { stringify } from "superjson"
-import { Parser } from "xml2js"
+import { XMLParser } from "fast-xml-parser"
 
 import { EpisodeType, episodeSchema } from "~/apps/pdcst/schemas"
 
@@ -238,7 +238,11 @@ const feeds: FeedItem[] = [
 ]
 
 export async function get() {
-  const xmlParser = new Parser({ explicitArray: false })
+  const xmlParser = new XMLParser({
+    ignoreAttributes: false,
+    attributesGroupName: "$",
+    attributeNamePrefix: "",
+  })
 
   const feedsData = await Promise.all(
     feeds.map(async feed => {
@@ -251,7 +255,7 @@ export async function get() {
           data = await res.json()
         } else {
           const body = await res.text()
-          data = await xmlParser.parseStringPromise(body)
+          data = xmlParser.parse(body)
         }
 
         const parsedData = feed.parser(data)
