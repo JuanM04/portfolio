@@ -7,7 +7,7 @@ const docs = await Astro.glob("./*.md")
 <MainLayout title="Tarjetas Útiles">
   {docs.map((doc) => (
     <article>
-      <a href={doc.url + '/'}>{doc.frontmatter.title}</a>
+      <a href={doc.url}>{doc.frontmatter.title}</a>
     </article>
   ))}
 </MainLayout>

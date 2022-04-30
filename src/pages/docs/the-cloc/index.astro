@@ -10,7 +10,7 @@ const es = await Astro.glob("./dia-*.md")
     <h3>English</h3>
     {en.map((doc) => (
       <article>
-        <a href={doc.url + '/'}>{doc.frontmatter.title}</a>
+        <a href={doc.url}>{doc.frontmatter.title}</a>
       </article>
     ))}
   </section>
@@ -18,7 +18,7 @@ const es = await Astro.glob("./dia-*.md")
     <h3>Español</h3>
     {es.map((doc) => (
       <article>
-        <a href={doc.url + '/'}>{doc.frontmatter.title}</a>
+        <a href={doc.url}>{doc.frontmatter.title}</a>
       </article>
     ))}
   </section>
