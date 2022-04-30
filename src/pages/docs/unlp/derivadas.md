@@ -29,3 +29,5 @@ $$
 |              $\arctan x$               |                 $\frac{1}{1 + x^2}$                  |
 | $a^x : a \in (0, 1) \cup (1, +\infty)$ |                  $a^x \cdot \ln a$                   |
 |                $\ln x$                 |                    $\frac{1}{x}$                     |
+|               $\cosh x$                |                      $\sinh x$                       |
+|               $\sinh x$                |                      $\cosh x$                       |
