@@ -1,0 +1,27 @@
+---
+export interface Props {
+  graph: string
+}
+
+const { graph } = Astro.props as Props
+---
+
+<div class="mermaid" set:text={graph} />
+
+<style is:global>
+  .mermaid {
+    font-size: 0;
+  }
+
+  .mermaid svg {
+    height: min-content;
+    background: white;
+    padding: 4px;
+  }
+</style>
+
+<script>
+  import mermaid from 'mermaid'
+
+  mermaid.initialize({ startOnLoad: true, fontFamily: 'var(--sans-font)', themeVariables });
+</script>
