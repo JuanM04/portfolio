@@ -5,9 +5,11 @@ const docs = await Astro.glob("./*.md")
 ---
 
 <MainLayout title="UNLP">
-  {docs.map((doc) => (
-    <article>
-      <a href={doc.url}>{doc.frontmatter.title}</a>
-    </article>
-  ))}
+  <ul>
+    {docs.map((doc) => (
+      <li>
+        <a href={doc.url}>{doc.frontmatter.title}</a>
+      </li>
+    ))}
+  </ul>
 </MainLayout>

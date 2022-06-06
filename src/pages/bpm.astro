@@ -1,13 +1,10 @@
 ---
 import MainLayout from "~/layouts/MainLayout.astro"
-import { Measure } from "~/apps/BPM/Measure.tsx"
-import { Play } from "~/apps/BPM/Play.tsx"
+import { Measure } from "~/apps/BPM/Measure"
+import { Play } from "~/apps/BPM/Play"
 ---
 
-<MainLayout
-  title="BPM"
-  description="Beats per minute"
->
+<MainLayout title="BPM" description="Beats per minute">
   <h3>Measure BPM</h3>
   <Measure client:load />
 

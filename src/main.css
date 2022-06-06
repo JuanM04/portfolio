@@ -88,3 +88,15 @@ pre span {
 code {
   color: var(--astro-code-token-keyword);
 }
+
+.docs-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.docs-nav a {
+  padding: 0 10px;
+}

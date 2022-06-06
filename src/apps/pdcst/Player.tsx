@@ -113,7 +113,7 @@ export function Player({
   })
 
   return (
-    <section id="player" class={styles.container}>
+    <div id="player" class={styles.container}>
       <Show
         when={playerStore.episode}
         fallback={<p style={{ "text-align": "center" }}>There is no episode playing</p>}
@@ -256,6 +256,6 @@ export function Player({
           </>
         )}
       </Show>
-    </section>
+    </div>
   )
 }

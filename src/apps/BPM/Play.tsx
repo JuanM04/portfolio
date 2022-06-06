@@ -24,7 +24,7 @@ export function Play() {
   }
 
   return (
-    <section>
+    <div>
       <div class={styles.inputs}>
         <input
           class={styles.slider}
@@ -93,6 +93,6 @@ export function Play() {
           )}
         </button>
       </div>
-    </section>
+    </div>
   )
 }

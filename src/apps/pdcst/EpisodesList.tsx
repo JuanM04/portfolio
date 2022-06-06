@@ -23,7 +23,7 @@ export function EpisodesList({
   if (data.error) return <p>There has been an error fetching the episodes</p>
 
   return (
-    <section id="episodes">
+    <div id="episodes">
       <ul class={styles.list}>
         <For each={!data.loading && data()} fallback={<p>Loading (might take a while)...</p>}>
           {episode => (
@@ -51,6 +51,6 @@ export function EpisodesList({
           )}
         </For>
       </ul>
-    </section>
+    </div>
   )
 }

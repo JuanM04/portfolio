@@ -6,20 +6,21 @@ const es = await Astro.glob("./dia-*.md")
 ---
 
 <MainLayout title="The Cloc">
-  <section>
-    <h3>English</h3>
+  <h3>English</h3>
+  <ul>
     {en.map((doc) => (
-      <article>
+      <li>
         <a href={doc.url}>{doc.frontmatter.title}</a>
-      </article>
+      </li>
     ))}
-  </section>
-  <section>
-    <h3>Español</h3>
+  </ul>
+
+  <h3>Español</h3>
+  <ul>
     {es.map((doc) => (
-      <article>
+      <li>
         <a href={doc.url}>{doc.frontmatter.title}</a>
-      </article>
+      </li>
     ))}
-  </section>
+  </ul>
 </MainLayout>
