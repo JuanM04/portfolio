@@ -3,7 +3,7 @@ import "katex/dist/katex.css"
 
 import MainLayout, {Props as MainLayoutProps} from "./MainLayout.astro"
 import { format } from 'date-fns'
-import esLocale from 'date-fns/locale/es'
+import esLocale from 'date-fns/locale/es/index.js'
 
 export interface Props {
   content: MainLayoutProps & {

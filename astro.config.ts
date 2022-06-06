@@ -3,7 +3,7 @@
 import { defineConfig } from "astro/config"
 import solid from "@astrojs/solid-js"
 import sitemap from "@astrojs/sitemap"
-import vercel from "@astrojs/vercel"
+import vercel from "@astrojs/vercel/serverless"
 
 import { betterImages } from "./src/plugins/better-images"
 import { getLanguages } from "./src/plugins/languages"

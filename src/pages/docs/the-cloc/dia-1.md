@@ -10,7 +10,7 @@ Lo primero que hice fue soldar los pines del amplificador y conectarlo con el pa
 
 ## Configurar la Raspberry Pi
 
-Quemé una copia de [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (por lo visto, ahora se llama _Raspberry Pi OS_) en una MicroSD de 16 GB con [Etcher](https://www.balena.io/etcher/) (Amo Etcher <3). Luego toqué un poco algunos archivos dentro de la MicroSD para activar el SSH y el WiFi _headlessly_:
+Quemé una copia de [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (por lo visto, ahora se llama _Raspberry Pi OS_) en una MicroSD de 16 GB con [Etcher](https://www.balena.io/etcher/) (Amo Etcher &lt;3). Luego toqué un poco algunos archivos dentro de la MicroSD para activar el SSH y el WiFi _headlessly_:
 
 1. Desconecté y contecté la MicroSD a mi PC.
 2. Fui al disco `boot` (con Ubuntu, está en `/media/$USER/boot`).
