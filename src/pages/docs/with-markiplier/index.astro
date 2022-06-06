@@ -1,0 +1,15 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro"
+
+const docs = await Astro.glob("./*.md")
+---
+
+<MainLayout title="With Markiplier">
+  <ul>
+    {docs.map((doc) => (
+      <li>
+        <a href={doc.url}>{doc.frontmatter.title}</a>
+      </li>
+    ))}
+  </ul>
+</MainLayout>
