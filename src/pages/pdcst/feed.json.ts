@@ -283,6 +283,7 @@ export async function get() {
   return new Response(stringify(episodes), {
     headers: {
       "Content-Type": "application/json",
+      "Cache-Control": "s-maxage=3600",
     },
   })
 }
