@@ -100,3 +100,13 @@ code {
 .docs-nav a {
   padding: 0 10px;
 }
+
+.mermaid {
+  font-size: 0;
+}
+
+.mermaid svg {
+  height: min-content;
+  background: white;
+  padding: 4px;
+}

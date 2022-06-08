@@ -2,15 +2,12 @@
 title: A Heist with Markiplier
 createdAt: 2022-06-06
 layout: ~/layouts/DocLayout.astro
-setup: |
-  import Mermaid from '~/components/Mermaid.astro';
 ---
 
 ## All videos
 
-<Mermaid
-  graph={`
-   graph LR;
+```mermaid
+graph LR;
     0[A Hesit with Markiplier]
     click 0 href "https://youtu.be/9TjfkXmwbTs" _blank
 
@@ -165,8 +162,7 @@ setup: |
                   222-->2222[I Don't Trust Strangers]
                       click 2222 href "https://youtu.be/M4HiiGiRKJE" _blank
                       2222-->22220>"Clever Girl (1)"]
-  `}
-/>
+```
 
 ## Secret code
 

@@ -6,6 +6,7 @@ import sitemap from "@astrojs/sitemap"
 import vercel from "@astrojs/vercel/serverless"
 
 import { betterImages } from "./src/plugins/better-images"
+import { mermaid } from "./src/plugins/mermaid"
 import { getLanguages } from "./src/plugins/languages"
 
 // https://astro.build/config
@@ -20,7 +21,13 @@ export default defineConfig({
       theme: "css-variables",
       langs: getLanguages(),
     },
-    remarkPlugins: ["remark-gfm", "remark-smartypants", "remark-code-titles", "remark-math"],
+    remarkPlugins: [
+      "remark-gfm",
+      "remark-smartypants",
+      "remark-code-titles",
+      "remark-math",
+      mermaid,
+    ],
     rehypePlugins: [
       "rehype-slug",
       [

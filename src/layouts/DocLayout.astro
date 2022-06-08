@@ -1,7 +1,7 @@
 ---
 import "katex/dist/katex.css"
 
-import MainLayout, {Props as MainLayoutProps} from "./MainLayout.astro"
+import MainLayout, { Props as MainLayoutProps } from "./MainLayout.astro"
 import { format } from 'date-fns'
 import esLocale from 'date-fns/locale/es/index.js'
 
@@ -13,13 +13,13 @@ export interface Props {
 }
 
 
-const {createdAt, updatedAt, ...props} = (Astro.props as Props).content
+const { createdAt, updatedAt, ...props } = (Astro.props as Props).content
 
 const formatDate = (date: string) => {
   // Removes the Z from 1900-01-01T00:00:00Z
   date = date.slice(0, -1)
 
-  if (props.lang === 'es') return format(new Date(createdAt.slice(0, -1)), "d 'de' MMMM 'de' yyyy", {locale: esLocale})
+  if (props.lang === 'es') return format(new Date(createdAt.slice(0, -1)), "d 'de' MMMM 'de' yyyy", { locale: esLocale })
   else return format(new Date(createdAt.slice(0, -1)), 'MMMM d, yyyy')
 }
 ---
@@ -28,14 +28,17 @@ const formatDate = (date: string) => {
   <Fragment slot="head">
     <meta property="og:type" content="article" />
     <meta property="og:article:published_time" content={createdAt} />
-    {updatedAt && <meta property="og:article:modified_time" content={createdAt} />}
+    {updatedAt &&
+    <meta property="og:article:modified_time" content={createdAt} />}
   </Fragment>
 
   <p slot="meta" class="published">
     {
-      props.lang === 'es'
-      ? <Fragment>Publicado el: {formatDate(createdAt)} {updatedAt && `— Última actualización: ${formatDate(updatedAt)}`}</Fragment>
-      : <Fragment>Published at: {formatDate(createdAt)} {updatedAt && `— Last modified: ${formatDate(updatedAt)}`}</Fragment>
+    props.lang === 'es'
+    ? <Fragment>Publicado el: {formatDate(createdAt)} {updatedAt && `— Última actualización: ${formatDate(updatedAt)}`}
+    </Fragment>
+    : <Fragment>Published at: {formatDate(createdAt)} {updatedAt && `— Last modified: ${formatDate(updatedAt)}`}
+    </Fragment>
     }
   </p>
 
@@ -47,4 +50,22 @@ const formatDate = (date: string) => {
       opacity: 0.7;
     }
   </style>
+
+  <script type="module">
+    const graphs = document.getElementsByClassName('mermaid');
+    if (document.getElementsByClassName('mermaid').length > 0) {
+      await import('https://unpkg.com/mermaid@^9/dist/mermaid.min.js');
+      mermaid.initialize({ startOnLoad: false, fontFamily: 'var(--sans-font)' });
+
+      for (const graph of graphs) {
+        const content = graph.getAttribute('data-content')
+        let svg = document.createElement('svg')
+        const id = svg.id = 'mermaid-' + Math.round(Math.random() * 100000)
+        graph.appendChild(svg)
+        mermaid.render(id, content, (result) => {
+          graph.innerHTML = result;
+        })
+      }
+    }
+  </script>
 </MainLayout>
