@@ -167,3 +167,9 @@ graph LR;
 ## Secret code
 
 Each ending ends with the frase "Try Again?". The dot under the question mark reveals a letter/number. In order, they form `Lh3EeEeR9z59YWcUB2b7ViHJ8ALQ637`, which is a password for the website https://www.aheistwithmarkiplier.com/
+
+## Extras
+
+- [Behind the Scenes](https://www.youtube.com/watch?v=78ZMKQSXLUA)
+- [BTS BTS](https://www.youtube.com/watch?v=qPtNQPPGwHc)
+- [Bloopers](https://www.youtube.com/watch?v=VzhFuf-B-N4)
