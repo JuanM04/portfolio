@@ -51,10 +51,10 @@ const formatDate = (date: string) => {
     }
   </style>
 
-  <script type="module">
+  <script>
     const graphs = document.getElementsByClassName('mermaid');
     if (document.getElementsByClassName('mermaid').length > 0) {
-      await import('https://unpkg.com/mermaid@^9/dist/mermaid.min.js');
+      const { default: mermaid } = await import('mermaid');
       mermaid.initialize({ startOnLoad: false, fontFamily: 'var(--sans-font)' });
 
       for (const graph of graphs) {
