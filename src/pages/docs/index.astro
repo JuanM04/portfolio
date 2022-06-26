@@ -15,7 +15,7 @@ const uncategorizedDocs = await Astro.glob("./*.md")
   </nav>
   <hr />
   <ul>
-    {uncategorizedDocs.map((doc) => (
+    {uncategorizedDocs.map(doc => (
       <li>
         <a href={doc.url}>{doc.frontmatter.title}</a>
       </li>

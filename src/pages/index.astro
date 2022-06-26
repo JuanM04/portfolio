@@ -25,13 +25,7 @@ const projects: {
   {
     name: "Martín Seery",
     description: "A redesign for a factory",
-    stack: [
-      "Next.js",
-      "Nodemailer",
-      "TailwindCSS",
-      "Typescript / Zod",
-      "React Hook Form",
-    ],
+    stack: ["Next.js", "Nodemailer", "TailwindCSS", "Typescript / Zod", "React Hook Form"],
     released: "Mid 2021",
     url: "https://seery.com.ar",
   },
@@ -45,13 +39,7 @@ const projects: {
   {
     name: "Hidro Industrial",
     description: "A website for a factory",
-    stack: [
-      "Next.js",
-      "SASS",
-      "Figma",
-      "Google Sheets (auto-update)",
-      "Mapbox",
-    ],
+    stack: ["Next.js", "SASS", "Figma", "Google Sheets (auto-update)", "Mapbox"],
     released: "Mid 2020",
     url: "https://hidroindustrial.com.ar",
   },
@@ -60,7 +48,7 @@ const projects: {
     description: "An alarm clock that doesn't show the time",
     stack: ["Raspberry Pi", "Electronics", "Python", "Next.js", "HackClub"],
     released: "Mid 2020",
-    url: "/docs/the-cloc/day-0/"
+    url: "/docs/the-cloc/day-0/",
   },
   {
     name: "Seery Facturas",
@@ -122,8 +110,7 @@ const projects: {
   },
   {
     name: "WatchWith",
-    description:
-      "Watch media from Youtube, Twitch, Facebook, direct files and more synchronously",
+    description: "Watch media from Youtube, Twitch, Facebook, direct files and more synchronously",
     stack: ["Next.js", "Vercel", "Pusher"],
     released: "Early 2019",
     url: "https://github.com/JuanM04/watch-with",
@@ -150,13 +137,13 @@ const projects: {
 
   <h2>Projects</h2>
   <ul class="projects">
-    {projects.map((project) => (
+    {projects.map(project => (
       <li class="project">
         <p class="project-name">{project.name}</p>
         <p class="project-description">{project.description}</p>
         <p class="project-released">{project.released}</p>
         <ul class="project-stack">
-          {project.stack.map((tech) => (
+          {project.stack.map(tech => (
             <li>{tech}</li>
           ))}
         </ul>

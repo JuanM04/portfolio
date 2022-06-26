@@ -4,7 +4,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier -w ."
+    "format": "prettier --plugin-search-dir=. -w ."
   },
   "dependencies": {
     "date-fns": "^2.28.0",

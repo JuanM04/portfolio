@@ -16,10 +16,9 @@ layout: ~/layouts/DocLayout.astro
 
 ### Cruz
 
-|                                                   Caso                                                   | Algoritmo        |
-| :------------------------------------------------------------------------------------------------------: | :--------------- |
-| ![](/images/fridrich/oll-punto.png) ![](/images/fridrich/oll-l.png)  ![](/images/fridrich/oll-linea.png) | `B' R' U' R U B` |
-
+|                                                  Caso                                                   | Algoritmo        |
+| :-----------------------------------------------------------------------------------------------------: | :--------------- |
+| ![](/images/fridrich/oll-punto.png) ![](/images/fridrich/oll-l.png) ![](/images/fridrich/oll-linea.png) | `B' R' U' R U B` |
 
 ### Esquinas
 
@@ -32,8 +31,6 @@ layout: ~/layouts/DocLayout.astro
 | Pajarita  | ![](/images/fridrich/oll-pajarita.png)  | `U F' (r U R' U') (r' F R)`        |
 | Botella 1 | ![](/images/fridrich/oll-botella-1.png) | `(R2 D R' U2) (R D' R' U2' R')`    |
 | Botella 2 | ![](/images/fridrich/oll-botella-2.png) | `(l' U') (L U) (R U' r' F)`        |
-
-
 
 ## PLL
 

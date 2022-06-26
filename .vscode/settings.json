@@ -11,6 +11,10 @@
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "conventionalCommits.scopes": ["docs", "bpm", "pdcst"]
+  "conventionalCommits.scopes": ["docs", "bpm", "pdcst"],
+  "prettier.documentSelectors": ["**/*.astro"]
 }

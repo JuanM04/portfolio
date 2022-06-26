@@ -2,7 +2,9 @@
 import { Icon } from "astro-icon"
 
 export interface Props {
-  title: string; description?: string; lang?: "en" | "es"
+  title: string
+  description?: string
+  lang?: "en" | "es"
 }
 
 const { title, description, lang = "en" } = Astro.props as Props
@@ -21,16 +23,16 @@ const canonicalURL = Astro.canonicalURL
     {description && <meta property="og:description" content={description} />}
     <meta property="og:url" content={canonicalURL} />
 
-    <link rel="icon" href="/favicon.ico" sizes="any"/>
-    <link rel="icon" href="/icon.svg" type="image/svg+xml"/>
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-    <link rel="manifest" href="/manifest.webmanifest"/>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
     <style is:global>
       @import "../main.css";
     </style>
 
-    <slot name="head" />
+    <slot name="head"></slot>
 
     <script
       async
@@ -38,7 +40,9 @@ const canonicalURL = Astro.canonicalURL
       data-website-id="4afe33e6-87d1-40d1-adb1-613d1487c0b2"
       src="https://umami.juanm04.com/umami.js"
       is:inline
-    />
+    >
+
+    </script>
   </head>
 
   <body>
@@ -47,11 +51,7 @@ const canonicalURL = Astro.canonicalURL
         <a href="/">Home</a>
         <a href="/#apps">Apps</a>
         <a href="/docs/">Docs</a>
-        <a
-          href="https://github.com/JuanM04"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://github.com/JuanM04" target="_blank" rel="noopener noreferrer">
           <Icon name="feather:github" /> GitHub
         </a>
         <a href="mailto:me@juanm04.com">
@@ -60,11 +60,11 @@ const canonicalURL = Astro.canonicalURL
       </nav>
       <h1>{title}</h1>
       {description && <p set:text={description} />}
-      <slot name="meta" />
+      <slot name="meta"></slot>
     </header>
 
     <main>
-      <slot />
+      <slot></slot>
     </main>
 
     <footer>

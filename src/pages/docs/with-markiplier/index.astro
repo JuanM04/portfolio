@@ -6,7 +6,7 @@ const docs = await Astro.glob("./*.md")
 
 <MainLayout title="With Markiplier">
   <ul>
-    {docs.map((doc) => (
+    {docs.map(doc => (
       <li>
         <a href={doc.url}>{doc.frontmatter.title}</a>
       </li>
