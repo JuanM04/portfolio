@@ -16,13 +16,13 @@
     "zod": "^3.17.3"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^0.1.2",
-    "@astrojs/solid-js": "^0.1.4",
+    "@astrojs/sitemap": "^0.2.2",
+    "@astrojs/solid-js": "^0.2.0",
     "@astrojs/vercel": "^0.2.3",
-    "astro": "1.0.0-beta.47",
+    "astro": "1.0.0-beta.56",
     "astro-icon": "^0.7.1",
     "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.1.0-next.4",
+    "prettier-plugin-astro": "^0.1.1",
     "rehype-katex": "^6.0.2",
     "rehype-slug": "^5.0.1",
     "remark-code-titles": "^0.1.2",
