@@ -58,14 +58,18 @@ const formatDate = (date: string) => {
     const graphs = document.getElementsByClassName("mermaid")
     if (document.getElementsByClassName("mermaid").length > 0) {
       const { default: mermaid } = await import("mermaid")
-      mermaid.initialize({ startOnLoad: false, fontFamily: "var(--sans-font)" })
+      mermaid.initialize({
+        startOnLoad: false,
+        fontFamily: "var(--sans-font)",
+        theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'
+      })
 
       for (const graph of graphs) {
         const content = graph.getAttribute("data-content")
         let svg = document.createElement("svg")
         const id = (svg.id = "mermaid-" + Math.round(Math.random() * 100000))
         graph.appendChild(svg)
-        mermaid.render(id, content, result => {
+        mermaid.render(id, content, (result: string) => {
           graph.innerHTML = result
         })
       }
