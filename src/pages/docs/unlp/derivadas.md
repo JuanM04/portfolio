@@ -6,7 +6,7 @@ layout: ~/layouts/DocLayout.astro
 ---
 
 $$
-\lim\limits_{h \to 0} \frac{f(x + h) - f(x)}{h} = f'(x)
+f'(x) = \lim\limits_{h \to 0} \frac{f(x + h) - f(x)}{h}
 $$
 
 |                Función                 |                       Derivada                       |
@@ -19,7 +19,6 @@ $$
 |         $k : k \in \mathbb{R}$         |                         $0$                          |
 |   $k \cdot f(x) : k \in \mathbb{R}$    |                   $k \cdot f'(x)$                    |
 |        $x^r : r \in \mathbb{Q}$        |                      $nx^{n-1}$                      |
-|              $f^{-1}(b)$               |                  $\frac{1}{f'(a)}$                   |
 |              $f^{-1}(b)$               |                  $\frac{1}{f'(a)}$                   |
 |                $\sin x$                |                       $\cos x$                       |
 |                $\cos x$                |                      $-\sin x $                      |
