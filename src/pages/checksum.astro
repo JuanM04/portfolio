@@ -1,0 +1,11 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro"
+import { Checksum } from "~/apps/Checksum"
+---
+
+<MainLayout title="Checksum" description="Get the checksum of a file" path={["checksum"]}>
+  <p class="text-sm leading-none">
+    Verify the checksum of a file <i>locally</i>. No file is uploaded anywhere
+  </p>
+  <Checksum client:only />
+</MainLayout>

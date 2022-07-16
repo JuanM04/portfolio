@@ -8,6 +8,7 @@ specifiers:
   astro: 1.0.0-beta.71
   astro-icon: ^0.7.1
   date-fns: ^2.28.0
+  hash-wasm: ^4.9.0
   katex: ^0.16.0
   mermaid: ^9.1.3
   prettier: ^2.7.1
@@ -25,6 +26,7 @@ specifiers:
 
 dependencies:
   date-fns: 2.28.0
+  hash-wasm: 4.9.0
   katex: 0.16.0
   mermaid: 9.1.3
   solid-js: 1.4.7
@@ -2569,6 +2571,10 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
+
+  /hash-wasm/4.9.0:
+    resolution: {integrity: sha512-7SW7ejyfnRxuOc7ptQHSf4LDoZaWOivfzqw+5rpcQku0nHfmicPKE51ra9BiRLAmT8+gGLestr1XroUkqdjL6w==}
+    dev: false
 
   /hast-to-hyperscript/10.0.1:
     resolution: {integrity: sha512-dhIVGoKCQVewFi+vz3Vt567E4ejMppS1haBRL6TEmeLeJVB1i/FJIIg/e6s1Bwn0g5qtYojHEKvyGA+OZuyifw==}
