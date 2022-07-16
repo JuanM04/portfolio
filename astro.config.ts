@@ -3,22 +3,21 @@
 import { defineConfig } from "astro/config"
 import solid from "@astrojs/solid-js"
 import sitemap from "@astrojs/sitemap"
-import vercel from "@astrojs/vercel/serverless"
-
 import { betterImages } from "./src/plugins/better-images"
 import { mermaid } from "./src/plugins/mermaid"
 import { getLanguages } from "./src/plugins/languages"
 
+import tailwind from "@astrojs/tailwind"
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://juanm04.com",
-  adapter: vercel(),
-  integrations: [solid(), sitemap()],
+  integrations: [solid(), sitemap(), tailwind()],
   trailingSlash: "always",
   markdown: {
     syntaxHighlight: "shiki",
     shikiConfig: {
-      theme: "css-variables",
+      theme: "vitesse-dark",
       langs: getLanguages(),
     },
     remarkPlugins: [

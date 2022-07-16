@@ -1,26 +1,14 @@
 ---
 import MainLayout from "~/layouts/MainLayout.astro"
-
-const en = await Astro.glob("./day-*.md")
-const es = await Astro.glob("./dia-*.md")
+import Files from "~/components/Files.astro"
 ---
 
-<MainLayout title="The Cloc">
-  <h3>English</h3>
-  <ul>
-    {en.map(doc => (
-      <li>
-        <a href={doc.url}>{doc.frontmatter.title}</a>
-      </li>
-    ))}
-  </ul>
-
-  <h3>Español</h3>
-  <ul>
-    {es.map(doc => (
-      <li>
-        <a href={doc.url}>{doc.frontmatter.title}</a>
-      </li>
-    ))}
-  </ul>
+<MainLayout title="The Cloc (~/docs)" path={['docs']}>
+  <Files
+    entries={[
+      { type: 'folder', href: '..', name: '..' },
+      { type: 'folder', href: './en/', name: 'English' },
+      { type: 'folder', href: './es/', name: 'Español' },
+    ]}
+  />
 </MainLayout>

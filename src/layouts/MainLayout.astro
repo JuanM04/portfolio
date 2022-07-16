@@ -1,13 +1,14 @@
 ---
-import { Icon } from "astro-icon"
+import "~/styles/main.css"
 
 export interface Props {
   title: string
   description?: string
+  path?: string[]
   lang?: "en" | "es"
 }
 
-const { title, description, lang = "en" } = Astro.props as Props
+const { title, description, path = [], lang = "en" } = Astro.props as Props
 const canonicalURL = Astro.canonicalURL
 ---
 
@@ -27,12 +28,9 @@ const canonicalURL = Astro.canonicalURL
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <style is:global>
-      @import "../main.css";
-    </style>
-
-    <slot name="head"></slot>
+    <slot name="head" />
 
     <script
       async
@@ -40,42 +38,26 @@ const canonicalURL = Astro.canonicalURL
       data-website-id="4afe33e6-87d1-40d1-adb1-613d1487c0b2"
       src="https://umami.juanm04.com/umami.js"
       is:inline
-    >
-
-    </script>
+    />
   </head>
 
   <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/#apps">Apps</a>
-        <a href="/docs/">Docs</a>
-        <a href="https://github.com/JuanM04" target="_blank" rel="noopener noreferrer">
-          <Icon name="feather:github" /> GitHub
-        </a>
-        <a href="mailto:me@juanm04.com">
-          <Icon name="feather:mail" /> Email
-        </a>
-      </nav>
-      <h1>{title}</h1>
-      {description && <p set:text={description} />}
-      <slot name="meta"></slot>
-    </header>
+    <div class="max-w-2xl mb-12 mx-auto">
+      {path.length >= 1 && (
+        <nav class="mt-4 mb-12 leading-none text-2xl font-light block">
+          <a href="/" class="font-black hover:text-red-500 transition-colors">~ </a>
+          {path.map((segment, i) => (
+            <a
+              href={'/' + path.slice(0, i + 1).join('/') + '/'}
+              class="hover:text-red-500 transition-colors before:content-['/'] before:text-xl before:inline-block"
+            >
+              {segment}
+            </a>
+          ))}
+        </nav>
+      )}
 
-    <main>
-      <slot></slot>
-    </main>
-
-    <footer>
-      <p>
-        <a href="/sitemap.xml">Sitemap</a>
-        —
-        <a href="https://github.com/JuanM04/portfolio">Source code</a>
-      </p>
-      <p>
-        <a href="#">Back to top ↑</a>
-      </p>
-    </footer>
+      <slot />
+    </div>
   </body>
 </html>

@@ -1,5 +1,5 @@
+/** @jsxImportSource solid-js */
 import { createSignal } from "solid-js"
-import styles from "./Play.module.css"
 
 type Playing = ReturnType<typeof setInterval> | false
 
@@ -25,9 +25,8 @@ export function Play() {
 
   return (
     <div>
-      <div class={styles.inputs}>
+      <div>
         <input
-          class={styles.slider}
           type="range"
           min={1}
           max={420}
@@ -36,7 +35,6 @@ export function Play() {
           onInput={e => updateBpm(e.currentTarget.valueAsNumber)}
         />
         <input
-          class={styles.text}
           type="number"
           value={bpm()}
           onInput={e => {
@@ -48,7 +46,7 @@ export function Play() {
         />
       </div>
 
-      <div class={styles.playpause}>
+      <div>
         <button
           onClick={() =>
             setPlaying(playing => {

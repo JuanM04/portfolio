@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon"
+
 import MainLayout from "~/layouts/MainLayout.astro"
 
 const projects: {
@@ -8,6 +10,13 @@ const projects: {
   stack: string[]
   url?: string
 }[] = [
+  {
+    name: "Cuadrado",
+    description: "An app to help you move around La Plata.",
+    stack: ["React Native", "Expo", "PWA", "TypeScript"],
+    released: "Early 2022",
+    url: "https://cuadrado.com.ar",
+  },
   {
     name: "pure-date-fns",
     description: "A package based on date-fns that works with string dates",
@@ -48,13 +57,14 @@ const projects: {
     description: "An alarm clock that doesn't show the time",
     stack: ["Raspberry Pi", "Electronics", "Python", "Next.js", "HackClub"],
     released: "Mid 2020",
-    url: "/docs/the-cloc/day-0/",
+    url: "/docs/the-cloc/",
   },
   {
     name: "Seery Facturas",
     description: "A billing program connected with AFIP (argentine IRS)",
     stack: [
-      "Blitz.js",
+      "Next.js",
+      "tRPC",
       "Prisma",
       "Postgres",
       "Docker",
@@ -125,81 +135,69 @@ const projects: {
 ]
 ---
 
-<MainLayout
-  title="Juan Martín Seery"
-  description="Another Full-Stack developer trying new technologies"
->
-  <h2 id="apps">Apps</h2>
-  <ul>
-    <li><a href="/bpm/">BPM</a></li>
-    <li><a href="/pdcst/">pdcst</a></li>
-  </ul>
-
-  <h2>Projects</h2>
-  <ul class="projects">
-    {projects.map(project => (
-      <li class="project">
-        <p class="project-name">{project.name}</p>
-        <p class="project-description">{project.description}</p>
-        <p class="project-released">{project.released}</p>
-        <ul class="project-stack">
-          {project.stack.map(tech => (
-            <li>{tech}</li>
-          ))}
-        </ul>
-        {project.url && (
-          <a href={project.url} target="_blank" rel="noopener noreferrer">
-            Visit ↗︎
+<MainLayout title="Juan Martín Seery" description="Developer, open-source enthusiast. 🇦🇷🧉">
+  <header class="flex items-start justify-between my-20">
+    <div>
+      <h1 class="text-4xl font-black text-display">Juan Martín Seery</h1>
+      <p>Developer, open-source enthusiast. 🇦🇷🧉</p>
+      <p>Currently studying at <a href="https://unlp.edu.ar/" class="underline decoration-red-500">UNLP</a>.</p>
+      <ul class="mt-8 space-y-2">
+        <li>
+          <a
+            href="mailto:me@juanm04.com"
+            class="flex items-center gap-2 underline decoration-red-500"
+          >
+            <Icon name="mi:email" class="w-5 h-5" />Email
           </a>
-        )}
+        </li>
+        <li>
+          <a
+            href="https://github.com/JuanM04"
+            target="_blank"
+            class="flex items-center gap-2 underline decoration-red-500"
+          >
+            <Icon name="line-md:github" class="w-5 h-5" />GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <img src="/images/me.jpg" alt="Me :D" class="rounded-full w-48" />
+  </header>
+
+  <main>
+    <h2 class="text-2xl font-bold text-display">ls ~</h2>
+    <ul>
+      <li>
+        <a href="/bpm/" class="hover:text-red-500 transition-colors">$ cd bpm/</a>
       </li>
-    ))}
-  </ul>
+      <li>
+        <a href="/docs/" class="hover:text-red-500 transition-colors">$ cd docs/</a>
+      </li>
+    </ul>
 
-  <style>
-    .projects {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 0;
-      gap: 2rem;
-    }
-
-    @media (max-width: 720px) {
-      .projects {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-
-    .project {
-      display: block;
-      padding: 1rem;
-      border: 2px solid var(--border);
-      border-radius: 5px;
-      background-color: var(--accent-bg);
-    }
-
-    .project-name {
-      margin: 0;
-      font-size: 1.33rem;
-      font-weight: bold;
-    }
-
-    .project-description {
-      margin: 0;
-      line-height: 1.25;
-    }
-
-    .project-released {
-      margin: 0.5rem 0;
-      font-size: 1rem;
-      font-weight: bold;
-    }
-
-    .project-stack {
-      font-size: 1rem;
-      padding-left: 1.1rem;
-      margin: 0.5rem 0;
-    }
-  </style>
+    <h2 class="text-2xl font-bold text-display mt-12">Projects</h2>
+    <ul class="divide-y">
+      {projects.map(project => (
+        <li class="py-8">
+          <p class="text-xs uppercase tracking-wide font-medium">{project.released}</p>
+          <p class="text-lg font-semibold text-display">
+            {project.url ? (
+              <a href={project.url} target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition-colors">
+                {project.name} ↗︎
+              </a>
+            ) : (
+              project.name
+            )}
+          </p>
+          <p class="text-sm">{project.description}</p>
+          <ul class="mt-4 flex flex-wrap gap-y-1 text-sm">
+            {project.stack.map(tech => (
+              <li class="after:content-['●'] after:px-2 after:text-red-500 after:text-xs last:after:content-none">{tech}</li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  </main>
 </MainLayout>

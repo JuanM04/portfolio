@@ -1,0 +1,33 @@
+---
+import type { MarkdownInstance } from 'astro';
+import { Icon } from 'astro-icon'
+
+export interface Entry {
+  type: 'file' | 'folder',
+  href: string
+  name: string
+}
+
+export interface Props {
+  entries: Entry[];
+}
+
+export const documentsToEntries = (docs: MarkdownInstance<Record<string, any>>[]) => docs.map((doc):Entry => ({
+  type: 'file',
+  href: doc.url as string,
+  name: doc.frontmatter.title
+}))
+
+const {entries} = Astro.props as Props
+---
+
+<ul class="divide-y">
+  {entries.map(({type, href, name}) => (
+    <li>
+      <a {href} class="flex items-center leading-none py-2 hover:text-red-500 transition-colors w-full">
+        <Icon name={type === 'folder' ? 'mi:folder' : 'mi:document'} class="w-5 h-5 mr-2" />
+        <span>{name}</span>
+      </a>
+    </li>
+  ))}
+</ul>

@@ -1,5 +1,5 @@
+/** @jsxImportSource solid-js */
 import { createMemo, createSignal } from "solid-js"
-import styles from "./Measure.module.css"
 
 type Timestamps = [current: number, previous: number] | null
 
@@ -20,7 +20,7 @@ export function Measure() {
 
   return (
     <button
-      class={styles.button}
+      class="max-w-md w-full h-full bg-red-500"
       onClick={() => {
         setTimestamps(prev => {
           const now = new Date().getTime()
@@ -29,9 +29,9 @@ export function Measure() {
         })
       }}
     >
-      <div>
-        <span class={styles.value}>{bpm()}</span>
-        <span class={styles.label}>BPM</span>
+      <div class="flex justify-center items-baseline py-12 text-display font-bold">
+        <span class="text-5xl text-white">{bpm()}</span>
+        <span class="text-sm text-red-100">BPM</span>
       </div>
     </button>
   )

@@ -1,15 +1,15 @@
 ---
 import MainLayout from "~/layouts/MainLayout.astro"
+import Files, { documentsToEntries } from "~/components/Files.astro"
 
 const docs = await Astro.glob("./*.md")
 ---
 
-<MainLayout title="5º 3ª">
-  <ul>
-    {docs.map(doc => (
-      <li>
-        <a href={doc.url}>{doc.frontmatter.title}</a>
-      </li>
-    ))}
-  </ul>
+<MainLayout title="5º 3ª (~/docs)" path={['docs']} lang="es">
+  <Files
+    entries={[
+      { type: 'folder', href: '..', name: '..' },
+      ...documentsToEntries(docs),
+    ]}
+  />
 </MainLayout>

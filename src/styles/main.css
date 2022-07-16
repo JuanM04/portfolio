@@ -1,0 +1,45 @@
+@import "./fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .stretch-expanded {
+    font-stretch: expanded;
+  }
+
+  .stretch-normal {
+    font-stretch: normal;
+  }
+
+  .text-display {
+    @apply stretch-normal text-black dark:text-white;
+  }
+
+  .text-body {
+    @apply stretch-expanded text-stone-800 dark:text-stone-200;
+  }
+}
+
+.remark-code-title {
+  @apply block bg-red-500 text-white text-sm px-4 py-1 rounded-t-md w-min rounded-bl-none;
+}
+
+.remark-code-title + .astro-code {
+  @apply mt-0 rounded-tl-none;
+}
+
+.mermaid > svg {
+  height: min-content;
+  padding: 4px;
+}
+
+body {
+  font-family: "Iosevka Web", theme('fontFamily.mono');
+  @apply bg-stone-50 dark:bg-stone-900 border-t-8 border-red-500 text-body divide-stone-200 dark:divide-stone-700;
+}
+
+hr {
+  @apply border-stone-200 dark:border-stone-700;
+}

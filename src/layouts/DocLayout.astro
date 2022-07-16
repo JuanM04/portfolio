@@ -6,53 +6,64 @@ import { format } from "date-fns"
 import esLocale from "date-fns/locale/es/index.js"
 
 export interface Props {
-  content: MainLayoutProps & {
+  content: Omit<MainLayoutProps, 'path'> & {
     createdAt: string
     updatedAt?: string
   }
 }
 
-const { createdAt, updatedAt, ...props } = (Astro.props as Props).content
+const { createdAt, updatedAt, title, description, lang = 'en' } = (Astro.props as Props).content
 
 const formatDate = (date: string) => {
   // Removes the Z from 1900-01-01T00:00:00Z
   date = date.slice(0, -1)
 
-  if (props.lang === "es")
+  if (lang === "es")
     return format(new Date(createdAt.slice(0, -1)), "d 'de' MMMM 'de' yyyy", { locale: esLocale })
   else return format(new Date(createdAt.slice(0, -1)), "MMMM d, yyyy")
 }
+
+const headTitle = title + ' (~/docs)'
 ---
 
-<MainLayout {...props}>
+<MainLayout title={headTitle} path={['docs']} {description} {lang}>
   <Fragment slot="head">
     <meta property="og:type" content="article" />
     <meta property="og:article:published_time" content={createdAt} />
     {updatedAt && <meta property="og:article:modified_time" content={createdAt} />}
   </Fragment>
 
-  <p slot="meta" class="published">
-    {props.lang === "es" ? (
-      <Fragment>
-        Publicado el: {formatDate(createdAt)}{" "}
-        {updatedAt && `— Última actualización: ${formatDate(updatedAt)}`}
-      </Fragment>
-    ) : (
-      <Fragment>
-        Published at: {formatDate(createdAt)}{" "}
-        {updatedAt && `— Last modified: ${formatDate(updatedAt)}`}
-      </Fragment>
-    )}
-  </p>
+  <header class="mb-16">
+    <h1 class="text-display font-black text-5xl">{title}</h1>
+    {description && <p class="italic">{description}</p>}
+    <p class="text-sm text-stone-600 dark:text-stone-400 mt-4">
+      {lang === "es" ? (
+        <>
+          Publicado el: {formatDate(createdAt)}
+          {updatedAt && (
+            <>
+              <br />
+              Última actualización: {formatDate(updatedAt)}
+            </>
+          )}
+        </>
+      ) : (
+        <>
+          Published at: {formatDate(createdAt)}
+          {updatedAt && (
+            <>
+              <br />
+              Last modified: {formatDate(updatedAt)}
+            </>
+          )}
+        </>
+      )}
+    </p>
+  </header>
 
-  <slot></slot>
-
-  <style>
-    .published {
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-  </style>
+  <main class="prose prose-stone dark:prose-invert prose-a:underline prose-a:decoration-red-500 prose-headings:text-display prose-video:my-0 prose-figcaption:text-center prose-figcaption:italic max-w-none">
+    <slot />
+  </main>
 
   <script>
     const graphs = document.getElementsByClassName("mermaid")

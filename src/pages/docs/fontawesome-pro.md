@@ -1,6 +1,6 @@
 ---
 title: FontAwesome Pro
-lang: es
+lang: en
 createdAt: 2020-02-25
 layout: ~/layouts/DocLayout.astro
 ---
