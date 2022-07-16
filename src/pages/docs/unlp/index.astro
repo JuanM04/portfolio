@@ -5,11 +5,6 @@ import Files, { documentsToEntries } from "~/components/Files.astro"
 const docs = await Astro.glob("./*.md")
 ---
 
-<MainLayout title="UNLP (~/docs)" path={['docs']} lang="es">
-  <Files
-    entries={[
-      { type: 'folder', href: '..', name: '..' },
-      ...documentsToEntries(docs),
-    ]}
-  />
+<MainLayout title="UNLP (~/docs)" path={["docs"]} lang="es">
+  <Files entries={[{ type: "folder", href: "..", name: ".." }, ...documentsToEntries(docs)]} />
 </MainLayout>

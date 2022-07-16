@@ -136,17 +136,22 @@ const projects: {
 ---
 
 <MainLayout title="Juan Martín Seery" description="Developer, open-source enthusiast. 🇦🇷🧉">
-  <header class="flex flex-col-reverse items-center mb-20 mt-10 md:flex-row md:items-start md:justify-between md:mt-20">
+  <header
+    class="flex flex-col-reverse items-center mb-20 mt-10 md:flex-row md:items-start md:justify-between md:mt-20"
+  >
     <div class="text-center mt-4 md:mt-0 md:text-left">
       <h1 class="text-4xl font-black text-display leading-none">Juan Martín Seery</h1>
       <p>Developer, open-source enthusiast. <span class="whitespace-nowrap">🇦🇷🧉</span></p>
-      <p>Currently studying at <a href="https://unlp.edu.ar/" class="underline decoration-red-500">UNLP</a>.</p>
-      <ul class="mt-8 flex flex-row items-center justify-center gap-x-4 md:flex-col md:items-start md:justify-start md:gap-y-2 md:gap-x-0">
+      <p>
+        Currently studying at <a href="https://unlp.edu.ar/" class="underline decoration-red-500"
+          >UNLP
+        </a>.
+      </p>
+      <ul
+        class="mt-8 flex flex-row items-center justify-center gap-x-4 md:flex-col md:items-start md:justify-start md:gap-y-2 md:gap-x-0"
+      >
         <li>
-          <a
-            href="mailto:me@juanm04.com"
-            class="flex items-center underline decoration-red-500"
-          >
+          <a href="mailto:me@juanm04.com" class="flex items-center underline decoration-red-500">
             <Icon name="mi:email" class="w-5 h-5 mr-2" />Email
           </a>
         </li>
@@ -183,7 +188,12 @@ const projects: {
           <p class="text-xs uppercase tracking-wide font-medium">{project.released}</p>
           <p class="text-lg font-semibold text-display">
             {project.url ? (
-              <a href={project.url} target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition-colors">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-red-500 transition-colors"
+              >
                 {project.name} ↗︎
               </a>
             ) : (
@@ -193,7 +203,9 @@ const projects: {
           <p class="text-sm">{project.description}</p>
           <ul class="mt-4 flex flex-wrap gap-y-1 text-sm">
             {project.stack.map(tech => (
-              <li class="after:content-['●'] after:px-2 after:text-red-500 after:text-xs last:after:content-none">{tech}</li>
+              <li class="after:content-['●'] after:px-2 after:text-red-500 after:text-xs last:after:content-none">
+                {tech}
+              </li>
             ))}
           </ul>
         </li>

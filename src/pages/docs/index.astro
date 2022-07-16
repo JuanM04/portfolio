@@ -5,15 +5,15 @@ import Files, { documentsToEntries } from "~/components/Files.astro"
 const uncategorizedDocs = await Astro.glob("./*.md")
 ---
 
-<MainLayout title="~/docs" path={['docs']}>
+<MainLayout title="~/docs" path={["docs"]}>
   <Files
     entries={[
-      { type: 'folder', href: "./4-5/", name: "4º 5ª"},
-      { type: 'folder', href: "./5-3/", name: "5º 3ª"},
-      { type: 'folder', href: "./tutiles/", name: "Tarjetas Útiles"},
-      { type: 'folder', href: "./the-cloc/", name: "The Cloc"},
-      { type: 'folder', href: "./unlp/", name: "UNLP"},
-      { type: 'folder', href: "./with-markiplier/", name: "With Markiplier"},
+      { type: "folder", href: "./4-5/", name: "4º 5ª" },
+      { type: "folder", href: "./5-3/", name: "5º 3ª" },
+      { type: "folder", href: "./tutiles/", name: "Tarjetas Útiles" },
+      { type: "folder", href: "./the-cloc/", name: "The Cloc" },
+      { type: "folder", href: "./unlp/", name: "UNLP" },
+      { type: "folder", href: "./with-markiplier/", name: "With Markiplier" },
       ...documentsToEntries(uncategorizedDocs),
     ]}
   />

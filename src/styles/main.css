@@ -23,7 +23,7 @@
 }
 
 body {
-  font-family: "Iosevka Web", theme('fontFamily.mono');
+  font-family: "Iosevka Web", theme("fontFamily.mono");
   @apply bg-stone-50 dark:bg-stone-900 border-t-8 border-red-500 text-body divide-stone-200 dark:divide-stone-700;
 }
 
@@ -31,13 +31,13 @@ hr {
   @apply border-stone-200 dark:border-stone-700;
 }
 
-input[type=number].no-spinner::-webkit-inner-spin-button,
-input[type=number].no-spinner::-webkit-outer-spin-button {
+input[type="number"].no-spinner::-webkit-inner-spin-button,
+input[type="number"].no-spinner::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type=number].no-spinner {
+input[type="number"].no-spinner {
   -moz-appearance: textfield;
 }
 
@@ -55,4 +55,3 @@ input[type=number].no-spinner {
   height: min-content;
   padding: 4px;
 }
-

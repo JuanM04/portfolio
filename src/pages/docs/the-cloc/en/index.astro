@@ -5,11 +5,6 @@ import Files, { documentsToEntries } from "~/components/Files.astro"
 const docs = await Astro.glob("./*.md")
 ---
 
-<MainLayout title="The Cloc EN (~/docs)" path={['docs']}>
-  <Files
-    entries={[
-      { type: 'folder', href: '..', name: '..' },
-      ...documentsToEntries(docs),
-    ]}
-  />
+<MainLayout title="The Cloc EN (~/docs)" path={["docs"]}>
+  <Files entries={[{ type: "folder", href: "..", name: ".." }, ...documentsToEntries(docs)]} />
 </MainLayout>
