@@ -47,7 +47,7 @@ export function Play() {
           placeholder="60"
           min={1}
           onChange={e => {
-            const input = e.currentTarget.value.replace(/\D/, "")
+            const input = e.currentTarget.value.replace(/\D/g, "")
             if (input === "") {
               updateBpm(60)
               return
