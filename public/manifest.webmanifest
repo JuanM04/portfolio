@@ -17,17 +17,5 @@
   "background_color": "#1C1917",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#EF4444",
-  "shortcuts": [
-    {
-      "name": "BPM",
-      "url": "/bpm/",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "Docs",
-      "url": "/docs/",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
-    }
-  ]
+  "theme_color": "#EF4444"
 }
