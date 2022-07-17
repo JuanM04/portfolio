@@ -46,14 +46,14 @@ const canonicalURL = Astro.canonicalURL
   <body>
     <div class="max-w-2xl px-4 pb-12 mx-auto">
       {path.length >= 1 && (
-        <nav class="mt-4 mb-12 leading-none text-2xl font-light block">
-          <a href="/" class="font-black hover:text-red-500 transition-colors">
-            ~{" "}
+        <nav class="mt-4 mb-12 leading-none text-2xl font-light block text-display select-none">
+          <a href="/" class="font-black hover:text-red-500 transition-colors after:content-['/'] after:text-xl after:font-light after:inline-block">
+            ~
           </a>
           {path.map((segment, i) => (
             <a
               href={"/" + path.slice(0, i + 1).join("/") + "/"}
-              class="hover:text-red-500 transition-colors before:content-['/'] before:text-xl before:inline-block"
+              class="hover:text-red-500 transition-colors after:content-['/'] after:text-xl after:inline-block"
             >
               {segment}
             </a>
