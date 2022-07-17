@@ -6,11 +6,13 @@ type Hash = [alg: string, hash: string]
 async function getHashes(file: File): Promise<Hash[]> {
   const data = new Uint8Array(await file.arrayBuffer())
 
+  const hashes = await Promise.all([md5(data), sha1(data), sha256(data), sha512(data)])
+
   return [
-    ["MD5", await md5(data)],
-    ["SHA-1", await sha1(data)],
-    ["SHA-256", await sha256(data)],
-    ["SHA-512", await sha512(data)],
+    ["MD5", hashes[0]],
+    ["SHA-1", hashes[1]],
+    ["SHA-256", hashes[2]],
+    ["SHA-512", hashes[3]],
   ]
 }
 
