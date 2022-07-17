@@ -25,7 +25,7 @@ export function documentsToEntries(docs: MarkdownInstance<Record<string, any>>[]
 const { entries } = Astro.props as Props
 ---
 
-<ul class="divide-y">
+<ul class="divide-y divide-stone-200 dark:divide-stone-700">
   {entries.map(({ type, href, name }) => (
     <li>
       <a

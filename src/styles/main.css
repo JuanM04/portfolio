@@ -24,7 +24,7 @@
 
 body {
   font-family: "Iosevka Web", theme("fontFamily.mono");
-  @apply bg-stone-50 dark:bg-stone-900 border-t-8 border-red-500 text-body divide-stone-200 dark:divide-stone-700;
+  @apply bg-stone-50 dark:bg-stone-900 border-t-8 border-red-500 text-body;
 }
 
 hr {
