@@ -1,0 +1,15 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro"
+import { Decode } from "~/apps/QR/Decode"
+import { Generate } from "~/apps/QR/Generate"
+---
+
+<MainLayout title="QR codes" description="Generate / Decode QR Codes" path={["qr"]}>
+  <h3 class="text-2xl font-bold text-display mb-4">Decode QR</h3>
+  <Decode client:only="solid-js" />
+
+  <hr class="my-12" />
+
+  <h3 class="text-2xl font-bold text-display mb-4">Generate QR</h3>
+  <Generate client:only="solid-js" />
+</MainLayout>

@@ -38,13 +38,7 @@ export function Checksum() {
     <div>
       <input
         type="file"
-        class="
-          block w-full my-8 text-sm text-stone-500
-          cursor-pointer file:cursor-pointer
-          file:mr-4 file:py-2 file:px-4 file:border-0
-          file:text-sm file:font-semibold
-          file:bg-red-500 file:text-white
-          hover:file:bg-red-600 file:transition-colors"
+        class="my-8"
         onChange={async e => {
           if (!e.currentTarget.files || e.currentTarget.files.length === 0) return
 

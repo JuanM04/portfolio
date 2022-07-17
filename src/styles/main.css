@@ -55,3 +55,22 @@ input[type="number"].no-spinner {
   height: min-content;
   padding: 4px;
 }
+
+/* QR */
+
+.form-input {
+  @apply text-black bg-white border border-stone-200 w-full p-1 focus:outline-red-500;
+}
+
+.form-label {
+  @apply uppercase text-xs text-display;
+}
+
+input[type="file"] {
+  @apply block w-full text-sm text-stone-500;
+  @apply cursor-pointer file:cursor-pointer;
+  @apply file:mr-4 file:py-2 file:px-4 file:border-0;
+  @apply file:text-sm file:font-semibold;
+  @apply file:bg-red-500 file:text-white;
+  @apply hover:file:bg-red-600 file:transition-colors;
+}

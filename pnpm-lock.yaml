@@ -5,6 +5,8 @@ specifiers:
   '@astrojs/solid-js': ^0.4.0
   '@astrojs/tailwind': ^0.2.4
   '@tailwindcss/typography': ^0.5.4
+  '@zxing/browser': ^0.1.1
+  '@zxing/library': ^0.19.1
   astro: 1.0.0-beta.71
   astro-icon: ^0.7.1
   date-fns: ^2.28.0
@@ -25,6 +27,8 @@ specifiers:
   unist-util-visit: ^4.1.0
 
 dependencies:
+  '@zxing/browser': 0.1.1_@zxing+library@0.19.1
+  '@zxing/library': 0.19.1
   date-fns: 2.28.0
   hash-wasm: 4.9.0
   katex: 0.16.0
@@ -673,6 +677,31 @@ packages:
       vscode-nls: 5.0.1
       vscode-uri: 2.1.2
     dev: true
+
+  /@zxing/browser/0.1.1_@zxing+library@0.19.1:
+    resolution: {integrity: sha512-fdcHrvvno1NnoiY5++kn/h2b9QnBNyqtK1JqbfY3dfmTdwyXCJr/aT2ZGyRcfe0D3I/THu1I5VJAcpoU0svQMQ==}
+    peerDependencies:
+      '@zxing/library': ^0.19.1
+    dependencies:
+      '@zxing/library': 0.19.1
+    optionalDependencies:
+      '@zxing/text-encoding': 0.9.0
+    dev: false
+
+  /@zxing/library/0.19.1:
+    resolution: {integrity: sha512-rKwvl3Uuqs8yf364iU9l3HDDaIx8yPv+CH6DbtQaQr67VdKLG22G1ukEp9fOdDefE6tpLtRAdMnTrgtpiaKAZw==}
+    engines: {node: '>= 10.4.0'}
+    dependencies:
+      ts-custom-error: 3.2.0
+    optionalDependencies:
+      '@zxing/text-encoding': 0.9.0
+    dev: false
+
+  /@zxing/text-encoding/0.9.0:
+    resolution: {integrity: sha512-U/4aVJ2mxI0aDNI8Uq0wEhMgY+u4CNtEb0om3+y3+niDAsoTCOB33UF0sxpzqzdqXLqmvc+vZyAt4O8pPdfkwA==}
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /acorn-jsx/5.3.2_acorn@8.7.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -4672,6 +4701,11 @@ packages:
   /trough/2.1.0:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
     dev: true
+
+  /ts-custom-error/3.2.0:
+    resolution: {integrity: sha512-cBvC2QjtvJ9JfWLvstVnI45Y46Y5dMxIaG1TDMGAD/R87hpvqFL+7LhvUDhnRCfOnx/xitollFWWvUKKKhbN0A==}
+    engines: {node: '>=8.0.0'}
+    dev: false
 
   /ts-dedent/2.2.0:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
