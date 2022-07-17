@@ -12,14 +12,15 @@ export interface Props {
   entries: Entry[]
 }
 
-export const documentsToEntries = (docs: MarkdownInstance<Record<string, any>>[]) =>
-  docs.map(
+export function documentsToEntries(docs: MarkdownInstance<Record<string, any>>[]) {
+  return docs.map(
     (doc): Entry => ({
       type: "file",
       href: doc.url as string,
       name: doc.frontmatter.title,
     })
   )
+}
 
 const { entries } = Astro.props as Props
 ---
