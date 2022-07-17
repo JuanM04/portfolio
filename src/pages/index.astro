@@ -143,9 +143,8 @@ const projects: {
       <h1 class="text-4xl font-black text-display leading-none">Juan Martín Seery</h1>
       <p>Developer, open-source enthusiast. <span class="whitespace-nowrap">🇦🇷🧉</span></p>
       <p>
-        Currently studying at <a href="https://unlp.edu.ar/" class="underline decoration-red-500"
-          >UNLP
-        </a>.
+        Currently studying at
+        <a href="https://unlp.edu.ar/" class="underline decoration-red-500">UNLP</a>.
       </p>
       <ul
         class="mt-8 flex flex-row items-center justify-center gap-x-4 md:flex-col md:items-start md:justify-start md:gap-y-2 md:gap-x-0"
@@ -174,13 +173,13 @@ const projects: {
     <h2 class="text-2xl font-bold text-display">ls ~</h2>
     <ul>
       <li>
-        <a href="/bpm/" class="hover:text-red-500 transition-colors">$ cd bpm/</a>
+        <a href="/bpm/" class="hover:text-red-500 transition-colors block py-1 w-full">$ cd bpm/</a>
       </li>
       <li>
-        <a href="/checksum/" class="hover:text-red-500 transition-colors">$ cd checksum/</a>
+        <a href="/checksum/" class="hover:text-red-500 transition-colors block py-1 w-full">$ cd checksum/</a>
       </li>
       <li>
-        <a href="/docs/" class="hover:text-red-500 transition-colors">$ cd docs/</a>
+        <a href="/docs/" class="hover:text-red-500 transition-colors block py-1 w-full">$ cd docs/</a>
       </li>
     </ul>
 
@@ -204,10 +203,10 @@ const projects: {
             )}
           </p>
           <p class="text-sm">{project.description}</p>
-          <ul class="mt-4 flex flex-wrap gap-y-1 text-sm">
+          <ul class="mt-4 flex flex-wrap gap-y-1">
             {project.stack.map(tech => (
-              <li class="after:content-['●'] after:px-2 after:text-red-500 after:text-xs last:after:content-none">
-                {tech}
+              <li class="text-[0px] after:content-['●'] after:px-2 after:text-red-500 after:text-xs last:after:content-none">
+                <span class="text-sm">{tech}</span>
               </li>
             ))}
           </ul>
