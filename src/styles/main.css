@@ -22,23 +22,34 @@
   }
 }
 
-body {
-  font-family: "Iosevka Web", theme("fontFamily.mono");
-  @apply bg-stone-50 dark:bg-stone-900 border-t-8 border-red-500 text-body;
-}
+@layer base {
+  body {
+    font-family: "Iosevka Web", theme("fontFamily.mono");
+    @apply bg-stone-50 dark:bg-stone-900 border-t-8 border-red-500 text-body;
+  }
 
-hr {
-  @apply border-stone-200 dark:border-stone-700;
-}
+  hr {
+    @apply border-stone-200 dark:border-stone-700;
+  }
 
-input[type="number"].no-spinner::-webkit-inner-spin-button,
-input[type="number"].no-spinner::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+  input[type="file"] {
+    @apply block w-full text-sm text-stone-500;
+    @apply cursor-pointer file:cursor-pointer;
+    @apply file:mr-4 file:py-2 file:px-4 file:border-0;
+    @apply file:text-sm file:font-semibold;
+    @apply file:bg-red-500 file:text-white;
+    @apply hover:file:bg-red-600 file:transition-colors;
+  }
 
-input[type="number"].no-spinner {
-  -moz-appearance: textfield;
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 
 /* Docs */
@@ -64,13 +75,4 @@ input[type="number"].no-spinner {
 
 .form-label {
   @apply uppercase text-xs text-display;
-}
-
-input[type="file"] {
-  @apply block w-full text-sm text-stone-500;
-  @apply cursor-pointer file:cursor-pointer;
-  @apply file:mr-4 file:py-2 file:px-4 file:border-0;
-  @apply file:text-sm file:font-semibold;
-  @apply file:bg-red-500 file:text-white;
-  @apply hover:file:bg-red-600 file:transition-colors;
 }

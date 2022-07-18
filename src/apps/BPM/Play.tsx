@@ -40,7 +40,7 @@ export function Play() {
           -
         </button>
         <input
-          class="font-bold text-5xl w-20 text-center bg-transparent outline-none no-spinner focus:border-b border-current"
+          class="font-bold text-5xl w-20 text-center bg-transparent outline-none focus:border-b border-current"
           type="number"
           value={bpm()}
           max={420}

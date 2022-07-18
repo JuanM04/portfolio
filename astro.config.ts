@@ -12,7 +12,7 @@ import tailwind from "@astrojs/tailwind"
 // https://astro.build/config
 export default defineConfig({
   site: "https://juanm04.com",
-  integrations: [solid(), sitemap(), tailwind()],
+  integrations: [solid(), sitemap(), tailwind({ config: { applyBaseStyles: false } })],
   trailingSlash: "always",
   markdown: {
     syntaxHighlight: "shiki",
