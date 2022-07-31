@@ -1,0 +1,10 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro"
+import Files, { documentsToEntries } from "~/components/Files.astro"
+
+const docs = await Astro.glob("./*.md")
+---
+
+<MainLayout title="SysAdmin Bible" path={["docs"]} lang="es">
+  <Files entries={[{ type: "folder", href: "..", name: ".." }, ...documentsToEntries(docs)]} />
+</MainLayout>
