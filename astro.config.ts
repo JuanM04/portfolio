@@ -4,6 +4,7 @@ import { defineConfig } from "astro/config"
 import solid from "@astrojs/solid-js"
 import sitemap from "@astrojs/sitemap"
 import { betterImages } from "./src/plugins/better-images"
+import { blockquoteEnhanced } from "./src/plugins/blockquote-enhanced"
 import { mermaid } from "./src/plugins/mermaid"
 import { getLanguages } from "./src/plugins/languages"
 import { remarkToc } from "./src/plugins/toc"
@@ -26,6 +27,7 @@ export default defineConfig({
       "remark-smartypants",
       "remark-code-titles",
       "remark-math",
+      blockquoteEnhanced,
       remarkToc,
       mermaid,
     ],
