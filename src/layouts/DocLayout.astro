@@ -36,7 +36,7 @@ const headTitle = title + " (~/docs)"
   <header class="mb-16">
     <h1 class="text-display font-black text-5xl">{title}</h1>
     {description && <p class="italic">{description}</p>}
-    <p class="text-sm text-stone-600 dark:text-stone-400 mt-4">
+    <p class="text-sm text-stone-700 dark:text-stone-400 mt-4">
       {lang === "es" ? (
         <>
           Publicado el: {formatDate(createdAt)}
@@ -61,14 +61,7 @@ const headTitle = title + " (~/docs)"
     </p>
   </header>
 
-  <main
-    class="
-      prose prose-stone dark:prose-invert max-w-none overflow-x-auto
-      prose-headings:text-display
-      prose-a:underline prose-a:decoration-red-500
-      prose-li:marker:text-red-500
-      prose-video:my-0 prose-figcaption:text-center prose-figcaption:italic"
-  >
+  <main class="prose prose-stone dark:prose-invert max-w-none overflow-x-auto">
     <slot />
   </main>
 
@@ -79,11 +72,13 @@ const headTitle = title + " (~/docs)"
       mermaid.initialize({
         startOnLoad: false,
         fontFamily: "var(--sans-font)",
+        // @ts-ignore This works, but TS expects a enum for some reason
         theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "default",
       })
 
       for (const graph of graphs) {
         const content = graph.getAttribute("data-content")
+        if(!content) continue;
         let svg = document.createElement("svg")
         const id = (svg.id = "mermaid-" + Math.round(Math.random() * 100000))
         graph.appendChild(svg)
