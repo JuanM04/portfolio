@@ -5,6 +5,8 @@ createdAt: 2019-07-01
 layout: ~/layouts/DocLayout.astro
 ---
 
+<!-- toc -->
+
 ## Compuestos
 
 $\text{nO}$ = Número de oxidación

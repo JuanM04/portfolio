@@ -4,6 +4,8 @@ createdAt: 2020-02-19
 layout: ~/layouts/DocLayout.astro
 ---
 
+<!-- toc -->
+
 ### Keyboard lights trick`.vbs`
 
 ```vb

@@ -5,6 +5,8 @@ updatedAt: 2022-06-26
 layout: ~/layouts/DocLayout.astro
 ---
 
+<!-- toc -->
+
 ## All videos
 
 ```mermaid

@@ -5,12 +5,7 @@ createdAt: 2022-04-24
 layout: ~/layouts/DocLayout.astro
 ---
 
-- [OLL](#oll)
-  - [Cruz](#cruz)
-  - [Esquinas](#esquinas)
-- [PLL](#pll)
-  - [Esquinas](#esquinas-1)
-  - [Aristas](#aristas)
+<!-- toc -->
 
 ## OLL
 

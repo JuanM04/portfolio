@@ -5,14 +5,7 @@ createdAt: 2019-07-01
 layout: ~/layouts/DocLayout.astro
 ---
 
-- [Horinzontalidad](#horinzontalidad)
-  - [MRU & MRUV](#mru--mruv)
-- [Verticalidad](#verticalidad)
-  - [Tiro Vertical](#tiro-vertical)
-  - [Caida Libre](#caida-libre)
-- [Fuerza](#fuerza)
-- [Energía y trabajo](#energía-y-trabajo)
-- [Potencia](#potencia)
+<!-- toc -->
 
 $$
 \begin{aligned}

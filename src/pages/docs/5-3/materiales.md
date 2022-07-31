@@ -5,14 +5,7 @@ createdAt: 2020-05-29
 layout: ~/layouts/DocLayout.astro
 ---
 
-- [Ensayo de Dureza](#ensayo-de-dureza)
-  - [Brinell](#brinell)
-    - [Constantes comunes](#constantes-comunes)
-    - [Nomenclatura](#nomenclatura)
-  - [Vickers](#vickers)
-    - [Valores de k](#valores-de-k)
-    - [Nomenclatura](#nomenclatura-1)
-- [Ensayo de Tracción](#ensayo-de-tracción)
+<!-- toc -->
 
 ## Ensayo de Dureza
 

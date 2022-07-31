@@ -6,19 +6,7 @@ updatedAt: 2020-05-29
 layout: ~/layouts/DocLayout.astro
 ---
 
-- [Medición](#medición)
-  - [Conversión](#conversión)
-  - [Calibre](#calibre)
-  - [Micrómetro](#micrómetro)
-  - [Reloj comparador](#reloj-comparador)
-  - [Alexómetro](#alexómetro)
-- [Torno](#torno)
-  - [Plato](#plato)
-  - [Contrapunta](#contrapunta)
-  - [Puntos](#puntos)
-  - [Otros](#otros)
-- [Fresadora](#fresadora)
-- [Roscas](#roscas)
+<!-- toc -->
 
 ## Medición
 

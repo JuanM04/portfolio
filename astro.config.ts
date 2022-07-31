@@ -6,6 +6,7 @@ import sitemap from "@astrojs/sitemap"
 import { betterImages } from "./src/plugins/better-images"
 import { mermaid } from "./src/plugins/mermaid"
 import { getLanguages } from "./src/plugins/languages"
+import { remarkToc } from "./src/plugins/toc"
 
 import tailwind from "@astrojs/tailwind"
 
@@ -25,6 +26,7 @@ export default defineConfig({
       "remark-smartypants",
       "remark-code-titles",
       "remark-math",
+      remarkToc,
       mermaid,
     ],
     rehypePlugins: [
