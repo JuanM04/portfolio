@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const { title, description, path = [], lang = "en" } = Astro.props as Props
-const canonicalURL = Astro.canonicalURL
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <html {lang}>
@@ -30,7 +30,7 @@ const canonicalURL = Astro.canonicalURL
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <slot name="head"></slot>
+    <slot name="head" />
 
     <script
       async
@@ -64,7 +64,7 @@ const canonicalURL = Astro.canonicalURL
         </nav>
       )}
 
-      <slot></slot>
+      <slot />
     </div>
   </body>
 </html>
