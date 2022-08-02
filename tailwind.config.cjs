@@ -28,6 +28,12 @@ module.exports = {
               fontStretch: "normal",
               color: "#000000",
             },
+            ol: {
+              paddingLeft: "2.25rem",
+            },
+            "ol > li::marker": {
+              fontStretch: "normal",
+            },
             video: {
               marginTop: "0",
               marginBottom: "0",
