@@ -33,7 +33,7 @@ const headTitle = title + " (~/docs)"
     {updatedAt && <meta property="og:article:modified_time" content={createdAt} />}
   </Fragment>
 
-  <header class="mb-16">
+  <header class="mb-8">
     <h1 class="text-display font-black text-5xl">{title}</h1>
     {description && <p class="italic">{description}</p>}
     <p class="text-sm text-stone-700 dark:text-stone-400 mt-4">
@@ -58,6 +58,8 @@ const headTitle = title + " (~/docs)"
           )}
         </>
       )}
+      <br />
+      <a href="../" class="text-red-400">cd ..</a>
     </p>
   </header>
 
