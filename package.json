@@ -12,7 +12,7 @@
     "date-fns": "^2.29.1",
     "hash-wasm": "^4.9.0",
     "katex": "^0.16.0",
-    "mermaid": "^9.1.4",
+    "mermaid": "^9.1.5",
     "solid-js": "^1.4.8"
   },
   "devDependencies": {
@@ -21,7 +21,7 @@
     "@astrojs/tailwind": "^1.0.0",
     "@tailwindcss/typography": "^0.5.4",
     "@types/mermaid": "^8.2.9",
-    "astro": "^1.0.1",
+    "astro": "^1.0.6",
     "astro-icon": "^0.7.3",
     "mdast-util-toc": "^6.1.0",
     "prettier": "^2.7.1",

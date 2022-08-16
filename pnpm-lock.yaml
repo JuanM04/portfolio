@@ -8,13 +8,13 @@ specifiers:
   '@types/mermaid': ^8.2.9
   '@zxing/browser': ^0.1.1
   '@zxing/library': ^0.19.1
-  astro: ^1.0.1
+  astro: ^1.0.6
   astro-icon: ^0.7.3
   date-fns: ^2.29.1
   hash-wasm: ^4.9.0
   katex: ^0.16.0
   mdast-util-toc: ^6.1.0
-  mermaid: ^9.1.4
+  mermaid: ^9.1.5
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.5.0
   rehype-katex: ^6.0.2
@@ -34,7 +34,7 @@ dependencies:
   date-fns: 2.29.1
   hash-wasm: 4.9.0
   katex: 0.16.0
-  mermaid: 9.1.4
+  mermaid: 9.1.5
   solid-js: 1.4.8
 
 devDependencies:
@@ -43,7 +43,7 @@ devDependencies:
   '@astrojs/tailwind': 1.0.0
   '@tailwindcss/typography': 0.5.4
   '@types/mermaid': 8.2.9
-  astro: 1.0.1
+  astro: 1.0.6
   astro-icon: 0.7.3
   mdast-util-toc: 6.1.0
   prettier: 2.7.1
@@ -65,15 +65,15 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/gen-mapping': 0.1.1
-      '@jridgewell/trace-mapping': 0.3.14
+      '@jridgewell/trace-mapping': 0.3.15
     dev: true
 
   /@astrojs/compiler/0.19.0:
     resolution: {integrity: sha512-8nvyxZTfCXLyRmYfTttpJT6EPhfBRg0/q4J/Jj3/pNPLzp+vs05ZdktsY6QxAREaOMAnNEtSqcrB4S5DsXOfRg==}
     dev: true
 
-  /@astrojs/compiler/0.23.1:
-    resolution: {integrity: sha512-KsoDrASGwTKZoWXbjy8SlIeoDv7y1OfBJtHVLuPuzhConA8e0SZpGzFqIuVRfG4bhisSTptZLDQZ7oxwgPv2jA==}
+  /@astrojs/compiler/0.23.3:
+    resolution: {integrity: sha512-eBWo0d3DoRDeg2Di1/5YJtOXh5eGFSjJMp1wVoVfoITHR4egdUGgsrDHZTzj0a25M/S9W5S6SpXCyNWcqi8jOA==}
     dev: true
 
   /@astrojs/language-server/0.20.3:
@@ -96,7 +96,7 @@ packages:
     resolution: {integrity: sha512-yQIMvVjSMs4ZQHffT2nBgXiqVHKOwIgd6xC0o5XkcbXxyspxjRGpHyiAp/WKEdKsUeXwjVuL8b+6lhAYByd+lw==}
     dependencies:
       '@astrojs/micromark-extension-mdx-jsx': 1.0.3
-      '@astrojs/prism': 1.0.0
+      '@astrojs/prism': 1.0.1
       acorn: 8.8.0
       acorn-jsx: 5.3.2_acorn@8.8.0
       github-slugger: 1.4.0
@@ -134,8 +134,8 @@ packages:
       vfile-message: 3.1.2
     dev: true
 
-  /@astrojs/prism/1.0.0:
-    resolution: {integrity: sha512-hRsHDw/y4p7bFpq9XSeDTJtIvhdajU5ZahfAh+n9I7VKsKUHTYI3xTkImcXgkkUoEWs6UI0gk4GgJjiiLEgfYQ==}
+  /@astrojs/prism/1.0.1:
+    resolution: {integrity: sha512-HxEFslvbv+cfOs51q/C7aMVFuW3EAGg0d1xXU/0e/QeScDzfrp5Ra4SOb8mV082SgENVjtVvet4zR84t3at4VQ==}
     engines: {node: ^14.18.0 || >=16.12.0}
     dependencies:
       prismjs: 1.28.0
@@ -481,7 +481,7 @@ packages:
     dependencies:
       '@jridgewell/set-array': 1.1.2
       '@jridgewell/sourcemap-codec': 1.4.14
-      '@jridgewell/trace-mapping': 0.3.14
+      '@jridgewell/trace-mapping': 0.3.15
     dev: true
 
   /@jridgewell/resolve-uri/3.1.0:
@@ -498,8 +498,8 @@ packages:
     resolution: {integrity: sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==}
     dev: true
 
-  /@jridgewell/trace-mapping/0.3.14:
-    resolution: {integrity: sha512-bJWEfQ9lPTvm3SneWwRFVLzrh6nhjwqw7TUFFBEMzwvg7t7PCDenf2lDwqo4NQXzdpgBXyFgDWnQA+2vkruksQ==}
+  /@jridgewell/trace-mapping/0.3.15:
+    resolution: {integrity: sha512-oWZNOULl+UbhsgB51uuZzglikfIKSUBO/M9W2OfEjn7cmqoAiCgmv9lyACTUacZwBz0ITnJ2NqjU8Tx0DHL88g==}
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
@@ -826,12 +826,12 @@ packages:
       svgo: 2.8.0
     dev: true
 
-  /astro/1.0.1:
-    resolution: {integrity: sha512-oQltZ7Yk+ShztRL5NO+nyXVIZqBHjlL6yn6oDeJ/a+6D/rN6KMZQquKP21j87nSwnSnEUjS73EsFsIEvrxG4Tw==}
+  /astro/1.0.6:
+    resolution: {integrity: sha512-QAkdkzP3PbauiO4YnOgVTWY6z26heKruoXW9TnN8Bbmwtf7DUFIchi6CFSAVYSONX8XtRnj+p6fCkk06OWfJ4w==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
-      '@astrojs/compiler': 0.23.1
+      '@astrojs/compiler': 0.23.3
       '@astrojs/language-server': 0.20.3
       '@astrojs/markdown-remark': 1.0.0
       '@astrojs/telemetry': 1.0.0
@@ -872,7 +872,7 @@ packages:
       recast: 0.20.5
       rehype: 12.0.1
       resolve: 1.22.1
-      rollup: 2.77.2
+      rollup: 2.78.0
       semver: 7.3.7
       shiki: 0.10.1
       sirv: 2.0.2
@@ -883,7 +883,7 @@ packages:
       tsconfig-resolver: 3.0.1
       unist-util-visit: 4.1.0
       vfile: 5.3.4
-      vite: 3.0.4
+      vite: 3.0.5
       yargs-parser: 21.1.1
       zod: 3.18.0
     transitivePeerDependencies:
@@ -2899,8 +2899,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /mermaid/9.1.4:
-    resolution: {integrity: sha512-QgQTpIIzJfV/Ob7FZTDzxmWjFzCciij4C8RbbQbamsadf2gHrNrfqAoWLF6ALfQlW5ZqOefvlogDdWcFZRnifg==}
+  /mermaid/9.1.5:
+    resolution: {integrity: sha512-XoikwsOTTwsf/bKrTKjE5vCWXuhrOocA+/v3ynmdb0PIO1UEdfRLUNb70Cssz4TxTADX6HzeWYsUBCATBi7F1w==}
     dependencies:
       '@braintree/sanitize-url': 6.0.0
       d3: 7.6.1
@@ -2909,7 +2909,7 @@ packages:
       dompurify: 2.3.10
       graphlib: 2.1.8
       khroma: 2.0.0
-      moment-mini: 2.29.4
+      moment-mini: 2.24.0
       stylis: 4.1.1
     dev: false
 
@@ -3244,8 +3244,8 @@ packages:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
 
-  /moment-mini/2.29.4:
-    resolution: {integrity: sha512-uhXpYwHFeiTbY9KSgPPRoo1nt8OxNVdMVoTBYHfSEKeRkIkwGpO+gERmhuhBtzfaeOyTkykSrm2+noJBgqt3Hg==}
+  /moment-mini/2.24.0:
+    resolution: {integrity: sha512-9ARkWHBs+6YJIvrIp0Ik5tyTTtP9PoV0Ssu2Ocq5y9v8+NOOpWiRshAp8c4rZVWTOe+157on/5G+zj5pwIQFEQ==}
     dev: false
 
   /mri/1.2.0:
@@ -3820,8 +3820,8 @@ packages:
     resolution: {integrity: sha512-ndEIpszUHiG4HtDsQLeIuMvRsDnn8c8rYStabochtUeCvfuvNptb5TUbVD68LRAILPX7p9nqQGh4xJgn3EHS/g==}
     dev: false
 
-  /rollup/2.77.2:
-    resolution: {integrity: sha512-m/4YzYgLcpMQbxX3NmAqDvwLATZzxt8bIegO78FZLl+lAgKJBd1DRAOeEiZcKOIOPjxE6ewHWHNgGEalFXuz1g==}
+  /rollup/2.78.0:
+    resolution: {integrity: sha512-4+YfbQC9QEVvKTanHhIAFVUFSRsezvQF8vFOJwtGfb9Bb+r014S+qryr9PSmw8x6sMnPkmFBGAvIFVQxvJxjtg==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -4448,8 +4448,8 @@ packages:
       vfile-message: 3.1.2
     dev: true
 
-  /vite/3.0.4:
-    resolution: {integrity: sha512-NU304nqnBeOx2MkQnskBQxVsa0pRAH5FphokTGmyy8M3oxbvw7qAXts2GORxs+h/2vKsD+osMhZ7An6yK6F1dA==}
+  /vite/3.0.5:
+    resolution: {integrity: sha512-bRvrt9Tw8EGW4jj64aYFTnVg134E8hgDxyl/eEHnxiGqYk7/pTPss6CWlurqPOUzqvEoZkZ58Ws+Iu8MB87iMA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -4470,7 +4470,7 @@ packages:
       esbuild: 0.14.54
       postcss: 8.4.16
       resolve: 1.22.1
-      rollup: 2.77.2
+      rollup: 2.78.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
