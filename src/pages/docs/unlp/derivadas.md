@@ -2,6 +2,7 @@
 title: Tabla de derivadas
 lang: es
 createdAt: 2022-04-24
+updatedAt: 2022-08-25
 layout: ~/layouts/DocLayout.astro
 ---
 
@@ -23,6 +24,9 @@ $$
 |                $\sin x$                |                       $\cos x$                       |
 |                $\cos x$                |                      $-\sin x $                      |
 |                $\tan x$                |                $\frac{1}{\cos^2(x)}$                 |
+|                $\sec x$                |              $\frac{\sin x}{\cos^2 x}$               |
+|               $\cosec x$               |              $\frac{-\cos x}{\sin^2 x}$              |
+|               $\cotg x$                |                $\frac{-1}{\sin^2 x}$                 |
 |              $\arcsin x$               |              $\frac{1}{\sqrt{1 - x^2}}$              |
 |              $\arccos x$               |             $\frac{-1}{\sqrt{1 - x^2}}$              |
 |              $\arctan x$               |                 $\frac{1}{1 + x^2}$                  |
