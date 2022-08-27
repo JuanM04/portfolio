@@ -13,15 +13,15 @@
     "hash-wasm": "^4.9.0",
     "katex": "^0.16.0",
     "mermaid": "^9.1.6",
-    "solid-js": "^1.4.8"
+    "solid-js": "^1.5.1"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/solid-js": "^1.0.0",
+    "@astrojs/solid-js": "^1.1.0",
     "@astrojs/tailwind": "^1.0.0",
     "@tailwindcss/typography": "^0.5.4",
     "@types/mermaid": "^8.2.9",
-    "astro": "^1.0.9",
+    "astro": "^1.1.1",
     "astro-icon": "^0.7.3",
     "mdast-util-toc": "^6.1.0",
     "prettier": "^2.7.1",
@@ -33,7 +33,7 @@
     "remark-math": "^5.1.1",
     "remark-smartypants": "^2.0.0",
     "ts-dedent": "^2.2.0",
-    "typescript": "~4.7.4",
+    "typescript": "~4.8.2",
     "unist-util-visit": "^4.1.1"
   }
 }
