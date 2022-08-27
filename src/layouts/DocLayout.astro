@@ -18,9 +18,8 @@ const formatDate = (date: string) => {
   // Removes the Z from 1900-01-01T00:00:00Z
   date = date.slice(0, -1)
 
-  if (lang === "es")
-    return format(new Date(createdAt.slice(0, -1)), "d 'de' MMMM 'de' yyyy", { locale: esLocale })
-  else return format(new Date(createdAt.slice(0, -1)), "MMMM d, yyyy")
+  if (lang === "es") return format(new Date(date), "d 'de' MMMM 'de' yyyy", { locale: esLocale })
+  else return format(new Date(date), "MMMM d, yyyy")
 }
 
 const headTitle = title + " (~/docs)"
@@ -37,27 +36,29 @@ const headTitle = title + " (~/docs)"
     <h1 class="text-display font-black text-5xl">{title}</h1>
     {description && <p class="italic">{description}</p>}
     <p class="text-sm text-stone-700 dark:text-stone-400 mt-4">
-      {lang === "es" ? (
-        <>
-          Publicado el: {formatDate(createdAt)}
-          {updatedAt && (
-            <>
-              <br />
-              Última actualización: {formatDate(updatedAt)}
-            </>
-          )}
-        </>
-      ) : (
-        <>
-          Published at: {formatDate(createdAt)}
-          {updatedAt && (
-            <>
-              <br />
-              Last modified: {formatDate(updatedAt)}
-            </>
-          )}
-        </>
-      )}
+      {
+        lang === "es" ? (
+          <>
+            Publicado el: {formatDate(createdAt)}
+            {updatedAt && (
+              <>
+                <br />
+                Última actualización: {formatDate(updatedAt)}
+              </>
+            )}
+          </>
+        ) : (
+          <>
+            Published at: {formatDate(createdAt)}
+            {updatedAt && (
+              <>
+                <br />
+                Last modified: {formatDate(updatedAt)}
+              </>
+            )}
+          </>
+        )
+      }
       <br />
       <a href="../" class="text-red-400">cd ..</a>
     </p>
@@ -80,7 +81,7 @@ const headTitle = title + " (~/docs)"
 
       for (const graph of graphs) {
         const content = graph.getAttribute("data-content")
-        if(!content) continue;
+        if (!content) continue
         let svg = document.createElement("svg")
         const id = (svg.id = "mermaid-" + Math.round(Math.random() * 100000))
         graph.appendChild(svg)
