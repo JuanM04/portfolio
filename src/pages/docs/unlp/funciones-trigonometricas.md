@@ -70,8 +70,8 @@ $$
 
 $$
 \begin{aligned}
-  \sinh x &= \frac{e^x - e^{-1}}{2} \\
-  \cosh x &= \frac{e^x + e^{-1}}{2} \\
+  \sinh x &= \frac{e^x - e^{-x}}{2} \\
+  \cosh x &= \frac{e^x + e^{-x}}{2} \\
   \\
   \operatorname{arsinh} x &= \ln (x + \sqrt{x^2 + 1}) \\
   \operatorname{arcosh} x &= \ln (x + \sqrt{x^2 - 1})\ \forall x \geq 1
