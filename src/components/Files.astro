@@ -26,15 +26,17 @@ const { entries } = Astro.props as Props
 ---
 
 <ul class="divide-y divide-stone-200 dark:divide-stone-700">
-  {entries.map(({ type, href, name }) => (
-    <li>
-      <a
-        href={href}
-        class="flex items-center leading-none py-2 hover:text-red-500 transition-colors w-full"
-      >
-        <Icon name={type === "folder" ? "mi:folder" : "mi:document"} class="w-5 h-5 mr-2" />
-        <span>{name}</span>
-      </a>
-    </li>
-  ))}
+  {
+    entries.map(({ type, href, name }) => (
+      <li>
+        <a
+          href={href}
+          class="flex items-center leading-none py-2 hover:text-red-500 transition-colors w-full"
+        >
+          <Icon name={type === "folder" ? "mi:folder" : "mi:document"} class="w-5 h-5 mr-2" />
+          <span>{name}</span>
+        </a>
+      </li>
+    ))
+  }
 </ul>

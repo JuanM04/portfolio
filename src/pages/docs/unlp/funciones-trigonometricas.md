@@ -26,7 +26,6 @@ $$
 \end{aligned}
 $$
 
-
 ### Derivadas
 
 $$
@@ -77,7 +76,6 @@ $$
   \operatorname{arcosh} x &= \ln (x + \sqrt{x^2 - 1})\ \forall x \geq 1
 \end{aligned}
 $$
-
 
 ### Derivadas
 

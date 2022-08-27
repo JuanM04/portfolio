@@ -166,7 +166,12 @@ const projects: {
       </ul>
     </div>
 
-    <img src="/images/me.jpg" alt="Me :D" class="rounded-full bg-red-500" width="192" height="192"
+    <img
+      src="/images/me.jpg"
+      alt="Me :D"
+      class="rounded-full bg-red-500"
+      width="192"
+      height="192"
     />
   </header>
 
@@ -193,33 +198,35 @@ const projects: {
 
     <h2 class="text-2xl font-bold text-display mt-16">Projects</h2>
     <ul class="divide-y divide-stone-200 dark:divide-stone-700">
-      {projects.map(project => (
-        <li class="py-8">
-          <p class="text-xs uppercase tracking-wide font-medium">{project.released}</p>
-          <p class="text-lg font-semibold text-display">
-            {project.url ? (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-red-500 transition-colors"
-              >
-                {project.name} ↗︎
-              </a>
-            ) : (
-              project.name
-            )}
-          </p>
-          <p class="text-sm">{project.description}</p>
-          <ul class="mt-4 flex flex-wrap gap-y-1">
-            {project.stack.map(tech => (
-              <li class="text-[0px] after:content-['●'] after:px-2 after:text-red-500 after:text-xs last:after:content-none">
-                <span class="text-sm">{tech}</span>
-              </li>
-            ))}
-          </ul>
-        </li>
-      ))}
+      {
+        projects.map(project => (
+          <li class="py-8">
+            <p class="text-xs uppercase tracking-wide font-medium">{project.released}</p>
+            <p class="text-lg font-semibold text-display">
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-red-500 transition-colors"
+                >
+                  {project.name} ↗︎
+                </a>
+              ) : (
+                project.name
+              )}
+            </p>
+            <p class="text-sm">{project.description}</p>
+            <ul class="mt-4 flex flex-wrap gap-y-1">
+              {project.stack.map(tech => (
+                <li class="text-[0px] after:content-['●'] after:px-2 after:text-red-500 after:text-xs last:after:content-none">
+                  <span class="text-sm">{tech}</span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
     </ul>
   </main>
 </MainLayout>

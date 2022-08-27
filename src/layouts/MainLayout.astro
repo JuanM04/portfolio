@@ -38,31 +38,31 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
       data-website-id="4afe33e6-87d1-40d1-adb1-613d1487c0b2"
       src="https://umami.juanm04.com/umami.js"
       is:inline
-    >
-
-    </script>
+    ></script>
   </head>
 
   <body>
     <div class="max-w-2xl px-4 pb-12 mx-auto">
-      {path.length >= 1 && (
-        <nav class="mt-4 mb-12 leading-none text-2xl font-light block text-display select-none">
-          <a
-            href="/"
-            class="font-black hover:text-red-500 transition-colors after:content-['/'] after:text-xl after:font-light after:inline-block"
-          >
-            ~
-          </a>
-          {path.map((segment, i) => (
+      {
+        path.length >= 1 && (
+          <nav class="mt-4 mb-12 leading-none text-2xl font-light block text-display select-none">
             <a
-              href={"/" + path.slice(0, i + 1).join("/") + "/"}
-              class="hover:text-red-500 transition-colors after:content-['/'] after:text-xl after:inline-block"
+              href="/"
+              class="font-black hover:text-red-500 transition-colors after:content-['/'] after:text-xl after:font-light after:inline-block"
             >
-              {segment}
+              ~
             </a>
-          ))}
-        </nav>
-      )}
+            {path.map((segment, i) => (
+              <a
+                href={"/" + path.slice(0, i + 1).join("/") + "/"}
+                class="hover:text-red-500 transition-colors after:content-['/'] after:text-xl after:inline-block"
+              >
+                {segment}
+              </a>
+            ))}
+          </nav>
+        )
+      }
 
       <slot />
     </div>

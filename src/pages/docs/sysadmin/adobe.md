@@ -11,6 +11,7 @@ layout: ~/layouts/DocLayout.astro
 3. Open CC and install whatever you want (even if it says "Start Trial"). Lightroom and Acrobat doesn't work with this guide.
 
    If Adobe asks for a credit card:
+
    1. download and extract [CCStopper](https://github.com/eaaasun/CCStopper/releases/latest),
    2. open `CCStopper.bat`,
    3. input number `4`,

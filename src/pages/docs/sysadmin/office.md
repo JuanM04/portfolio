@@ -10,17 +10,16 @@ layout: ~/layouts/DocLayout.astro
 
 ## Download Office
 
-
 The easiest way to download Office is via [tb.rg-adguard.net](https://tb.rg-adguard.net/public.php), a web interface for an official Microsoft source and all the downloads will come directly from Microsoft's CDNs.
 
 You can download the latest Office version (like 2021) or the 365 version (which includes some cloud features).
 
-| Office 2021 edition | Word  | Excel | PowerPoint | Outlook | Publisher | Access | Teams |
-| :------------------ | :---: | :---: | :--------: | :-----: | :-------: | :----: | :---: |
-| Home & Student      |   ✅   |   ✅   |     ✅      |    ❌    |     ❌     |   ❌    |   ❌   |
-| Home & Business     |   ✅   |   ✅   |     ✅      |    ✅    |     ❌     |   ❌    |   ❌   |
-| Professional        |   ✅   |   ✅   |     ✅      |    ✅    |     ✅     |   ✅    |   ❌   |
-| Professional Plus   |   ✅   |   ✅   |     ✅      |    ✅    |     ✅     |   ✅    |   ✅   |
+| Office 2021 edition | Word | Excel | PowerPoint | Outlook | Publisher | Access | Teams |
+| :------------------ | :--: | :---: | :--------: | :-----: | :-------: | :----: | :---: |
+| Home & Student      |  ✅  |  ✅   |     ✅     |   ❌    |    ❌     |   ❌   |  ❌   |
+| Home & Business     |  ✅  |  ✅   |     ✅     |   ✅    |    ❌     |   ❌   |  ❌   |
+| Professional        |  ✅  |  ✅   |     ✅     |   ✅    |    ✅     |   ✅   |  ❌   |
+| Professional Plus   |  ✅  |  ✅   |     ✅     |   ✅    |    ✅     |   ✅   |  ✅   |
 
 ## Installation
 
