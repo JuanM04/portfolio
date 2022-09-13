@@ -49,11 +49,11 @@ $$
 $$
 \begin{aligned}
   \sin^2\theta + \cos^2\theta &= 1 \\
-  \tg^2\theta + 1 &= \cosec^2\theta \\
-  1 + \cotg^2\theta  &= \sec^2\theta \\
+  \tg^2\theta &= \sec^2\theta - 1\\
+  \cotg^2\theta  &= \cosec^2\theta - 1 \\
   \\
   \sin(\alpha \pm \beta) &= \sin\alpha \cos\beta \pm \cos\alpha \sin\beta \\
-  \sin(\alpha \pm \beta) &= \cos\alpha \cos\beta \mp \sin\alpha \sin\beta \\
+  \cos(\alpha \pm \beta) &= \cos\alpha \cos\beta \mp \sin\alpha \sin\beta \\
   \\
   \sin 2x &= 2\sin x \cos x \\
   \cos 2x &= \cos^2 x - \sin^2 x \\
