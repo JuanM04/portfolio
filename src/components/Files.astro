@@ -13,13 +13,15 @@ export interface Props {
 }
 
 export function documentsToEntries(docs: MarkdownInstance<Record<string, any>>[]) {
-  return docs.map(
-    (doc): Entry => ({
-      type: "file",
-      href: doc.url as string,
-      name: doc.frontmatter.title,
-    })
-  )
+  return docs
+    .map(
+      (doc): Entry => ({
+        type: "file",
+        href: doc.url as string,
+        name: doc.frontmatter.title,
+      })
+    )
+    .sort((a, b) => a.name.localeCompare(b.name))
 }
 
 const { entries } = Astro.props as Props
