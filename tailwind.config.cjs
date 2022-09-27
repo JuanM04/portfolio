@@ -28,6 +28,9 @@ module.exports = {
               fontStretch: "normal",
               color: "#000000",
             },
+            "tbody td": {
+              verticalAlign: "middle",
+            },
             ol: {
               paddingLeft: "2.25rem",
             },
