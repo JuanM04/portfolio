@@ -1,0 +1,23 @@
+---
+import MainLayout from "~/layouts/MainLayout.astro"
+---
+
+<MainLayout title="Juan Martín Seery" description="Developer, open-source enthusiast. 🇦🇷🧉">
+  <main class="text-center mt-10 md:mt-20 mb-20">
+    <h2 class="text-8xl font-black text-display leading-none">404</h2>
+    <p class="text-2xl">Page not found</p>
+    <p class="mt-8"><a href="/" class="text-red-400" id="good-place">Go back to The Good Place&trade;</a></p>
+
+    <script>
+      const goodPlace = document.getElementById('good-place')!
+
+      goodPlace.addEventListener('mouseenter', () => {
+        goodPlace.innerText = goodPlace.innerText.replace('The Good Place', 'The Bad Place')
+      })
+
+      goodPlace.addEventListener('mouseleave', () => {
+        goodPlace.innerText = goodPlace.innerText.replace('The Bad Place', 'The Good Place')
+      })
+    </script>
+  </main>
+</MainLayout>
