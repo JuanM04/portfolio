@@ -13,12 +13,12 @@ The easiest way to download Office is via [tb.rg-adguard.net](https://tb.rg-adgu
 
 You can download the latest Office version (like 2021) or the 365 version (which includes some cloud features).
 
-| Office 2021 edition | Word  | Excel | PowerPoint | Outlook | Publisher | Access | Teams |
-| :------------------ | :---: | :---: | :--------: | :-----: | :-------: | :----: | :---: |
-| Home & Student      |   ✅   |   ✅   |     ✅      |    ❌    |     ❌     |   ❌    |   ❌   |
-| Home & Business     |   ✅   |   ✅   |     ✅      |    ✅    |     ❌     |   ❌    |   ❌   |
-| Professional        |   ✅   |   ✅   |     ✅      |    ✅    |     ✅     |   ✅    |   ❌   |
-| Professional Plus   |   ✅   |   ✅   |     ✅      |    ✅    |     ✅     |   ✅    |   ✅   |
+| Office 2021 edition | Word | Excel | PowerPoint | Outlook | Publisher | Access | Teams |
+| :------------------ | :--: | :---: | :--------: | :-----: | :-------: | :----: | :---: |
+| Home & Student      |  ✅  |  ✅   |     ✅     |   ❌    |    ❌     |   ❌   |  ❌   |
+| Home & Business     |  ✅  |  ✅   |     ✅     |   ✅    |    ❌     |   ❌   |  ❌   |
+| Professional        |  ✅  |  ✅   |     ✅     |   ✅    |    ✅     |   ✅   |  ❌   |
+| Professional Plus   |  ✅  |  ✅   |     ✅     |   ✅    |    ✅     |   ✅   |  ✅   |
 
 ## Installation
 

@@ -24,13 +24,7 @@ export default defineConfig({
     },
     gfm: true,
     smartypants: true,
-    remarkPlugins: [
-      "remark-code-titles",
-      "remark-math",
-      blockquoteEnhanced,
-      remarkToc,
-      mermaid,
-    ],
+    remarkPlugins: ["remark-code-titles", "remark-math", blockquoteEnhanced, remarkToc, mermaid],
     rehypePlugins: [
       "rehype-slug",
       [
