@@ -4,7 +4,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier --plugin-search-dir=. -w ."
+    "format": "prettier -w ."
   },
   "dependencies": {
     "@vercel/analytics": "^0.1.8",
