@@ -13,7 +13,7 @@ import tailwind from "@astrojs/tailwind"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://juanm04.com",
+  site: "https://juanm04.com/",
   integrations: [solid(), sitemap(), tailwind({ config: { applyBaseStyles: false } })],
   trailingSlash: "always",
   markdown: {
@@ -22,9 +22,9 @@ export default defineConfig({
       theme: "vitesse-dark",
       langs: getLanguages(),
     },
+    gfm: true,
+    smartypants: true,
     remarkPlugins: [
-      "remark-gfm",
-      "remark-smartypants",
       "remark-code-titles",
       "remark-math",
       blockquoteEnhanced,

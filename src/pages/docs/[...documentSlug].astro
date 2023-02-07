@@ -1,0 +1,104 @@
+---
+import "katex/dist/katex.css"
+
+import type { GetStaticPathsItem } from "astro"
+import { CollectionEntry, getCollection } from "astro:content"
+
+import MainLayout from "~/layouts/MainLayout.astro"
+
+export interface Props {
+  entry: CollectionEntry<"docs">
+}
+
+interface PathItem extends GetStaticPathsItem {
+  params: { documentSlug: string }
+  props: Props
+}
+
+export async function getStaticPaths() {
+  const entries = await getCollection("docs")
+
+  return entries.map(
+    (entry): PathItem => ({
+      params: { documentSlug: entry.slug },
+      props: { entry },
+    })
+  )
+}
+
+const { entry } = Astro.props
+const { createdAt, lang, title, description, updatedAt } = entry.data
+
+const dateFormat = new Intl.DateTimeFormat(lang, { timeZone: "UTC", dateStyle: "long" })
+
+const headTitle = title + " (~/docs)"
+const { Content } = await entry.render()
+---
+
+<MainLayout title={headTitle} path={["docs"]} description={description} lang={lang}>
+  <Fragment slot="head">
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content={createdAt.toISOString()} />
+    {updatedAt && <meta property="og:article:modified_time" content={createdAt.toISOString()} />}
+  </Fragment>
+
+  <header class="mb-8">
+    <h1 class="text-display font-black text-5xl">{title}</h1>
+    {description && <p class="italic">{description}</p>}
+    <p class="text-sm text-stone-700 dark:text-stone-400 mt-4">
+      {
+        lang === "es" ? (
+          <>
+            Publicado el: {dateFormat.format(createdAt)}
+            {updatedAt && (
+              <>
+                <br />
+                Última actualización: {dateFormat.format(updatedAt)}
+              </>
+            )}
+          </>
+        ) : (
+          <>
+            Published at: {dateFormat.format(createdAt)}
+            {updatedAt && (
+              <>
+                <br />
+                Last modified: {dateFormat.format(updatedAt)}
+              </>
+            )}
+          </>
+        )
+      }
+      <br />
+      <a href="../" class="text-red-400">cd ..</a>
+    </p>
+  </header>
+
+  <main class="prose prose-stone dark:prose-invert max-w-none overflow-x-auto">
+    <Content />
+  </main>
+
+  <script>
+    const graphs = document.getElementsByClassName("mermaid")
+    if (document.getElementsByClassName("mermaid").length > 0) {
+      const { default: mermaid } = await import("mermaid")
+      mermaid.initialize({
+        startOnLoad: false,
+        fontFamily: "var(--sans-font)",
+        // @ts-ignore This works, but TS expects a enum for some reason
+        theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "default",
+      })
+
+      for (const graph of graphs) {
+        const content = graph.getAttribute("data-content")
+        if (!content) continue
+        let svg = document.createElement("svg")
+        const id = (svg.id = "mermaid-" + Math.round(Math.random() * 100000))
+        graph.appendChild(svg)
+        mermaid.render(id, content, (result: string) => {
+          graph.innerHTML = result
+        })
+      }
+    }
+  </script>
+</MainLayout>

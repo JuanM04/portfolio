@@ -1,0 +1,100 @@
+---
+import type { GetStaticPathsItem } from "astro"
+import { getCollection } from "astro:content"
+import { Icon } from "astro-icon"
+import { z } from "zod"
+
+import MainLayout from "~/layouts/MainLayout.astro"
+
+type FolderChild = { href: string; name: string; type: "folder" | "document" }
+
+export type Props = z.infer<typeof folderMetaSchema> & { children: FolderChild[] }
+
+interface PathItem extends GetStaticPathsItem {
+  params: { folderSlug: string | undefined }
+  props: Props
+}
+
+export const folderMetaSchema = z.object({
+  name: z.string(),
+  lang: z.enum(["es", "en"]),
+})
+
+export async function getStaticPaths() {
+  const paths: PathItem[] = [
+    {
+      params: { folderSlug: undefined },
+      props: { name: "~/docs", lang: "en", children: [] },
+    },
+  ]
+
+  const addToParent = (slug: string, name: string, type: FolderChild["type"]) => {
+    const parent = slug.split("/").slice(0, -1).join("/")
+    const child: FolderChild = { href: `./${slug.split("/").at(-1)}/`, name, type }
+
+    if (parent.length === 0) {
+      const root = paths.find(path => path.params.folderSlug === undefined)!
+      root.props.children.push(child)
+    } else {
+      for (const path of paths) {
+        if (path.params.folderSlug !== parent) continue
+
+        path.props.children.push(child)
+        return
+      }
+      throw new Error(`Could not find parent for ${slug}`)
+    }
+  }
+
+  const folders = import.meta.glob("../../content/docs/**/_meta.json")
+  for (const path in folders) {
+    const slug = path.slice(19, -11) // remove "content/docs/" and "/_meta.json"
+    const json = await folders[path]()
+    const meta = folderMetaSchema.parse(json)
+    paths.push({
+      params: { folderSlug: slug },
+      props: { name: `${meta.name} (~/docs)`, lang: meta.lang, children: [] },
+    })
+
+    addToParent(slug, meta.name, "folder")
+  }
+
+  const entries = await getCollection("docs")
+  for (const entry of entries) {
+    addToParent(entry.slug, entry.data.title, "document")
+  }
+
+  return paths
+}
+
+const { name, lang, children } = Astro.props
+
+let entries = [...children]
+entries = entries.sort((a, b) => {
+  if (a.type === "folder" && b.type === "document") return -1
+  if (a.type === "document" && b.type === "folder") return 1
+  return a.name.localeCompare(b.name, lang)
+})
+
+if (Astro.params.folderSlug !== undefined) {
+  entries = [{ href: "../", name: "..", type: "folder" }, ...entries]
+}
+---
+
+<MainLayout title={name} path={["docs"]} lang={lang}>
+  <ul class="divide-y divide-stone-200 dark:divide-stone-700">
+    {
+      entries.map(({ type, href, name }) => (
+        <li>
+          <a
+            href={href}
+            class="flex items-center leading-none py-2 hover:text-red-500 transition-colors w-full"
+          >
+            <Icon name={type === "folder" ? "mi:folder" : "mi:document"} class="w-5 h-5 mr-2" />
+            <span>{name}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</MainLayout>
