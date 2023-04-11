@@ -1,6 +1,7 @@
 ---
 title: Office
 createdAt: 2022-08-01
+updatedAt: 2023-04-11
 ---
 
 > This is strictly for educational purposes only — if you can't pay for software, there are great free alternatives!
@@ -9,16 +10,11 @@ createdAt: 2022-08-01
 
 ## Download Office
 
-The easiest way to download Office is via [tb.rg-adguard.net](https://tb.rg-adguard.net/public.php), a web interface for an official Microsoft source and all the downloads will come directly from Microsoft's CDNs.
+There are lots of versions of Office. You can find newer ones [here]() and see their differences [here](). These are my go-to downloads:
 
-You can download the latest Office version (like 2021) or the 365 version (which includes some cloud features).
-
-| Office 2021 edition | Word | Excel | PowerPoint | Outlook | Publisher | Access | Teams |
-| :------------------ | :--: | :---: | :--------: | :-----: | :-------: | :----: | :---: |
-| Home & Student      |  ✅  |  ✅   |     ✅     |   ❌    |    ❌     |   ❌   |  ❌   |
-| Home & Business     |  ✅  |  ✅   |     ✅     |   ✅    |    ❌     |   ❌   |  ❌   |
-| Professional        |  ✅  |  ✅   |     ✅     |   ✅    |    ✅     |   ✅   |  ❌   |
-| Professional Plus   |  ✅  |  ✅   |     ✅     |   ✅    |    ✅     |   ✅   |  ✅   |
+- [Office 365 ProPlus (English) x64](https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=O365ProPlusRetail&platform=x64&language=en-us&version=O16GA)
+- [Office 365 ProPlus (Spanish - Mexico) x64](https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=O365ProPlusRetail&platform=x64&language=es-mx&version=O16GA)
+- [Office 365 ProPlus (Spanish - Mexico) x86](https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=O365ProPlusRetail&platform=x86&language=es-mx&version=O16GA)
 
 ## Installation
 
@@ -32,6 +28,6 @@ You can use an official key or an activator.
 >
 > **It's essentially piracy with a middleman.**
 
-If you don't have a key, you can use [Microsoft Activation Scripts (MAS)](https://github.com/massgravel/Microsoft-Activation-Scripts/releases/latest).
+If you don't have a key, you can use [Microsoft Activation Scripts (MAS)](https://github.com/massgravel/Microsoft-Activation-Scripts/releases/latest). You can also run `irm https://massgrave.dev/get | iex` in the PowerShell.
 
 Once opened, go to `Office`, then activate only Office. Once you finished that, enable the auto-renewal.

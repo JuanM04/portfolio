@@ -1,6 +1,7 @@
 ---
 title: Adobe
 createdAt: 2022-08-01
+updatedAt: 2023-04-11
 ---
 
 > This is strictly for educational purposes only — if you can't pay for software, there are great free alternatives!
@@ -42,3 +43,7 @@ createdAt: 2022-08-01
 That's it! Always open the apps from the Windows menu / shortcurts, **never from the Creative Cloud launcher**.
 
 If something's wrong, check out [this guide on r/GenP](https://www.reddit.com/r/GenP/wiki/redditgenpguides/).
+
+## Acrobat
+
+If you only need Adobe Acrobat Pro, [Acropolis](https://www.reddit.com/r/GenP/wiki/redditgenpguides/#wiki_guide_.2310_-_acropolis.3A_adobe_acrobat_pro_dc_.28standalone.2Fcc-less.29) is the simplest way to install it.

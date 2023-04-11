@@ -1,6 +1,7 @@
 ---
 title: Windows
 createdAt: 2022-07-31
+updatedAt: 2023-04-11
 ---
 
 > This is strictly for educational purposes only — if you can't pay for software, there are great free alternatives!
@@ -13,9 +14,9 @@ The majority of PCs will run Windows 7 and 10, but only the newer ones will run 
 
 Once you chose a Windows version, you need to download the ISO. The ISO size varies a lot depending of the version — with a **8 GB thumbdrive** you'll be fine.
 
-If you are in a Windows computer, you can use the [Media Creation Tool](https://www.microsoft.com/en-us/software-download/windows10), which downloads and flashes the thumbdrive automatically for you.
+If you are in a Windows computer, you can use the [Media Creation Tool](https://www.microsoft.com/en-us/software-download/windows11), which downloads and flashes the thumbdrive automatically for you.
 
-Otherwhise, [tb.rg-adguard.net](https://tb.rg-adguard.net/public.php) is a web interface for an official Microsoft source and all the downloads will come directly from Microsoft's CDNs. For flashing the thumbdrive, you can use
+Otherwhise, [Microsoft Software Download Listing](https://ave9858.github.io/msdl/) is a web interface for an official Microsoft source and all the downloads will come directly from Microsoft's CDNs. For flashing the thumbdrive, you can use
 
 - [Rufus](https://rufus.ie/en/) (Windows-only),
 - [WoeUSB](https://github.com/WoeUSB) (Linux-only),
@@ -34,6 +35,8 @@ You can use an official key or an activator.
 > **It's essentially piracy with a middleman.**
 
 If you don't have a key, you can use [Microsoft Activation Scripts (MAS)](https://github.com/massgravel/Microsoft-Activation-Scripts/releases/latest). Instructions and downloads are inside that link.
+
+You can also run `irm https://massgrave.dev/get | iex` in the PowerShell.
 
 ## Next steps
 
