@@ -1,7 +1,7 @@
 ---
 import "katex/dist/katex.css"
 
-import type { GetStaticPathsItem } from "astro"
+import type { GetStaticPaths } from "astro"
 import { CollectionEntry, getCollection } from "astro:content"
 
 import MainLayout from "~/layouts/MainLayout.astro"
@@ -10,21 +10,14 @@ export interface Props {
   entry: CollectionEntry<"docs">
 }
 
-interface PathItem extends GetStaticPathsItem {
-  params: { documentSlug: string }
-  props: Props
-}
-
-export async function getStaticPaths() {
+export const getStaticPaths = (async () => {
   const entries = await getCollection("docs")
 
-  return entries.map(
-    (entry): PathItem => ({
-      params: { documentSlug: entry.slug },
-      props: { entry },
-    })
-  )
-}
+  return entries.map(entry => ({
+    params: { documentSlug: entry.slug },
+    props: { entry },
+  }))
+}) satisfies GetStaticPaths
 
 const { entry } = Astro.props
 const { createdAt, lang, title, description, updatedAt } = entry.data
