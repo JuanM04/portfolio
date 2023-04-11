@@ -95,8 +95,8 @@ const { Content } = await entry.render()
         let svg = document.createElement("svg")
         const id = (svg.id = "mermaid-" + Math.round(Math.random() * 100000))
         graph.appendChild(svg)
-        mermaid.render(id, content, (result: string) => {
-          graph.innerHTML = result
+        mermaid.render(id, content).then(result => {
+          graph.innerHTML = result.svg
         })
       }
     }
