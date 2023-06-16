@@ -201,7 +201,7 @@ int fputc( int ch, FILE *stream );
 int putchar( int ch );
 ```
 
-Escribe el carácter `ch`  en el archivo. Retorna `EOF` si ocurre un error.
+Escribe el carácter `ch` en el archivo. Retorna `EOF` si ocurre un error.
 
 `putchar(ch)` es equivalente a hacer `fputc(ch, stdout)`.
 
@@ -234,6 +234,7 @@ El string `format` consiste de un texto leído con máscaras opcionales. El text
 Una expeción importante son los blancos (`" "`, `"\n"`, `"\t\t"`, etc). Cada espacio consumirá todos los blancos consecutivos de la entrada (determinados por `isspace`). Nótese que no hay diferencia entre escribir `" "`, `"\n"` ni ningún otro blanco válido.
 
 Las máscaras de lectura
+
 - comienzan con `%`;
 - (opcional) `*` lee el formato especificado pero no lo guarda;
 - (opcional) un entero mayor a cero que especifica la longitud máxima del resultado y, por ende, la longitud máxima de lecuta para esa máscara;
@@ -242,20 +243,20 @@ Las máscaras de lectura
 
 El especificador puede ser...
 
-|             Esp.             | Explicación                                                                            |        `h`        |     (nada)      |       `l`        |      `L`       |
-| :--------------------------: | :------------------------------------------------------------------------------------- | :---------------: | :-------------: | :--------------: | :------------: |
-|             `%`              | lee un literal `%`                                                                     |        --         |       --        |        --        |       --       |
-|             `c`              | lee un carácter (o varios si una longitud es especificada)                             |        --         |     `char*`     |    `wchar_t*`    |       --       |
-|             `s`              | lee un string hasta el primer blanco (incluso con longitud especificada)               |        --         |     `char*`     |    `wchar_t*`    |       --       |
-|           `[set]`            | lee un carácter si es especificado en `set` (o varios si una longitud es especificada) |        --         |     `char*`     |    `wchar_t*`    |       --       |
-|             `i`              | lee un entero con signo                                                                |     `short*`      |     `int*`      |     `long*`      |       --       |
-|             `d`              | lee un entero con signo (decimal)                                                      |     `short*`      |     `int*`      |     `long*`      |       --       |
-|             `u`              | lee un entero sin signo (decimal)                                                      | `unsigned short*` | `unsigned int*` | `unsigned long*` |       --       |
-|             `o`              | lee un entero sin signo (octal)                                                        | `unsigned short*` | `unsigned int*` | `unsigned long*` |       --       |
-|           `x` `X`            | lee un entero sin signo (hexadecimal)                                                  | `unsigned short*` | `unsigned int*` | `unsigned long*` |       --       |
-|             `n`              | retonra la cantidad de caracteres leídos hasta el momento                              |     `short*`      |     `int*`      |     `long*`      |       --       |
-| `f` `F` `e` `E` `a`  `g` `G` | lee un nro. de punto flotante                                                          |        --         |    `double*`    |        --        | `long double*` |
-|             `p`              | lee la direcciónn de un puntero                                                        |        --         |    `void**`     |        --        |       --       |
+|            Esp.             | Explicación                                                                            |        `h`        |     (nada)      |       `l`        |      `L`       |
+| :-------------------------: | :------------------------------------------------------------------------------------- | :---------------: | :-------------: | :--------------: | :------------: |
+|             `%`             | lee un literal `%`                                                                     |        --         |       --        |        --        |       --       |
+|             `c`             | lee un carácter (o varios si una longitud es especificada)                             |        --         |     `char*`     |    `wchar_t*`    |       --       |
+|             `s`             | lee un string hasta el primer blanco (incluso con longitud especificada)               |        --         |     `char*`     |    `wchar_t*`    |       --       |
+|           `[set]`           | lee un carácter si es especificado en `set` (o varios si una longitud es especificada) |        --         |     `char*`     |    `wchar_t*`    |       --       |
+|             `i`             | lee un entero con signo                                                                |     `short*`      |     `int*`      |     `long*`      |       --       |
+|             `d`             | lee un entero con signo (decimal)                                                      |     `short*`      |     `int*`      |     `long*`      |       --       |
+|             `u`             | lee un entero sin signo (decimal)                                                      | `unsigned short*` | `unsigned int*` | `unsigned long*` |       --       |
+|             `o`             | lee un entero sin signo (octal)                                                        | `unsigned short*` | `unsigned int*` | `unsigned long*` |       --       |
+|           `x` `X`           | lee un entero sin signo (hexadecimal)                                                  | `unsigned short*` | `unsigned int*` | `unsigned long*` |       --       |
+|             `n`             | retonra la cantidad de caracteres leídos hasta el momento                              |     `short*`      |     `int*`      |     `long*`      |       --       |
+| `f` `F` `e` `E` `a` `g` `G` | lee un nro. de punto flotante                                                          |        --         |    `double*`    |        --        | `long double*` |
+|             `p`             | lee la direcciónn de un puntero                                                        |        --         |    `void**`     |        --        |       --       |
 
 La diferencia entre las versiones "minúsculas" y "mayúsculas" (como `x` y `X`) es que leerá solo minúsculas o mayúsculas respectivamente (por ejemplo, `12ab5` y `12AB5`).
 
@@ -278,6 +279,7 @@ Escriben texto de manera variable según un formato.
 Retornan la cantidad de caracteres que logró escribir, o un número negativo si ocurrió un error.
 
 El string `format` consiste de un texto a ser escrito con máscaras opcionales. Estas máscaras
+
 - comienzan con `%`;
 - (opcional) tienen modificadores:
   - `-` justifica el resultado a la izquierda,
@@ -330,6 +332,7 @@ void rewind( FILE *stream );
 ```
 
 Cambia la posición en el archivo. Se mueve según un `offset` desde un `origin`. Este último puede ser
+
 - `SEEK_SET`, el inicio del archivo;
 - `SEEK_CUR`, la posición actual;
 - `SEEK_END`, el final del archivo.
@@ -402,6 +405,7 @@ _Quicksort_.
 Ordena un arreglo `ptr` de `count` elementos de `size` bytes cada uno en orden ascendente según `comp`.
 
 `comp` es una función que recibe dos elementos `a`, `b` y retorna
+
 - `<0` si `a` es _menor_ que `b`,
 - `=0` si `a` es _igual_ que `b`,
 - `>0` si `a` es _mayor_ que `b`.
@@ -417,6 +421,7 @@ _Binary search_.
 Encuentra un elemento `*key` en un arreglo `ptr` de `count` elementos de `size` bytes cada uno. El arreglo debe estar previamente ordenado según `comp` en orden ascendente.
 
 `comp` es una función que recibe dos elementos `a`, `b` y retorna
+
 - `<0` si `a` es _menor_ que `b`,
 - `=0` si `a` es _igual_ que `b`,
 - `>0` si `a` es _mayor_ que `b`.
@@ -463,6 +468,7 @@ int strncmp( const char *lhs, const char *rhs, size_t count );
 ```
 
 Compara `lhs` con `rhs` lexicográficamente. Si
+
 - retorna `<0`, `lhs` precede a `rhs`;
 - retorna `0`, `lhs` es idéntico a `rhs`;
 - retorna `>0`, `lhs` le sigue a `rhs`.
