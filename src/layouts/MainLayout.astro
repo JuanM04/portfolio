@@ -31,6 +31,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <slot name="head" />
+
+    <script
+      async
+      defer
+      src="/stats/script.js"
+      data-website-id="121c4633-c56b-44e9-96cb-3a55953431a8"
+      data-do-not-track="true"></script>
   </head>
 
   <body>
@@ -57,11 +64,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
       }
 
       <slot />
-
-      <script>
-        import { inject } from "@vercel/analytics"
-        inject()
-      </script>
     </div>
   </body>
 </html>
