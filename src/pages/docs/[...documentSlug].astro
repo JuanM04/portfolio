@@ -24,6 +24,10 @@ const { createdAt, lang, title, description, updatedAt } = entry.data
 
 const dateFormat = new Intl.DateTimeFormat(lang, { timeZone: "UTC", dateStyle: "long" })
 
+let previous = entry.slug.split("/").slice(0, -1).join("/")
+if (previous.length > 0) previous = `/docs/${previous}`
+else previous = "/docs"
+
 const headTitle = title + " (~/docs)"
 const { Content } = await entry.render()
 ---
@@ -63,7 +67,7 @@ const { Content } = await entry.render()
         )
       }
       <br />
-      <a href="../" class="text-red-400">cd ..</a>
+      <a href={previous} class="text-red-400">cd ..</a>
     </p>
   </header>
 
@@ -76,7 +80,7 @@ const { Content } = await entry.render()
      * @params {HTMLCollectionOf<HTMLElement>} graphs
      */
     async function renderDiagrams(graphs) {
-      const {default: mermaid} = await import("mermaid")
+      const { default: mermaid } = await import("mermaid")
       mermaid.initialize({
         startOnLoad: false,
         fontFamily: "var(--sans-font)",
@@ -98,7 +102,7 @@ const { Content } = await entry.render()
 
     const graphs = document.getElementsByClassName("mermaid")
     if (document.getElementsByClassName("mermaid").length > 0) {
-      renderDiagrams(graphs);
+      renderDiagrams(graphs)
     }
   </script>
 </MainLayout>

@@ -35,4 +35,4 @@ The second part is all the Python scripts than control the lights and the music.
 - Theorically, according to the Spotify API docs, being login in with Spotify isn't necessary, but Spotify doesn't gives you the song in MP3 unless you are authenticated.
 - A little fade-in and fade-out is added to the song. The problem is that is added from the RasPi, but I would like to be added by Vercel, but PyDub is sooo magical that I just let it happen in the RasPi.
 
-[&larr; Day 3](../day-3/) | [Day 5 &rarr;](../day-5/)
+[&larr; Day 3](../day-3) | [Day 5 &rarr;](../day-5)

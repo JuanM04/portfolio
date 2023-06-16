@@ -36,4 +36,4 @@ La segunda parte está formada de varios scripts de Python que controlan las luc
 - Teoricamente, según la documentación de la API de Spotify, no haría falta estar logueado en Spotify para obtener la canción, pero por algún motivo, Spotify necesita que lo estés.
 - Un pequeño fundido es agregado a la canción. El problema que lo estoy añadiendo en la Raspberry, aumentando la cancidad de CPU usado, en vez de añadirlo en Vercel. El problema es que PyDub es taaaan mágico y fácil de usar que no me quiero molestar en instalar FFmpeg en Vercel.
 
-[&larr; Día 3](../dia-3/) | [Día 5 &rarr;](../dia-5/)
+[&larr; Día 3](../dia-3) | [Día 5 &rarr;](../dia-5)

@@ -9,4 +9,4 @@ updatedAt: 2020-09-10
 
 Ahora, es momento de hacer un experimento: obtener una canción de Spotify y reproducirla. Y eso fue lo que hice. Visualmente, no es nada _wow_, pero funciona. El código está en [este repo](https://github.com/JuanM04/the-cloc/tree/day-3), en la rama `day-3`. Ahora, ¡a hacer The Cloc!
 
-[&larr; Día 2](../dia-2/) | [Día 4 &rarr;](../dia-4/)
+[&larr; Día 2](../dia-2) | [Día 4 &rarr;](../dia-4)

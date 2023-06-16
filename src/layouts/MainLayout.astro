@@ -9,7 +9,8 @@ export interface Props {
 }
 
 const { title, description, path = [], lang = "en" } = Astro.props as Props
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+// Canonical URL is the current URL without trailing slashes
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString().replace(/\/+$/, "")
 ---
 
 <html lang={lang}>

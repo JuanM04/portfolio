@@ -101,4 +101,4 @@ while True:
     rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
 ```
 
-[&larr; Day 1](../day-1/) | [Day 3 &rarr;](../day-3/)
+[&larr; Day 1](../day-1) | [Day 3 &rarr;](../day-3)

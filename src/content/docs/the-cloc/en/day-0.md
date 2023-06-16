@@ -71,4 +71,4 @@ The configuration, or how I will call it to prevent headaches, **the editor**, i
 
 The alarm, a.k.a, **the wake-up-ator**, would run a server which listens to Bluetooth requests to change the configuration and would start the _ring-time_. This last would be a song being played through the speaker and the LED strip being turned on. If it's possible, the lights will have an animation.
 
-[Day 1 &rarr;](../day-1/)
+[Day 1 &rarr;](../day-1)

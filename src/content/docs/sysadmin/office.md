@@ -10,7 +10,7 @@ updatedAt: 2023-04-11
 
 ## Download Office
 
-There are lots of versions of Office. You can find newer ones [here]() and see their differences [here](). These are my go-to downloads:
+There are lots of versions of Office. You can find newer ones [here](https://massgrave.dev/office_c2r_links.html) and see their differences [here](https://www.coolhub.top/tech-articles/products.html). These are my go-to downloads:
 
 - [Office 365 ProPlus (English) x64](https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=O365ProPlusRetail&platform=x64&language=en-us&version=O16GA)
 - [Office 365 ProPlus (Spanish - Mexico) x64](https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=O365ProPlusRetail&platform=x64&language=es-mx&version=O16GA)

@@ -11,4 +11,4 @@ Here is some footage of the The Cloc in action
 
 ![](/videos/the-cloc/working.mp4)
 
-[&larr; Day 4](../day-4/)
+[&larr; Day 4](../day-4)

@@ -30,7 +30,7 @@ export async function getStaticPaths() {
 
   const addToParent = (slug: string, name: string, type: FolderChild["type"]) => {
     const parent = slug.split("/").slice(0, -1).join("/")
-    const child: FolderChild = { href: `./${slug.split("/").at(-1)}/`, name, type }
+    const child: FolderChild = { href: `/docs/${slug}`, name, type }
 
     if (parent.length === 0) {
       const root = paths.find(path => path.params.folderSlug === undefined)!
@@ -77,7 +77,11 @@ entries = entries.sort((a, b) => {
 })
 
 if (Astro.params.folderSlug !== undefined) {
-  entries = [{ href: "../", name: "..", type: "folder" }, ...entries]
+  let previous = Astro.params.folderSlug.split("/").slice(0, -1).join("/")
+  console.log(previous)
+  if (previous.length > 0) previous = `/docs/${previous}`
+  else previous = `/docs`
+  entries = [{ href: previous, name: "..", type: "folder" }, ...entries]
 }
 ---
 

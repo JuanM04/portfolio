@@ -6,7 +6,7 @@ createdAt: 2020-09-16
 
 ## MCU
 
-[¿Qué es un Radián?](../radianes/)
+[¿Qué es un Radián?](../radianes)
 
 $$
 \begin{aligned}

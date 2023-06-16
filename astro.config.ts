@@ -3,19 +3,19 @@
 import { defineConfig } from "astro/config"
 import solid from "@astrojs/solid-js"
 import sitemap from "@astrojs/sitemap"
+import tailwind from "@astrojs/tailwind"
+
 import { betterImages } from "./src/plugins/better-images"
 import { blockquoteEnhanced } from "./src/plugins/blockquote-enhanced"
 import { mermaid } from "./src/plugins/mermaid"
 import { getLanguages } from "./src/plugins/languages"
 import { remarkToc } from "./src/plugins/toc"
 
-import tailwind from "@astrojs/tailwind"
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://juanm04.com/",
   integrations: [solid(), sitemap(), tailwind({ config: { applyBaseStyles: false } })],
-  trailingSlash: "always",
+  trailingSlash: "never",
   markdown: {
     syntaxHighlight: "shiki",
     shikiConfig: {

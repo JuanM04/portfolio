@@ -8,6 +8,12 @@
   "markdown.extension.list.indentationSize": "inherit",
   "markdown.suggest.paths.enabled": false,
   "markdown.extension.completion.root": "public",
+  "markdown.preferredMdPathExtensionStyle": "removeExtension",
+  "markdown.validate.fileLinks.enabled": "error",
+  "markdown.validate.fileLinks.markdownFragmentLinks": "error",
+  "markdown.validate.fragmentLinks.enabled": "error",
+  "markdown.validate.referenceLinks.enabled": "error",
+
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },

@@ -24,7 +24,7 @@ Otherwhise, [Microsoft Software Download Listing](https://ave9858.github.io/msdl
 
 ## Installation
 
-Connect your flashed USB drive to the computer and boot it (check out the [BIOS Cheatsheet](../bios/)). You can perform a normal installation with or without a Microsoft account. If it asks you for a Windows key, there is always a way to skip it.
+Connect your flashed USB drive to the computer and boot it (check out the [BIOS Cheatsheet](../bios)). You can perform a normal installation with or without a Microsoft account. If it asks you for a Windows key, there is always a way to skip it.
 
 ## Activation
 
@@ -44,6 +44,6 @@ Useful software to install
 
 - [7-Zip](https://www.7-zip.org/index.html)
 - [Notepad++](https://notepad-plus-plus.org/)
-- [Office](../office/) or [LibreOffice](https://www.libreoffice.org/)
+- [Office](../office) or [LibreOffice](https://www.libreoffice.org/)
 - [PowerToys](https://github.com/microsoft/PowerToys)
 - [VLC](https://www.videolan.org/vlc/)
