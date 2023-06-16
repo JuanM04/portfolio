@@ -33,6 +33,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     <slot name="head" />
 
     <script
+      is:inline
       async
       defer
       src="/stats/script.js"
